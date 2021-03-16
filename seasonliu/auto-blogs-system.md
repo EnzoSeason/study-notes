@@ -1,4 +1,4 @@
-# A blog system with github webooks
+# A blogs system with github webooks
 
 As a developer, I like learning and sharing new technology. However, I find it wastes a lot time to copy my notes and post them on blogs websites like medium. So, I decide to create my own blog site.
 
