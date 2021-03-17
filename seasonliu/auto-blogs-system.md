@@ -1,7 +1,5 @@
 # A blogs system with github webooks
 
-![auto-blogs-system](https://dj-seasonliu.s3.eu-west-3.amazonaws.com/study-notes/seasonliu/auto-blog-system.png)
-
 As a developer, I like learning and sharing new technology. However, I find it wastes a lot time to copy my notes and post them on blogs websites like medium. So, I decide to create my own blog site.
 
 My blog site should **publish my notes automatically**, without posing them by hand. That means, when I take some notes, these notes should be presented in my blog sites without extra action. Awesome, right ? Let's do it.
