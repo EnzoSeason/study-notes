@@ -136,4 +136,62 @@ def func(n):
 
 Its space complexity is `O(n)`.
 
+## Cases of Time complexity
+
+There are 4 cases: 
+
+- **best** case time complexity
+- **worst** case time complexity
+- **average** case time complexity
+- **amortized** time complexity
+
+Usually, we use the first three. 
+
+To get Average `T(n)`, we need to calculate the probability of each case and return the weighted mean value.
+
+Exemples:
+
+```python
+def find(arr: list, x: int) -> int:
+    for i in arr:
+        if i == x:
+            return i
+    return -1
+```
+
+- best: `O(1)`
+- worst: `O(n)`
+- average: 
+
+    We assume the probability of find the `x` in `arr` is 50%, then the average Time complexity is:
+
+    ```
+    O(1/2n + 2/2n + 3/20 + ... + n/2n + n/2) = O(n)
+    ```
+
+```python
+MAX_LEN = N # N is a global const number
+
+def insert(arr: list, val: int, pos: int) -> list:
+    if pos >= MAX_LEN:
+        sum_val = 0
+        for i in arr:
+            sum_val += i
+        arr = [sum_val]
+        arr.append(val)
+        pos = 2
+    else:
+        arr[pos] = val
+        pos += 1
+    return [arr, pos]
+```
+
+- best: `O(1)`
+- worst: `O(n)`
+- average: 
+
+    ```
+    O(1/(n+1) + 1/(n+1) + 1/(n+1) + ... + 1/(n+1) +n/(n+1))
+    ```
+
    
