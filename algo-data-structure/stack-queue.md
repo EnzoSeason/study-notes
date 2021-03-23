@@ -77,4 +77,20 @@ Problems:
 
 - [227. Basic Calculator II](https://leetcode.com/problems/basic-calculator-ii/)
 
+  There are 2 ways to use stack in this problem.
+  
+  - use **two stacks**, one for numbers, one for operations. 
+  
+    use **two loops**. The first loop reads digitals and deals with the `*` and `/` operations. The second one deals with the rest and returns the result
+
+
+  - use **one stack for number**. The number can be positive and negative
+
+    use **2 global variables**, previous number and previous operator. 
+    
+    use **one loop**, we always deal with the previous case and update these two variable. 
+    
+    DO NOT forget the last char in the string.
+
+
 - [224. Basic Calculator](https://leetcode.com/problems/basic-calculator/)
