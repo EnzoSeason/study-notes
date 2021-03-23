@@ -9,6 +9,22 @@
 
 Python allows use `_` to separate numbers, `100_00` == `10000`
 
+Some notes: 
+
+1. `/` can transform `int` to `float`. For example: 3 / 2 = 1.5
+
+2. `//` is equal to `floor()`. The result is `int`.
+
+3. `int()` and `floor()` are different.
+
+    ```python
+    int(3 // 2) # 1
+    3 // 2 # 1
+
+    int(-3 // 2) # -1
+    -3 // 2 # -2
+    ```
+
 ### float
 
 `1.23`, `1.23e5` (1.23 \* 10 ^ 5)
