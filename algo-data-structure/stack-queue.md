@@ -170,7 +170,7 @@ It doesn't need to move data when the queue is "fake" full (`tail == n && head !
 
 > In practice, There is an empty space between the head and the tail. It helps to define the conditions of full queue and empty queue.
 
-Two eage cases are important to a queue.
+Two edge cases are important to a queue.
 
 - The queue is full.
 
