@@ -28,7 +28,7 @@ def climb_staires(n: int) -> int:
     return climb_staires(n - 2) + climb_staires(n - 1)
 ```
 
-What's more, we can use `Dynamic Programming`. It **caches the internal results** of the recursion.
+What's more, we can use `Dynamic Programming`. It avoids **stack overflow** and **repeated calculation**.
 
 ```python
 def climb_staires(n: int) -> int:
