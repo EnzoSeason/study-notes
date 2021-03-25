@@ -1,6 +1,8 @@
 # Sort
 
-There are a lot of sort algorithms. How can we choose a good one ? 
+There are a lot of sort algorithms. We classify them by time complexity.
+
+- [`O(n^2)`](##O(n^2))
 
 ## How to analyze a sort algorithm
 
@@ -25,13 +27,13 @@ There are 3 apects.
 
   It depends on the implement. Change the list ONLY we need to.
 
-## O(n^2) sort
+## O(n^2)
 
-- Bubble Sort
-- Insert Sort
-- Selection Sort
+- [Bubble Sort](###Bubble_Sort)
+- [Insert Sort](###Insert_Sort)
+- [Selection Sort](###Selection_Sort)
 
-### Bubble Sort
+### Bubble_Sort
 
 Bubble sort only operate on **two adjacent data**. If these 2 data **meet the switch condition**, we switch them.
 
@@ -103,7 +105,7 @@ a[i] <= a[j], if i < j
 a[i] > a[j], if i < j
 ```
 
-### Insert Sort
+### Insert_Sort
 
 The main idea is to insert a item into a **sorted list**.
 
@@ -147,7 +149,7 @@ def insert_sort(a: list) -> list:
 
 The times of the switch is **the number of the reversed pairs**.
 
-### Selection Sort
+### Selection_Sort
 
 It also splits the list into **sorted** and **unsorted** parts. However, it selects the **minimal value** in the unsorted part and puts it at the **end** of the sorted part.
 
