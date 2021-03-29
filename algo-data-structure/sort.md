@@ -187,16 +187,20 @@ def selection_sort(a: list) -> list:
 
 ## O(nlogn)
 
+The main idea of `O(nlogn)` sort is **spliting a big array into small arrays**, then solving the small arrays.
+
 - [Merge Sort](###Merge_sort)
+
+- [Quick Sort](###Quick_sort)
 
 
 ### Merge_sort
 
 The idea is simple.
 
-1. split the big array into small arrays
+1. split a big array into 2 arrays
 
-3. merge the small arrays by the order.
+3. merge 2 arrays into one by the order ASC / DESC. 
 
 To make it simple, we split an array in 2.
 
@@ -258,7 +262,7 @@ def merge_sort(arr: List[int]) -> List[int]:
 
 - Memory consumption
   
-  `O(n)`. It needs a temporaire memory to stock the array in `_merge` function.
+  It's sorted in place. `O(1)`
 
 - Stability 
   
@@ -295,10 +299,71 @@ T(n) = C*n + n*logn
 
 Since `nlogn` is much larger than `n` when `n` approaches infinity. So, we get `O(n) = nlogn`.
 
+### Quick_sort
 
+The idea is:
 
+1. choose a **random number** in the array as **pivot**.
 
+2. put the the numbers that are smaller than the pivot before the pivot, the rest after the pivot. 
 
+    > The array is split into 2 arrays.
+
+3. do the step 1 & 2 on the arrays that are before & after the pivot
+
+```python
+def _quick_sort_worker(arr: List[int], start: int, end: int) -> None:
+    if start >= end - 1: 
+        return
+    
+    pivot_idx = _partition(arr, start, end)
+    _quick_sort_worker(arr, start, pivot_idx)
+    _quick_sort_worker(arr, pivot_idx+1, end)
+```
+
+```python
+def _partition(arr: List[int], start: int, end: int) -> int:
+    '''
+    Tricky method:
+
+    1. choose a random item in the array, and put it at the first / last position
+    2. traverse the rest of array
+    '''
+    k = random.randint(start, end - 1)
+    arr[k], arr[end - 1] = arr[end - 1], arr[k]
+    pivot_idx = start
+
+    for i in range(start, end - 1):
+        if arr[i] < arr[end - 1]:
+            arr[i], arr[pivot_idx] = arr[pivot_idx], arr[i]
+            pivot_idx += 1
+        
+    arr[end - 1], arr[pivot_idx] = arr[pivot_idx], arr[end - 1]
+    
+    return pivot_idx
+```
+
+> `_partition` is tricky. See [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/) to learn more
+
+- Memory consumption
+  
+  `O(1)`. It needs a temporaire memory to stock the array in `_merge` function.
+
+- Stability 
+  
+  No. `_partition` change the positions of items having the same value.
+
+- Efficiency
+
+  - best: `O(nlogn)`
+  - worst: `O(n^2)`
+  - average: `O(nlogn)`
+
+  The time complexity depends on the choice of **pivot**.
+
+  For exemple, we always choose the last item as pivot of the array `[1, 2, 3, 4, 5]`. The time complexity is `O(n^2)`.
+
+  That's why we choose a **random** item as a **pivot**.
 
 
 
