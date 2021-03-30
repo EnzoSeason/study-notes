@@ -6,6 +6,8 @@ There are a lot of sort algorithms. We classify them by time complexity.
 
 - [`O(nlogn)`](##O(nlogn))
 
+- [`O(n)`](##O(n))
+
 ## How to analyze a sort algorithm
 
 There are 3 apects.
@@ -365,5 +367,154 @@ def _partition(arr: List[int], start: int, end: int) -> int:
 
   That's why we choose a **random** item as a **pivot**.
 
+## O(n)
 
+The sort whose time complexity is `O(n)` are called **linear sort**.
+
+There are 3 common linear sorts.
+
+- [bucket sort](###bucket_sort)
+- [counting sort](###counting_sort)
+- [radix sort](###radix_sort)
+
+These 3 sorts are NOT based on the **comparaison**. That's the main reason that their time complexities are `O(n)`. 
+
+However, these sorts have strict demande on **data format**.
+
+### bucket_sort
+
+We split the data into serveral **ordered bucket**. Then we do `O(nlogn)` sort, like quick sort, in each bucket.
+
+The most tricky part in this sort is how to **create the buckets** that make **data split evenly in each bucket**.
+
+#### Time complexity
+
+If we have n items and `m` buckets, then in each bucket, we have `k = n/m` items. 
+
+The time complexity of each bucket is:
+
+```
+O(klogk) = O(n/m * log(n/m))
+```
+
+The time complexity of bucket sort is:
+
+```
+m * O(n/m * log(n/m)) = O(n * log(n/m))
+```
+
+When `m` approaches `n`, the time complexity approach to `O(n)`.
+
+#### Limits
+
+- Buckets are ordered
+- Data is even in each bucket.
+
+  If the data isn't even, some buckets have a lot of data, some have little. The time complexity will become `O(nlogn)`.
+
+#### usage
+
+A use case is sorting the **huge external data**. 
+
+We can't put all the data into the memory at once. So, we traverse all the data, find **the distribution of the data** and create the buckets. Then we sort bucket by bucket.
+
+### counting_sort
+
+The main idea of counting sort is to **count how many numbers** is smaller / bigger than **current** number.
+
+Counting sort does 2 things:
+
+1. create an array `C`. 
+
+    The `C[i]` means there are `C[i]` items equal or small/bigger than `i`.
+
+2. traverse the orignal array and sort it using the array `C`
+
+The first part is composed by 2 steps.
+
+1. bincount
+
+    ```python
+    C = np.bincount(arr)
+    ```
+
+2. accumulate
+  
+    ```python
+    C = np.add.accumulate(C)
+    ```
+
+In this part, we can find the **limits** of counting sort.
+
+1. The data in the array **must be positive**. Because the array `C` can't have a negative index.
+
+2. The data in the array **can't be sparse**. If the data is sparse, we will have a lot of `0` in the `bincount` step, and the array `C` will be huge. It can be **much biggest** than the orignal array.
+
+The second part is more tricky.
+
+1. read the orignal array **from bottom to top**.
+
+    The order is important. It makes counting sort **stable**. The position of the same value won't be changed after sort.
+
+2. take the value of orignal array as an index of the array `C`, then take the value of array `C` as an index of sorted array, finally, fill in the value of orignal array
+
+    ```python
+    idx_c = org_arr[i]
+    
+    # C[idx_c] means the numbers of items whose value <= idx_c .
+    # So we need to -1 to transform it into index of sorted array.
+    idx_sorted_arr = C[idx_c] - 1 
+    
+    sorted_arr[idx_sorted_arr] = org_arr[i]
+    
+    # The numbers of items whose value <= idx_c reduces 1.
+    C[idx_c] -= 1
+    ```
+
+The entire implement is as followed.
+
+```python
+from typing import List
+
+def _accumulate_bincount(nums: List[int]) -> List[int]:
+    len_acc_bincounts = max(nums) + 1
+    acc_bincounts = [0 for _ in range(len_acc_bincounts)]
+
+    # bincount
+    for num in nums:
+        acc_bincounts[num] += 1
+    # accumulate
+    for i in range(1, len_acc_bincounts):
+        acc_bincounts[i] += acc_bincounts[i-1]
+    
+    return acc_bincounts
+
+def _fill_sorted_nums(nums: List[int], acc_bincounts: List[int])-> List[int]:
+    sorted_nums = [0 for _ in nums]
+    i = len(nums) - 1
+
+    while i >= 0:
+        idx_acc_bincounts = nums[i]
+        idx_sorted_nums = acc_bincounts[idx_acc_bincounts]
+        sorted_nums[idx_sorted_nums - 1] = nums[i]
+
+        acc_bincounts[idx_acc_bincounts] -= 1
+        i -= 1
+    
+    return sorted_nums
+
+def counting_sort(nums: List[int]) -> List[int]:
+    acc_bincounts = _accumulate_bincount(nums)
+    sorted_nums = _fill_sorted_nums(nums, acc_bincounts)
+
+    return sorted_nums
+```
+
+### radix_sort
+
+Radix sort must apply the rule, high position takes priority over low position.
+
+For example, `20` > `18`. Although `8 > 0`, `2 > 1` so that `20 > 18`.
+
+Radix sort sorts the radix **from low to high** using `O(n)` sort, such as bucket sort or counting sort.
 
