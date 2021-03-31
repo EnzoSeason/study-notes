@@ -307,6 +307,11 @@ The idea is:
 
 1. choose a **random number** in the array as **pivot**.
 
+    The key point of quick sort is to choose a good pivot which can **split the array evenly**.
+
+    Random number is one way. We can also choose the **median** of **first, last and middle** item in the array.
+
+
 2. put the the numbers that are smaller than the pivot before the pivot, the rest after the pivot. 
 
     > The array is split into 2 arrays.
@@ -518,3 +523,28 @@ For example, `20` > `18`. Although `8 > 0`, `2 > 1` so that `20 > 18`.
 
 Radix sort sorts the radix **from low to high** using `O(n)` sort, such as bucket sort or counting sort.
 
+
+## Conclusion
+
+In this article, we've talked about 3 types of sort, `O(n^2)`, `O(nlogn)`, `O(n)`. `O(n^2)` costs too much time, while `O(n)` sets too much limits on data. Usually, we use `O(nlogn)` in the industry.
+
+We've presented two `O(nlogn)` sorts, **merge sort and quick sort**. The difference between them is:
+
+- worse time complexity:
+
+    - merge sort: `O(nlogn)`
+    - quick sort: `O(n^2)`
+
+- space complexity:
+
+    - merge sort: `O(n)`
+    - quick sort: `O(1)`
+
+- Stability
+
+    - merge sort: Yes
+    - quick sort: No
+
+We can see merge sort is better than quick sort when the data isn't huge. Quick sort needs choose a good pivot to avoid the worse time complexity.
+
+When data is little, these 3 types of sort havn't much difference in performance. So we prefer the **insert sort**. Because its best time complexity is `O(n)`, and the the times of switch can be less than that of bubble sort. 
