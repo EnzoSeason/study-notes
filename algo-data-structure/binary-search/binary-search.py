@@ -1,20 +1,19 @@
 from typing import List
 
 
-def binary_search(nums: List[int], num: int) -> bool:
-    my_nums = nums.copy()
+def binary_search(nums: List[int], target: int) -> int:
+    low = 0
+    high = len(nums) - 1
 
-    while len(my_nums) != 0:
-        mid_idx = len(my_nums) // 2
-        
-        if num == my_nums[mid_idx]:
-            return True
-        if num < my_nums[mid_idx]:
-            my_nums = my_nums[0:mid_idx]
-        if num > my_nums[mid_idx]:
-            my_nums = my_nums[mid_idx+1:len(my_nums)]
-    
-    return False
+    while low <= high:
+        mid = low + (high - low) // 2
+        if target < nums[mid]:
+            high = mid - 1
+        elif target > nums[mid]:
+            low = mid + 1
+        else:
+            return mid
+    return -1
 
 
 
@@ -23,5 +22,5 @@ if __name__ == "__main__":
     num = 67
     
     print(nums)
-    is_finded = binary_search(nums, num)
-    print("{} is finded ? {}".format(num, is_finded))
+    idx = binary_search(nums, num)
+    print("{} is finded in ? {}".format(num, idx))
