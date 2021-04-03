@@ -16,6 +16,18 @@ The key point of the hash table is hash function, `hash()`. To make sure the ind
 
 The third rule is very strict. None of the [hash algorithms](https://en.wikipedia.org/wiki/Secure_Hash_Algorithms) can 100% make sure the third rule is applied.
 
+A good hash algorithm must has following features.
+
+1. We can't get **orginal data** from **hash value**.
+
+2. The probability of collision must be very small. **Different data has different hash value**.
+
+3. Similar data has very different hash value.
+
+4. The calculation of hash value is fast.
+
+The first and second feature are very important. Because of these features, hash function is always used to **create IDs**.
+
 If `k_1 != k_2`, `hash(k_1) == hash(k_2)`, then it's a **collision**.
 
 There are 2 ways to solve the collision.
