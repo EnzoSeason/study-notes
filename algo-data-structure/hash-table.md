@@ -48,6 +48,25 @@ There is a factor to describe how full the hash table is, **load factor**.
 load factor = the number of empty space / the length of the table
 ```
 
+When the **load factor** is too big, we need to inscrease the space of the hash table. 
+
+A proper way to do is, first, create a empty array but do not move the date from the old one. When we insert / delete an item, we move an item from the old array to the new one. 
+
+To sum up:
+
+- Advantage: 
+
+  - It's fast to find an item
+  
+- Disadvantage: 
+   
+  - It's difficult to insert / delete an item
+
+  - When the load factor is too big, the performance is dropped dramatically.
+
+  - It isn't easy to increase the capacity.
+
+If the **data size is small**, It's good to use it.
 
 ### chaining
 
@@ -56,3 +75,34 @@ Chaining is a more **common** and **simple** implement.
 Instead of insert the value directly in the table, we put the **linked list** in it. We call it, **bucket** or **slot**.
 
 A hash value maps a bucket. If we meet collision, we simply **add a new node** in the bucket.
+
+To sum up:
+
+- Avantage:
+
+  - It's easy to insert / delete data.
+  - It inscreases the capacity automatically.
+
+- Disavantage:
+
+  - It cost the extra space to stock the pointers.
+
+  - It isn't as fast as *open addressing* to find an item.
+
+If the **data size is big**, we choose chaining.
+
+## Linked Hash Map
+
+It's a common data structure in Java. It can:
+
+1. find an item by `key` using **hash table**
+2. insert / delete an item using **linked list**
+3. If the max capacity is reached, the least recently used (LRU) item is removed.
+
+As we can see, all the operation is `O(1)`. It's very efficient.
+
+To understand Linked Hash Map, we can see it on 2 axes.
+
+- axe x: a **hash table**. The value of it is an **one-way linked list**. This linked list is created for dealing with the collision (chaining).
+
+- axe y: a **two-way linked list** to stock the key and the value.
