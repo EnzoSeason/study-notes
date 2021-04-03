@@ -106,3 +106,5 @@ To understand Linked Hash Map, we can see it on 2 axes.
 - axe x: a **hash table**. The value of it is an **one-way linked list**. This linked list is created for dealing with the collision (chaining).
 
 - axe y: a **two-way linked list** to stock the key and the value.
+
+The full implement is [here](https://github.com/EnzoSeason/study-notes/blob/main/algo-data-structure/hash-table/linked-hash-map.py)
