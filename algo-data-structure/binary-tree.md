@@ -97,3 +97,111 @@ There are **4 orders** to traverse a binary tree.
   ```
 
 The time complexity of all of them is `O(n)`.
+
+## Binary Search Tree
+
+It's a special binary tree, built for searching. 
+
+For any node in the binary tree, all the nodes in its left child tree are smaller than it, those in its right child tree are greater than it.
+
+### Find a node
+
+```python
+def find(self, val: int) -> Optional[LinkedNode]:
+    node = self.root
+    while node.val != val and node is not None:
+        if node.val > val: node = node.left  
+        if node.val < val: node = node.right
+    return node
+```
+
+### Insert a node
+
+```python
+def insert(self, val: int) -> None:
+    node = self.root
+    if node is None: 
+        self.root = LinkedNode(val)
+        return
+    
+    parent = None
+    while node is not None:
+        parent = node
+        node = node.left if node.val > val else node.right
+    if parent.val > val:
+        parent.left = LinkedNode(val)
+    else:
+        parent.right = LinkedNode(val)
+```
+
+### Delete a node
+
+```python
+def delete(val: int) -> Optional[LinkedNode]:
+    node = self.root
+    parent = None
+    while node.val != val and node is not None:
+        parent = node
+        if node.val > val: node = node.left  
+        if node.val < val: node = node.right
+
+    if node is None: return
+    
+    # case 1: The node has 2 children
+    # replace the node with the right min node
+    if node.left is not None and node.right is not None:
+        right_parent = node
+        right_min_node = node.right
+        while right_min_node.left is not None:
+            right_parent = right_min_node
+            right_min_node = right_min_node.left
+        # replace the node with the right min node
+        node.val, right_min_node.val = right_min_node.val, node.val
+        # prepare for deleting right min node
+        parent, node = right_parent, right_min_node
+    
+    # case 2: The node has one child or no child
+    else:
+        child = node.left if node.left is not None else node.right
+        if parent is None:
+            self.root = child
+            return node
+        if parent.left is node:
+            parent.left = None
+            return node
+        if parent.right is node:
+            parent.right = None
+            return node
+```
+
+### Features
+
+- Its `InOrder` traverse returns a **orderd** list.
+
+- Time complexity
+
+  - If the binary search is complete, then the number of comparaison is the **height** of the tree. The time complexity is `O(logn)`.
+
+  - The worst case is all the node have only left / right child. It becomes a **linked list**. The time complexity is `O(n)`.
+
+
+### Binary Search Tree vs Hash Table
+
+- Order:
+
+  Hash Table has't an order.
+
+  Binary Search Tree's `InOrder` traverse returns a **orderd** list.
+
+- Performance (Stability of the time complexity)
+
+  Hash Table need **increase / decrease the size**, and it may meet **hash collision**. Its time complexity isn't stable.
+
+  Binary Search Tree's time complexity depends on whether the tree is **complete** or not. It's not stable, either.
+
+- Complexity of data structure.
+
+  Hash table is more complex than Binary Search Tree. We need to consider the **hash function, hash collision, increasement / decreasement of size**. While, for Binary Search Tree, we just need to know whether the tree is complete.
+
+  Usually, extra complexity costs extra time and space. Date structure should be as simple as possible.
+  
