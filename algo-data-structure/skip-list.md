@@ -51,6 +51,14 @@ s = 2 + 4 + 8 + ... + n/2^i + ... + n/4 + n/2 = n-2
 
 The space complexity is `O(n)`.
 
+## Update the indexes
+
+To avoid turning a skip list into a list, we need to update the indexes dynamically.
+
+When we **insert a item**, we can insert it into the indexes, too. We use a **random function** to decide the levels of indexes.
+
+For example, if the random function returns `4`. We insert the item into `1, 2, 3, 4` <sup>th</sup> levels of indexes.
+
 
 
 
