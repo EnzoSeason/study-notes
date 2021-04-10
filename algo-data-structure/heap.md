@@ -151,6 +151,7 @@ def sort(self, arr: List[int]):
 ```
 The time complexity is `O(nlogn)`. It isn't stable because of heapifying. It's sort in place, the space complexity is `O(1)`.
 
+The heap sort is **not by the order of the index**. It's not friendly for CPU. Beside, **the times of switch** is too much during **heapifying**. That's why people usually choose **Quick sort** than **Heap sort**.
 
 
 
