@@ -59,7 +59,7 @@ class MinHeap:
 3. heapify: from top to bottom
 
    ```python
-    def heapify_top1bottom(self, top: int):
+    def heapify_top2bottom(self, top: int):
         '''
         from top to bottom heapify for a min-heap
         '''
@@ -154,6 +154,42 @@ The time complexity is `O(nlogn)`. It isn't stable because of heapifying. It's s
 The heap sort is **not by the order of the index**. It's not friendly for CPU. Beside, **the times of switch** is too much during **heapifying**. That's why people usually choose **Quick sort** than **Heap sort**.
 
 
+## Applications
+### Priority queue
 
+Priority queue is similar to Queue. However, it always pops the item having the **highest priority**.
 
+Priority queue can be implemented by Heap. The **top item** has the highest priority.
 
+### Top k problems
+
+For exemple, finding the **k<sup>th</sup> largest** item
+
+1. create and fill a **MinHeap** with the size `k`. 
+2. compare the rest of items with the **top** of heap one by one.
+
+    - If the item is **bigger** than the heap top, remove the top and insert the item
+    - Else, do nothing
+3. return the **the heap top**.
+
+The advantages of using heap are
+
+1. It's very efficient. Creating a heap is `O(n)`, and inserting / removing are `O(logn)`.
+2. The size of input data can be **dynamic**. We don't care about the input data. We just need to maintain the heap.
+
+### Finding the Median
+
+We can create 2 heap, a **MaxHeap** and a **MinHeap**.
+
+MaxHeap contains all the number **smaller** or equal to the median. While the MinHeap contains those **bigger** or equal to the median. 
+
+What's more.
+```
+size(MaxHeap) - size(MinHeap) <= 1
+```
+
+Finally, we return the top of the **MaxHeap**.
+
+Like *Top k problems*, here, we don't care the size of the input data. We just need to track the **difference** of these **2 heaps' size**.
+
+Maintaining these 2 heaps, we can also solve the problems like finding the value **bigger or smaller than n \%** of all the data. The **size** of the MaxHeap is **n or 1/n** times of the MinHeap.
