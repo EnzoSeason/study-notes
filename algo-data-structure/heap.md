@@ -144,7 +144,7 @@ Since we have 2 ways to heapify, we have 2 ways to create a heap.
     Now, we have 2 equation.
     
     - S = 2<sup>h+1</sup> - 2 + h
-    - h = logn
+    - h = log<sub>2</sub> n
 
     S = `O(n)`. So the time complexity is `O(n)`.
 
@@ -175,7 +175,7 @@ The heap sort is **not by the order of the index**. It's not friendly for CPU. B
 
 
 ## Applications
-### Priority queue
+### Priority queue (alias of Heap)
 
 Priority queue is similar to Queue. However, it always pops the item having the **highest priority**.
 
