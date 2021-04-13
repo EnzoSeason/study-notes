@@ -158,16 +158,16 @@ The result is:
 - max-heap => asc array
 
 ```python
-def sort(self, arr: List[int]):
-    self.build(arr)
+def sort(nums: List[int]) -> List[int]:
+    min_heap = MinHeap(len(nums))
+    min_heap.build(nums)
 
-    i = self.count 
-    while i != 0:
-        sorted_arr[1], sorted_arr[i] = sorted_arr[i], sorted_arr[1]
-        self.heapify_top1bottom(1)
-        i -= 1
+    for i in range(len(nums), 0, -1):
+        min_heap.arr[1], min_heap.arr[i] = min_heap.arr[i], min_heap.arr[1]
+        min_heap.count -= 1
+        min_heap.shiftdown(1)
     
-    return sorted_arr
+    return min_heap.arr[1:]
 ```
 The time complexity is `O(nlogn)`. It isn't stable because of heapifying. It's sort in place, the space complexity is `O(1)`.
 
