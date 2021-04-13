@@ -18,13 +18,28 @@ If the data of the node `i` is saved in `arr[i]`, then its left child is saved i
 
 ```python
 class MinHeap:
-    def __init__(n: int):
-        self.arr = [None] # heap
-        self.n = n # capacity
-        self.count = 0 # current volume
+    def __init__(self, n: int) -> None:
+        """
+        ## Arributes
+        - n: the capacity of the MinHeap
+        - arr: the array that contains heap's data
+        - count: current volume of the heap
+        """
+        self.n = n
+        self.arr = [None for _ in range(n+1)]
+        self.count = 0
 ```
 
-### Insert
+### Push
+
+```python
+def push(self, num: int) -> None:
+    if self.count == self.n:
+        return
+    self.count += 1
+    self.arr[self.count] = num
+    self.shiftup()
+```
 
 1. put the new data at the **end** of the array.
 
@@ -38,41 +53,59 @@ class MinHeap:
     In the insert operation, we use the first one.
 
     ```python
-    def heapify_bottom2top(self):
+    def shiftup(self):
         '''
         from bottom to top heapify for a min-heap
         '''
         i = self.count
         while i // 2 != 0:
-            if arr[i//2] > arr[i]:
-                arr[i], arr[i//2] = arr[i//2], arr[i]
+            if self.arr[i//2] > self.arr[i]:
+                self.arr[i], self.arr[i//2] = self.arr[i//2], self.arr[i]
                 i = i // 2
             else:
                 break       
     ```
     Time complexity: `O(logn)`.
 
-### Delete
+### Pop
+
+```python
+def pop(self) -> Optional[int]:
+    if self.count == 0:
+        return None
+    val = self.arr[1]
+    self.arr[1] = self.arr[self.count]
+    self.count -= 1
+    self.shiftdown(1)
+    return val
+```
 
 1. remove the **first** item, `arr[1]`, in the array.
 2. replace `arr[1]` by the **last** one, `arr[n-1]` (n = `len(arr)`).
 3. heapify: from top to bottom
 
    ```python
-    def heapify_top2bottom(self, top: int):
+    def shiftdown(self, top: int):
         '''
         from top to bottom heapify for a min-heap
+
+        compare 3 nodes: current node, its left child and its right child
+        and find the smallest one.
+
+        If the smallest one is the current node, then break
+        else swap the smallest one with the current node, and move to upper level. 
         '''
-        i = top
-        while i <= self.n // 2:
-            if arr[2*i] < arr[i]:
-                arr[i], arr[2*i] = arr[2*i], arr[i]
-                i = 2 * i
-            elif arr[2*i+1] < arr[i]:
-                arr[i], arr[2*i+1] = arr[2*i+1], arr[i]
-                i = 2 * i + 1
-            else:
+        i = smaller_child_index = top
+        while True:
+            left, right = 2*i, 2*i+1
+            if left <= self.count and self.arr[smaller_child_index] > self.arr[left]:
+                smaller_child_index = left
+            if right <= self.count and self.arr[smaller_child_index] > self.arr[right]:
+                smaller_child_index = right
+            if smaller_child_index == i:
                 break
+            self.arr[i], self.arr[smaller_child_index] = self.arr[smaller_child_index], self.arr[i]
+            i = smaller_child_index
    ```
    Time complexity: `O(logn)`.
 
@@ -81,17 +114,6 @@ class MinHeap:
 Since we have 2 ways to heapify, we have 2 ways to create a heap.
 
 1. put the **first** item into `arr[1]` and keep **inserting** the new items into the heap.
-   
-   ```python
-   def dummy_build(self, arr: List[int]):
-        if len(arr) > self.n or len(arr) == 0:
-            return
-        self.arr = [0, arr.pop(0)]
-        self.count = 1
-        for data in arr:
-            self.insert(data)
-            self.count += 1
-   ```
 
    Time complexity: `O(nlogn)`.
    
@@ -103,12 +125,10 @@ Since we have 2 ways to heapify, we have 2 ways to create a heap.
     def build(self, arr: List[int]):
         if len(arr) > self.n:
             return
-        self.arr = [0] + arr
-        self.count = len(n)
-        i = self.count // 2
-        while i != 0:
-            self.heapify_top2bottom(i)
-            i = i // 2
+        self.arr = [None] + arr
+        self.count = len(arr)
+        for i in range(self.count // 2, 0, -1):
+            self.shiftdown(i)
     ```
 
     Time complexity: `O(n)`
@@ -163,7 +183,7 @@ Priority queue can be implemented by Heap. The **top item** has the highest prio
 
 ### Top k problems
 
-For exemple, finding the **k<sup>th</sup> largest** item
+For exemple, [finding the **k<sup>th</sup> largest** item](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 
 1. create and fill a **MinHeap** with the size `k`. 
 2. compare the rest of items with the **top** of heap one by one.
