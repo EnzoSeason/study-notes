@@ -199,6 +199,8 @@ The advantages of using heap are
 
 ### Finding the Median
 
+For exemple, [finding Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
+
 We can create 2 heap, a **MaxHeap** and a **MinHeap**.
 
 MaxHeap contains all the number **smaller** or equal to the median. While the MinHeap contains those **bigger** or equal to the median. 
