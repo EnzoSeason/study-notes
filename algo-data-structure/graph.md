@@ -10,7 +10,7 @@ There are concepts in the graph.
 
 - **degree** of a vertex: The number of edges owned by the vertex
 
-If the edge has the **orientation**, than the graph is **oriented graph**.
+If the edge has the **orientation**, than the graph is **directed graph**.
 
 If the edge has the **weight**, than the graph is **weighted graph**.
 
@@ -20,13 +20,13 @@ If the edge has the **weight**, than the graph is **weighted graph**.
 
 Adjacency Matrix has 2 dimensions. `adj[i][j]` represents a edge **from vertex *i* to vertex *j***.
 
-In a **non-oriented** graph, if there is an edge between vertex *i* and vertex *j* without the weight, then:
+In a **undirected** graph, if there is an edge between vertex *i* and vertex *j* without the weight, then:
 
 ```python
 adj[i][j] == 1 and adj[j][i] == 1
 ```
 
-In a **weighted oriented** graph, if the weight of the edge between from vertex *i* to vertex *j* is `3`, then:
+In a **weighted directed** graph, if the weight of the edge between from vertex *i* to vertex *j* is `3`, then:
 
 ```python
 adj[i][j] == 3
