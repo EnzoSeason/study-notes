@@ -12,7 +12,7 @@ def bf(main_str: str, pattern: str) -> int:
     return -1
 
 if __name__ == "__main__":
-    main = "aababc"
-    sub = "abc"
-    res = bf(main, sub)
+    main = "aabababc"
+    pattern = "abc"
+    res = bf(main, pattern)
     print(res)
