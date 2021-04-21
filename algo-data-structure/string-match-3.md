@@ -4,7 +4,7 @@ KMP is similar to BM.
 
 It uses the concepts of **bad character** and **good suffix**. 
 
-It pays more attention on **pattern**. It studies **pattern** to decide how to move when mismatch is met.
+It pays more attention on **pattern**. It studies **pattern** to decide how to slide when mismatch is met.
 
 KMP pre-process the pattern. It stocks the result of the "study" in an array, called PTM (Partial Match Table).
 
@@ -21,7 +21,7 @@ main:    a b a b a b a b c a
                      |
 pattern: a b a b a b c a
 ```
-The mismatch is found, let's move the pattern.
+The mismatch is found, let's slide the pattern.
 
 ```
 main:    a b a b a b a b c a
@@ -29,7 +29,7 @@ main:    a b a b a b a b c a
 pattern: > > a b a b a b c a
 ```
 
-We move 2 characters and find the match. The question is how we know we should move 2 characters.
+We slide 2 characters and find the match. The question is how we know we should slide 2 characters.
 
 ## PTM (Partial Match Table)
 
@@ -68,11 +68,11 @@ Explanation:
 
     In the string `abababca`, the last `a` matches the first `a`, and `ca` doesn't matches the first `ab`. So the matched string length is `1`.
 
-Back to the question, *how we know we should move 2 characters*. Since `c == pattern[7]`, we should check `PTM[0:7]`. `PTM[6]` tells us the **length** of the matched string is `4`, so we need to move `(7-1) - 4 = 2` characters. `7-1` means the length of the pattern before `c` (`ababab`).
+Back to the question, *how we know we should slide 2 characters*. Since `c == pattern[7]`, we should check `PTM[0:7]`. `PTM[6]` tells us the **length** of the matched string is `4`, so we need to slide `(7-1) - 4 = 2` characters. `7-1` means the length of the pattern before `c` (`ababab`).
 
 In conclusion, if `pattern[i]` is the bad character, we need to check `PTM[i-1]` the **length** of the matched string. Finally, the number of moving character is `i - PTM[i-1] + 1`.
 
-Now, we move **one** space in `PTM` and create the new array, `next`. It makes **the generation** of the `PTM` and **usage** of `PTM` simpler. It's tricky.
+Now, we **move one space back** in `PTM` and create the new array, `next`. It makes **the generation** of the `PTM` and **usage** of `PTM` simpler. It's tricky.
 
 ```
 pattern :  a b a b a b c a
@@ -92,6 +92,7 @@ def kmp(main: str, pattern: str) -> int:
     m = len(pattern)
     next_arr = generate_next_from_PTM(pattern)
 
+    # use fast-slow pointers
     i = 0
     j = 0
     while i < n and j < m:
@@ -104,11 +105,8 @@ def kmp(main: str, pattern: str) -> int:
             # If pattern[j] is the bad character, (main[i] != pattern[j])
             # We check next_arr[j] instead of PTM[j-1], which are the same.
             j = next_arr[j]
-    
-    if j == m:
-        return i - j
-    else:
-        return -1
+            # This line also implies the slide of pattern.
+            # Because the pointer i is not moved, the slide of pattern is i - j 
 ```
 
 ### Generation of PTM
