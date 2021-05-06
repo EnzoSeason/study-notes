@@ -70,3 +70,4 @@ class Trie:
 
 Both `insert` and `isFind` is `O(n)` (`n` is the length of the input string). It's very efficient.
 
+
