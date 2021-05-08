@@ -12,7 +12,7 @@ class Solution:
 
         if i < 0 or i == len(board) or j < 0 or j == len(board[0]):
             return False
-        
+
         if board[i][j] != word[0]:
             return False
 
