@@ -71,3 +71,8 @@ class Trie:
 Both `insert` and `isFind` is `O(n)` (`n` is the length of the input string). It's very efficient.
 
 
+## Example
+
+[Leetcode 208](https://leetcode.com/problems/implement-trie-prefix-tree/)
+
+
