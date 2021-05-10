@@ -1,13 +1,18 @@
-# How to use study mode
+# How to use Study Note
+
+1. create your branche from `main`.
+
+2. That's all. enjoy :)
 
 ## Notify in the slack
 
-Once you make a `push` on the `main` branch, a notification will be send in the slack channel, **study note**. 
+Once you make a `push`, a notification will be send in the slack channel, **study note**. 
 
 It helps other members know your works.
 
-## Add markdown files
+## Publish your files
 
-The markdown file added under the **current folder** will be published on the website [https://seasonliu.com/station/topics](https://seasonliu.com/station/topics). For example, this README is published.
+You can make PR to `main` for pushlishing your files on the [seasonliu](https://seasonliu.com/station/topics)
 
-However, the markdown file under the **subfolder** of the current folder won't be published.
+Only the **markdown** files under the **current folder** can be published.
+> The files under the subfolders can NOT be pulished.
