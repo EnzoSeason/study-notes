@@ -8,6 +8,6 @@ It helps other members know your works.
 
 ## Add markdown files
 
-The markdown file added under the **current folder** will be published on the website [https://seasonliu.com/station/topics](https://seasonliu.com/station/topics).
+The markdown file added under the **current folder** will be published on the website [https://seasonliu.com/station/topics](https://seasonliu.com/station/topics). For example, this README is published.
 
 However, the markdown file under the **subfolder** of the current folder won't be published.
