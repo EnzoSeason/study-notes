@@ -14,5 +14,7 @@ It helps other members know your works.
 
 You can make a **Pull Request** to `main` for publishing your files on the [seasonliu](https://seasonliu.com/station/topics)
 
-Only the **markdown** files under the **current folder** can be published.
-> The files under the subfolders can NOT be published.
+ONLY the **markdown** files under a **folder** can be published as the articles. The folder name is the topic of your work.
+
+For example, `my-works/introduction.md` can be published.
+> The files under its subfolders can NOT be published.
