@@ -6,6 +6,6 @@ When we use **Backtracking Algorithm** to solve the problems, such as [fibonacci
 
 The cause of the high time complexity is the **internal results** are re-calculated, again and again.
 
-Dynamic Programming can **cache** the internal states** so that it improves the time complexity.
+Dynamic Programming can **cache the internal states** so that it improves the time complexity.
 
 
