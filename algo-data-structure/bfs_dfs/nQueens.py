@@ -42,6 +42,7 @@ class Solution2:
     def _dfs(self, row: int, n: int, cols: List[int], left_diags: List[int], right_diags: List[int]) -> None:
         if row == n:
             self.result += 1
+            return
         
         for col in range(n):
             if (col not in cols and row + col not in left_diags and row - col not in right_diags):
