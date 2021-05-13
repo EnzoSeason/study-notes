@@ -58,9 +58,25 @@ Since I've figured out the needs. I should choose my tools.
 
 I use `Django` to build the back-end. Django is written by Python. It makes development so fast. I love Python, and I love this framework.
 
-`Next.js` is my front-end framework. It uses `React`. The interesting point of this framework is that it **creates HTML files when it's built**. It reduces the size of the site and the time of the response. The downside is it isn't real-time updated. We need to rebuild the site to show the new blogs. 
+`Next.js` is my front-end framework. It provides **SSR (Server-Side-Rendering)**. There are several advantages of SSR over SPA (Single Page Application).
 
-However, `Next.js` provides Server-Side-Rendering to do instant updates. That makes this framework more interesting. But, I don't really need it because my blog site doesn't need real-time updates. An update a week is fine.
+- The application is chunked.
+   
+   The blog system is one part of my website. The browser doesn't need to load other JS files which aren't used in this system.
+   
+- The SEO is better.
+
+   Compared with the HTML file of SPA which is impossible to read, the HTML files of SSR are rendered at the server-side instead of the client-side, which are more friendly to the search engine.
+   
+- The router is simpler.
+
+  `Next.js` is based on `React`. However, we don't need `react-router`. Each JS/TS file under `pages` folder represents a page. It's very easy to develop.
+
+Of course, there are downsides.
+
+- The HTML files are rendered at the server-side for each request.
+
+We can use the `Static Generator`, which is also provided by `Next.js`, to overcome it. HTML file can be pre-rendered at the build time. But, the building will cost too much time if we have many files to generate.
 
 ## Details
 
