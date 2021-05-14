@@ -175,18 +175,47 @@ You can now install the Node.js package
 sudo apt-get install nodejs
 ```
 
-The nodejs package contains the nodejs binary as well as NPM, so you won't need to install NPM separately. But for some NPM packages to work, you'll need to install the build-essential package:
-
-```command
-sudo apt-get install build-essential
-```
-
 Now, node.js is installed, test it:
 
 ```command
 node --version
 
 npm --version
+```
+
+It's optional but recommended to install a node manager, `n` or `nvm`. I use `n`.
+
+```command
+sudo npm install -g n
+```
+
+Then, intall node version.
+
+```command
+n lts
+```
+
+Now, there are 2 nodejs installed.
+
+```command
+which -a node
+```
+
+```
+/usr/bin/node        # old one
+/usr/local/bin/node  # new one, added by n
+```
+
+remove the old one
+
+```command
+sudo apt-get uninstall nodejs
+```
+
+Finally, update `npm`
+
+```command
+npm install -g npm@latest
 ```
 
 ## Deploy the Next.js Application
