@@ -48,8 +48,21 @@ var searchInsert_2 = function(nums, target) {
     return start
 };
 
+// 38 外观数列 笑死我了 评论第一 笑裂了
+
+//53最大子序和 
+var maxSubArray = function(nums) {
+    let dp = [nums[0]]
+    let max = dp[0]
+    let len = nums.length
+    for(let i = 1; i < len; i++){
+        dp[i] = Math.max(dp[i-1]+nums[i], nums[i])
+        max = Math.max(dp[i], max)
+    }
+    return max
+};
 
 var a = [1, 3, 4, 5]
 var b = 2
-var res = searchInsert_2(a, b)
+var res = maxSubArray(a)
 console.log(res)
