@@ -16,32 +16,29 @@ class Solution1:
         # profit[1][0:days] and profit[2][0:days] cache the max profit of each day,
         # They represent the curr_transent transaction and prev_transious one alternately.
         profit = [[0 for _ in range(days)] for _ in range(3)]
-        globalMax = 0
 
         for trans in range(1, k + 1):
             curr_trans, prev_trans = trans % 2 + 1, (trans - 1) % 2 + 1
-            # Minimize the local max profit on the first day
+            # Minimize the buyMax on the first day
             # Buy the stock
-            localMax = -prices[0]
+            buyMax = -prices[0]
             for day in range(1, days):
                 # profit[curr_trans][day] takes the max profit of
                 # holding the stock (profit[curr_trans][day - 1]) or
                 #  selling the stock (localMax + prices[day])
                 profit[curr_trans][day] = max(
-                    profit[curr_trans][day - 1], localMax + prices[day]
+                    profit[curr_trans][day - 1], buyMax + prices[day]
                 )
 
-                # update globalMax
-                globalMax = max(globalMax, profit[curr_trans][day])
-
-                # localMax takes the max profit of
-                # holding the stock (localMax) or
+                # buyMax takes the max profit of
+                # holding the stock or
                 # buying the stock (profit[prev_trans][day - 1] - prices[day])
-                localMax = max(localMax, profit[prev_trans][day - 1] - prices[day])
+                buyMax = max(buyMax, profit[prev_trans][day - 1] - prices[day])
         
         print(profit)
 
-        return globalMax
+        sells = [trans[days-1] for trans in profit]
+        return max(sells)
 
 
 class Solution2:
