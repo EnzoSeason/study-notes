@@ -1,7 +1,7 @@
 from typing import List
 
 
-class Solution:
+class Solution1:
     """
     https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
     """
@@ -38,13 +38,49 @@ class Solution:
                 # holding the stock (localMax) or
                 # buying the stock (profit[prev_trans][day - 1] - prices[day])
                 localMax = max(localMax, profit[prev_trans][day - 1] - prices[day])
+        
+        print(profit)
 
         return globalMax
+
+
+class Solution2:
+    """
+    https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
+
+    DP state function is similar to the solution of two_transactions_maxProfit.
+    """
+
+    def maxProfit(self, k: int, prices: List[int]) -> int:
+        days = len(prices)
+        if days <= 1:
+            return 0
+        
+        profit = [{"sell": 0, "buy": float("-inf")} for _ in range(k + 1)]
+
+        for day in range(days):
+            for trans in range(1, k+1):
+                profit[trans]["sell"] = max(
+                    profit[trans]["sell"],
+                    profit[trans]["buy"] + prices[day],
+                )
+                profit[trans]["buy"] = max(
+                    profit[trans]["buy"],
+                    profit[trans - 1]["sell"] - prices[day],
+                )
+        
+        print(profit)
+        
+        sells = [trans["sell"] for trans in profit]
+        return max(sells)
 
 
 if __name__ == "__main__":
     k = 2
     prices = [3, 3, 5, 0, 0, 3, 1, 4]
 
-    s = Solution()
-    print(s.maxProfit(k, prices))
+    s1 = Solution1()
+    print(s1.maxProfit(k, prices))
+
+    s2 = Solution2()
+    print(s2.maxProfit(k, prices))
