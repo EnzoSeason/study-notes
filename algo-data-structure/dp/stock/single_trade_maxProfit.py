@@ -8,7 +8,7 @@ class Solution:
     choosing a **single** day to buy one stock 
     and choosing a **different** day in the **future** to sell that stock.
 
-    Idea: Find ONE max increase
+    Idea: Find ONE max increase interval
     
     Buy it the *minPrice* and sell it *maxPrice* in the **future** of the *minPrice*
     """
