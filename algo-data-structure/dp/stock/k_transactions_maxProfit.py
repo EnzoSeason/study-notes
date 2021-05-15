@@ -2,12 +2,16 @@ from typing import List
 
 
 class Solution:
+    """
+    https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
+    """
+
     def maxProfit(self, k: int, prices: List[int]) -> int:
         days = len(prices)
         if days <= 1:
             return 0
 
-        # profit[0][0:days] means the max profit of each day without transaction, 
+        # profit[0][0:days] means the max profit of each day without transaction,
         # It's is an array filled with 0.
         # profit[1][0:days] and profit[2][0:days] cache the max profit of each day,
         # They represent the curr_transent transaction and prev_transious one alternately.
@@ -22,9 +26,11 @@ class Solution:
             for day in range(1, days):
                 # profit[curr_trans][day] takes the max profit of
                 # holding the stock (profit[curr_trans][day - 1]) or
-                # selling the stock (localMax + prices[day])
-                profit[curr_trans][day] = max(profit[curr_trans][day - 1], localMax + prices[day])
-                
+                #  selling the stock (localMax + prices[day])
+                profit[curr_trans][day] = max(
+                    profit[curr_trans][day - 1], localMax + prices[day]
+                )
+
                 # update globalMax
                 globalMax = max(globalMax, profit[curr_trans][day])
 
