@@ -19,10 +19,6 @@ class Solution1:
     
     - Second dimension is the day
 
-    DP State Compression
-    ---
-    We compress the dimension of **the number of transaction** so that DP state has 2 dimension instead of 3.
-
 
     DP State Function
     ----
@@ -92,10 +88,6 @@ class Solution2:
     It represents the profit when **selling and buying** the share.
     - First dimension is stage of profit, selling or buying
     - Second dimension is the number of transactions, k
-
-    DP State Compression
-    ---
-    We compress the dimension of the **days** so that DP state has 2 dimension instead of 3.
 
     DP State Function
     ---
