@@ -22,3 +22,17 @@ class Solution:
                 maxGain += profit
 
         return maxGain
+
+
+class SolutionDP:
+    def maxProfit(self, prices: List[int]) -> int:
+        days = len(prices)
+        if days <= 1:
+            return 0
+
+        sell, buy = 0, -prices[0]
+        for day in range(days):
+            sell = max(sell, buy + prices[day])
+            buy = max(buy, sell - prices[day])
+
+        return sell

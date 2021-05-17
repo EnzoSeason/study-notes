@@ -20,10 +20,8 @@ class Solution:
         if days <= 1:
             return 0
 
-        buyFirst = float("-inf")
-        sellFirst = 0
-        buySecond = float("-inf")
-        sellSecond = 0
+        sellFirst, buyFirst = 0, -prices[0]
+        sellSecond, buySecond = 0, -prices[0]
 
         for day in range(days):
             sellSecond = max(sellSecond, buySecond + prices[day])
