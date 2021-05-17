@@ -19,7 +19,6 @@ class Solution:
 
 
 if __name__ == "__main__":
-    k = 2
     prices = [1,2,3,0,2]
 
     s = Solution()
