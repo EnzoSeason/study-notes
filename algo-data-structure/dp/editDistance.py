@@ -1,4 +1,8 @@
 class Solution:
+    """
+    https://leetcode.com/problems/edit-distance/
+    """
+
     def minDistance(self, word1: str, word2: str) -> int:
         m, n = len(word1), len(word2)
 
@@ -36,7 +40,7 @@ class Solution:
                     # covert word1[0:i-1] to word2[0:j-1], 
                     # then replace a character of word2[j-1]
                     replace = minDis[i - 1][j - 1] + 1
-                    
+
                     minDis[i][j] = min(insert, delete, replace)
 
         return minDis[m][n]
