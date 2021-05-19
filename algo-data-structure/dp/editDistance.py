@@ -16,7 +16,7 @@ class Solution:
         # delete all the characters
         for i in range(m + 1):
             minDis[i][0] = i
-        
+
         # word1 = ""
         # word2 = "abc"
         # insert all the characters
@@ -31,13 +31,13 @@ class Solution:
                     # do nothing
                     minDis[i][j] = minDis[i - 1][j - 1]
                 else:
-                    # covert word1[0:i] to word2[0:j-1], 
-                    # then insert in word2 
+                    # covert word1[0:i] to word2[0:j-1],
+                    # then insert in word2
                     insert = minDis[i][j - 1] + 1
-                    # covert word1[0:i-1] to word2[0:j], 
-                    # then delete a character in word2 
+                    # covert word1[0:i-1] to word2[0:j],
+                    # then delete a character in word2
                     delete = minDis[i - 1][j] + 1
-                    # covert word1[0:i-1] to word2[0:j-1], 
+                    # covert word1[0:i-1] to word2[0:j-1],
                     # then replace a character of word2[j-1]
                     replace = minDis[i - 1][j - 1] + 1
 
