@@ -47,19 +47,21 @@ class LRUCache:
 
     def put(self, key: int, value: int) -> None:
         p = self.head
+        last_node = self.head
         count = 0
         
-        while p.next is not None:
+        while p is not None:
             if p.key == key:
                 p.val = value
                 self._remove(p)
                 self._moveToHead(p)
                 return
             else:
+                last_node = p
                 p = p.next
                 count += 1
 
         new_node = LinkedNode(key, value)
         self._moveToHead(new_node)
-        if count == self.capacity:
-            p.prev.next = None
+        if count > self.capacity:
+            last_node.prev.next = None
