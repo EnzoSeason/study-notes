@@ -8,7 +8,7 @@ def recursion(level: int, params: Any) -> None:
     if level > MAX_LEVEL:
         return
 
-    #  2. process data at the current level
+    #  2. process data according to the demand at the current level
     process(level, params)
 
     # 3. drill down
