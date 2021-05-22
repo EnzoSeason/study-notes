@@ -9,7 +9,7 @@ class Solution:
         """
         "visited" is indispensable when a node can be visited twice.
 
-        So, it's IMPORTANT of the graphic, optional for the tree.
+        So, it's IMPORTANT for the graphic, optional for the tree.
         """
         self.visited = set()
 
