@@ -1,6 +1,6 @@
 from typing import List
 
-
+# https://leetcode.com/problems/remove-element/
 class SolutionBrute:
     def removeElement(self, nums: List[int], val: int) -> int:
         i, n = 0, len(nums)
