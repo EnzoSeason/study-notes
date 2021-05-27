@@ -9,7 +9,7 @@ class Solution:
                 slow += 1
                 nums[slow] = nums[fast]
             fast += 1
-        return slow
+        return slow + 1
 
 
 if __name__ == "__main__":
