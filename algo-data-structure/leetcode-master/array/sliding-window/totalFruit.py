@@ -4,6 +4,9 @@ from typing import List
 class Solution:
     """
     https://leetcode.com/problems/fruit-into-baskets/
+
+    Best answer:
+    https://leetcode.com/problems/fruit-into-baskets/discuss/170740/JavaC%2B%2BPython-Sliding-Window-for-K-Elements
     """
 
     def totalFruit(self, tree: List[int]) -> int:
