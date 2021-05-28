@@ -11,19 +11,19 @@ class Solution:
 
     def totalFruit(self, tree: List[int]) -> int:
         bag = {}
-        left = 0
+        max_len = 0
 
-        for right in range(len(tree)):
-            prod = tree[right]
-            bag[prod] = bag.get(prod, 0) + 1
+        l, r = 0, 0
+        while r < len(tree):
+            bag[tree[r]] = bag.get(tree[r], 0) + 1
 
-            if len(bag) > 2:
-                prev_prod = tree[left]
-                bag[prev_prod] -= 1
+            while len(bag) > 2:
+                bag[tree[l]] -= 1
+                if bag[tree[l]] == 0:
+                    bag.pop(tree[l])
+                l += 1
 
-                if bag[prev_prod] == 0:
-                    bag.pop(prev_prod)
+            max_len = max(max_len, r - l + 1)
+            r += 1
 
-                left += 1
-
-        return right - left + 1
+        return max_len
