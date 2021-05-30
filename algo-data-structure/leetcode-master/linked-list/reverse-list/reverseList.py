@@ -16,8 +16,8 @@ class Solution:
         prev, curr = None, head
         while curr:
             # next_node = curr.next
-            # curr.next = prev
-            # prev, curr = curr, next_node
+            # curr.next = prev (firt element)
+            # prev, curr = curr, next_node (the rest)
             curr.next, prev, curr = prev, curr, curr.next
 
         return prev
