@@ -19,3 +19,17 @@ class Solution:
             b = b.next if b is not None else headA
 
         return a
+
+    def getIntersectionNode_dirty(self, headA: ListNode, headB: ListNode) -> ListNode:
+        a = headA
+        while a:
+            a.visited = True
+            a = a.next
+
+        b = headB
+        while b:
+            if hasattr(b, "visited") and b.visited:
+                return b
+            b = b.next
+
+        return None
