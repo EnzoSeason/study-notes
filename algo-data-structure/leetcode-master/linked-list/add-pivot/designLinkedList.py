@@ -5,6 +5,10 @@ class MyNode:
 
 
 class MyLinkedList:
+    """
+    https://leetcode.com/problems/design-linked-list/
+    """
+
     def __init__(self):
         """
         Initialize your data structure here.
