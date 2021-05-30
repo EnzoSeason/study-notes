@@ -20,15 +20,15 @@ class Solution:
             # prev, curr = curr, next_node
             curr.next, prev, curr = prev, curr, curr.next
 
-
         return prev
-    
 
     def reverseList_re(self, head: ListNode) -> ListNode:
         prev, curr = None, head
         return self.reverseList_worker(prev, curr)
-    
-    def reverseList_worker(self, prev: Optional[ListNode], curr: Optional[ListNode]) -> ListNode:
+
+    def reverseList_worker(
+        self, prev: Optional[ListNode], curr: Optional[ListNode]
+    ) -> ListNode:
         if not curr:
             return prev
         next_node = curr.next
