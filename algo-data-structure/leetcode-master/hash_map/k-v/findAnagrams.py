@@ -4,6 +4,9 @@ from typing import List
 class Solution:
     """
     https://leetcode.com/problems/find-all-anagrams-in-a-string/submissions/
+
+    key: the alphabet
+    value: the count of the alphabet
     """
 
     def findAnagrams(self, s: str, p: str) -> List[int]:
