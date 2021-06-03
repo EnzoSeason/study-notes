@@ -40,12 +40,13 @@ class Solution:
 
     def removeExtraSpace(self, arr) -> List[str]:
         slow, fast = 0, 0
-        #  remove the spaces between the words
+        #  remove the spaces at the head.
         while fast < len(arr) and arr[fast] == " ":
             fast += 1
 
         while fast < len(arr):
             if fast > 0 and arr[fast - 1] == arr[fast] == " ":
+                # remove the space between the words
                 fast += 1
                 continue
             arr[slow] = arr[fast]
