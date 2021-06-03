@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     """
     https://leetcode.com/problems/reverse-words-in-a-string/
@@ -35,11 +38,27 @@ class Solution:
         self.reverse(words, 0, len(words))
         return " ".join(words)
 
+    def removeExtraSpace(self, arr) -> List[str]:
+        slow, fast = 0, 0
+        #  remove the spaces between the words
+        while fast < len(arr) and arr[fast] == " ":
+            fast += 1
+
+        while fast < len(arr):
+            if fast > 0 and arr[fast - 1] == arr[fast] == " ":
+                fast += 1
+                continue
+            arr[slow] = arr[fast]
+            slow += 1
+            fast += 1
+        # remove the extra spaces at the tail
+        return arr[0 : slow - 1] if slow > 0 and arr[slow - 1] == " " else arr[0:slow]
+
     def reverseWords_O1(self, s: str) -> str:
         """
         1. reverse the entire string
-        2. reverse each word and remove extra spaces
-        3. remove all the spaces at the tail
+        2. remove the extra space.
+        3. reverse each word
 
         Time complexity: O(N)
         Space complexity: O(1)
@@ -49,23 +68,17 @@ class Solution:
         # reverse string
         self.reverse(arr, 0, len(arr))
 
+        # remove the extra space
+        arr = self.removeExtraSpace(arr)
+
         # reverse words
         i = 0
         while i < len(arr):
-            if arr[i] == " ":
-                # remove the space before the word
-                arr.pop(i)
-            else:
-                # reverse the word, arr[i:j]
-                j = i
-                while j < len(arr) and arr[j] != " ":
-                    j += 1
-                self.reverse(arr, i, j)
-                # arr[j] is the space right after the word.
-                # So the next character to check is arr[j + 1]
-                i = j + 1
-        # remove the spaces at the tail
-        while arr[-1] == " ":
-            arr.pop()
+            # reverse the word, arr[i:j]
+            j = i
+            while j < len(arr) and arr[j] != " ":
+                j += 1
+            self.reverse(arr, i, j)
+            i = j + 1
 
         return "".join(arr)
