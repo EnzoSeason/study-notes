@@ -23,9 +23,9 @@ class Solution:
         words = []
 
         while i < len(arr):
-            if not arr[i].isspace():
+            if arr[i] != " ":
                 j = i
-                while j < len(arr) and not arr[j].isspace():
+                while j < len(arr) and arr[j] != " ":
                     j += 1
                 words.append("".join(arr[i:j]))
                 i = j
@@ -38,7 +38,7 @@ class Solution:
     def reverseWords_O1(self, s: str) -> str:
         """
         1. reverse the entire string
-        2. reverse each word and remove the extra spaces
+        2. reverse each word and remove extra spaces
         3. remove all the spaces at the tail
 
         Time complexity: O(N)
@@ -52,16 +52,20 @@ class Solution:
         # reverse words
         i = 0
         while i < len(arr):
-            if arr[i].isspace():
+            if arr[i] == " ":
+                # remove the space before the word
                 arr.pop(i)
             else:
+                # reverse the word, arr[i:j]
                 j = i
-                while j < len(arr) and not arr[j].isspace():
+                while j < len(arr) and arr[j] != " ":
                     j += 1
                 self.reverse(arr, i, j)
+                # arr[j] is the space right after the word.
+                # So the next character to check is arr[j + 1]
                 i = j + 1
         # remove the spaces at the tail
-        while arr[-1].isspace():
+        while arr[-1] == " ":
             arr.pop()
 
         return "".join(arr)
