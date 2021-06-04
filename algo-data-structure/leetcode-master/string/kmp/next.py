@@ -10,12 +10,11 @@ class Solution:
         i, j = 0, -1
 
         while i < len(s):
-            if j == -1 or s[i] == s[j]:
-                i += 1
-                j += 1
-                next_arr[i] = j
-            else:
+            while j >= 0 and s[i] != s[j]:
                 j = next_arr[j]
+            i += 1
+            j += 1
+            next_arr[i] = j        
         
         return next_arr
     
@@ -24,10 +23,9 @@ class Solution:
         i, j = 0, 0
         
         while i < len(haystack) and j < len(needle):
-            if j == -1 or haystack[i] == needle[j]:
-                i += 1
-                j += 1
-            else:
+            while j >= 0 and haystack[i] != needle[j]:
                 j = next_arr[j]
+            i += 1
+            j += 1
         
         return i - j if j == len(needle) else -1
