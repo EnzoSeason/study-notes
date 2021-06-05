@@ -13,7 +13,7 @@ class Solution:
 
         for p in range(len(nums)):
             if nums[p] > 0:
-                continue
+                break
             if p > 0 and nums[p] == nums[p - 1]:
                 continue
             # Two pointers move from 2 ends to the middle.
