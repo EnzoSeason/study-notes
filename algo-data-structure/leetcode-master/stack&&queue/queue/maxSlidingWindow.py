@@ -34,15 +34,45 @@ class Solution:
         res = []
         mono_q = MonoQueue()
 
-        for i in range(k):
+        for i in range(len(nums)):
+            # pop the top if idx_mono_q is overflowed.
+            if i - k >= 0:
+                mono_q.pop(nums[i - k])
+            
+            # maintain the mono queue
+            # remove the elements that are smaller than current number
             mono_q.push(nums[i])
-        if mono_q.front() is not None:
-            res.append(mono_q.front())
-
-        for i in range(k, len(nums)):
-            mono_q.pop(nums[i - k])
-            mono_q.push(nums[i])
-            if mono_q.front() is not None:
+            
+            # keep the top
+            if i >= k - 1 and mono_q.front() is not None:
                 res.append(mono_q.front())
 
         return res
+    
+    def maxSlidingWindow2(self, nums: List[int], k: int) -> List[int]:
+        """
+        use a dequeue as a mono queue
+        """
+
+        res = []
+        idx_mono_q = []
+
+        for i in range(len(nums)):
+            # pop the top if idx_mono_q is overflowed.
+            if i >= k and idx_mono_q[0] <= i - k:
+                idx_mono_q.pop(0)
+
+            # maintain the mono queue
+            # remove the elements that are smaller than current number
+            while idx_mono_q and nums[idx_mono_q[-1]] < nums[i]:
+                idx_mono_q.pop()
+            idx_mono_q.append(i)
+            
+            # keep the top
+            if i >= k - 1:
+                res.append(nums[idx_mono_q[0]])
+        
+        return res
+
+
+
