@@ -9,6 +9,10 @@ class TreeNode:
 
 
 class Solution:
+    """
+    https://leetcode.com/problems/binary-tree-postorder-traversal/
+    """
+
     def postorderTraversal(self, root: TreeNode) -> List[int]:
         if not root:
             return []
