@@ -1,4 +1,5 @@
 from typing import List
+from collections import deque
 
 
 class TreeNode:
@@ -13,22 +14,18 @@ class Solution:
     https://leetcode.com/problems/binary-tree-level-order-traversal/
     """
 
-    def levelOrder(self, root: TreeNode) -> List[List[int]]:
-        """
-        BFS
-        """
-
+    def levelOrder_bfs(self, root: TreeNode) -> List[List[int]]:
         if not root:
             return []
 
         res = []
-        queue = [root]
+        queue = deque([root])
 
         while queue:
             n = len(queue)
             level = []
             for _ in range(n):
-                node = queue.pop(0)
+                node = queue.popleft()
                 level.append(node.val)
                 if node.left:
                     queue.append(node.left)
@@ -38,11 +35,7 @@ class Solution:
 
         return res
 
-    def levelOrder_re(self, root: TreeNode) -> List[List[int]]:
-        """
-        DFS
-        """
-
+    def levelOrder_dfs(self, root: TreeNode) -> List[List[int]]:
         res = []
         self.level_worker(root, 1, res)
         return res
