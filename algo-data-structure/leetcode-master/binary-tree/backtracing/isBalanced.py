@@ -6,6 +6,10 @@ class TreeNode:
 
 
 class Solution:
+    """
+    https://leetcode.com/problems/balanced-binary-tree/
+    """
+
     def getDepth(self, node: TreeNode) -> int:
         if not node:
             return 0

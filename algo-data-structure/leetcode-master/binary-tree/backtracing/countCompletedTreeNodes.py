@@ -6,18 +6,22 @@ class TreeNode:
 
 
 class Solution:
+    """
+    https://leetcode.com/problems/count-complete-tree-nodes/
+    """
+
     def getLeftLevel(self, node: TreeNode) -> int:
         if not node:
             return 0
         return 1 + self.getLeftLevel(node.left)
-    
+
     def countNodes(self, root: TreeNode) -> int:
         if not root:
             return 0
-        
+
         left = self.getLeftLevel(root.left)
         right = self.getLeftLevel(root.right)
-        
+
         # return current node + nb of node in the left child tree + nb of node in the right child tree
         # The nb of node of a perfect binary tree = 2 ^ level - 1, level = depth + 1
         if left == right:
