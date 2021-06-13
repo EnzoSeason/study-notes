@@ -43,12 +43,17 @@ class Solution2:
         if not root:
             return True
         
+        # check left child tree
         left = self.isValidBST(root.left)
+        if not left:
+            return False
         
-        if not left or root.val <= self.leftMax:
+        # check current node
+        if root.val <= self.leftMax:
             return False
         self.leftMax = root.val
         
+        # check right child tree
         return self.isValidBST(root.right)
 
 
