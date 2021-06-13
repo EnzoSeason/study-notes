@@ -11,6 +11,8 @@ class TreeNode:
 class Solution1:
     """
     https://leetcode.com/problems/validate-binary-search-tree/
+
+    backtracing with min_val and max_val
     """
 
     def dfs(self, node: TreeNode, min_val: int, max_val: int) -> bool:
@@ -32,8 +34,10 @@ class Solution1:
 
 class Solution2:
     """
+    https://leetcode.com/problems/validate-binary-search-tree/
+
     use inorder traversal.
-    check leftMax < curr.val
+    check leftMax < curr.val and update leftMax
     """
 
     def __init__(self) -> None:
@@ -59,6 +63,8 @@ class Solution2:
 
 class Solution3:
     """
+    https://leetcode.com/problems/validate-binary-search-tree/
+    
     Use inorder traversal
     The result array must be ASC.
     """
