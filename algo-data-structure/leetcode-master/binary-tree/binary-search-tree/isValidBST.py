@@ -8,7 +8,7 @@ class TreeNode:
         self.right = right
 
 
-class Solution:
+class Solution1:
     """
     https://leetcode.com/problems/validate-binary-search-tree/
     """
@@ -30,8 +30,29 @@ class Solution:
     def isValidBST(self, root: TreeNode) -> bool:
         return self.dfs(root, float("-inf"), float("inf"))
 
-
 class Solution2:
+    """
+    use inorder traversal.
+    check leftMax < curr.val
+    """
+
+    def __init__(self) -> None:
+        self.leftMax = float("-inf")
+        
+    def isValidBST(self, root: TreeNode) -> bool:
+        if not root:
+            return True
+        
+        left = self.isValidBST(root.left)
+        
+        if not left or root.val <= self.leftMax:
+            return False
+        self.leftMax = root.val
+        
+        return self.isValidBST(root.right)
+
+
+class Solution3:
     """
     Use inorder traversal
     The result array must be ASC.
