@@ -17,7 +17,7 @@ class Solution:
             return
 
         for i in range(start, len(self.candidates)):
-            if sum(prev + [self.candidates[i]]) <= self.target:
+            if sum(prev, self.candidates[i]) <= self.target:
                 self.helper(prev + [self.candidates[i]], i)
 
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
