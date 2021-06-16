@@ -4,6 +4,8 @@ from typing import List
 class Solution:
     """
     https://leetcode.com/problems/palindrome-partitioning/
+
+    It's similar to combination.
     """
 
     def __init__(self) -> None:
