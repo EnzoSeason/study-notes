@@ -19,22 +19,22 @@ class Solution:
 
         return False
 
-    def helper(self, prev: List[str], start: int, count: int) -> None:
-        if start == len(self.s) and count == 4:
-            self.res.append(".".join(prev))
+    def backTrack(self, path: List[str], start: int) -> None:
+        if start == len(self.s) and len(path) == 4:
+            self.res.append(".".join(path))
             return
 
         for end in range(start + 1, len(self.s) + 1):
             # prune
-            if len(self.s) - end > 3 * (4 - count - 1):
+            if len(self.s) - end > 3 * (4 - len(path) - 1):
                 continue
             if self.isVaild(self.s[start:end]):
-                self.helper(prev + [self.s[start:end]], end, count + 1)
+                self.backTrack(path + [self.s[start:end]], end)
 
     def restoreIpAddresses(self, s: str) -> List[str]:
         # prune
-        if len(s) > 4 * 3:
+        if len(s) > 3 * 4:
             return []
         self.s = s
-        self.helper([], 0, 0)
+        self.backTrack([], 0)
         return self.res
