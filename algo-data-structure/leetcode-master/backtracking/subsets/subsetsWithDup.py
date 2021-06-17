@@ -39,7 +39,7 @@ class Solution2:
     https://leetcode.com/problems/subsets-ii/
 
     Nums aren't distinct.
-    Therefore, we use visited set to track the visited items.
+    Therefore, we use visited_in_layer set to track the visited items of current layer.
     It's same as the previous solution, check self.nums[i] == self.nums[i - 1].
     """
 
@@ -49,10 +49,10 @@ class Solution2:
 
     def helper(self, prev: List[int], start: int) -> None:
 
-        visited = set()
+        visited_in_layer = set()
         for i in range(start, len(self.nums)):
-            if self.nums[i] not in visited:
-                visited.add(self.nums[i])
+            if self.nums[i] not in visited_in_layer:
+                visited_in_layer.add(self.nums[i])
                 self.res.append(prev + [self.nums[i]])
                 self.helper(prev + [self.nums[i]], i + 1)
 
