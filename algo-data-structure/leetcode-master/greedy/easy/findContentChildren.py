@@ -5,7 +5,7 @@ class Solution:
     """
     https://leetcode.com/problems/assign-cookies/
 
-    use the smallest cookie to meet kid's need.
+    greedy: use the smallest cookie to meet kid's need.
     """
 
     def findContentChildren(self, g: List[int], s: List[int]) -> int:
