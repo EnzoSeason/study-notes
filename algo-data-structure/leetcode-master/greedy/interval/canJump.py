@@ -13,11 +13,13 @@ class Solution:
         if len(nums) == 1:
             return True
 
-        max_range, i = 0, 0
-        while i <= max_range:
+        max_range = 0
+        for i in range(len(nums)):
+            if i > max_range:
+                return False
+
             max_range = max(max_range, i + nums[i])
             if max_range >= len(nums) - 1:
                 return True
-            i += 1
 
         return False
