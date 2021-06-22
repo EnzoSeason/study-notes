@@ -14,7 +14,7 @@ class Solution:
             return True
 
         max_range = 0
-        for i in range(len(nums)):
+        for i in range(len(nums) - 1):
             if i > max_range:
                 return False
 
