@@ -4,9 +4,6 @@ from typing import List
 class Solution:
     """
     https://leetcode.com/problems/partition-labels/
-
-    
-    
     """
 
     def partitionLabels(self, s: str) -> List[int]:
@@ -14,7 +11,7 @@ class Solution:
         end_pos = [0] * 26
         for i in range(len(s)):
             end_pos[ord(s[i]) - ord("a")] = i
-        
+
         res = []
         upper_bound = 0
         for i in range(len(s)):
