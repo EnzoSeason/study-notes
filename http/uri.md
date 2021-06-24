@@ -32,7 +32,7 @@ URI uses **ASCII** code.
 
 2. Use `encodeURL()`.
 
-   It encodes a URI by replacing each instance of certain characters by one, two, three, or four escape sequences representing the UTF-8 encoding of the character.
+   It encodes a URI by replacing each instance of certain characters by one, two, three, or four escape sequences representing the **UTF-8 encoding** of the character.
 
    ```javascript
    const uri = 'https://mozilla.org/?x=шеллы';
