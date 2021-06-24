@@ -33,3 +33,26 @@ class Solution:
             a, b = b, res
         
         return res
+
+class SolutionRE:
+    """
+    https://leetcode.com/problems/fibonacci-number/
+
+    Recursion with cache
+    """
+    def __init__(self) -> None:
+        self.cache = []
+    
+    def helper(self, n: int) -> int:
+        if self.cache[n] is None:
+            self.cache[n] = self.helper(n - 1) + self.helper(n - 2)
+        return self.cache[n]
+    
+    def fib(self, n: int) -> int:
+        if n <= 1:
+            return n
+        
+        self.cache = [None] * (n + 1)
+        self.cache[0] = 0
+        self.cache[1] = 1
+        return self.helper(n)
