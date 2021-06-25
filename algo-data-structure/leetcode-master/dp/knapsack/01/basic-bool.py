@@ -36,12 +36,16 @@ class Solution:
             dp[0][weight[0]] = True
 
         # update dp
-        for i in range(1, n + 1):  # traverse the items
-            for j in range(capacity + 1):  # traverse the capacity
+        for i in range(1, n + 1):
+            # do not take item i
+            for j in range(capacity + 1):
                 if dp[i - 1][j]:
                     # do not take item i
                     dp[i][j] = dp[i - 1][j]
-                    # take item i
+
+            # take item i
+            for j in range(capacity + 1):
+                if dp[i - 1][j]:
                     if j + weight[i] <= capacity:
                         dp[i][j + weight[i]] = True
 
@@ -49,8 +53,6 @@ class Solution:
         for j in range(capacity, -1, -1):
             if dp[n][j]:
                 return j
-
-        return dp[type][capacity]
 
     def dp_1d(self, weight: List[int], value: List[int], capacity: int) -> int:
         """
@@ -73,11 +75,9 @@ class Solution:
             for j in range(capacity - weight[i], - 1, -1):  # traverse the capacity
                 if dp[j]:
                     dp[j + weight[i]] = True
-                    # hidden case: do not take item i.
+            # hidden case: do not take item i.
         
         # result
         for j in range(capacity, -1, -1):
             if dp[j]:
                 return j
-
-        return dp[capacity]
