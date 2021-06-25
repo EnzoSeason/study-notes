@@ -24,7 +24,7 @@ class Solution:
 
         dp function:
           - do not take item i: dp[i][j] = dp[i - 1][j]
-          - take item i: dp[i][j - weight[i]] = True
+          - take item i: dp[i][j + weight[i]] = True
         """
         n = len(weight)
         # init dp
