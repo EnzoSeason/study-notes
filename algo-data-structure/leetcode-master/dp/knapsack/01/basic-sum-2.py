@@ -29,12 +29,12 @@ class Solution:
         type = len(weight)
         # init dp
         dp = [[0] * (capacity + 1)] * (type + 1)
-        
-        # create the first line
+
+        #  create the first line
         # The value of taking the first item.
         for j in range(1, capacity + 1):
             dp[0][j] = value[0]
-        
+
         # update dp
         for i in range(1, type + 1):
             for j in range(1, capacity + 1):
@@ -42,12 +42,11 @@ class Solution:
                     # do not take item i since it's over the capacity.
                     dp[i][j] = dp[i - 1][j]
                 else:
-                    # get the max value of taking or not the item i.
+                    #  get the max value of taking or not the item i.
                     dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i])
-        
+
         return dp[type][capacity]
 
-    
     def dp_1d(self, weight: List[int], value: List[int], capacity: int) -> int:
         """
         Since the dp function only concerns i and i - 1,
@@ -59,17 +58,17 @@ class Solution:
         # init dp
         dp = [0] * (capacity + 1)
 
-        # create the first line
+        #  create the first line
         # The value of taking the first item.
         for j in range(1, capacity + 1):
             dp[j] = value[0]
-        
+
         # update dp
-        for i in range(1, type + 1): # traverse the items' types
-            for j in range(capacity, weight[i] - 1, -1): # traverse the capacity
-                # get the max value of taking or not the item i.
+        for i in range(1, type + 1):  # traverse the items' types
+            for j in range(capacity, weight[i] - 1, -1):  # traverse the capacity
+                #  get the max value of taking or not the item i.
                 dp[j] = max(dp[j], dp[j - weight[i]] + value[i])
             # hidden condition
             # if j < weight[i], do not take item i.
-        
+
         return dp[capacity]
