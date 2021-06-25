@@ -66,10 +66,9 @@ class Solution:
         
         # update dp
         for i in range(1, type + 1):
-            for j in range(capacity, 0, -1):
-                if j >= weight[i]:
-                    # get the max value of taking or not the item i.
-                    dp[j] = max(dp[j], dp[j - weight[i]] + value[i])
+            for j in range(capacity, weight[i] - 1, -1):
+                # get the max value of taking or not the item i.
+                dp[j] = max(dp[j], dp[j - weight[i]] + value[i])
                 # hidden condition
                 # if j < weight[i], do not take item i.
         
