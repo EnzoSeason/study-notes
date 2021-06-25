@@ -50,7 +50,7 @@ class Solution:
                             dp[i][j + weight[i]], dp[i - 1][j] + value[i]
                         )
 
-        return dp[n][capacity]
+        return max(dp[n])
 
     def dp_1d(self, weight: List[int], value: List[int], capacity: int) -> int:
         """
@@ -74,4 +74,4 @@ class Solution:
                     dp[j + weight[i]] = max(dp[j + weight[i]], dp[j] + value[i])
             # hidden case: do not take item i.
 
-        return dp[capacity]
+        return max(dp)
