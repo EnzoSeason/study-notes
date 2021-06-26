@@ -28,7 +28,7 @@ class Solution:
         """
         type = len(weight)
         # init dp
-        dp = [[0] * (capacity + 1)] * (type + 1)
+        dp = [[0 for _ in range(capacity + 1)] for _ in range(type + 1)]
 
         #  create the first line
         # The value of taking the first item.
