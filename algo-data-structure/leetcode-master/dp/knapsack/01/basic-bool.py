@@ -28,7 +28,7 @@ class Solution:
         """
         n = len(weight)
         # init dp
-        dp = [[False] * (capacity + 1)] * (type + 1)
+        dp = [[False for _ in range(capacity + 1)] for _ in range(type + 1)]
         dp[0][0] = True  # Pivot
 
         # create the first line
