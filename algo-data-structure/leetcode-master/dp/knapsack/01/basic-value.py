@@ -30,7 +30,7 @@ class Solution:
         """
         n = len(weight)
         # init dp
-        dp = [[0] * (capacity + 1)] * (n + 1)
+        dp = [[0 for _ in range(capacity + 1)] for _ in range(n + 1)]
 
         #  create the first line
         if weight[0] <= capacity:
