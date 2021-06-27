@@ -5,7 +5,7 @@ class Solution:
     """
     https://leetcode.com/problems/combination-sum-iv/
 
-    It's a Partition Problem because 
+    It's a Partition Problem because
     different sequences are counted as different combinations.
 
     如果求**组合数**就是, 外层遍历物品，内层遍历背包。
@@ -26,3 +26,24 @@ class Solution:
                     dp[j] += dp[j - nums[i]]
 
         return dp[target]
+
+
+class SolutionBrute:
+    def dfs(self, prev: int) -> None:
+        if prev == self.target:
+            self.count += 1
+            return
+
+        if prev > self.target:
+            return
+
+        for num in self.nums:
+            self.dfs(prev + num)
+
+    def combinationSum4(self, nums: List[int], target: int) -> int:
+        self.nums = nums
+        self.target = target
+        self.count = 0
+
+        self.dfs(0)
+        return self.count
