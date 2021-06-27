@@ -4,7 +4,7 @@
 
 ## Data type and Encoding
 
-Http Body uses **MIME type** as data type. 
+Http Body uses **MIME type** as data type.
 
 > MIME is Multipurpose Internet Mail Extensions.
 
@@ -19,7 +19,6 @@ There are some categories.
 - **application**: application/json, application/javascript, application/pdf
 
   If we don't know the type of "application", we use `application/octet-stream`
-
 
 What's more, we need to know **Encoding type**.
 
@@ -90,3 +89,88 @@ Vary: Accept-Encoding,User-Agent,Accept
 ```
 
 That means the server sent the response according to `Accept-Encoding`, `User-Agent` and `Accept` in the resquest headers.
+
+## Large body
+
+To transfer the large body, there are several ways.
+
+### Compress
+
+Using `Accept-Encoding` and `Content-Encoding`, we can compress the data. It works fine with **text**, but doesn't good for images or videos.
+
+### Chunk
+
+We can chunk the body and sent them multiple responses.
+
+In the response header, we set:
+
+```code
+Transfer-Encoding: chunked
+```
+
+> Since the body is chunked, the body length is unknown. Therefore, `Content-Length` is NOT set.
+
+### Range request
+
+Range request allows the client requests **a part of** the body.
+
+However, range request isn't supported by all the server. The server need to tell the client whether it can accept it.
+
+```code
+Accept-Ranges: bytes
+```
+
+If `Accept-Ranges` is missing, it means range request isn't supported.
+
+Then, the client ask for the partial body.
+
+```code
+Range: bytes=0-31
+```
+
+The server receives the request.
+
+- If it's out of range, return **416 Range Not Satisfiable**.
+
+- If it's ok, return **206 Partial Content**
+
+  The server need to add `Content-Range` to tell **the range and the length** of the body.
+
+```code
+Content-Length: 32
+Accept-Ranges: bytes
+Content-Range: bytes 0-31/96
+```
+
+We can asks for multiple ranges, too.
+
+```code
+Range: bytes=0-9, 20-29
+```
+
+The body will be split by **boundary**.
+
+```code
+HTTP/1.1 206 Partial Content
+Content-Type: multipart/byteranges; boundary=00000000001
+Content-Length: 189
+Connection: keep-alive
+Accept-Ranges: bytes
+
+
+--00000000001
+Content-Type: text/plain
+Content-Range: bytes 0-9/96
+
+// this is
+--00000000001
+Content-Type: text/plain
+Content-Range: bytes 20-29/96
+
+ext json d
+--00000000001--
+```
+
+`--00000000001` is the separator.
+
+`--00000000001--` is the end point.
