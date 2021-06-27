@@ -38,7 +38,12 @@ class Solution:
                     dp[i][j] = max(dp[i][j], dp[i - 1][j])
                 else:
                     #  get the max value of taking or not the item i.
-                    dp[i][j] = max(dp[i][j], dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i])
+                    dp[i][j] = max(
+                        dp[i][j],
+                        dp[i][j - weight[i]] + value[i],
+                        dp[i - 1][j],
+                        dp[i - 1][j - weight[i]] + value[i],
+                    )
 
         return dp[type][capacity]
 
