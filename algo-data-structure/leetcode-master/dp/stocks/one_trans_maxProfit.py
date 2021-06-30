@@ -30,11 +30,12 @@ class SolutionDP2:
     """
 
     def maxProfit(self, prices: List[int]) -> int:
+        n = len(prices)
         sell, buy = 0, -prices[0]
 
-        for price in prices:
-            sell = max(sell, buy + price)
-            buy = max(buy, -price)
+        for i in range(1, n):
+            sell = max(sell, buy + prices[i])
+            buy = max(buy, -prices[i])
 
         return sell
 
