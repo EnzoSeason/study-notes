@@ -23,7 +23,7 @@ class SolutionDP:
                 dp[i][j][0] = max(dp[i - 1][j][0], dp[i - 1][j][1] + prices[i])
                 dp[i][j][1] = max(dp[i - 1][j][1], dp[i - 1][j - 1][0] - prices[i])
 
-        return max([x[0] for x in dp[-1]])
+        return dp[-1][-1][0]
 
 
 class SolutionDP2:
@@ -47,4 +47,4 @@ class SolutionDP2:
                 sell[j] = max(sell[j], buy[j] + prices[i])
                 buy[j] = max(buy[j], sell[j - 1] - prices[i])
 
-        return max(sell)
+        return sell[-1]
