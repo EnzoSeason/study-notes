@@ -16,10 +16,10 @@ class SolutionDP:
 
         for i in range(1, n):
             # not sell, sell
-            dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i]) 
-            # not buy, buy 
+            dp[i][0] = max(dp[i - 1][0], dp[i - 1][1] + prices[i])
+            #  not buy, buy
             # Since only one transaction is allowed, the profit is -prices[i] once we buy the stock.
-            dp[i][1] = max(dp[i - 1][1], -prices[i]) 
+            dp[i][1] = max(dp[i - 1][1], -prices[i])
 
         return dp[-1][0]
 
