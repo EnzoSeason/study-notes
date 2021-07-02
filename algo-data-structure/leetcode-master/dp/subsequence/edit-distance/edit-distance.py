@@ -1,6 +1,8 @@
 class SolutionDP:
     """
     https://leetcode.com/problems/edit-distance/
+
+    https://en.wikipedia.org/wiki/Levenshtein_distance
     """
 
     def minDistance(self, word1: str, word2: str) -> int:
