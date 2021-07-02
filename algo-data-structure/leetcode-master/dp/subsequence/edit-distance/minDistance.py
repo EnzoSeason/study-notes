@@ -16,7 +16,8 @@ class Solution:
                 if word1[i - 1] == word2[j - 1]:
                     dp[i][j] = dp[i - 1][j - 1]
                 else:
-                    dp[i][j] = min(
-                        dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + 2
-                    )
+                    delete_char_i = dp[i - 1][j] + 1
+                    delete_char_j = dp[i][j - 1] + 1
+                    delete_char_i_j = dp[i - 1][j - 1] + 2
+                    dp[i][j] = min(delete_char_i, delete_char_j, delete_char_i_j)
         return dp[-1][-1]
