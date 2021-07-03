@@ -1,6 +1,8 @@
 class SolutionDP:
     """
     https://leetcode.com/problems/palindromic-substrings/
+
+    dp[i][j]: if s[i:j+1] is palindromic.
     """
 
     def countSubstrings(self, s: str) -> int:
