@@ -35,3 +35,15 @@ PROXY TCP4 1.1.1.1 2.2.2.2 55555 80\r\n
 ```
 
 The client is `1.1.1.1:55555`.
+
+
+## HTTP cache with Proxy
+
+Server-side
+
+![client-proxy-cache](https://raw.githubusercontent.com/EnzoSeason/study-notes/main/http/img/server-proxy-cache.png)
+
+
+client-side:
+
+![server-proxy-cache.png](https://raw.githubusercontent.com/EnzoSeason/study-notes/main/http/img/client-proxy-cache.png)
