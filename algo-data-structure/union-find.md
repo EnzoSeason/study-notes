@@ -35,7 +35,7 @@ def findRoot(self, i: int) -> int:
     root = i
     while root != self.parent[root]:
         root = self.parent[root]
-    return node
+    return root
 ```
 
 ## Compress the path
