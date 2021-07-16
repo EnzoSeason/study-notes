@@ -24,6 +24,10 @@ class SolutionDFS:
 
 
 class Solution:
+    """
+    DFS with cache
+    """
+
     def __init__(self) -> None:
         self.wordDict = []
 
