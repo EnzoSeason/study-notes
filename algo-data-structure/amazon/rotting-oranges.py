@@ -4,6 +4,8 @@ from collections import deque
 
 class Solution:
     """
+    https://leetcode.com/problems/rotting-oranges/
+
     BFS
     """
 
