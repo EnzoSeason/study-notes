@@ -2,7 +2,7 @@ from typing import List
 from collections import deque
 
 
-class SolutionBFS:
+class SolutionBFSLayers:
     """
     https://leetcode.com/problems/shortest-path-in-binary-matrix/
 
