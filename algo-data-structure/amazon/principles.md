@@ -10,7 +10,7 @@ I want to be an engineer who has deep understanding of the sofeware inductry. An
 
   Pipedrive update button
 
-  Situation: Product manager want to add feature, update deal's fields in Pipedrive. (Pipedrive is a CRM application.) The updated value is calculated by Doc generator which I created.
+  Situation: Product manager want to add feature, update deal's details  in Pipedrive. (Pipedrive is a CRM application.) The updated value is calculated by Doc generator which I created.
 
   Task: She wants a button below the data table. Once the user clicks it, it sends all the calculated value to the pipedrive.
 
