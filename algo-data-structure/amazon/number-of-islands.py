@@ -1,6 +1,7 @@
 from typing import List
 from collections import deque
 
+
 class Solution:
     def __init__(self) -> None:
         self.visited = []
