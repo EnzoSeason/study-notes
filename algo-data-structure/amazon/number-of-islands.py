@@ -50,3 +50,63 @@ class Solution:
                     self.bfs(i, j)
                     count += 1
         return count
+
+
+class SolutionUF:
+    """
+    https://leetcode.com/problems/number-of-islands/
+
+    using Union & Find:
+
+    The number of islands is the number of the sets.
+    """
+
+    def __init__(self) -> None:
+        self.dx = [-1, 1, 0, 0]
+        self.dy = [0, 0, -1, 1]
+
+    def numIslands(self, grid: List[List[str]]) -> int:
+        m = len(grid)
+        if m == 0:
+            return 0
+        n = len(grid[0])
+
+        uf = UnionFind(grid)
+
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == "1":
+                    for type in range(4):
+                        x = i + self.dx[type]
+                        y = j + self.dy[type]
+                        if 0 <= x < m and 0 <= y < n and grid[x][y] == "1":
+                            uf.union(i * n + j, x * n + y)
+
+        print(uf.parent)
+        return uf.nbOfSets()
+
+
+class UnionFind:
+    def __init__(self, grid: List[List[str]]) -> None:
+        m, n = len(grid), len(grid[0])
+        self.parent = [
+            i * n + j if grid[i][j] == "1" else -1 for i in range(m) for j in range(n)
+        ]
+        print(self.parent)
+
+    def findRoot(self, i: int) -> int:
+        root = i
+        while root != self.parent[root]:
+            root = self.parent[root]
+        while i != root:
+            self.parent[i], i = root, self.parent[i]
+        return root
+
+    def union(self, p: int, q: int) -> None:
+        p_root = self.findRoot(p)
+        q_root = self.findRoot(q)
+        self.parent[p_root] = q_root
+
+    def nbOfSets(self) -> int:
+        n = len(self.parent)
+        return sum([1 if i == self.parent[i] else 0 for i in range(n)])
