@@ -6,6 +6,10 @@ class TreeNode:
 
 
 class Solution:
+    """
+    use PostOrder Traversal
+    """
+    
     def __init__(self):
         self.res = 0.0
 
