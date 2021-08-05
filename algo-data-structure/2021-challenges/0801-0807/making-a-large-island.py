@@ -44,7 +44,7 @@ class Solution:
 
         return count
     
-    def dfs(self, start: Tuple[int], flag: int) -> Generator[Tuple[int], None, None]:
+    def dfs(self, start: Tuple[int], flag: int) -> int:
         i, j = start
         
         if self.grid[i][j] != 1:
