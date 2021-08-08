@@ -15,15 +15,14 @@ def _accumulate_bincount(nums: List[int]) -> List[int]:
 
 def _fill_sorted_nums(nums: List[int], acc_bincounts: List[int])-> List[int]:
     sorted_nums = [0 for _ in nums]
-    i = len(nums) - 1
+    i = 0
 
-    while i >= 0:
-        idx_acc_bincounts = nums[i]
-        idx_sorted_nums = acc_bincounts[idx_acc_bincounts]
-        sorted_nums[idx_sorted_nums - 1] = nums[i]
+    while i < len(nums):
+        acc_count = acc_bincounts[nums[i]]
+        sorted_nums[acc_count - 1] = nums[i]
 
-        acc_bincounts[idx_acc_bincounts] -= 1
-        i -= 1
+        acc_bincounts[nums[i]] -= 1
+        i += 1
     
     return sorted_nums
 
