@@ -42,3 +42,15 @@ The advantages are:
 - When we want to **reuse code**, we think about the **abstract class**. When we want to **abstract the code**, we look for the **interface**.
 
 - Usually, we first create child class, then create abstract parent class, while we first design the interface then write the class.
+
+## Programming based on interface rather than implementation
+
+1. The naming of the function cannot reveal any implementation details.
+
+   use `update()` rather than `AwsUpdate()`
+
+2. Encapsulate specific implementation details.
+
+   set `createAwsBucket()` to `private`.
+
+3. We define the interfaces for classes, so that the user of classes depends on the interfaces rather than the classes themselves while coding.
