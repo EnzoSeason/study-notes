@@ -32,6 +32,15 @@ Design principles are some **experience summaries** that guide our code design.
 
 We need to grasp the **original intention of its design**, what programming problems it can solve, and what application scenarios it has.
 
+- SOLID:
+
+  - Single-responsibility principle:
+
+    A class or module should have a single responsibility.
+
+  - Open–closed principle:
+    Open for extension, closed for modification.
+
 ## Design Patterns
 
 Design Patterns are the solutions or design ideas that are summarized for some design problems often encountered in software development.
