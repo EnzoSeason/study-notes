@@ -36,10 +36,15 @@ We need to grasp the **original intention of its design**, what programming prob
 
   - Single-responsibility principle:
 
-    A class or module should have a single responsibility.
+    A class or module should have a **single responsibility**.
 
   - Open–closed principle:
-    Open for extension, closed for modification.
+
+    Software entities (modules, classes, functions, etc.) should be **open for extension , but closed for modification**.
+
+  - Liskov Substitution Principle:
+
+    If **S is a subtype of T**, then **objects of type T may be replaced with objects of type S**, without breaking the program。
 
 ## Design Patterns
 
