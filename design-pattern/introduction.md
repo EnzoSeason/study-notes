@@ -48,6 +48,12 @@ We need to grasp the **original intention of its design**, what programming prob
   
   - Interface Segregation Principle:
 
+    Clients should ONLY be forced to depend upon interfaces that they do use.
+  
+  - Dependency Inversion Principle:
+
+    High-level modules shouldn’t depend on low-level modules. Both **modules should depend on abstractions**. In addition, abstractions shouldn’t depend on details. **Details depend on abstractions.**
+
 ## Design Patterns
 
 Design Patterns are the solutions or design ideas that are summarized for some design problems often encountered in software development.

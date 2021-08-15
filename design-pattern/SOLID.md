@@ -52,11 +52,18 @@ Here, we have 3 different angles to understand it.
   If only a part of the interface is used, we should split this interface into two.
 
 - "Interface" is a function:
-  
-  If only a part of the function is used, we should split this function into two. 
+
+  If only a part of the function is used, we should split this function into two.
 
 - "Interface" is an OOP interface:
 
   The interface has a single duty. We split the generic interface into specific interfaces.
 
-   
+## Dependency Inversion Principle
+
+High-level modules shouldn’t depend on low-level modules. Both **modules should depend on abstractions**. In addition, abstractions shouldn’t depend on details. **Details depend on abstractions.**
+
+
+For example, `Tomcat` is the container to run the Web App. There is no direct dependency between these two. 
+
+However, they are based on `Servlet`, and `Servlet` doesn't depend on neither `Tomcat` or Web App.
