@@ -30,3 +30,11 @@ The ways to extend the code are:
 - Dependency Injection
 - Programming based on interfaces rather than implementation
 - most of the design patterns (for example, decoration, strategy, template, chain of responsibility, state)
+
+## Liskov Substitution Principle
+
+If **S is a subtype of T**, then **objects of type T may be replaced with objects of type S**, without breaking the program.
+
+When we create a subclass, we should not change the **input, output, exception, and any other config** indictated by the parent class. It makes sure the instance of subclass can replace that of the parent class without problems. In fact, this relationship can be replace by that of **interface and implemented class**.
+
+To check whether this rule is followed, we can **use the unit tests of the parent class to test to subclass**.

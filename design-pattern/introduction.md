@@ -44,7 +44,7 @@ We need to grasp the **original intention of its design**, what programming prob
 
   - Liskov Substitution Principle:
 
-    If **S is a subtype of T**, then **objects of type T may be replaced with objects of type S**, without breaking the program。
+    If **S is a subtype of T**, then **objects of type T may be replaced with objects of type S**, without breaking the program.
 
 ## Design Patterns
 
