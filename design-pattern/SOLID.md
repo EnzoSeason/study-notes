@@ -6,6 +6,8 @@ SOLID is composed by 5 principles.
 
 A class or module should have a single responsibility.
 
+For example, the Address info of an user can be saved in the Address class.
+
 > A module can be composed by one or more than one classes.
 
 There are some simple metrics for SRP.
@@ -38,3 +40,23 @@ If **S is a subtype of T**, then **objects of type T may be replaced with object
 When we create a subclass, we should not change the **input, output, exception, and any other config** indictated by the parent class. It makes sure the instance of subclass can replace that of the parent class without problems. In fact, this relationship can be replace by that of **interface and implemented class**.
 
 To check whether this rule is followed, we can **use the unit tests of the parent class to test to subclass**.
+
+## Interface Segregation Principle
+
+Clients should ONLY be forced to depend upon interfaces that they do use.
+
+Here, we have 3 different angles to understand it.
+
+- "Interface" is a set of interfaces:
+
+  If only a part of the interface is used, we should split this interface into two.
+
+- "Interface" is a function:
+  
+  If only a part of the function is used, we should split this function into two. 
+
+- "Interface" is an OOP interface:
+
+  The interface has a single duty. We split the generic interface into specific interfaces.
+
+   
