@@ -54,6 +54,12 @@ We need to grasp the **original intention of its design**, what programming prob
 
     High-level modules shouldn’t depend on low-level modules. Both **modules should depend on abstractions**. In addition, abstractions shouldn’t depend on details. **Details depend on abstractions.**
 
+- KISS: Keep It Simple and Stupid.
+
+- YAGNI: You Ain’t Gonna Need It
+
+- DRY: Don’t Repeat Yourself
+
 ## Design Patterns
 
 Design Patterns are the solutions or design ideas that are summarized for some design problems often encountered in software development.
