@@ -60,6 +60,8 @@ We need to grasp the **original intention of its design**, what programming prob
 
 - DRY: Don’t Repeat Yourself
 
+- Law of Demeter (The Least Knowledge Principle): Each unit should only talk to its friends; Don’t talk to strangers.
+
 ## Design Patterns
 
 Design Patterns are the solutions or design ideas that are summarized for some design problems often encountered in software development.
