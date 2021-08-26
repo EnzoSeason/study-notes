@@ -18,18 +18,17 @@ def sqrt_newton(target: int) -> int:
     """
     Newton:
     
-    Suppose y = f(x), then
-    y = f'(x - xn)x + f(xn)
+    Suppose y = f(x), then the tangent line that pass (xn, f(xn)) is
+    y = f'(xn)(x - xn) + f(xn)
     
-    f(xn+1) = 0, then
-    xn+1 = xn - f(xn)/f'(xn)
+    (x, y)=(xn+1, 0) => xn+1 = xn - f(xn)/f'(xn)
 
     This question can be transformed into finding the root of the function
     y = x^2 - target
 
     The recursion is:
     x0 = target (This init makes sure xn+1 < xn.)
-    xn+1 = (xn + target/xn) / 2
+    xn+1 = xn - (xn^2 - target) / 2*xn = (xn + target/xn) / 2
     """
     root = target
     while root * root > target:
