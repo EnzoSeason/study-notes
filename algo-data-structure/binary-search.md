@@ -144,7 +144,7 @@ def first_greater_equal(nums: List[int], given: int) -> int:
     while low <= high:
         mid = low + (high - low) // 2
         if given <= nums[mid]:
-            if mid == 0 or nums[mid-1] != given:
+            if mid == 0 or nums[mid-1] < given:
                 return mid
             else:
                 high = mid - 1
