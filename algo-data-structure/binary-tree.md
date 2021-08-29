@@ -10,13 +10,13 @@
 
   The node that has no parent is **root** node.
 
-- Height of the node *i*:
+- Height of the node _i_:
 
-  It's the **max number of edge** from the node *i* to a **leaf** node
+  It's the **max number of edge** from the node _i_ to a **leaf** node
 
-- Depth of the node *i*:
+- Depth of the node _i_:
 
-  It's the **number of edge** from the node *i* to the **root** node.
+  It's the **number of edge** from the node _i_ to the **root** node.
 
 - Level of the node: **Depth** of the node + 1
 
@@ -29,14 +29,14 @@ In binary tree, a node has, at most, 2 children.
   All the nodes, except **leaf nodes**, have 2 children.
 
 - complete binary tree:
-  
+
   1. All the nodes, except those in **last 2 levels**, have 2 children.
 
   2. The leaf nodes are positioned as **left** as possible.
 
 ### Advantage of complete binary tree.
 
-If we save a tree in the **array** and we suppose that the node *i* is saved in `arr[i]`, then its **left node** is saved in `arr[2*i]` and its **right** node is saved in `arr[2*i+1]`.
+If we save a tree in the **array** and we suppose that the node _i_ is saved in `arr[i]`, then its **left node** is saved in `arr[2*i]` and its **right** node is saved in `arr[2*i+1]`.
 
 If the binary tree is complete, then the array, except the `arr[0]`, is **full**. Otherwise, there must have an index `i, i>0` that `arr[i] is None`.
 
@@ -44,8 +44,8 @@ If the binary tree is complete, then the array, except the `arr[0]`, is **full**
 
 There are **4 orders** to traverse a binary tree.
 
-- Pre Order: 
-  
+- Pre Order:
+
   mid -> left -> right
 
   ```python
@@ -100,7 +100,7 @@ The time complexity of all of them is `O(n)`.
 
 ## Binary Search Tree
 
-It's a special binary tree, built for searching. 
+It's a special binary tree, built for searching.
 
 For any node in the binary tree, all the nodes in its left child tree are smaller than it, those in its right child tree are greater than it.
 
@@ -110,7 +110,7 @@ For any node in the binary tree, all the nodes in its left child tree are smalle
 def find(self, val: int) -> Optional[LinkedNode]:
     node = self.root
     while node.val != val and node is not None:
-        if node.val > val: node = node.left  
+        if node.val > val: node = node.left
         if node.val < val: node = node.right
     return node
 ```
@@ -120,10 +120,10 @@ def find(self, val: int) -> Optional[LinkedNode]:
 ```python
 def insert(self, val: int) -> None:
     node = self.root
-    if node is None: 
+    if node is None:
         self.root = LinkedNode(val)
         return
-    
+
     parent = None
     while node is not None:
         parent = node
@@ -142,11 +142,11 @@ def delete(val: int) -> Optional[LinkedNode]:
     parent = None
     while node.val != val and node is not None:
         parent = node
-        if node.val > val: node = node.left  
+        if node.val > val: node = node.left
         if node.val < val: node = node.right
 
     if node is None: return
-    
+
     # case 1: The node has 2 children
     # replace the node with the right min node
     if node.left is not None and node.right is not None:
@@ -159,19 +159,20 @@ def delete(val: int) -> Optional[LinkedNode]:
         node.val, right_min_node.val = right_min_node.val, node.val
         # prepare for deleting right min node
         parent, node = right_parent, right_min_node
-    
+
     # case 2: The node has one child or no child
-    else:
-        child = node.left if node.left is not None else node.right
-        if parent is None:
-            self.root = child
-            return node
-        if parent.left is node:
-            parent.left = None
-            return node
-        if parent.right is node:
-            parent.right = None
-            return node
+    child = node.left if node.left is not None else node.right
+    
+    # remove node
+    if parent is None:
+        self.root = child
+        return node
+    if parent.left is node:
+        parent.left = None
+        return node
+    if parent.right is node:
+        parent.right = None
+        return node
 ```
 
 ### Features
@@ -183,7 +184,6 @@ def delete(val: int) -> Optional[LinkedNode]:
   - If the binary search is complete, then the number of comparaison is the **height** of the tree. The time complexity is `O(logn)`.
 
   - The worst case is all the node have only left / right child. It becomes a **linked list**. The time complexity is `O(n)`.
-
 
 ### Binary Search Tree vs Hash Table
 
@@ -204,4 +204,3 @@ def delete(val: int) -> Optional[LinkedNode]:
   Hash table is more complex than Binary Search Tree. We need to consider the **hash function, hash collision, increasement / decreasement of size**. While, for Binary Search Tree, we just need to know whether the tree is complete.
 
   Usually, extra complexity costs extra time and space. Date structure should be as simple as possible.
-  
