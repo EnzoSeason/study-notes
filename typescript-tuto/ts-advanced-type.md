@@ -1,12 +1,12 @@
-#  Advanced Type
+# Advanced Type
 
-# #  Type Guards
+## Type Guards
 
 * check basic type of JavaScript: `typeof a === 'string'`
 * check the property of object (same in JS): `pro in obj === true`
 * check class (same in JS): `obj instanceof OneClass === true`
 
-# # #  User-Defined Type Guards
+### User-Defined Type Guards
 
 ```typescript
 function isFish(pet: Fish | Bird): pet is Fish {
@@ -27,7 +27,7 @@ if (isFish(pet)) {
 }
 ```
 
-# #  Index properties
+## Index properties
 
 With index types, you can get the compiler to check code that uses dynamic property names of definded type.
 
@@ -42,7 +42,7 @@ const error: ErrorContainer = {
 }
 ```
 
-# #  Function overload
+## Function overload
 
 ```typescript
 function add(a: number, b: number): number;
@@ -59,10 +59,10 @@ function add(a: number | string, b: number | string) {
 add('1', 2);
 ```
 
-# #  Optional Chain
+## Optional Chain
 
 `a?.b`: get `b` after checking `a` is `null` or `undefinded`
 
-# #  ??
+## ??
 
 `const a = b ?? 'DEFAULT'`: if `b` is `null` or `undefinded`, a will be `'DEFAULT'`

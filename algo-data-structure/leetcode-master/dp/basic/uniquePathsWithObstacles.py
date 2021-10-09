@@ -36,15 +36,15 @@ class SolutionImprove:
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
         m, n = len(obstacleGrid), len(obstacleGrid[0])
 
-        #  init current row, which is the first row.
+        # init current row, which is the first row.
         curr = [0] * n
         for j in range(n):
             if obstacleGrid[0][j] == 1:
                 break
             curr[j] = 1
             
-        for i in range(1, m): #  start at the second row
-            for j in range(n): #  start at 0 because the first item may be blocked.
+        for i in range(1, m): # start at the second row
+            for j in range(n): # start at 0 because the first item may be blocked.
                 if obstacleGrid[i][j] == 1:
                     curr[j] = 0
                 elif j > 0:

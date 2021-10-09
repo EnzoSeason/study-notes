@@ -1,4 +1,4 @@
-#  HTTP
+# HTTP
 
 use `HttpClient` of `@angular/common/http`
 
@@ -41,9 +41,9 @@ this.aService.aFunc().subscribe(
 )
 ```
 
-# #  Request / Response setting
+## Request / Response setting
 
-# # #  Set request header
+### Set request header
 
 ```typescript
 this.http.get(
@@ -54,7 +54,7 @@ this.http.get(
 )
 ```
 
-# # #  Set request Query Params
+### Set request Query Params
 
 ```typescript
 const params = new HttpParams();
@@ -71,7 +71,7 @@ this.http.get(
 
 Which is equal to `/url?my-key=my-value&you-key=you-value`.
 
-# # #  Set response observe
+### Set response observe
 
 ```typescript
 this.http.get(
@@ -87,7 +87,7 @@ Other `observe`:
 * `response`: return the whole response
 * `event`: return the all the events received during Http request
 
-# # #  set response Type
+### set response Type
 
 ```typescript
 this.http.get(
@@ -99,7 +99,7 @@ this.http.get(
 )
 ```
 
-# #  Interceptor
+## Interceptor
 
 To add extra information to every http request, we use Interceptor
 

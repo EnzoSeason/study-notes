@@ -1,4 +1,4 @@
-#  Redirection
+# Redirection
 
 The **301 / 302** is a redirection response. In its headers, there is a key, `Location`, its value is the **redirection URI**.
 
@@ -8,7 +8,7 @@ The redirection URI can be "absolue", which contains scheme, host:port, path and
 Location: /index.html
 ```
 
-# #  redirection status codes
+## redirection status codes
 
 - 301: Moved Permanently
 

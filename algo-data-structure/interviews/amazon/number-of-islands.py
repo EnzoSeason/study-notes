@@ -46,7 +46,7 @@ class Solution:
         for i in range(m):
             for j in range(n):
                 if self.grid[i][j] == "1" and not self.visited[i][j]:
-                    #  self.dfs(i, j)
+                    # self.dfs(i, j)
                     self.bfs(i, j)
                     count += 1
         return count

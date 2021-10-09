@@ -22,22 +22,22 @@ class Solution:
                 matrix[top][left] = num
                 return matrix
 
-            #  go right
+            # go right
             for j in range(left, right):
                 matrix[top][j] = num
                 num += 1
 
-            #  go down
+            # go down
             for i in range(top, bottom):
                 matrix[i][right] = num
                 num += 1
 
-            #   go left
+            #  go left
             for j in range(right, left, -1):
                 matrix[bottom][j] = num
                 num += 1
 
-            #  go top
+            # go top
             for i in range(bottom, top, -1):
                 matrix[i][left] = num
                 num += 1
@@ -63,15 +63,15 @@ class Solution:
         while num <= n * n:
             matrix[i][j] = num
 
-            #  update
+            # update
             num += 1
-            #  n % n == 0, -1 % n == n - 1
-            #  It can find out if next move is out of bounds.
-            #  This trick is used in circular queue.
+            # n % n == 0, -1 % n == n - 1
+            # It can find out if next move is out of bounds.
+            # This trick is used in circular queue.
             next_i = (i + dx[d]) % n
             next_j = (j + dy[d]) % n
             if matrix[next_i][next_j] != 0:
-                #  change direction
+                # change direction
                 d = (d + 1) % 4
             i += dx[d]
             j += dy[d]

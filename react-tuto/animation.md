@@ -1,6 +1,6 @@
-#  Animation
+# Animation
 
-# #  CSS transition
+## CSS transition
 
 [css transition](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
 
@@ -28,7 +28,7 @@
 }
 ```
 
-# #  CSS @keyframe
+## CSS @keyframe
 
 To fine-tune the animation, use `@keyframe` and `animation`
 
@@ -52,14 +52,14 @@ To fine-tune the animation, use `@keyframe` and `animation`
 }
 ```
 
-# #  react-transition-group
+## react-transition-group
 
 A package of React for animation. It's mostly for adding or removing elements to / from the DOM.
 
 [doc](http://reactcommunity.org/react-transition-group/)
 
-# #  Other packages
+## Other packages
 
 * [React-motion](https://github.com/chenglou/react-motion): for physical simulation
 
-* [React-move](https://react-move.js.org/# /): for BI animation
+* [React-move](https://react-move.js.org/#/): for BI animation

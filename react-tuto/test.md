@@ -1,12 +1,12 @@
-#  Test
+# Test
 
-# #  What to test
+## What to test
 
 Test isolated unit, Test conditional output
 
 For example, test `Log Out` button is shown after user logs in.
 
-# #  Enzyme
+## Enzyme
 
 A tool to test React Component
 

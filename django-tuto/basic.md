@@ -1,6 +1,6 @@
-#  Basic
+# Basic
 
-# #  init project
+## init project
 
 1. install anaconda
 
@@ -20,7 +20,7 @@
 
 7. run dev server: `python ./manage.py runserver`
 
-# #  create App and Model
+## create App and Model
 
 1. create App in Project: `python ./manage.py startapp myApp`
 
@@ -28,7 +28,7 @@
 
    ```python
    INSTALLED_APPS = [
-        #  other APPS
+        # other APPS
        'myApp'
    ]
    ```
@@ -40,7 +40,7 @@
    > Optional: In order to see the model in admin page, we need to register it into `admin.py` of App.
 
    ```python
-   #  myApp/admin.py
+   # myApp/admin.py
    
    from myApp.models import myModel
    

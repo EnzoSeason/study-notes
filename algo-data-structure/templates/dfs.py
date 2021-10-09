@@ -14,11 +14,11 @@ class Solution:
         self.visited = set()
 
     def dfs(self, node: Node) -> None:
-        #  1. process data according to the demand
+        # 1. process data according to the demand
         self.process(node)
         self.visited.add(node)
 
-        #  2. do DFS on the not-visited children
+        # 2. do DFS on the not-visited children
         for child in node.children:
             if child not in self.visited:
                 self.dfs(child)

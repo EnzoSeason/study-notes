@@ -1,4 +1,4 @@
-#  Index
+# Index
 
 Index makes the searching becomes faster.
 
@@ -10,11 +10,11 @@ There are some types of data structure used in the database engine.
 
 - Binary Search Tree
 
-# #  InnoDB Index
+## InnoDB Index
 
 InnoDB uses **B+ Tree** as the index.
 
-# #  Primary key vs Key
+## Primary key vs Key
 
 If we use primary key to find an item in the database, we only need traverse the database **once**.
 
@@ -23,7 +23,7 @@ However, if we use the key other than the primary key, we need traverse to find 
 That's the reason why we prefer using the primary key.
 
 
-# #  Avoid re-traversing by the primary key
+## Avoid re-traversing by the primary key
 
 In the exemple, we use the table as followed
 

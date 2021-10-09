@@ -1,11 +1,11 @@
-#  Form
+# Form
 
-* [template-driven](# template-driven)
-* [reactive](# reactive)
+* [template-driven](#template-driven)
+* [reactive](#reactive)
 
-# #  Template-driven
+## Template-driven
 
-# # #  Set up
+### Set up
 
 use `ngModel` in the built-in Angular Directive: `FormsModule`
 
@@ -16,13 +16,13 @@ In HTML:
 2. bind local ref to `form`, and assign it as `ngForm`
 
     ```html
-    # myForm="ngForm"
+    #myForm="ngForm"
     ```
 
 3. bind submit function to `ngSubmit`.
 
     ```html
-    <form # myForm="ngForm" (ngSubmit)="onSubmit()">
+    <form #myForm="ngForm" (ngSubmit)="onSubmit()">
     ```
 
 4. bind `ngModel` to `input`, and add `name` attribute
@@ -32,7 +32,7 @@ In HTML:
     ```
 
 ```html
-<form # myForm="ngForm" (ngSubmit)="onSubmit()">
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
     <input name="email" ngModel/>
     <button type="submit">Submit</button>
 </form>
@@ -51,7 +51,7 @@ export class AComponent {
 }
 ```
 
-# # #  Validation
+### Validation
 
 By default, Angular disables HTML5 validation, and uses [its validators](https://angular.io/api/forms/Validators), like:
 
@@ -70,7 +70,7 @@ To show error message:
 2. use `ngIf` to check if the `input` is validated
 
 ```html
-<input # email="ngModel" name="email" ngModel email required/>
+<input #email="ngModel" name="email" ngModel email required/>
 <span *ngIf="email.invalid && email.touched">wrong email</span>
 ```
 
@@ -80,13 +80,13 @@ input.ng-invalid.ng-touched {
 }
 ```
 
-# # #  Grouping Form Control
+### Grouping Form Control
 
 We can control a group of inputs:
 
 ```html
-<form # myForm="ngForm" (ngSubmit)="onSubmit()">
-    <div # myGroupCtrl="ngModelGroup" ngModelGroup="userData">
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+    <div #myGroupCtrl="ngModelGroup" ngModelGroup="userData">
         <!-- some <input /> -->
     </div>
     <!-- show ngModelGroup error -->
@@ -101,7 +101,7 @@ We can control a group of inputs:
 const myGroup = this.myForm.value.userData
 ```
 
-# # #  Set value of Form
+### Set value of Form
 
 We set some form fields without affecting other fields by using `ngForm.form.patchValue()`.
 
@@ -118,11 +118,11 @@ this.myForm.form.patchValue({
 });
 ```
 
-# # #  Use value of Form
+### Use value of Form
 
 All the data in `ngForm` is in `ngForm.value`.
 
-# # #  Reset form
+### Reset form
 
 reset the form concludes:
 
@@ -135,12 +135,12 @@ reset the form concludes:
 this.myForm.reset()
 ```
 
-# # #  Bonus: Two way binding
+### Bonus: Two way binding
 
 A very useful method:
 
 ```html
-<input # email="ngModel"
+<input #email="ngModel"
     name="email"
     [(ngModel)]="email"
     email required/>
@@ -152,9 +152,9 @@ export class AComponent {
 }
 ```
 
-# #  Reactive
+## Reactive
 
-# # #  Set up
+### Set up
 
 use `formGroup` in `@angular/forms`.
 
@@ -185,7 +185,7 @@ onSubmit(){
 }
 ```
 
-# # #  Validation
+### Validation
 
 In `FormGroup`:
 

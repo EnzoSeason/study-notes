@@ -1,4 +1,4 @@
-#  Dynamic component
+# Dynamic component
 
  To create a dynamic component, such as a popup, use `*ngIf`:
 

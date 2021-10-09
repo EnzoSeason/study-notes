@@ -4,7 +4,7 @@ from typing import List
 def generate_next_from_PTM(pattern: str) -> List[int]:
     next_arr = [-1 for _ in range(len(pattern) + 1)]
 
-    #  use fast-slow pointers
+    # use fast-slow pointers
     i, j = 0, -1
     while i < len(pattern):
         while j >= 0 and pattern[i] != pattern[j]:

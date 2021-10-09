@@ -9,7 +9,7 @@ class Solution:
     """
 
     def findMinArrowShots(self, points: List[List[int]]) -> int:
-        #  sorted by upper bound in ASC
+        # sorted by upper bound in ASC
         points = sorted(points, key=lambda x: x[1])
         count = 1
         upper_bound = points[0][1]

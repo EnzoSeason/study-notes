@@ -5,10 +5,10 @@ def _accumulate_bincount(nums: List[int]) -> List[int]:
     len_acc_bincounts = max(nums) + 1
     acc_bincounts = [0 for _ in range(len_acc_bincounts)]
 
-    #  bincount
+    # bincount
     for num in nums:
         acc_bincounts[num] += 1
-    #  accumulate
+    # accumulate
     for i in range(1, len_acc_bincounts):
         acc_bincounts[i] += acc_bincounts[i - 1]
 
@@ -17,8 +17,8 @@ def _accumulate_bincount(nums: List[int]) -> List[int]:
 
 def _fill_sorted_nums(nums: List[int], acc_bincounts: List[int]) -> List[int]:
     sorted_nums = [0 for _ in nums]
-    #  The order is important.
-    #  Sorting from bottom to top makes sort stable.
+    # The order is important.
+    # Sorting from bottom to top makes sort stable.
     i = len(nums) - 1
 
     while i >= 0:

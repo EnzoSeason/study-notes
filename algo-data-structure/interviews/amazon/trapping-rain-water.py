@@ -38,7 +38,7 @@ class SolutionTwoPointers:
         left_boundary, right_boundary = 0, 0
 
         while l < r:
-            if height[l] < height[r]:  #   It makes sure we have the min boundary.
+            if height[l] < height[r]:  #  It makes sure we have the min boundary.
                 if height[l] >= left_boundary:
                     left_boundary = height[l]
                 else:
@@ -65,11 +65,11 @@ class SolutionStack:
         i = 0
         
         while i < n:
-            while stack and height[i] > height[stack[-1]]: #  right boundary found
-                top = stack.pop() #  the bottom is height[top]
+            while stack and height[i] > height[stack[-1]]: # right boundary found
+                top = stack.pop() # the bottom is height[top]
                 if not stack:
                     break
-                distance = i - stack[-1] - 1 #  the distance between the left boundary and right boundary
+                distance = i - stack[-1] - 1 # the distance between the left boundary and right boundary
                 res += distance * (min(height[i], height[stack[-1]]) - height[top])
             stack.append(i)
             i += 1

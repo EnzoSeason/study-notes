@@ -1,9 +1,9 @@
-#  Loader
+# Loader
 
 - blender: tools to create 3D models, animations, etc
 - [mixamo](https://www.mixamo.com): 3D models
 
-# #  OBJ Model Loader
+## OBJ Model Loader
 
 There are many DCC (Digital Content Creation) tools that can create models in **OBJ format**.
 
@@ -28,7 +28,7 @@ objLoader.load(
 );
 ```
 
-# #  MTL Loader
+## MTL Loader
 
 MTL is the **material** information used by an **OBJ** file.
 
@@ -64,7 +64,7 @@ mtlLoader.load(
 );
 ```
 
-# #  GLTF Model Loader (popular)
+## GLTF Model Loader (popular)
 
 glTF is a specification for the efficient transmission and loading of 3D scenes and models.
 
@@ -91,7 +91,7 @@ loader.load(
 );
 ```
 
-# #  DRACO Loader
+## DRACO Loader
 
 The DRACO loader is used to load geometry **compressed with the Draco library**.
 
@@ -111,7 +111,7 @@ loader.load(
 );
 ```
 
-# #  FBX Model Loader
+## FBX Model Loader
 The FBX format is used to provide interoperability between **digital content creation applications** and **game engines** such as Blender, Maya, Autodesk, Unity, Unreal and many others. 
 
 It supports many features such as 3D models, scene hierarchy, materials, lighting, animations, bones and more.
@@ -132,7 +132,7 @@ fbxLoader.load(
 )
 ```
 
-# #  STL Model Loader
+## STL Model Loader
 
 The STL model format is widely used for rapid prototyping, 3D printing and computer-aided manufacturing.
 

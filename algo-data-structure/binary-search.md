@@ -1,4 +1,4 @@
-#  Binary Search
+# Binary Search
 
 If we want to find a number in a **ordered** data set, we can use binary search. 
 
@@ -52,7 +52,7 @@ def binary_search_recursive(nums: List[int], num: int) -> bool:
         return binary_search_recursive(nums[mid_idx+1:len(nums)], num)
 ```
 
-# #  Time complexity
+## Time complexity
 
 We use the **times of comparaison** to approach the time complexity.
 
@@ -68,7 +68,7 @@ The time complexity is `O(logn)`.
 
 `O(logn)` is very good to deal with large data set.
 
-# #  Limits
+## Limits
 
 1. The data must be **ordered**.
 
@@ -81,21 +81,21 @@ The time complexity is `O(logn)`.
     - too small: We just need traverse the data.
     - too big: We can put all the data int the memory.
 
-# #  Typical use cases
+## Typical use cases
 
 Previously, we use biinary search to find the **equal** item. Here, we add some extra condition.
 
-# # #  Find First Equal
+### Find First Equal
 
 This extra condition can be transformed as followed.
 
 ```python
 if given_num == nums[mid_idx]:
-    #  extra condition
+    # extra condition
     if mid_idx == 0 or nums[mid_idx-1] != given_num:
         return True
     else:
-        #  not the first one, keep searching
+        # not the first one, keep searching
         high_idx = mid_idx - 1
 ```
 
@@ -121,13 +121,13 @@ def first_equal(nums: List[int], given: int) -> int:
     return -1
 ```
 
-# # #  First Equal or Greater
+### First Equal or Greater
 
 This extra condition can be transformed as followed.
 
 ```python
 if nums[mid_idx-1] >= given_num:
-    #  extra condition
+    # extra condition
     if mid_idx == 0 or nums[mid_idx-1] < given_num:
         return mid_idx
     else:

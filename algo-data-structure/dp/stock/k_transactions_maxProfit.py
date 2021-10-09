@@ -53,25 +53,25 @@ class Solution1:
         days = len(prices)
         if days <= 1:
             return 0
-        #  init DP
+        # init DP
         profit = [[0 for _ in range(days)] for _ in range(3)]
 
         for trans in range(1, k + 1):
             curr_trans, prev_trans = trans % 2 + 1, (trans - 1) % 2 + 1
-            #  Minimize the buyMax on the first day
-            #  Buy the share
+            # Minimize the buyMax on the first day
+            # Buy the share
             buyMax = -prices[0]
             for day in range(1, days):
-                #  profit[curr_trans][day] takes the max profit of
-                #  holding the share (profit[curr_trans][day - 1]) or
-                #  selling the share (buyMax + prices[day])
+                # profit[curr_trans][day] takes the max profit of
+                # holding the share (profit[curr_trans][day - 1]) or
+                # selling the share (buyMax + prices[day])
                 profit[curr_trans][day] = max(
                     profit[curr_trans][day - 1], buyMax + prices[day]
                 )
 
-                #  buyMax takes the max profit of
-                #  holding the stock or
-                #  buying the stock (profit[prev_trans][day - 1] - prices[day])
+                # buyMax takes the max profit of
+                # holding the stock or
+                # buying the stock (profit[prev_trans][day - 1] - prices[day])
                 buyMax = max(buyMax, profit[prev_trans][day - 1] - prices[day])
 
         print(profit)

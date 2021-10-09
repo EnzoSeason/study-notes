@@ -8,13 +8,13 @@ class Solution:
         left_start, right_start = [0] * n, [0] * n
         res = n
 
-        #  from left to right
-        #  flip 0 to 1
+        # from left to right
+        # flip 0 to 1
         for i in range(1, n):
             left_start[i] = left_start[i - 1] + (0 if s[i - 1] == "0" else 1)
 
-        #  from right to left
-        #  flip 1 to 0
+        # from right to left
+        # flip 1 to 0
         for j in range(n - 2, -1, -1):
             right_start[j] = right_start[j + 1] + (0 if s[j + 1] == "1" else 1)
 

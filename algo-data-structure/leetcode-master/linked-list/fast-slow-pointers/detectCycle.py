@@ -13,15 +13,15 @@ class Solution:
         slow, fast = head, head
 
         while fast and fast.next:
-            #  verify if there has a circle
-            #  fast_move = 2 * slow_move
+            # verify if there has a circle
+            # fast_move = 2 * slow_move
             slow = slow.next
             fast = fast.next.next
 
             if fast is slow:
-                #  There is a circle.
-                #  reset the slow to the head, and
-                #  fast_move = slow_move
+                # There is a circle.
+                # reset the slow to the head, and
+                # fast_move = slow_move
                 slow = head
                 while slow is not fast:
                     slow = slow.next

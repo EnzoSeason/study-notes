@@ -1,4 +1,4 @@
-#  Redux Saga
+# Redux Saga
 
 [doc](https://redux-saga.js.org/)
 
@@ -10,7 +10,7 @@ A library that aims to make application **side effects** (i.e. asynchronous thin
 
 easier to manage.
 
-# #  example
+## example
 
 Saga contains `generators`
 
@@ -97,7 +97,7 @@ const store = createStore(
 sagaMiddleWare.run(wathAuth);
 ```
 
-# #  More function in redux-saga
+## More function in redux-saga
 
 * `call`: call the function. make Unit test easier
 

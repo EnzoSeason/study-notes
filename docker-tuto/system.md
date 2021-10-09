@@ -1,4 +1,4 @@
-#  System
+# System
 
 To see the docker disk usage:
 

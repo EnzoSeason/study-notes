@@ -1,10 +1,10 @@
-#  Decorator
+# Decorator
 
 Decorators are used for meta programming to add extra configuration or extra logic.
 
 Angular is heavily depended on Decorator.
 
-# #  Basic
+## Basic
 
 ```typescript
 function logger(constructor: Function) {
@@ -21,7 +21,7 @@ class Test {
 
 `logger()` is executed when `Test` is **definded**, not is **instantiated**.
 
-# #  Decorator Factory
+## Decorator Factory
 
 ```typescript
 function Logger(message: string) {
@@ -39,7 +39,7 @@ class Test {
 }
 ```
 
-# # #  Order of decorator
+### Order of decorator
 
 ```typescript
 function Logger(message: string) {
@@ -64,7 +64,7 @@ The first Decorate Factory executes first, then put its returned function into a
 
 That's why the output is printed from bottom to up.
 
-# #  Return a class in Decorator
+## Return a class in Decorator
 
 To let the logic in Derator runs while the class is **instantiated**, we can return the class (technically, the constructor function) in Decorator.
 
@@ -96,7 +96,7 @@ class Test {
 }
 ```
 
-# #  Autobind
+## Autobind
 
 ```typescript
 class Printer {
@@ -144,7 +144,7 @@ class Printer {
 }
 ```
 
-# #  Validation
+## Validation
 
 ```typescript
 interface ValidatorConfig {

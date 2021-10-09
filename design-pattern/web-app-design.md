@@ -1,6 +1,6 @@
-#  Web App System Design
+# Web App System Design
 
-# #  Anemic Domain Model: Model View Controller (MVC)
+## Anemic Domain Model: Model View Controller (MVC)
 
 In backend, there are 3 types of classes.
 
@@ -15,7 +15,7 @@ The class that **only contains data** are called **Anemic Domain Model**.
 
 **Anemic Domain Model** splits the data and the operation, destroyes the **encapsulation** of OOP. **Data can be modified without the limit.**
 
-# #  Rich Domain Model: Domain Driven Design (DDD)
+## Rich Domain Model: Domain Driven Design (DDD)
 
 DDD also has 3 types of classes, Repository, Service, Controller. But in Service, It has **Service** class and **Domain** class.
 

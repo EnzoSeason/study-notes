@@ -1,6 +1,6 @@
-#  Image
+# Image
 
-# #  Important concepts
+## Important concepts
 
 1. Image layers
 
@@ -14,11 +14,11 @@
 
     A container just a single read/write layer on the top of image. It's usually very small.
 
-# #  Get an image
+## Get an image
 
 `docker pull <image>`
 
-# #  Name
+## Name
 
 Image doesn't have name. To identify an image, we use:
 
@@ -26,7 +26,7 @@ Image doesn't have name. To identify an image, we use:
 
 An Image can have multiple tags.
 
-# #  Build an image
+## Build an image
 
 `Dockerfile` is an instruction of building an image.
 

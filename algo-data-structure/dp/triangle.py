@@ -44,9 +44,9 @@ class SolutionDP2:
         if levels == 1:
             return triangle[0][0]
 
-        #  Only the layer below the current layer is needed
-        #  So we use one dim array
-        #  dp is initialized by the bottom of triangle
+        # Only the layer below the current layer is needed
+        # So we use one dim array
+        # dp is initialized by the bottom of triangle
         dp = triangle[levels - 1]
         for i in range(levels - 2, -1, -1):
             for j in range(len(triangle[i])):

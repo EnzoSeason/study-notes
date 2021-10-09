@@ -1,4 +1,4 @@
-#  Trie
+# Trie
 
 Trie is a **tree** to save the **strings**. It's used in the **search engine**. It's efficient to **find words by given prefix**.
 
@@ -15,19 +15,19 @@ For example, `cat` and `cow` are saved in a Trie.
 A node, usually, has 26 children which represent 26 children.
 
 ```python
-#  26 alphabets
+# 26 alphabets
 NODE_SIZE = 26
 
 class TrieNode:
     def __init__(self):
-        #  Children contains TrieNodes.
-        #  The index of children represents the character.
-        #  For example, 0 => a
+        # Children contains TrieNodes.
+        # The index of children represents the character.
+        # For example, 0 => a
         self.children = [None] * NODE_SIZE
         self.isEndOfWord = False
 ```
 
-# #  Operations
+## Operations
 
 ```python
 class Trie:
@@ -70,6 +70,6 @@ class Trie:
 
 Both `insert` and `isFind` is `O(n)` (`n` is the length of the input string). It's very efficient.
 
-# #  Example
+## Example
 
 [Leetcode 208](https://leetcode.com/problems/implement-trie-prefix-tree/)

@@ -11,12 +11,12 @@ class Solution:
             return 0
 
         count = 0
-        #  prev, curr keep the max jumping ranges.
+        # prev, curr keep the max jumping ranges.
         prev, curr = 0, 0
 
         for i in range(len(nums) - 1):
             curr = max(curr, i + nums[i])
-            if i == prev: #  update jumping range
+            if i == prev: # update jumping range
                 prev = curr
                 count += 1
 

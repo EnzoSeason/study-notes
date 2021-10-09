@@ -1,10 +1,10 @@
-#  Hash Table
+# Hash Table
 
 If we want to save the data for fast searching, we will use an array. However, we must use a non negative integer as an index. Can we custom the index ? Hash table is created for that.
 
 Hash table is based on the **array**. It stocks **key-value** paires. **Hash function** transform the key into the index of the table.
 
-# #  Hash function
+## Hash function
 
 The key point of the hash table is hash function, `hash()`. To make sure the index is well created, there are some rules to follow.
 
@@ -36,7 +36,7 @@ There are 2 ways to solve the collision.
 
 2. chaining
 
-# # #  open addressing
+### open addressing
 
 The main idea of open addressing is if there is a collision, then we find another empty space.
 
@@ -80,7 +80,7 @@ To sum up:
 
 If the **data size is small**, It's good to use it.
 
-# # #  chaining
+### chaining
 
 Chaining is a more **common** and **simple** implement.
 
@@ -103,7 +103,7 @@ To sum up:
 
 If the **data size is big**, we choose chaining.
 
-# #  Linked Hash Map
+## Linked Hash Map
 
 It's a common data structure in Java. It can:
 

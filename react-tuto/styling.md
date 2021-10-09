@@ -1,10 +1,10 @@
-#  Styling
+# Styling
 
-# #  style sheet
+## style sheet
 
 It's the most common way. But it's hard to change the style dynamically.
 
-# # #  Button.js
+### Button.js
 
 ```css
 .Button {
@@ -12,7 +12,7 @@ It's the most common way. But it's hard to change the style dynamically.
 }
 ```
 
-# # #  Button.js (v1)
+### Button.js (v1)
 
 ```javascript
 import React, { Component } from 'react';
@@ -26,13 +26,13 @@ class Button extends Component {
 }
 ```
 
-# #  CSS Module (personnal favorite)
+## CSS Module (personnal favorite)
 
 In JavaScript file, Read the css from style sheet
 
 This project supports CSS Modules alongside regular stylesheets using the `[name].module.css` file naming convention. CSS Modules allows the scoping of CSS by automatically creating a unique classname of the format `[filename]\_[classname]\_\_[hash]`.
 
-# # #  Button.module.css
+### Button.module.css
 
 MUST name the file ended by .module.css
 
@@ -42,7 +42,7 @@ MUST name the file ended by .module.css
 }
 ```
 
-# # #  Button.js (v2)
+### Button.js (v2)
 
 ```javascript
 import React, { Component } from 'react';
@@ -56,7 +56,7 @@ class Button extends Component {
 }
 ```
 
-# #  redium
+## redium
 
 `npm install --save radium`
 
@@ -109,7 +109,7 @@ const MyComponent = props => {
 }
 ```
 
-# #  styled components
+## styled components
 
 `npm install --save styled-components`
 

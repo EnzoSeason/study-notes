@@ -1,11 +1,11 @@
-#  Product
+# Product
 
-# #  init a product
+## init a product
 
 MVP (Minimum viable product) is the main product development strategy.
 *minimum dev, maximum iteration.*
 
-# #  database principles
+## database principles
 
 - basic:
 
@@ -33,7 +33,7 @@ MVP (Minimum viable product) is the main product development strategy.
 
     - DO NOT use JOIN: never search 2 or more table at one time
 
-# #  LDAP user
+## LDAP user
 
 1. install `django-python3-ldap`
 
@@ -41,7 +41,7 @@ MVP (Minimum viable product) is the main product development strategy.
 
 3. run `python .manage.py ldap_sync_users`
 
-# #  import csv
+## import csv
 
 Django can create **commands**. We use custom command to import csv.
 
@@ -55,7 +55,7 @@ Django can create **commands**. We use custom command to import csv.
 
    `python manage.py import_candidates --path /path/to/your/file.csv`
 
-# #  Export csv
+## Export csv
 
 We can add **export csv** action to [admin page](../recruitment/interview/admin.py).
 
@@ -65,7 +65,7 @@ We can add **export csv** action to [admin page](../recruitment/interview/admin.
 
 2. add the function into `actions` in `ModelAdmin`
 
-# #  Logs
+## Logs
 
 We can config **logs** in [setting.py](../recruitment/settings/base.py)
 
@@ -84,7 +84,7 @@ logger = logging.getLogger(__name__)
 logger.info('my log')
 ```
 
-# #  env settings
+## env settings
 
 We can create different env for different modes (dev, test, prod, etc)
 
@@ -93,7 +93,7 @@ We can create different env for different modes (dev, test, prod, etc)
 2. create `base.py` as base settings, and point to it
 
    ```python
-   #  manage.py
+   # manage.py
    import os
    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.base')
    ```
@@ -101,7 +101,7 @@ We can create different env for different modes (dev, test, prod, etc)
 3. create `local.py`, `production.py`, which imports `base.py`
 
    ```python
-   #  production.py
+   # production.py
    from .base import *
    
    DEBUG = False

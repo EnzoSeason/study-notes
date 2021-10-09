@@ -46,7 +46,7 @@ class SolutionBinarySearch:
 
         for char in searchWord:
             prefix += char
-            #  lo = bisect.bisect_left(products, prefix, lo)
+            # lo = bisect.bisect_left(products, prefix, lo)
             lo = self.binarySearch_left(products, prefix, lo)
             suggestions = [
                 word for word in products[lo : lo + 3] if word.startswith(prefix)

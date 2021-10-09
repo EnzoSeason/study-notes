@@ -11,8 +11,8 @@ class Solution:
         self.nums = []
 
     def helper(self, prev: List[int], start: int) -> None:
-        #  if start == len(self.nums):
-        #      return
+        # if start == len(self.nums):
+        #     return
 
         for i in range(start, len(self.nums)):
             self.res.append(prev + [self.nums[i]])

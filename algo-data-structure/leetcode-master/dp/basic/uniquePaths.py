@@ -4,8 +4,8 @@ class Solution:
     """
 
     def uniquePaths(self, m: int, n: int) -> int:
-        #  The boarder is filled with 1.
-        #  So I init the dp with 1.
+        # The boarder is filled with 1.
+        # So I init the dp with 1.
         dp = [[1] * n] * m
 
         for i in range(1, m):

@@ -1,4 +1,4 @@
-#  What happens after entering an URL
+# What happens after entering an URL
 
 In general, there are following steps.
 

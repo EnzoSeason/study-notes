@@ -22,14 +22,14 @@ class Solution:
         left = self.getLeftLevel(root.left)
         right = self.getLeftLevel(root.right)
 
-        #  return current node + nb of node in the left child tree + nb of node in the right child tree
-        #  The nb of node of a perfect binary tree = 2 ^ level - 1, level = depth + 1
+        # return current node + nb of node in the left child tree + nb of node in the right child tree
+        # The nb of node of a perfect binary tree = 2 ^ level - 1, level = depth + 1
         if left == right:
-            #  The left child tree must be a perfect binary tree.
-            #  The next tree to check is the right child tree.
+            # The left child tree must be a perfect binary tree.
+            # The next tree to check is the right child tree.
             return 1 + ((1 << left) - 1) + self.countNodes(root.right)
         else:
-            #  The right child tree must be a perfect binary tree.
-            #  right = left - 1
-            #  The next tree to check is the left child tree.
+            # The right child tree must be a perfect binary tree.
+            # right = left - 1
+            # The next tree to check is the left child tree.
             return 1 + self.countNodes(root.left) + ((1 << right) - 1)

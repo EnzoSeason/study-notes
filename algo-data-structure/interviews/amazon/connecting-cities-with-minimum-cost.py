@@ -54,7 +54,7 @@ class Solution:
         """
         
         uf = UnionFind(n + 1)
-        #  sort connections by the weight of the edge
+        # sort connections by the weight of the edge
         connections.sort(key=lambda x: x[2])
         total = 0
         cost = 0
@@ -66,7 +66,7 @@ class Solution:
             if uf.find(p) == uf.find(q):
                 continue
             
-            #  union two set
+            # union two set
             uf.union(p, q)
             cost += conn[2]
             total += 1

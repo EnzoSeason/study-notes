@@ -33,8 +33,8 @@ class Solution:
         while stack:
             node = stack.pop()
             res.append(node.val)
-            #  Attention, the left child is popped before the right one.
-            #  So, the right child is pushed into the stack before left one.
+            # Attention, the left child is popped before the right one.
+            # So, the right child is pushed into the stack before left one.
             if node.right:
                 stack.append(node.right)
             if node.left:

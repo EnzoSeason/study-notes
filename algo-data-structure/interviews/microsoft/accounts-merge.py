@@ -12,10 +12,10 @@ class Solution:
     """
 
     def accountsMerge(self, accounts: List[List[str]]) -> List[List[str]]:
-        adj_list = defaultdict(set)  #  adj list for emails
-        users = dict()  #  hash map for email: name
+        adj_list = defaultdict(set)  # adj list for emails
+        users = dict()  # hash map for email: name
 
-        #  init adj_list and users
+        # init adj_list and users
         for acc in accounts:
             name = acc[0]
             for email in acc[1:]:
@@ -23,7 +23,7 @@ class Solution:
                 adj_list[email].add(acc[1])
                 users[email] = name
 
-        #  use DFS
+        # use DFS
         visited = set()
         res = []
         for vertex in adj_list:

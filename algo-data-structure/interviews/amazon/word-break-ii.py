@@ -12,7 +12,7 @@ class SolutionDFS:
             return
 
         for word in self.wordDict:
-            if s[: len(word)] == word:  #  s.startswith(word)
+            if s[: len(word)] == word:  # s.startswith(word)
                 self.dfs(s[len(word) :], prev + [word])
 
     def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:

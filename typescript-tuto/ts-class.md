@@ -1,6 +1,6 @@
-#  Class & Interface
+# Class & Interface
 
-# #  Class
+## Class
 
 ```typescript
 class Department {
@@ -14,7 +14,7 @@ class Department {
 const accouting = new Derpartment("Accounting");
 ```
 
-# # #  key word: this
+### key word: this
 
 `this` is tricky, for example. 
 
@@ -45,7 +45,7 @@ class Department {
 }
 ```
 
-# # #  Inheritance
+### Inheritance
 
 extend existing classes to create new ones using inheritance.
 
@@ -59,7 +59,7 @@ class ITSupport extends Departement {
 } 
 ```
 
-# # #  private protected, public modifier
+### private protected, public modifier
 
 The key word `private` can make `property`or `method` of the class only accessable by Class, not by Public.
 
@@ -86,7 +86,7 @@ The `protected` modifier acts much like the `private` modifier with the exceptio
 
 A `constructor` may also be marked protected. This means that the class **cannot be instantiated outside of its containing class**, but can be extended.
 
-# # #  readonly modifier
+### readonly modifier
 
 Readonly properties must be initialized at their declaration or in the constructor. And they can not be modified.
 
@@ -99,7 +99,7 @@ class Department {
 }
 ```
 
-# # #  getter and setter
+### getter and setter
 
 ```typescript
 class Department {
@@ -114,7 +114,7 @@ class Department {
 }
 ```
 
-# # #  Static Properties
+### Static Properties
 
 They are visible on the class itself rather than on the instances.
 
@@ -129,7 +129,7 @@ class Department {
 Department.showCompany();
 ```
 
-# # #  Abstract Classes
+### Abstract Classes
 
 Abstract classes are base classes from which other classes may be derived. They **may not be instantiated directly**.
 
@@ -151,7 +151,7 @@ class ITSupport extends Departement {
 }
 ```
 
-# # #  singleton
+### singleton
 
 ```typescript
 class ITSupport extends Departement {
@@ -172,7 +172,7 @@ class ITSupport extends Departement {
 }
 ```
 
-# # #  Optional property
+### Optional property
 
 add `?` after property name
 
@@ -186,7 +186,7 @@ class A {
 [Full example](../src/ts-class.ts)
 
 
-# #  Interface
+## Interface
 
 DO NOT exist in JavaScript
 
@@ -194,7 +194,7 @@ DO NOT exist in JavaScript
 
 `private`, `public` or `protected` can not be used in Interface, but `readonly` can.
 
-# # #  Function type
+### Function type
 
 We can defind a Function type by: 
 

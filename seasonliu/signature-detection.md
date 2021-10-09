@@ -1,6 +1,6 @@
-#  Signature detection
+# Signature detection
 
-# #  Introduction
+## Introduction
 
 Recently, I've worked on an innovation project, **signature detection**. It judges whether a document is signed. It's a very interesting project. I would like to share this experience, bringing an innovation project from the lab to production. The project is on my website, [Signature Detection](https://seasonliu.com/station/signature-detection). It's free to use :)
 
@@ -16,7 +16,7 @@ This project is split into several phases.
 
 This article will walk through all these stages. Let's go!
 
-# #  Do experiments
+## Do experiments
 
 In this stage, The primary question we should think about is **whether the project doable?** We need to come out the ideas **as much as possible** and test them **as fast as possible**.
 
@@ -34,7 +34,7 @@ I chose **the area size of connected pixels** as the indicator of the signature.
 
 The application I used to do experiments is [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/). My programming language is Python.
 
-# #  Make a package
+## Make a package
 
 If **the width of the ideas** is the key point of the previous stage, **the depth of an idea** is the core of the current stage. We need to consider the **as many details as possible**. After this stage, we should be able to deliver an early version of the product.
 
@@ -60,7 +60,7 @@ However, if the project is long-term maintained and shared with other developers
 
 The package of signature detection is on [PyPI](https://pypi.org/project/signature-detect/).
 
-# #  Create a backend API
+## Create a backend API
 
 The backend API is a web application. It takes cares of
 
@@ -76,7 +76,7 @@ Since I used Python, I chose Django as my web application framework. MySQL is my
 
 More details are presented in another article on my website, [Django Set up](https://seasonliu.com/station/topics/seasonliu/api-setup).
 
-# #  Create a frontend UI
+## Create a frontend UI
 
 Finally, It's the last stage. We've created the product and prepared the application to run it. Now, we need an interface for users. It's the bridge between our product and the users.
 For the signature detection project, the frontend should allow users
@@ -91,7 +91,7 @@ I'm not saying that the backend is simple. The challenge of the backend is the h
 
 So, my suggestion is to pay more attention to **the Frontend and the package** than the backend when we run an innovation project.
 
-# #  Conclusion
+## Conclusion
 
 We've talked about running an innovation project. **The ideas and the presentation** are the core. 
 

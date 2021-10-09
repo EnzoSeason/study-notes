@@ -18,7 +18,7 @@ class LRUCache:
         self.capacity = capacity
         self.size = 0
         self.cache = dict()
-        self.head, self.tail = DLinkedNode(), DLinkedNode()  #   dummy node
+        self.head, self.tail = DLinkedNode(), DLinkedNode()  #  dummy node
 
         self.head.next, self.tail.prev = self.tail, self.head
 

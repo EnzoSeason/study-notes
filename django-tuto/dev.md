@@ -1,6 +1,6 @@
-#  Development
+# Development
 
-# #  generate a back office of an existed database
+## generate a back office of an existed database
 
 It's common that we have a running back-end, and we need create new back office on it.
 
@@ -11,7 +11,7 @@ Django can easily generate a back office, which is connected to the existed data
 2. set database config
 
    ```python
-   #  settings/base.py
+   # settings/base.py
    DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -23,12 +23,12 @@ Django can easily generate a back office, which is connected to the existed data
        }
    }
 
-   #  use DatabaseRouter to config which database to use
+   # use DatabaseRouter to config which database to use
    DATABASE_ROUTERS = ['settings.router.DatabaseRouter']
    ```
 
    ```python
-   #  settings/router.py
+   # settings/router.py
 
    class DatabaseRouter:
     route_app_labels = {'running'}
@@ -59,7 +59,7 @@ Django can easily generate a back office, which is connected to the existed data
 
    [Integrating Django with a legacy database](https://docs.djangoproject.com/en/3.1/howto/legacy-databases/)
 
-# #  Middleware
+## Middleware
 
 What is Middleware ? 
 
@@ -71,16 +71,16 @@ There are 2 ways to create middleware:
 
    ```python
    def simple_middleware(get_response):
-       #  one-time config and init
+       # one-time config and init
        
        def middleware(request):
-           #  codes exec for each request
-           #  before the view is called
+           # codes exec for each request
+           # before the view is called
            
            response = get_response(request)
            
-           #  codes exec for each request
-           #  before the view is called
+           # codes exec for each request
+           # before the view is called
            return response
        
        return middleware
@@ -91,17 +91,17 @@ There are 2 ways to create middleware:
    ```python
    class SimpleMiddleware:
        def __init__(self, get_response):
-           #  one-time config and init
+           # one-time config and init
            self.get_response = get_response
    
        def __ceil__(self, request):
-           #  codes exec for each request
-           #  before the view is called
+           # codes exec for each request
+           # before the view is called
    
            response = self.get_response(request)
    
-           #  codes exec for each request
-           #  before the view is called
+           # codes exec for each request
+           # before the view is called
            return response
    ```
 
@@ -113,7 +113,7 @@ The process of make a custom middleware:
 
    `MIDDLEWARE` in `setting.py` est executed from top to bottom.
 
-# #  i18n
+## i18n
 
 Django can set i18n easily.
 
@@ -142,33 +142,33 @@ Django can set i18n easily.
 
     - add `LOCALE_PATHS`
 
-# #  Security
-# # #  XSS Attack
+## Security
+### XSS Attack
 
 Hacker saves js script into database using form. When the site **renders the data**, js script is executed.
 
 To avoid this, use `render` method created by Django
 
-# # #  CSRF Attack
+### CSRF Attack
 
 Hacker creates another website and try to let superuser click on it. So that, he can get the auth of superuser.
 
 To avoid that, add `CsrfViewMiddleware` of Django. It will create and check **csrf token** of each request.
 
-# # #  SQL Injection Attack
+### SQL Injection Attack
 
 Hacker adds extra SQL in the query of database.
 
 To avoid that, DO NOT use raw SQL, such as `SELECT * FROM my_table WHERE name = %s' % name`
 
-# #  Media: upload files
+## Media: upload files
 
-# # #  upload to server
+### upload to server
 
 1. cofig media path
 
     ```python
-    #  settings/base.py
+    # settings/base.py
 
     MEDIA_ROOT =  os.path.join(BASE_DIR, 'media') 
     MEDIA_URL = '/media/'
@@ -177,7 +177,7 @@ To avoid that, DO NOT use raw SQL, such as `SELECT * FROM my_table WHERE name = 
 2. add url
 
     ```python
-    #  recruitment/urls.py
+    # recruitment/urls.py
 
     from django.conf import settings
     from django.conf.urls.static import static
@@ -189,15 +189,15 @@ To avoid that, DO NOT use raw SQL, such as `SELECT * FROM my_table WHERE name = 
 3. add FileField in model
 
     ```python
-    #  models.py
+    # models.py
 
-    #  picture will be saved at /media/images
+    # picture will be saved at /media/images
     picture = models.ImageField(
         upload_to='images/', 
         blank=True, 
         verbose_name=_('picture')) 
     
-    #  attachment will be saved at /media/file
+    # attachment will be saved at /media/file
     attachment = models.FileField(
         upload_to='file/', 
         blank=True, 
@@ -208,9 +208,9 @@ To avoid that, DO NOT use raw SQL, such as `SELECT * FROM my_table WHERE name = 
 
 4. add `picture` and `attachment` into `class ResumeAdmin` in `admin.py`
 
-# # #  upload to cloud (recommanded)
+### upload to cloud (recommanded)
 
-# #  Signal
+## Signal
 
 Django includes a “signal dispatcher” which helps allow **decoupled applications** get notified when actions occur elsewhere in the framework.
 

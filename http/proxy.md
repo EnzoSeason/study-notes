@@ -1,4 +1,4 @@
-#  Proxy
+# Proxy
 
 A proxy forwards requests and responses.
 
@@ -14,7 +14,7 @@ A proxy is used for:
 
 - cache
 
-# #  Attributes
+## Attributes
 
 - Via: the **host name** or **domain name** of all proxy machines.
 
@@ -26,7 +26,7 @@ A proxy is used for:
 
 - X-Real-IP: the IP address of the **client**.
 
-# #  The PROXY protocol
+## The PROXY protocol
 
 PROXY + ip address type + request ip address + response ip address + request port + response port + \r\n
 
@@ -37,7 +37,7 @@ PROXY TCP4 1.1.1.1 2.2.2.2 55555 80\r\n
 The client is `1.1.1.1:55555`.
 
 
-# #  HTTP cache with Proxy
+## HTTP cache with Proxy
 
 Server-side
 

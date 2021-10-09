@@ -1,4 +1,4 @@
-#  BM (Boyer-Moore)
+# BM (Boyer-Moore)
 
 [Previously](./string-match-1.md), we've talked about BF & RF. Both of them have poor performance while find `aab` in `aaaaaaaaab`.
 
@@ -9,7 +9,7 @@ To solve this problem, BM proposes 2 rules to follow.
 - Bad Character Rule
 - Good Suffix Rule
 
-# #  Bad Character Rule
+## Bad Character Rule
 
 For exemple, we need to find `abd` in `abcababd`. The first **bad character** we meet is `c` in the main string.
 
@@ -49,7 +49,7 @@ else:
 
 If we apply Bad Character Rule to find `aab` in `aaaaab`, we move **3 character** instead of **one**. It's a huge improvement.
 
-# #  Good Suffix Rule
+## Good Suffix Rule
 
 In the previous exemple, the bad character is the **last** character in the pattern. Let's a different case.
 
@@ -101,7 +101,7 @@ In general, there are 3 case:
 
    move the entire pattern back.
 
-# #  Bad Character Rule + Good Suffix Rule
+## Bad Character Rule + Good Suffix Rule
 
 BM combinds both of them.
 

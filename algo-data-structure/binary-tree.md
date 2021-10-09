@@ -1,6 +1,6 @@
-#  Binary Tree
+# Binary Tree
 
-# #  Tree
+## Tree
 
 - nodes:
 
@@ -20,7 +20,7 @@
 
 - Level of the node: **Depth** of the node + 1
 
-# #  Binary Tree
+## Binary Tree
 
 In binary tree, a node has, at most, 2 children.
 
@@ -34,13 +34,13 @@ In binary tree, a node has, at most, 2 children.
 
   2. The leaf nodes are positioned as **left** as possible.
 
-# # #  Advantage of complete binary tree.
+### Advantage of complete binary tree.
 
 If we save a tree in the **array** and we suppose that the node _i_ is saved in `arr[i]`, then its **left node** is saved in `arr[2*i]` and its **right** node is saved in `arr[2*i+1]`.
 
 If the binary tree is complete, then the array, except the `arr[0]`, is **full**. Otherwise, there must have an index `i, i>0` that `arr[i] is None`.
 
-# #  Traversing a binary tree
+## Traversing a binary tree
 
 There are **4 orders** to traverse a binary tree.
 
@@ -98,13 +98,13 @@ There are **4 orders** to traverse a binary tree.
 
 The time complexity of all of them is `O(n)`.
 
-# #  Binary Search Tree
+## Binary Search Tree
 
 It's a special binary tree, built for searching.
 
 For any node in the binary tree, all the nodes in its left child tree are smaller than it, those in its right child tree are greater than it.
 
-# # #  Find a node
+### Find a node
 
 ```python
 def find(self, val: int) -> Optional[LinkedNode]:
@@ -115,7 +115,7 @@ def find(self, val: int) -> Optional[LinkedNode]:
     return node
 ```
 
-# # #  Insert a node
+### Insert a node
 
 ```python
 def insert(self, val: int) -> None:
@@ -134,7 +134,7 @@ def insert(self, val: int) -> None:
         parent.right = LinkedNode(val)
 ```
 
-# # #  Delete a node
+### Delete a node
 
 ```python
 def delete(val: int) -> Optional[LinkedNode]:
@@ -147,23 +147,23 @@ def delete(val: int) -> Optional[LinkedNode]:
 
     if node is None: return
 
-    #  case 1: The node has 2 children
-    #  replace the node with the right min node
+    # case 1: The node has 2 children
+    # replace the node with the right min node
     if node.left is not None and node.right is not None:
         right_parent = node
         right_min_node = node.right
         while right_min_node.left is not None:
             right_parent = right_min_node
             right_min_node = right_min_node.left
-        #  replace the node with the right min node
+        # replace the node with the right min node
         node.val, right_min_node.val = right_min_node.val, node.val
-        #  prepare for deleting right min node
+        # prepare for deleting right min node
         parent, node = right_parent, right_min_node
 
-    #  case 2: The node has one child or no child
+    # case 2: The node has one child or no child
     child = node.left if node.left is not None else node.right
     
-    #  remove node
+    # remove node
     if parent is None:
         self.root = child
         return node
@@ -175,7 +175,7 @@ def delete(val: int) -> Optional[LinkedNode]:
         return node
 ```
 
-# # #  Features
+### Features
 
 - Its `InOrder` traverse returns a **orderd** list.
 
@@ -185,7 +185,7 @@ def delete(val: int) -> Optional[LinkedNode]:
 
   - The worst case is all the node have only left / right child. It becomes a **linked list**. The time complexity is `O(n)`.
 
-# # #  Binary Search Tree vs Hash Table
+### Binary Search Tree vs Hash Table
 
 - Order:
 

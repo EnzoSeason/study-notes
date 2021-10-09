@@ -1,14 +1,14 @@
-#  Sort
+# Sort
 
 There are a lot of sort algorithms. We classify them by time complexity.
 
-- [`O(n^2)`](# # O(n^2))
+- [`O(n^2)`](##O(n^2))
 
-- [`O(nlogn)`](# # O(nlogn))
+- [`O(nlogn)`](##O(nlogn))
 
-- [`O(n)`](# # O(n))
+- [`O(n)`](##O(n))
 
-# #  How to analyze a sort algorithm
+## How to analyze a sort algorithm
 
 There are 3 apects.
 
@@ -31,13 +31,13 @@ There are 3 apects.
 
   It depends on the implement. Change the list ONLY we need to.
 
-# #  O(n^2)
+## O(n^2)
 
-- [Bubble Sort](# # # Bubble_Sort)
-- [Insert Sort](# # # Insert_Sort)
-- [Selection Sort](# # # Selection_Sort)
+- [Bubble Sort](###Bubble_Sort)
+- [Insert Sort](###Insert_Sort)
+- [Selection Sort](###Selection_Sort)
 
-# # #  Bubble_Sort
+### Bubble_Sort
 
 Bubble sort only operate on **two adjacent data**. If these 2 data **meet the switch condition**, we switch them.
 
@@ -52,7 +52,7 @@ def bubble_sort(a: list) -> list:
     is_switched = False
     
     for j in range(n-i-1):
-      if l[j] > l[j+1]: #  switch condition
+      if l[j] > l[j+1]: # switch condition
         l[j], l[j+1] = l[j+1], l[j]
         is_switched = True
     
@@ -96,7 +96,7 @@ So the average switch times is `( 0 + n*(n-1)/2 ) / 2`. The average time complex
 Here, we introduce a definition, *ordered pairs*.
 
 ```
-#  i < j is a sufficient not necessary condition
+# i < j is a sufficient not necessary condition
 
 a[i] <= a[j], if i < j
 ```
@@ -104,12 +104,12 @@ a[i] <= a[j], if i < j
 *Reversed pairs* are the opposite of *ordered pairs*.
 
 ```
-#  i <= j is a sufficient not necessary condition
+# i <= j is a sufficient not necessary condition
 
 a[i] > a[j], if i < j
 ```
 
-# # #  Insert_Sort
+### Insert_Sort
 
 The main idea is to insert a item into a **sorted list**.
 
@@ -125,14 +125,14 @@ def insert_sort(a: list) -> list:
   for i in range(1, n):
     val = l[i]
     j = i - 1
-    #  move sorted list
+    # move sorted list
     while j >= 0:
-      if l[j] > val: #  switch condition
+      if l[j] > val: # switch condition
         l[j+1] = l[j]
         j -= 1
       else:
         break
-    #  insert
+    # insert
     l[j+1] = val
   return l
 ```
@@ -153,7 +153,7 @@ def insert_sort(a: list) -> list:
 
 The times of the switch is **the number of the reversed pairs**.
 
-# # #  Selection_Sort
+### Selection_Sort
 
 It also splits the list into **sorted** and **unsorted** parts. However, it selects the **minimal value** in the unsorted part and puts it at the **end** of the sorted part.
 
@@ -166,7 +166,7 @@ def selection_sort(a: list) -> list:
 
   for i in range(n):
     for j in range(i, n):
-      if l[i] > l[j]: #  switch condition
+      if l[i] > l[j]: # switch condition
         l[i], l[j] = l[j], l[i]
   return l 
 ```
@@ -187,16 +187,16 @@ def selection_sort(a: list) -> list:
   - Worse: `O(n^2)`
   - Average: `O(n^2)`
 
-# #  O(nlogn)
+## O(nlogn)
 
 The main idea of `O(nlogn)` sort is **spliting a big array into small arrays**, then solving the small arrays.
 
-- [Merge Sort](# # # Merge_sort)
+- [Merge Sort](###Merge_sort)
 
-- [Quick Sort](# # # Quick_sort)
+- [Quick Sort](###Quick_sort)
 
 
-# # #  Merge_sort
+### Merge_sort
 
 The idea is simple.
 
@@ -212,7 +212,7 @@ def _merge_sort_worker(arr: List[int], start: int, end: int) -> None:
     merge sort the arr[start:end] recursively
     '''
     
-    #  end-1 is the index of the last item is the array
+    # end-1 is the index of the last item is the array
     if start >= end - 1: 
         return
     
@@ -276,12 +276,12 @@ def merge_sort(arr: List[int]) -> List[int]:
   - worst: `O(nlogn)`
   - average: `O(nlogn)`
 
-# # # #  How we get the `O(nlogn)` time complexity
+#### How we get the `O(nlogn)` time complexity
 
 In `merge sort`, we split an array into 2. So, if the time of sorting an array having `n` items is `T(n)`, then: 
 
 ```
-#  C is a constant.
+# C is a constant.
 
 T(1) = C
 
@@ -301,7 +301,7 @@ T(n) = C*n + n*logn
 
 Since `nlogn` is much larger than `n` when `n` approaches infinity. So, we get `O(n) = nlogn`.
 
-# # #  Quick_sort
+### Quick_sort
 
 The idea is:
 
@@ -372,27 +372,27 @@ def _partition(arr: List[int], start: int, end: int) -> int:
 
   That's why we choose a **random** item as a **pivot**.
 
-# #  O(n)
+## O(n)
 
 The sort whose time complexity is `O(n)` are called **linear sort**.
 
 There are 3 common linear sorts.
 
-- [bucket sort](# # # bucket_sort)
-- [counting sort](# # # counting_sort)
-- [radix sort](# # # radix_sort)
+- [bucket sort](###bucket_sort)
+- [counting sort](###counting_sort)
+- [radix sort](###radix_sort)
 
 These 3 sorts are NOT based on the **comparaison**. That's the main reason that their time complexities are `O(n)`. 
 
 However, these sorts have strict demande on **data format**.
 
-# # #  bucket_sort
+### bucket_sort
 
 We split the data into serveral **ordered bucket**. Then we do `O(nlogn)` sort, like quick sort, in each bucket.
 
 The most tricky part in this sort is how to **create the buckets** that make **data split evenly in each bucket**.
 
-# # # #  Time complexity
+#### Time complexity
 
 If we have n items and `m` buckets, then in each bucket, we have `k = n/m` items. 
 
@@ -410,20 +410,20 @@ m * O(n/m * log(n/m)) = O(n * log(n/m))
 
 When `m` approaches `n`, the time complexity approach to `O(n)`.
 
-# # # #  Limits
+#### Limits
 
 - Buckets are ordered
 - Data is even in each bucket.
 
   If the data isn't even, some buckets have a lot of data, some have little. The time complexity will become `O(nlogn)`.
 
-# # # #  usage
+#### usage
 
 A use case is sorting the **huge external data**. 
 
 We can't put all the data into the memory at once. So, we traverse all the data, find **the distribution of the data** and create the buckets. Then we sort bucket by bucket.
 
-# # #  counting_sort
+### counting_sort
 
 The main idea of counting sort is to **count how many numbers** is smaller / bigger than **current** number.
 
@@ -466,13 +466,13 @@ The second part is more tricky.
     ```python
     idx_c = org_arr[i]
     
-    #  C[idx_c] means the numbers of items whose value <= idx_c .
-    #  So we need to -1 to transform it into index of sorted array.
+    # C[idx_c] means the numbers of items whose value <= idx_c .
+    # So we need to -1 to transform it into index of sorted array.
     idx_sorted_arr = C[idx_c] - 1 
     
     sorted_arr[idx_sorted_arr] = org_arr[i]
     
-    #  The numbers of items whose value <= idx_c reduces 1.
+    # The numbers of items whose value <= idx_c reduces 1.
     C[idx_c] -= 1
     ```
 
@@ -485,10 +485,10 @@ def _accumulate_bincount(nums: List[int]) -> List[int]:
     len_acc_bincounts = max(nums) + 1
     acc_bincounts = [0 for _ in range(len_acc_bincounts)]
 
-    #  bincount
+    # bincount
     for num in nums:
         acc_bincounts[num] += 1
-    #  accumulate
+    # accumulate
     for i in range(1, len_acc_bincounts):
         acc_bincounts[i] += acc_bincounts[i-1]
     
@@ -515,7 +515,7 @@ def counting_sort(nums: List[int]) -> List[int]:
     return sorted_nums
 ```
 
-# # #  radix_sort
+### radix_sort
 
 Radix sort must apply the rule, high position takes priority over low position.
 
@@ -524,7 +524,7 @@ For example, `20` > `18`. Although `8 > 0`, `2 > 1` so that `20 > 18`.
 Radix sort sorts the radix **from low to high** using `O(n)` sort, such as bucket sort or counting sort.
 
 
-# #  Conclusion
+## Conclusion
 
 In this article, we've talked about 3 types of sort, `O(n^2)`, `O(nlogn)`, `O(n)`. `O(n^2)` costs too much time, while `O(n)` sets too much limits on data. Usually, we use `O(nlogn)` in the industry.
 

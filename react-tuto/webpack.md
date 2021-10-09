@@ -1,6 +1,6 @@
-#  webpack
+# webpack
 
-# #  basic
+## basic
 
 webpack run on **Node.js**. There are 4 important concepts:  
 
@@ -14,7 +14,7 @@ webpack run on **Node.js**. There are 4 important concepts:
 
 4. output
 
-# #  React project
+## React project
 
 We need to install a lot of package to init a React project. Here is an example:
 
@@ -26,7 +26,7 @@ To config webpack, we use `webpack.config.js`. It is used on node.js:
 [webpack.config.js](./code/webpack.config.js)
 
 
-# #  babel
+## babel
 
 It handles js file.
 
@@ -36,18 +36,18 @@ It handles js file.
 
 [example](./code/.babelrc)
 
-# #  css file
+## css file
 
 There are 2 loaders which deal with css files
 
 * `css-loader`: parse css files
 * `style-loader`: inject css into html
 
-# #  assets
+## assets
 
 need `url-loader` and `file-loader`
 
-# #  Production
+## Production
 
 * create a file, `webpack.config.prod.js`
 

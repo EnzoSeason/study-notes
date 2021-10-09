@@ -1,6 +1,6 @@
-#  Layers
+# Layers
 
-# #  TCP/IP Layers
+## TCP/IP Layers
 
 From **bottom** to **top**, they are:
 
@@ -28,7 +28,7 @@ From **bottom** to **top**, they are:
 
    The unit of data in this layer is **message**.
 
-# #  OSI (Open System Interconnection Reference Model)
+## OSI (Open System Interconnection Reference Model)
 
 There are 7 layers.
 

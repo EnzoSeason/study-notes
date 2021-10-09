@@ -17,11 +17,11 @@ class SolutionDP:
 
         for i in range(1, n):
             for j in range(1, 3):
-                #  not sell, sell
+                # not sell, sell
                 dp[i][j][0] = max(dp[i - 1][j][0], dp[i - 1][j][1] + prices[i])
-                #  not buy, buy
-                #  In case buy, the max profit 
-                #    = the max profit of previous day and previous transaction - the current price.
+                # not buy, buy
+                # In case buy, the max profit 
+                #   = the max profit of previous day and previous transaction - the current price.
                 dp[i][j][1] = max(dp[i - 1][j][1], dp[i - 1][j - 1][0] - prices[i])
 
         return dp[-1][-1][0]

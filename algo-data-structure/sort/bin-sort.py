@@ -6,7 +6,7 @@ def bin_sort(nums: List[int]) -> List[int]:
     if len(nums) <= 1:
         return nums
 
-    #   init bins
+    #  init bins
     N = 5
     bins = [[] for _ in range(N)]
     max_num = max(nums)
