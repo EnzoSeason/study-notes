@@ -1,6 +1,6 @@
-# Advance
+#  Advance
 
-## generator
+# #  generator
 
 Generator doesn't use RAM to save data util the program runs. It saves the storage of RAM.
 
@@ -20,10 +20,10 @@ There are two ways to create a generator:
         yield 3
         yield 5
     
-    next(odd) # 1
-    next(odd) # 3
-    next(odd) # 5
-    next(odd) # error StopIteration
+    next(odd) #  1
+    next(odd) #  3
+    next(odd) #  5
+    next(odd) #  error StopIteration
     ```
 
     Sometimes, to avoid having `StopIteration` error, we put `yield` in an infinit loop `while True`.
@@ -34,12 +34,12 @@ To use a generator, we use `next()`:
 ```python
 g = (x for x in range(10))
 
-next(g) # 0
-next(g) # 1
-next(g) # 2
+next(g) #  0
+next(g) #  1
+next(g) #  2
 ```
 
-## Iterable vs Iterator
+# #  Iterable vs Iterator
 
 - Iterable: the data structure that can be used in `for` loop
 
@@ -53,12 +53,12 @@ To transform `Iterable` to `Iterator`, we use `iter()`
 
 ```python
 from collections.abc import Iterable, Iterator
-isinstance([], Iterable) # True
-isinstance([], Iterator) # False
-isinstance(iter([]), Iterator) # True
+isinstance([], Iterable) #  True
+isinstance([], Iterator) #  False
+isinstance(iter([]), Iterator) #  True
 ```
 
-## '==' vs 'is'
+# #  '==' vs 'is'
 
 - '==': compare if the **value** is the same
 
@@ -67,21 +67,21 @@ isinstance(iter([]), Iterator) # True
     ```python
     a = 10
     b = 10
-    a == b # True
+    a == b #  True
     
-    id(a) # 4427562448
-    id(b) # 4427562448
-    a is b # True
+    id(a) #  4427562448
+    id(b) #  4427562448
+    a is b #  True
     ```
     Python save the int, from -5 to 256, in a list.
     ```python
     a = 257
     b = 257
-    a == b # True
+    a == b #  True
     
-    id(a) # 4473417552
-    id(b) # 4473417584
-    a is b # True
+    id(a) #  4473417552
+    id(b) #  4473417584
+    a is b #  True
     ```
 A common usage of `is` is compare if the variable is `None`:
 
@@ -91,7 +91,7 @@ if a is None:
     pass
 ```
 
-## Shallow copy vs Deep copy
+# #  Shallow copy vs Deep copy
 
 - Shallow copy: create a new RAM for the new variable, the elements in the new variable is the **reference** of these in the orignal variable.
 
@@ -102,12 +102,12 @@ l1 = [[1, 2], 'a']
 l2 = l1[:]
 
 l1.append('b')
-l1 # [[1, 2], 'a', 'b']
-l2 # [[1, 2], 'a']
+l1 #  [[1, 2], 'a', 'b']
+l2 #  [[1, 2], 'a']
 
 l1[0].append(3)
-l1 # [[1, 2, 3], 'a', 'b']
-l2 # [[1, 2, 3], 'a', 'b']
+l1 #  [[1, 2, 3], 'a', 'b']
+l2 #  [[1, 2, 3], 'a', 'b']
 ```
 
 - Deep copy: the variable variable has **NO relationship** with the orignal one.
@@ -116,7 +116,7 @@ l2 # [[1, 2, 3], 'a', 'b']
 
 use `deepcopy()` of `copy` package to de deep copy.
 
-## Assignment
+# #  Assignment
 
 Example 1:
 
@@ -141,8 +141,8 @@ l1 = [1, 2, 3]
 l2 = l1
 l1.append(4)
 
-l1 # [1, 2, 3, 4]
-l2 # [1, 2, 3, 4]
+l1 #  [1, 2, 3, 4]
+l2 #  [1, 2, 3, 4]
 ```
 
 `l1` and `l2` point at the same RAM so that the change of `l1` happens on `l2`, too.
@@ -152,7 +152,7 @@ It's important to understand the difference between:
 - create a new RAM
 - edit on current RAM
 
-### function args
+# # #  function args
 
 In Python, there isn't function args by value or by reference. It always **create an new reference**.
 
@@ -162,7 +162,7 @@ def my_func1(b):
 
 a = 1
 my_func1(a)
-a # 1
+a #  1
 ```
 As *Example 1*, `b`, first, points at the RAM of `1`, same as `a`. Then it points at the new RAM of `1`. So that, `a == 1` 
 
@@ -172,7 +172,7 @@ def my_func2(l2):
 
 l1 = [1, 2, 3]
 my_func2(l1)
-l1 # [1, 2, 3, 4]
+l1 #  [1, 2, 3, 4]
 ```
 
 As *Example 2*, `l1` and `l2` always point at the same RAM.
@@ -191,10 +191,10 @@ def my_func2_plus(l2):
 
 l1 = [1, 2, 3]
 l1 = my_func2_plus(l1)
-l1 # [1, 2, 3, 4]
+l1 #  [1, 2, 3, 4]
 ```
 
-## Decorator
+# #  Decorator
 
 Decorator is a **closure**, a function return a function object.
 
@@ -212,9 +212,9 @@ def greet():
 greet = my_decorator(greet)
 greet()
 
-### output ###
-# wrapper of decorator
-# Hi
+# # #  output # # # 
+#  wrapper of decorator
+#  Hi
 ```
 
 Decorators is to modify the behavior of the function through a wrapper so we don’t have to actually modify the function.
@@ -226,9 +226,9 @@ def greet():
 
 greet()
 
-### output ###
-# wrapper of decorator
-# Hi
+# # #  output # # # 
+#  wrapper of decorator
+#  Hi
 ```
 
 Usually, we use `*args` and `**kw` pass params in decorator
@@ -264,7 +264,7 @@ def greet(message):
 greet('hello world')
 ```
 
-### class decorator
+# # #  class decorator
 
 We can use class to create a decortaor, too.
 
@@ -286,12 +286,12 @@ def example():
 
 example()
 
-### output ###
-# wrapper of decorator
-# Hi
+# # #  output # # # 
+#  wrapper of decorator
+#  Hi
 ```
 
-### multi decorator
+# # #  multi decorator
 
 Python allows to use multiple decorator.
 
@@ -310,7 +310,7 @@ decorator1(decorator2(decorator3(func)))
 ```
 
 Decorators are executed **from top to bottom**.
-### example
+# # #  example
 
 Usually, decorators are used in **validation**, **authentication**, **log**, etc.
 

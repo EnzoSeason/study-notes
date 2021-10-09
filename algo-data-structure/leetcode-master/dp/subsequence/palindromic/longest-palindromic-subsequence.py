@@ -9,8 +9,8 @@ class Solution:
         n = len(s)
         dp = [[1 if i == j else 0 for i in range(n)] for j in range(n)]
 
-        # make sure dp[i + 1][j - 1] is calculated
-        # before processing dp[i][j]
+        #  make sure dp[i + 1][j - 1] is calculated
+        #  before processing dp[i][j]
         for i in range(n - 1, -1, -1):
             for j in range(i + 1, n):
                 if s[i] == s[j]:

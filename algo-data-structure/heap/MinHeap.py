@@ -3,7 +3,7 @@ from typing import List, Optional
 class MinHeap:
     def __init__(self, n: int) -> None:
         """
-        ## Arributes
+        # #  Arributes
         - n: the capacity of the MinHeap
         - arr: the array that contains heap's data
         - count: current volume of the heap

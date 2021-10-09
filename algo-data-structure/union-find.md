@@ -1,4 +1,4 @@
-# Union & Find
+#  Union & Find
 
 Unon & Find is a **tree** data structure, which deals with **finding an elements** in the sets and **unioning the disjoint sets**.
 
@@ -6,7 +6,7 @@ Unon & Find is a **tree** data structure, which deals with **finding an elements
 - Find: find the sub-set of an element.
   > It can be used to verify whether 2 elements are in the same set.
 
-## Node
+# #  Node
 
 The node in Unon & Find has an attribute, **parent**.
 
@@ -16,7 +16,7 @@ Unon & Find is create by the **array**.
 parent_node = self.parent[curr_node]
 ```
 
-## Initialization
+# #  Initialization
 
 Unon & Find is initialized by an array, `parent`.
 
@@ -28,7 +28,7 @@ class UnionFind:
         self.parent = [i for i in range(n)]
 ```
 
-## Find the root
+# #  Find the root
 
 ```python
 def findRoot(self, i: int) -> int:
@@ -38,7 +38,7 @@ def findRoot(self, i: int) -> int:
     return root
 ```
 
-## Compress the path
+# #  Compress the path
 
 To improve the performance, reduce the depth of the tree, we compress the path while finding the root.
 
@@ -49,14 +49,14 @@ def findRoot(self, i: int) -> int:
     root = i
     while root != self.parent[root]:
         root = self.parent[root]
-    # compress the path
-    # point sub-nodes to the root directly
+    #  compress the path
+    #  point sub-nodes to the root directly
     while i != root:
         self.parent[i], i = root, self.parent[i]
     return root
 ```
 
-## union
+# #  union
 
 Union 2 sets.
 
@@ -64,7 +64,7 @@ Union 2 sets.
 def union(self, p: int, q: int) -> None:
     p_root = self.findRoot(p)
     q_root = self.findRoot(q)
-    # p_root.parent = q_root
+    #  p_root.parent = q_root
     self.parent[p_root] = q_root
 ```
 
@@ -84,16 +84,16 @@ def union(self, p: int, q: int) -> None:
 
     if p_root != q_root:
         if self.ranks[p_root] > self.ranks[q_root]:
-            # q_root.parent = p_root
+            #  q_root.parent = p_root
             self.parent[q_root] = p_root
         elif  self.ranks[p_root] < self.ranks[q_root]:
-            # p_root.parent = q_root
+            #  p_root.parent = q_root
             self.parent[p_root] = q_root
         else:
-            # p_root.parent = q_root
+            #  p_root.parent = q_root
             self.parent[p_root] = q_root
             self.ranks[p_root] += 1
 
 ```
 
-## [Full implementation](https://github.com/EnzoSeason/study-notes/blob/main/algo-data-structure/union&find/UnionFind.py)
+# #  [Full implementation](https://github.com/EnzoSeason/study-notes/blob/main/algo-data-structure/union&find/UnionFind.py)

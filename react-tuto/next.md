@@ -1,14 +1,14 @@
-# Next JS
+#  Next JS
 
 [docs](https://nextjs.org/docs)
 
-## Pages
+# #  Pages
 
 Pages create routes automatically.
 
 For example, to create `/about`, create `about.js` in `pagees`. [about.js](../next-app/pages/about.js)
 
-### link & router
+# # #  link & router
 
 ```javascript
 import Link from 'next/link'
@@ -31,6 +31,6 @@ const router = useRouter()
 ```
 
 
-## getInitialProps
+# #  getInitialProps
 
 A special lifehook in Next. It's a **static, async** function which initializes the props before the page is loaded.

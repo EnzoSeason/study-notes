@@ -9,7 +9,7 @@ You should not remove it, and you can define some classes to implement it.
 
 class Node(ABC):
     @abstractmethod
-    # define your fields here
+    #  define your fields here
     def evaluate(self) -> int:
         pass
 

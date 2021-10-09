@@ -1,23 +1,23 @@
-# Basic
+#  Basic
 
-## Concepts
+# #  Concepts
 
 ![road-map](./img/road-map.png)
 
-### CDN (Content Delivery Network)
+# # #  CDN (Content Delivery Network)
 
 It applies the **caching** and **proxy** technology in the HTTP protocol.
 
 It replaces the origin site to respond to the client's request.
 
-### WAF (Web application firewall)
+# # #  WAF (Web application firewall)
 
-## HTTP
+# #  HTTP
 
 ![http](./img/http.png)
 
 
-### TCP/IP
+# # #  TCP/IP
 
 TCP (Transmission Control Protocol), it makes sure the data is **complete** and **not missing**.
 
@@ -25,11 +25,11 @@ IP (Internet Protocol), it takes care of **addressing and routing**.
 
 HTTP doesn't deal with the details, such as addressing, routing, data integrity, etc. **HTTP is create on the TCP/IP**.
 
-### DNS (Domain Name System)
+# # #  DNS (Domain Name System)
 
 It maps **domain Name** to **IP address**.
 
-### URI/URL
+# # #  URI/URL
 
 URI（Uniform Resource Identifier) is the **superset** of URL (Uniform Resource Locator).
 
@@ -47,13 +47,13 @@ URI has 3 parts: (`http://nginx.org/en/download.html`)
 
     `/en/download.html`
 
-### HTTPS
+# # #  HTTPS
 
 It's **HTTP over SSL/TLS**.
 
 SSL (Secure Socket Layer) /TLS (Transport Layer Security) is a protocal over **TCP/IP**. It's a **secure protocol for encrypted communication**.
 
-### Proxy
+# # #  Proxy
 
 It's a "hub". It forwards the **client's request**, and also forwards the **server's response**.
 

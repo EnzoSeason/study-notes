@@ -1,10 +1,10 @@
-# Parent-Child Components
+#  Parent-Child Components
 
 Connection betweent Parent Component and Child Component
 
-## Data binding
+# #  Data binding
 
-### Pass data from *Parent* component to *Child* component
+# # #  Pass data from *Parent* component to *Child* component
 
 * In parent component:
 
@@ -29,7 +29,7 @@ Connection betweent Parent Component and Child Component
     }
     ```
 
-### Pass data from *Child* component to *Parent* component
+# # #  Pass data from *Child* component to *Parent* component
 
 * In parent component
 
@@ -59,14 +59,14 @@ Connection betweent Parent Component and Child Component
         }
     }
 
-## Local Reference
+# #  Local Reference
 
 get the **DOM Element**.
 
 * use function
 
     ```html
-    <input #input />
+    <input # input />
     <button (click)="getInput(input)"></button>
     ```
 
@@ -77,7 +77,7 @@ get the **DOM Element**.
 * use @ViewChild
 
     ```html
-    <input #input></input>
+    <input # input></input>
     ```
 
     ```typescript
@@ -90,7 +90,7 @@ get the **DOM Element**.
 
     > If `{static: false}` (by default), it's available after `ngAfterInit`
 
-## Html binding
+# #  Html binding
 
 pass html from Parent to Child
 
@@ -107,7 +107,7 @@ pass html from Parent to Child
     ```html
     <!-- somthing else -->
     <div>
-        <ng-content #content></ng-content>
+        <ng-content # content></ng-content>
     </div>
     <!-- somthing else-->
     ```
@@ -122,7 +122,7 @@ import { ContentChild, ElementRef } from "@angular/core";
 @ContentChild("input") inputRef: ElementRef;
 ```
 
-## View Encapsulation
+# #  View Encapsulation
 
 ```typescript
 @Component({
@@ -137,7 +137,7 @@ import { ContentChild, ElementRef } from "@angular/core";
 
 * None: Component's CSS rules is applied globally.
 
-## Cross components Data passing
+# #  Cross components Data passing
 
 If the data needed to be sent to other components without parent-child relation, use `Subject`.
 

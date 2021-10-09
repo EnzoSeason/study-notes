@@ -1,6 +1,6 @@
-# Styling
+#  Styling
 
-## assert
+# #  assert
 
 We use `assert` to make codes robust.
 
@@ -8,7 +8,7 @@ We use `assert` to make codes robust.
 assert condition, 'message'
 ```
 
-### usage
+# # #  usage
 
 - assert **value** of a variable
 

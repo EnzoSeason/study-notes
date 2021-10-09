@@ -1,6 +1,6 @@
-# Basic
+#  Basic
 
-## To create an HTML element
+# #  To create an HTML element
 
 `React.createElement(el, props, ...children)`
 
@@ -26,7 +26,7 @@ is equal to
 </div>
 ```
 
-## To create a component
+# #  To create a component
 
 * use `function`:
 
@@ -55,7 +55,7 @@ import Person from './Person/Person';
 <Person />
 ```
 
-### props
+# # #  props
 
 1. To pass props to children, use `props.[propName]`
 
@@ -155,7 +155,7 @@ import Person from './Person/Person';
     }
     ```
 
-### state
+# # #  state
 
 React components can have state by setting `this.state` in their constructors.
 
@@ -203,7 +203,7 @@ this.setState((prevState, props) => {
     }
 })
 ```
-## Styling
+# #  Styling
 
 1. css file
 

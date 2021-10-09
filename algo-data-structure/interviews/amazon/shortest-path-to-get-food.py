@@ -18,7 +18,7 @@ class Solution:
 
         while queue:
             count, cell = heapq.heappop(queue)
-            if grid[cell[0]][cell[1]] == "#":
+            if grid[cell[0]][cell[1]] == "# ":
                 return count
             if grid[cell[0]][cell[1]] == "X":
                 continue

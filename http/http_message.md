@@ -1,4 +1,4 @@
-# HTTP message
+#  HTTP message
 
 HTTP message is composed by:
 
@@ -10,9 +10,9 @@ HTTP message is composed by:
 
 4. body
 
-## Start line
+# #  Start line
 
-### Request line
+# # #  Request line
 
 It is composed by:
 
@@ -22,7 +22,7 @@ It is composed by:
 GET / HTTP/1.1
 ```
 
-### Response line
+# # #  Response line
 
 `Version` `code` `reason`
 
@@ -36,7 +36,7 @@ or
 HTTP/1.1 404 Not Found
 ```
 
-## Header
+# #  Header
 
 Header contains the info in **key-value** format. There are some rule.
 
@@ -45,7 +45,7 @@ Header contains the info in **key-value** format. There are some rule.
 - There is no space before `:`.
 - The order of header is meaningless.
 
-### fields
+# # #  fields
 
 There are 4 classes of header.
 

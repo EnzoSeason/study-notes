@@ -20,10 +20,10 @@ class Solution:
         while curr and curr.next:
             a = prev.next
             b = curr.next
-            # swap
-            # next_node = b.next
-            # b.next = a (firt element)
-            # prev.next, a.next = b, next_node (the rest)
+            #  swap
+            #  next_node = b.next
+            #  b.next = a (firt element)
+            #  prev.next, a.next = b, next_node (the rest)
             b.next, prev.next, a.next = a, b, b.next
             prev, curr = a, a.next
 

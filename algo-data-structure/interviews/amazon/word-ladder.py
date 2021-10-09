@@ -8,7 +8,7 @@ class SolutionBFS:
             return 0
 
         n = len(beginWord)
-        combo = defaultdict(list)  # adj list
+        combo = defaultdict(list)  #  adj list
         for word in wordList:
             for i in range(n):
                 combo[word[:i] + "*" + word[i + 1 :]].append(word)

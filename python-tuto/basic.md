@@ -1,8 +1,8 @@
-# Basic
+#  Basic
 
-## Data Type
+# #  Data Type
 
-### int
+# # #  int
 
 - Decimal: 0, 100, -8080, ...
 - Hexadecimal, start with `0x`, range `0-9`, `a-f`: 0xff00
@@ -18,30 +18,30 @@ Some notes:
 3. `int()` and `floor()` are different.
 
     ```python
-    int(3 // 2) # 1
-    3 // 2 # 1
+    int(3 // 2) #  1
+    3 // 2 #  1
 
-    int(-3 // 2) # -1
-    -3 // 2 # -2
+    int(-3 // 2) #  -1
+    -3 // 2 #  -2
     ```
 
-### float
+# # #  float
 
 `1.23`, `1.23e5` (1.23 \* 10 ^ 5)
 
 `int` is percise and `float` is not. It depends on how they are stored on the computer.
 
-### boolean
+# # #  boolean
 
 `True` or `False`
 
 we can use `and`, `or`, `not` to do boolean calcul.
 
-### None
+# # #  None
 
 `None` is special value in Python, means none.
 
-### string
+# # #  string
 
 '' and "" are the same.
 
@@ -73,32 +73,32 @@ JSON and string:
 
 - `json.loads()`: string => basic types
 
-## list vs tuple
+# #  list vs tuple
 
 - list: a **mutable** ordered set contains **any type** of data.
 - tuple: a **immutable** ordered set contains **any type** of data.
 
-### Some operation:
+# # #  Some operation:
 
 `l = [1, 2, 3, 4]`
 
-- get last element: `list[-1] # 4`
-- slice: `list[1:3] # 2, 3`
+- get last element: `list[-1] #  4`
+- slice: `list[1:3] #  2, 3`
 
     ```python
     list = [1, 2, 3]
     tuple = (4, 5, 6)
 
-    print(list[1:2]) # 2 3
-    print(list[::2]) # step = 2, output: 1 3
-    print(tuple[-1]) # 6
+    print(list[1:2]) #  2 3
+    print(list[::2]) #  step = 2, output: 1 3
+    print(tuple[-1]) #  6
     ```
 - embed:
 
   ```python
   t = ('a', 'b', l)
   t[2][0] = 0
-  print(t) # ('a', 'b', [0, 2, 3, 4])
+  print(t) #  ('a', 'b', [0, 2, 3, 4])
   ```
 
   > list in the tuple is still mutable
@@ -110,16 +110,16 @@ JSON and string:
   ```python
   count(item)
   index(item)
-  l.reverse() / l.sort() # apply on variable l directly, so that it's ONLY FOR the list
+  l.reverse() / l.sort() #  apply on variable l directly, so that it's ONLY FOR the list
   ```
 
-### usage
+# # #  usage
 
 Tuple is immutable. It hasn't pointers. So that, it's lighter than list.
 
 Tuple is perfect for static data, such as cache, const data, etc.
 
-## dict and set
+# #  dict and set
 
 - dict: A hash map used to stock `key - value` paires.
 
@@ -135,21 +135,21 @@ So that dict and set is built for **search**.
 
   ```python
   d = {'name': 'Jack', 'age': 10}
-  print(d['name']) # Jack
+  print(d['name']) #  Jack
   ```
 
   To check `key` in `dict`:
 
   ```python
-  # method 1: in
+  #  method 1: in
 
-  print('name' in d) #  True
+  print('name' in d) #   True
 
-  # method 2: get()
+  #  method 2: get()
 
-  d.get('age') # 10
-  d.get('major') # None
-  d.get('gender', -1) # -1
+  d.get('age') #  10
+  d.get('major') #  None
+  d.get('gender', -1) #  -1
   ```
 
   remove an element
@@ -162,7 +162,7 @@ So that dict and set is built for **search**.
 - set:
 
     ```python
-    # It needs a list to init a set
+    #  It needs a list to init a set
     s = set([1, 2, 3])
     ```
 
@@ -173,14 +173,14 @@ So that dict and set is built for **search**.
     ```
     > Note: `set` can use index to search because hash map isn't ordered.
 
-### usage
+# # #  usage
 
 `dict` and `set` are both for **search**. `dict` is more useful for **managing items**, while `set` is more suitbale for **managing conditions**, such as `'Jack' in student_set`.
 
 
-## condition
+# #  condition
 
-## if
+# #  if
 
 ```python
 
@@ -195,7 +195,7 @@ else:
     statement_n
 ```
 
-### for
+# # #  for
 
 ```python
 for item in <iterable>:
@@ -210,17 +210,17 @@ d = {'name': 'jason', 'dob': '2000-01-01', 'gender': 'male'}
 for key in d: 
     print(key)
 
-# name dob gender
+#  name dob gender
 
 for value in d.values():
     print(value)
 
-# jason 2000-01-01 male    
+#  jason 2000-01-01 male    
 
 for key, value in d.items(): 
     print('key: {}, value: {}'.format(key, value))
 
-# key: name, value: jason key: dob, value: 2000-01-01 key: gender, value: male 
+#  key: name, value: jason key: dob, value: 2000-01-01 key: gender, value: male 
 ```
 
 For `list`:
@@ -230,15 +230,15 @@ l = ["a", "b", "c"]
 for item in l:
     print(item)
 
-# a b c
+#  a b c
 
 for index, item in enumerate(l): 
     print('i: {}, item: {}'.format(index, item))
 
-# i:0, item: a i:1, item: b i:2, item: c
+#  i:0, item: a i:1, item: b i:2, item: c
 ```
 
-## simple expressions
+# #  simple expressions
 
 - `expression for item in iterable if condition`
 
@@ -281,7 +281,7 @@ for index, item in enumerate(l):
                 l.append((xx, yy))
     ```
 
-## Error
+# #  Error
 
 Some codes will meet errors, such as connecting Database, fetching data from APIs, etc. We need to use `try ... except ...` to catch errors.
 
@@ -289,13 +289,13 @@ Some codes will meet errors, such as connecting Database, fetching data from API
 try:
     ...
 except ValueError as err:
-    # ONLY catch ValueError
+    #  ONLY catch ValueError
     print('Value Error: {}'.format(err))
 except IndexError as err:
-    # ONLY catch IndexError
+    #  ONLY catch IndexError
     print('Index Error: {}'.format(err))
 except Exception as err:
-    # catch all kinds of error
+    #  catch all kinds of error
     print('Other error: {}'.format(err))
 ```
 
@@ -305,7 +305,7 @@ except Exception as err:
 import sys
 try:
     f = open('file.txt', 'r')
-    .... # some data processing
+    .... #  some data processing
 except OSError as err:
     print('OS error: {}'.format(err))
 except:
@@ -314,7 +314,7 @@ finally:
     f.close()
 ```
 
-## Module
+# #  Module
 
 ```
 .
@@ -327,14 +327,14 @@ finally:
 ```
 
 ```python
-# utils/utils.py
+#  utils/utils.py
 
 def get_sum(a, b):
     return a + b
 ```
 
 ```python
-# utils/class_utils.py
+#  utils/class_utils.py
 
 class Encoder(object):
     def encode(self, s):
@@ -346,7 +346,7 @@ class Decoder(object):
 ```
 
 ```python
-# src/main.py
+#  src/main.py
 
 from proto.mat import Matrix
 from utils.mat_mul import mat_mul
@@ -357,7 +357,7 @@ b = Matrix([[5, 6], [7, 8]])
 
 print(mat_mul(a, b).data)
 
-########## output ##########
+# # # # # # # # # #  output # # # # # # # # # # 
 
 [[19, 22], [43, 50]]
 ```
@@ -383,7 +383,7 @@ The best practice to set path is:
 To test a module, we can use `if __name__ == "__main__"`
 
 ```python
-# my-code.py
+#  my-code.py
 
 def my_code:
     pass

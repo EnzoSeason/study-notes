@@ -1,4 +1,4 @@
-# Routing
+#  Routing
 
 Basic syntax:
 
@@ -26,9 +26,9 @@ const routes: Routes = [
 <route-outlet></route-outlet>
 ```
 
-## Navigation
+# #  Navigation
 
-### `<a> link`
+# # #  `<a> link`
 
 The link can be added like: `<a href="/my-component">`. But, Angular will rebuild the page when the user clicks on that,  since Angular will send a request to the server. Not good :(.
 
@@ -40,7 +40,7 @@ It's better use:
 
 Besides, using `routerLinkActive` and `routerLinkActiveOptions` can style the link.
 
-### router
+# # #  router
 
 ```typescript
 import { Router } from '@angular/router';
@@ -76,7 +76,7 @@ export class oneComponent {
 }
 ```
 
-### route parameters
+# # #  route parameters
 
 We can pass `id` to the route: 
 
@@ -121,7 +121,7 @@ To fetch `id`, we can:
 
 **Query Parameters and Fragments** can be used in router:
 
-For example, url is `prefix/my-component?userId=1#new`
+For example, url is `prefix/my-component?userId=1# new`
 
 * `<a> link`:
 
@@ -173,7 +173,7 @@ There an useful option:
         }),
     ```
 
-## wildcard and redirection
+# #  wildcard and redirection
 
 ```typescript
 const routes: Routes = [
@@ -189,7 +189,7 @@ Here, it shows that **the ordre in the array routes** matters ! Angular reads th
 
 If the the path `**` is placed at top, all the rest of the routes won't work.
 
-## Route Guards
+# #  Route Guards
 
 A Guard can be added to check if a route can be accessed.
 
@@ -245,7 +245,7 @@ Besides,
 * `canActivateChild` add Guard to the component and its children.
 * `canDeactivate` is a guard for leaving a route.
 
-## Static data in route
+# #  Static data in route
 
 We can pass static data of route.
 
@@ -265,7 +265,7 @@ const data = this.route.snapshot['data'];
 this.route.data.subscribe();
 ```
 
-## Dynamic data in route
+# #  Dynamic data in route
 
 We can create a **Service** which implements `Resolver` to deal with dynamic data in route.
 

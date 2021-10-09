@@ -1,15 +1,15 @@
-# Django Unit Test
+#  Django Unit Test
 
 Django Unit Test extends `unittest` of Python. The common use case is as followed.
 
 ```python
-# <parent>/tests/test_myclass.py
+#  <parent>/tests/test_myclass.py
 
 from django.test.testcases import TestCase
 
 class MyClassTestCase(TestCase):
     def test_my_func(self):
-        # do something to test the codes
+        #  do something to test the codes
         self.assertEqual(test_result, expected_result)
 ```
 
@@ -31,7 +31,7 @@ docker-compose run django_app coverage report -i -m --skip-covered
 I like skipping covered lines and errors.
 
 
-## Mock
+# #  Mock
 
 Making Mocks in Django is simple. We can use **decorators** on the functions.
 
@@ -42,7 +42,7 @@ Making Mocks in Django is simple. We can use **decorators** on the functions.
    > The order of `@patch` and the order of **parameters** are important.
 
 ```python
-# <parent>/tests/test_myclass.py
+#  <parent>/tests/test_myclass.py
 
 from unittest.mock import patch
 from django.test.testcases import TestCase
@@ -55,7 +55,7 @@ class MyClassTestCase(TestCase):
     def test_my_func(self, first_func, second_func):
         first_func.return_value = {}
         second_func = None
-        # do something to test the codes
+        #  do something to test the codes
         self.assertEqual(test_result, expected_result)
 ```
 

@@ -13,9 +13,9 @@ class Solution:
         required = len(targets)
 
         window = {}
-        # the number of satisfied char
-        # t: {a:1, b:2}, s: {a:1, b:1} => uniq_count == 1.
-        # Because only "a" is satisfied.
+        #  the number of satisfied char
+        #  t: {a:1, b:2}, s: {a:1, b:1} => uniq_count == 1.
+        #  Because only "a" is satisfied.
         uniq_count = 0
         min_len = float("inf")
         start, end = 0, 0
@@ -25,14 +25,14 @@ class Solution:
             window[s[r]] = window.get(s[r], 0) + 1
             if s[r] in targets and window[s[r]] == targets[s[r]]:
                 uniq_count += 1
-            # When the window contains all the charactors in the t.
-            # reduce the window size.
+            #  When the window contains all the charactors in the t.
+            #  reduce the window size.
             while l <= r and uniq_count == required:
-                # update the window size
+                #  update the window size
                 if r - l + 1 < min_len:
                     min_len = r - l + 1
                     start, end = l, r
-                # reduce the window size
+                #  reduce the window size
                 window[s[l]] -= 1
                 if s[l] in targets and window[s[l]] < targets[s[l]]:
                     uniq_count -= 1

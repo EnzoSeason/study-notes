@@ -26,8 +26,8 @@ class Solution:
             if not root.right:
                 return root.left
 
-            # put left child tree under 
-            # the leftest part of right child tree.
+            #  put left child tree under 
+            #  the leftest part of right child tree.
             q = root.right
             while q.left:
                 q = q.left
@@ -45,19 +45,19 @@ class Solution:
             return
         
         if root.val == key:
-            # If the search node is a leaf
-            # delete it
+            #  If the search node is a leaf
+            #  delete it
             if not root.right:
                 return root.left
             
-            # else, swap its value with 
-            # the leftest leaf's value in the right child tree
+            #  else, swap its value with 
+            #  the leftest leaf's value in the right child tree
             q = root.right
             while q.left:
                 q = q.left
             root.val, q.val = q.val, root.val
-        # Since the search tree is destroyed by the swap
-        # We need to traverse the entire tree.
+        #  Since the search tree is destroyed by the swap
+        #  We need to traverse the entire tree.
         root.left = self.deleteNode(root.left, key)
         root.right = self.deleteNode(root.right, key)
         

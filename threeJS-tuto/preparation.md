@@ -1,8 +1,8 @@
-# Preparation
+#  Preparation
 
 This tuto is writen in TypeScript.
 
-## Server
+# #  Server
 
 The server uses `Express`. It serves 2 things:
 
@@ -19,7 +19,7 @@ Server used `common.js` to run JavaScript code, so in `tsconfig.js`, we need to 
 },
 ```
 
-## Client
+# #  Client
 
 We write codes in `client.ts`, then this file is tranlated into `client.js` and imported by `index.html`.
 
@@ -36,7 +36,7 @@ If we need to import file into `client.ts`, we must config the paths.
 }
 ```
 
-## npm run dev
+# #  npm run dev
 
 To run the project, we need to run 3 commands:
 

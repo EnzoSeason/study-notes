@@ -37,10 +37,10 @@ class UF:
 
     def find_root(self, i: int) -> int:
         root = i
-        #  find root
+        #   find root
         while root != self.parent[root]:
             root = self.parent[root]
-        #  update UF
+        #   update UF
         while i != root:
             self.parent[i], i = root, self.parent[i]
 

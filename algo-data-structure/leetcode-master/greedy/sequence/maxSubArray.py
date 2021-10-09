@@ -17,7 +17,7 @@ class SolutionGreedy:
             global_max = max(local_max, global_max)
 
             if local_max <= 0:
-                # reset local_max
+                #  reset local_max
                 local_max = 0
 
         return global_max
@@ -29,7 +29,7 @@ class SolutionDP:
     """
 
     def maxSubArray(self, nums: List[int]) -> int:
-        local_max = [0] * len(nums)  # the max in nums[:i]
+        local_max = [0] * len(nums)  #  the max in nums[:i]
         local_max[0] = nums[0]
         global_max = nums[0]
 

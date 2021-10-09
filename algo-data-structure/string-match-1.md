@@ -1,8 +1,8 @@
-# BF & RF
+#  BF & RF
 
 BF (Brute Force) and RF (Rabin-Karp) are two methods of **string match**.
 
-## BF (Brute Force)
+# #  BF (Brute Force)
 
 It's the easiest way for string. It compares the **pattern** with the **main string** character by character.
 
@@ -29,7 +29,7 @@ The worse case is we compared `(n*m+1) * m` times. The time complexity is `O(n*m
 
 BF isn't good at deal with special cases, such as finding `ab` in `aaaaaaaaab`. However, this type of cases is rare at work. BF is widely used because of its simplicity.
 
-## RF (Rabin-Karp)
+# #  RF (Rabin-Karp)
 
 RF is similar to BF. The main difference is that it compares **hash value** of the string instead of itself.
 
@@ -73,7 +73,7 @@ def rf(main_str: str, pattern: str) -> int:
     return -1
 ```
 
-### Limits
+# # #  Limits
 
 1. large pattern
   

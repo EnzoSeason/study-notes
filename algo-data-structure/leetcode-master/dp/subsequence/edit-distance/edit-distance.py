@@ -8,9 +8,9 @@ class SolutionDP:
     def minDistance(self, word1: str, word2: str) -> int:
         n1, n2 = len(word1), len(word2)
 
-        # dp[i][j] means
-        # the minimum number of operations required to convert
-        # word1[0:i+1] to word1[0:j+1]
+        #  dp[i][j] means
+        #  the minimum number of operations required to convert
+        #  word1[0:i+1] to word1[0:j+1]
         dp = [[0 for _ in range(n2 + 1)] for _ in range(n1 + 1)]
 
         for i in range(n1 + 1):

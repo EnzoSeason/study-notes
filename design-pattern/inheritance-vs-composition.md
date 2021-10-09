@@ -1,4 +1,4 @@
-# Inheritance vs Composition
+#  Inheritance vs Composition
 
 Combination is better than inheritance, use **more combination less inheritance**.
 
@@ -51,7 +51,7 @@ To sum up:
 
 - If the relation between the classes is **complicate**, we use combination.
 
-## 4 relationships between the classes
+# #  4 relationships between the classes
 
 - Generalization
 

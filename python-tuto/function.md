@@ -1,9 +1,9 @@
-# Function
+#  Function
 
 ```python
 def my_func(param1, param2, ..., paramN):
     statements 
-    return/yield value # optional
+    return/yield value #  optional
 ```
 
 The function must be defined before using it.
@@ -30,11 +30,11 @@ The function must be defined before using it.
     square = nth_power(2) 
     cube = nth_power(3)
 
-    print(square(3)) # 9 square uses the env which has exponent == 2
-    print(cube(5)) # 125
+    print(square(3)) #  9 square uses the env which has exponent == 2
+    print(cube(5)) #  125
     ```
 
-## Default params
+# #  Default params
 
 Default param always point to an immutable object
 
@@ -43,8 +43,8 @@ def add_end(L=[]):
     L.append('END')
     return L
 
-add_end() # ['END']
-add_end() # ['END', 'END']
+add_end() #  ['END']
+add_end() #  ['END', 'END']
 ```
 
 We can change the function.
@@ -57,7 +57,7 @@ def add_end(L=None):
     return L
 ```
 
-## Changable params
+# #  Changable params
 
 We can use `*params` to represent multiple params of a function. Python passes these params into a `tuple` automatically.
 
@@ -68,13 +68,13 @@ def calc(*numbers):
         sum = sum + n * n
     return sum
 
-calc(1, 2, 3) # 14
+calc(1, 2, 3) #  14
 
 nums = [1, 2, 3]
-calc(*nums) # 14
+calc(*nums) #  14
 ```
 
-## keyword params
+# #  keyword params
 
 We can use `**kw` to represent `k-v` params. Python passes them into `dict`.
 
@@ -82,22 +82,22 @@ We can use `**kw` to represent `k-v` params. Python passes them into `dict`.
 def person(name, age, **kw):
     print('name:', name, 'age:', age, 'other:', kw)
 
-person('Bob', 35, city='Beijing') # Bob age: 35 other: {'city': 'Beijing'}
+person('Bob', 35, city='Beijing') #  Bob age: 35 other: {'city': 'Beijing'}
 
 extra = {'city': 'Beijing', 'job': 'Engineer'}
-person('Jack', 24, **extra) # name: Jack age: 24 other: {'city': 'Beijing', 'job': 'Engineer'}
+person('Jack', 24, **extra) #  name: Jack age: 24 other: {'city': 'Beijing', 'job': 'Engineer'}
 ```
 
 If we want to set limits on `key`, we can defind function:
 
 ```python
-# function only takes city and job as the key of **kw
+#  function only takes city and job as the key of **kw
 
-# * separate normal params from keyword params
+#  * separate normal params from keyword params
 def person(name, age, *, city, job):
     print(name, age, city, job)
 
-# If function has changable params, we don't need *.
+#  If function has changable params, we don't need *.
 def person(name, age, *args, city, job):
     print(name, age, args, city, job)
 ```
@@ -108,13 +108,13 @@ To put `normal params`, `default params`, `changable params`, `keyword params` a
 def f1(a, b, c=0, *args, **kw):
     print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
 
-f1(1, 2) # a = 1 b = 2 c = 0 args = () kw = {}
-f1(1, 2, c=3) # a = 1 b = 2 c = 3 args = () kw = {}
-f1(1, 2, 3, 'a', 'b') # a = 1 b = 2 c = 3 args = ('a', 'b') kw = {}
-f1(1, 2, 3, 'a', 'b', x=99) # a = 1 b = 2 c = 3 args = ('a', 'b') kw = {'x': 99}
+f1(1, 2) #  a = 1 b = 2 c = 0 args = () kw = {}
+f1(1, 2, c=3) #  a = 1 b = 2 c = 3 args = () kw = {}
+f1(1, 2, 3, 'a', 'b') #  a = 1 b = 2 c = 3 args = ('a', 'b') kw = {}
+f1(1, 2, 3, 'a', 'b', x=99) #  a = 1 b = 2 c = 3 args = ('a', 'b') kw = {'x': 99}
 ```
 
-## Function variable scope
+# #  Function variable scope
 
 1. Variable created in the function only works in function
 
@@ -145,11 +145,11 @@ f1(1, 2, 3, 'a', 'b', x=99) # a = 1 b = 2 c = 3 args = ('a', 'b') kw = {'x': 99
     
     outer()
 
-    # inner: nonlocal
-    # outer: nonlocal
+    #  inner: nonlocal
+    #  outer: nonlocal
     ```
 
-## lambda function
+# #  lambda function
 
 ```python
 lambda argument1, argument2,... argumentN : expression
@@ -164,10 +164,10 @@ lambda function focus at tasks which are:
 ```python
 
 l = [(1, 20), (3, 0), (9, 10), (2, -1)]
-l.sort(key=lambda x: x[1]) # sorted by the second element of each tuple
+l.sort(key=lambda x: x[1]) #  sorted by the second element of each tuple
 print(l)
 
-# [(2, -1), (3, 0), (9, 10), (1, 20)]
+#  [(2, -1), (3, 0), (9, 10), (1, 20)]
 ```
 
 There are some built-in function work with lambda function:
@@ -176,19 +176,19 @@ There are some built-in function work with lambda function:
     
     ```python
     l = [1, 2, 3, 4, 5]
-    new_list = map(lambda x: x * 2, l) # [2， 4， 6， 8， 10]
+    new_list = map(lambda x: x * 2, l) #  [2， 4， 6， 8， 10]
     ```
 
 - `filter(function, iterable)`:
 
     ```python
     l = [1, 2, 3, 4, 5]
-    new_list = filter(lambda x: x % 2 == 0, l) # [2, 4]
+    new_list = filter(lambda x: x % 2 == 0, l) #  [2, 4]
     ```
 
 - `reduce(function, iterable)`:
 
     ```python
     l = [1, 2, 3, 4, 5]
-    product = reduce(lambda x, y: x * y, l) # 1*2*3*4*5 = 120
+    product = reduce(lambda x, y: x * y, l) #  1*2*3*4*5 = 120
     ```

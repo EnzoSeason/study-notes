@@ -1,6 +1,6 @@
-# KISS & YAGNI
+#  KISS & YAGNI
 
-## KISS
+# #  KISS
 
 Keep It Simple and Stupid.
 
@@ -14,7 +14,7 @@ In practice:
 
 - Don't over-optimize, which makes codes hard to read.
 
-## YAGNI
+# #  YAGNI
 
 You Ain’t Gonna Need It.
 

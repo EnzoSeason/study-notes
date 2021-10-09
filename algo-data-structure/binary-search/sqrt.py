@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/sqrtx/
+#  https://leetcode.com/problems/sqrtx/
 def sqrt_binary_search(x: int) -> int:
     if x == 0 or x == 1:
         return x

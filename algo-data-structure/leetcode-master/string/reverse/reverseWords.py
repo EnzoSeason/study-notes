@@ -40,19 +40,19 @@ class Solution:
 
     def removeExtraSpace(self, arr) -> List[str]:
         slow, fast = 0, 0
-        #  remove the spaces at the head.
+        #   remove the spaces at the head.
         while fast < len(arr) and arr[fast] == " ":
             fast += 1
 
         while fast < len(arr):
             if fast > 0 and arr[fast - 1] == arr[fast] == " ":
-                # remove the space between the words
+                #  remove the space between the words
                 fast += 1
                 continue
             arr[slow] = arr[fast]
             slow += 1
             fast += 1
-        # remove the extra spaces at the tail
+        #  remove the extra spaces at the tail
         return arr[0 : slow - 1] if slow > 0 and arr[slow - 1] == " " else arr[0:slow]
 
     def reverseWords_O1(self, s: str) -> str:
@@ -66,16 +66,16 @@ class Solution:
         """
 
         arr = list(s)
-        # reverse string
+        #  reverse string
         self.reverse(arr, 0, len(arr))
 
-        # remove the extra space
+        #  remove the extra space
         arr = self.removeExtraSpace(arr)
 
-        # reverse words
+        #  reverse words
         i = 0
         while i < len(arr):
-            # reverse the word, arr[i:j]
+            #  reverse the word, arr[i:j]
             j = i
             while j < len(arr) and arr[j] != " ":
                 j += 1

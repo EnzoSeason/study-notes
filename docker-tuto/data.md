@@ -1,11 +1,11 @@
-# Data
+#  Data
 
-## Volumes
+# #  Volumes
 
 Volumes is a place to persist data.
 
 If the container is destroyed, the data in volumes will be perserved. If we need to remove a volume, we need to delete it manually.
-### named volume
+# # #  named volume
 
 Docker will create a place on the host for the volume. Usually, we will give a volume a name.
 
@@ -17,7 +17,7 @@ In `docker container run`, we can use `-v`:
 
 example: `-v <custom_name>:<container_path>`
 
-### bind mounts
+# # #  bind mounts
 
 With bind mounts, we control the exact mountpoint on the host.
 

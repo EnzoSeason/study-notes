@@ -1,4 +1,4 @@
-# DNS
+#  DNS
 
 It maps **Domain name** to **IP address**.
 
@@ -16,13 +16,13 @@ It maps **Domain name** to **IP address**.
 
 ```conf
 server {
-    listen 80;                       #监听80端口
-    server_name  time.geekbang.org;  #主机名是time.geekbang.org
+    listen 80;                       # 监听80端口
+    server_name  time.geekbang.org;  # 主机名是time.geekbang.org
     ...
 }
 ```
 
-## Caching
+# #  Caching
 
 Once we visited a website, its **IP address** is cached.
 
@@ -37,10 +37,10 @@ Once we visited a website, its **IP address** is cached.
    There are third-party DNS, too. It helps reduce the pressure of main DNS server. There are "8.8.8.8" (Google), "4.2.2.1" (Microsoft), etc.
 
    ```conf
-   resolver 8.8.8.8 valid=30s;  #指定Google的DNS，缓存30秒
+   resolver 8.8.8.8 valid=30s;  # 指定Google的DNS，缓存30秒
    ```
 
-## Load balancing based on domain name
+# #  Load balancing based on domain name
 
 If the server of "buy.tv" need maintain, we can switch to another server by telling DNS, mapping "buy.tv" to new server's IP address "4.5.6.7" instead of current IP address "1.2.3.4".
 

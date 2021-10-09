@@ -1,4 +1,4 @@
-# KMP
+#  KMP
 
 KMP is similar to BM. 
 
@@ -8,7 +8,7 @@ It pays more attention on **pattern**. It studies **pattern** to decide how to s
 
 KMP pre-process the pattern. It stocks the result of the "study" in an array, called PTM (Partial Match Table).
 
-## Algo
+# #  Algo
 
 When we meet **bad character**, we take **all the pattern before bad character** out as `arr`. 
 
@@ -31,7 +31,7 @@ pattern: > > a b a b a b c a
 
 We slide 2 characters and find the match. The question is how we know we should slide 2 characters.
 
-## PTM (Partial Match Table)
+# #  PTM (Partial Match Table)
 
 The array stored the "study" result is call PTM (Partial Match Table). `PTM[i]` means the **length** of the matched string.
 
@@ -80,7 +80,7 @@ PTM     :  0 0 1 2 3 4 0 1
 next    : -1 0 0 1 2 3 4 0 1
 ```
 
-### Usage of PTM
+# # #  Usage of PTM
 
 KMP is the usage of `PTM`.
 
@@ -92,24 +92,24 @@ def kmp(main: str, pattern: str) -> int:
     m = len(pattern)
     next_arr = generate_next_from_PTM(pattern)
 
-    # use fast-slow pointers
+    #  use fast-slow pointers
     i = 0
     j = 0
     while i < n and j < m:
         if j == -1 or main[i] == pattern[j]:
-            # check the next character in the main string
+            #  check the next character in the main string
             i += 1
             j += 1
         else:
-            # Thanks to moving one space back in PTM
-            # If pattern[j] is the bad character, (main[i] != pattern[j])
-            # We check next_arr[j] instead of PTM[j-1], which are the same.
+            #  Thanks to moving one space back in PTM
+            #  If pattern[j] is the bad character, (main[i] != pattern[j])
+            #  We check next_arr[j] instead of PTM[j-1], which are the same.
             j = next_arr[j]
-            # This line also implies the slide of pattern.
-            # Because the pointer i is not moved, the slide of pattern is i - j 
+            #  This line also implies the slide of pattern.
+            #  Because the pointer i is not moved, the slide of pattern is i - j 
 ```
 
-### Generation of PTM
+# # #  Generation of PTM
 
 ```python
 def generate_next_from_PTM(pattern: str) -> List[int]:
@@ -124,7 +124,7 @@ def generate_next_from_PTM(pattern: str) -> List[int]:
             j += 1
             next_arr[i] = j
         else:
-            # key point
+            #  key point
             j = next_arr[j]
     
     return next_arr

@@ -10,8 +10,8 @@ class Solution:
         dp = [[True if i == j else False for j in range(n)] for i in range(n)]
         start, end = 0, 0
 
-        # make sure dp[i + 1][j - 1] is calculated
-        # before processing dp[i][j]
+        #  make sure dp[i + 1][j - 1] is calculated
+        #  before processing dp[i][j]
         for i in range(n - 1, -1, -1):
             for j in range(i + 1, n):
                 if s[i] == s[j]:
@@ -36,10 +36,10 @@ class SolutionTwoPointers:
 
             res = max(
                 res,
-                self.palindromeRange(s, i, i),  # set s[i] as search center
+                self.palindromeRange(s, i, i),  #  set s[i] as search center
                 self.palindromeRange(
                     s, i, i + 1
-                ),  # set s[i], s[i] + 1 as search center.
+                ),  #  set s[i], s[i] + 1 as search center.
                 key=len,
             )
 

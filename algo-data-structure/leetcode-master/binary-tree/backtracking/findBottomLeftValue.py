@@ -19,12 +19,12 @@ class Solution:
 
     def dfs(self, node: TreeNode, depth: int) -> None:
         if not node.left and not node.right:
-            # update the res once the depth is increased.
+            #  update the res once the depth is increased.
             if depth > self.maxDepth:
                 self.maxDepth = depth
                 self.res = node.val
-        # The order is important.
-        #  The left is first to update.
+        #  The order is important.
+        #   The left is first to update.
         if node.left:
             self.dfs(node.left, depth + 1)
         if node.right:

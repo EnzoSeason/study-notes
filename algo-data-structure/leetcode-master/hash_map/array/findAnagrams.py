@@ -27,14 +27,14 @@ class Solution:
         for i in range(n - m + 1):
             if search_arr == target_arr:
                 res.append(i)
-            # move the start of the sliding window
+            #  move the start of the sliding window
             window_start = ord(s[i]) - ord("a")
             search_arr[window_start] -= 1
             
             if i + m == n:
                 break
 
-            # move the end of the sliding window
+            #  move the end of the sliding window
             window_end = ord(s[i + m]) - ord("a")
             search_arr[window_end] += 1
 

@@ -1,8 +1,8 @@
-# Basic
+#  Basic
 
 
-## Basic commands
-### create a container
+# #  Basic commands
+# # #  create a container
 
 `docker container run` (`docker run`)
 
@@ -18,47 +18,47 @@ Exemple:
 
 `--detech` run the container in the backgroud
 
-### see the containers
+# # #  see the containers
 
 `docker container ls` (`docker ps`)
 
 list the running containers
 
-### run an existed container
+# # #  run an existed container
 
 `docker container start  <container_id>` (`docker start`)
 
-### stop a container
+# # #  stop a container
 
 `docker container stop <container_id>` (`docker stop`)
 
 
-### check the logs
+# # #  check the logs
 
 `docker container logs`
 
-### list the running process of a container
+# # #  list the running process of a container
 
 `docker container top <container_name >`
 
-### remove a container
+# # #  remove a container
 
 `docker container rm <container_id>`
 
 
-### check the config of the container
+# # #  check the config of the container
 
 `docker container inspect <container_id>`
 
-### stats
+# # #  stats
 
 `docker container stats`
 
-### help
+# # #  help
 
 `docker container --help`
 
-## Enter container
+# #  Enter container
 
 - start a **new** container and enter it:
 

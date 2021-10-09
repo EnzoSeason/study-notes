@@ -1,11 +1,11 @@
-# Log System
+#  Log System
 
 There are 2 important logs in MySql.
 
 - **Redo log** in InnoDB engine
 - **Binlog** in Server Layer
 
-## Redo log
+# #  Redo log
 
 In MySql, there is a problem. If we want to update a piece of data. MySql needs to search the old data, find it and write the new one. The cost of IO is high.
 
@@ -19,7 +19,7 @@ The cache in redo log won't be removed until redo log is full. The most accent d
 
 Because of redo log, InnoDB engine is **crash-safe**. It can recover the data by loading them from redo log when the database is crashed.
 
-## Binlog
+# #  Binlog
 
 Like Redo log, Binlog also uses **WAL**. But, there are some difference.
 
@@ -31,7 +31,7 @@ Like Redo log, Binlog also uses **WAL**. But, there are some difference.
 
 Usually, if we want to recover a database or add the distributed database, we will **copy the entire database** + **using binlog**.
 
-## Redo log + Binlog
+# #  Redo log + Binlog
 
 For exemple, we need to update a field in a row in a table.
 

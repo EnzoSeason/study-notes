@@ -1,6 +1,6 @@
-# Basic
+#  Basic
 
-## Object 3D
+# #  Object 3D
 
 The most common things you will do with an Object3D:
 
@@ -34,13 +34,13 @@ cube.geometry = newGeometry;
 
 As you can see, 3D object has 2 parts: **Geometry** and **Material**.
 
-## Geometry
+# #  Geometry
 
 It defines the shape of object, like Box, Cylinder, Text, etc.
 
 Three.js always, first, create a Buffer Geometry, which improves the performance.
 
-## Material
+# #  Material
 
 There are some props for material
 

@@ -1,6 +1,6 @@
-# React Internals
+#  React Internals
 
-## HOC (Higher-Order Components)
+# #  HOC (Higher-Order Components)
 
 `render` function must return:
 
@@ -81,7 +81,7 @@ HOC can be created in 2 ways:
 
     To pass props: `<WrappedComponent {...props}/>`
 
-## PropTypes
+# #  PropTypes
 
 To define the type of the props
 
@@ -101,7 +101,7 @@ Greeting.propTypes = {
 };
 ```
 
-## Refs
+# #  Refs
 
 Refs provide a way to access DOM nodes or React elements created in the render method.
 
@@ -153,7 +153,7 @@ There are 3 ways:
     }
     ```
 
-## Context
+# #  Context
 
 Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 

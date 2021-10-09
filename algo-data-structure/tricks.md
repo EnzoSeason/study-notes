@@ -1,6 +1,6 @@
-# Tricks
+#  Tricks
 
-## Slow-Fast pointers
+# #  Slow-Fast pointers
 
 We can use 2 pointers to traverse a **linked list**. That can reduce complexity.
 

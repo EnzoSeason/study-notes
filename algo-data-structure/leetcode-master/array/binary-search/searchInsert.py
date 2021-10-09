@@ -16,5 +16,5 @@ class Solution:
                 l = mid + 1
             else:
                 r = mid - 1
-        # return the big one in l and r
+        #  return the big one in l and r
         return l

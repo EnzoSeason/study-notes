@@ -4,8 +4,8 @@ class Solution:
     """
 
     def numSquares(self, n: int) -> int:
-        # init
-        # use 1 to create the number, so that dp[i] = i
+        #  init
+        #  use 1 to create the number, so that dp[i] = i
         dp = [i for i in range(n + 1)]
 
         for i in range(n):

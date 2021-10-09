@@ -1,4 +1,4 @@
-# Directive
+#  Directive
 
 * Attribute directive:
 
@@ -21,7 +21,7 @@ export class myDirective {}
  <div appDirective></div>
 ```
 
-## Attribute directive
+# #  Attribute directive
 
 `ElementRef` lets the attribute directive access the element.
 
@@ -57,7 +57,7 @@ constructor(elementRef: ElementRef) {}
 
 * `@Input` can be used in Directive. It is used as that in `@Component`.
 
-## Structural directive
+# #  Structural directive
 
 ```html
 <div *ngIf=[isOdd]></div>
@@ -69,7 +69,7 @@ is equal to
 <ng-template [ngIf]="isOdd"><ng-template>
 ```
 
-### Create a structural directive
+# # #  Create a structural directive
 
 ```typescript
 import { TemplateRef,ViewContainerRef } from '@angular/core';

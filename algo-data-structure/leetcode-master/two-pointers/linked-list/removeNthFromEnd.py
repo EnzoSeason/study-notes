@@ -13,19 +13,19 @@ class Solution:
         pivot.next = head
         prev = pivot
 
-        # init the interval
+        #  init the interval
         curr = head
         for _ in range(n):
             if not curr:
                 return head
             curr = curr.next
         
-        # move the interval
+        #  move the interval
         while curr:
             prev = prev.next
             curr = curr.next
         
-        # remove the node
+        #  remove the node
         curr = prev.next
         if curr:
             prev.next = curr.next

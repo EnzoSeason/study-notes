@@ -1,4 +1,4 @@
-# JSON
+#  JSON
 
 `json` package in python can easily serialize/deserialize between json and python object.
 
@@ -11,7 +11,7 @@ json | python data type
 true/false | boolean
 null | None
 
-## Python data => json
+# #  Python data => json
 
 `json.dumps`
 
@@ -21,11 +21,11 @@ import json
 d = dict(name='Bob', age=20, score=88)
 json.dumps(d)
 
-### output ###
+# # #  output # # # 
 '{"age": 20, "score": 88, "name": "Bob"}'
 ```
 
-## json => python data
+# #  json => python data
 
 `json.loads`
 
@@ -33,10 +33,10 @@ json.dumps(d)
 json_str = '{"age": 20, "score": 88, "name": "Bob"}'
 json.loads(json_str)
 
-# {'age': 20, 'score': 88, 'name': 'Bob'}
+#  {'age': 20, 'score': 88, 'name': 'Bob'}
 ```
 
-## json <=> python class instance
+# #  json <=> python class instance
 
 Class instance => json, we can use `default` in `json.dumps`.
 
@@ -62,10 +62,10 @@ def student2dict(std):
 s = Student('Bob', 20, 88)
 print(json.dumps(s, default=student2dict))
 
-# {"age": 20, "name": "Bob", "score": 88}
+#  {"age": 20, "name": "Bob", "score": 88}
 
 print(json.dumps(s, default=lambda obj: obj.__dict__))
-# {"age": 20, "name": "Bob", "score": 88}
+#  {"age": 20, "name": "Bob", "score": 88}
 ```
 
 json => class object, we can use `object_hook` in `json.loads`
@@ -76,5 +76,5 @@ def dict2student(d):
 
 json_str = '{"age": 20, "score": 88, "name": "Bob"}'
 print(json.loads(json_str, object_hook=dict2student))
-# <__main__.Student object at 0x10cd3c190>
+#  <__main__.Student object at 0x10cd3c190>
 ```
