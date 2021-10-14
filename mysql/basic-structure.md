@@ -23,9 +23,9 @@ The connection is complicate. It's better to establish **long connection**. Howe
 
 ### Analyzer
 
-After the connection establised, MySql starts to execute the query. 
+After the connection establised, MySql starts to execute the query.
 
-Firstly, it analyzes the query. It finds the **keywords**, such as, `SELECT`, `IN`, `WHERE`, etc. 
+Firstly, it analyzes the query. It finds the **keywords**, such as, `SELECT`, `IN`, `WHERE`, etc.
 
 Then it **parses the query**. If it fails, MySql will return an **syntax error**.
 
@@ -51,8 +51,6 @@ Finally, MySql executes the query. It will use the **interfaces** given by the *
 
 The search is started at **the first line** of a table. If the line matches the query, this line will be saved in the **result set**. Then, MySql scans the next line. In the end, MySql returns the entire result set.
 
-
 ## Storage Engine ayer
 
 Storage Engine is responsible for **saving and getting** data. The default engine is **InnoDB**. There are other engine, such as **memory**.
-
