@@ -2,6 +2,8 @@
 
 There are two ways to present the relation.
 
+There is no strict rule to tell which method to use. It depends on the use cases.
+
 - Embedded document
 
   It's **easy to read and write**, but the size of a document can be huge.
@@ -22,10 +24,16 @@ There are two ways to present the relation.
 
 For example, a patient has one disease summary.
 
+Usually, we use _Embedded document_ if there is no reason to split them.
+
 ## One to Many
 
 For example, a question has many answers.
 
+Usually, we use _Embedded document_ if there is no reason to split them.
+
 ## Many to Many
 
 An author has many books, and a book has many authors.
+
+Usually, we use _reference_ to split them.
