@@ -8,7 +8,7 @@ We'll focus on five essential points.
 
 Curiosity is all about wanting to learn something.
 
-## Understanding context
+## Understanding context
 
 Context is the condition in which something exists or happens. This can be **a structure or an environment**.
 
