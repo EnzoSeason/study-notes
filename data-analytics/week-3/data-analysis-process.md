@@ -2,7 +2,7 @@
 
 This program is split into courses, six of which are based upon the steps of data analysis: **ask, prepare, process, analyze, share, and act**.
 
-## Act
+## Ask
 
 In this phase, we do two things:
 
