@@ -18,7 +18,7 @@ Visualization is the graphical representation of information.
 
 Strategizing helps data analysts see **what they want to achieve** with the data and **how** they can get there.
 
-Strategy also helps i**mprove the quality and usefulness of the data** we collect.
+Strategy also helps **improve the quality and usefulness of the data** we collect.
 
 ## Problem-orientation
 
@@ -38,7 +38,7 @@ This means being able to see **the big picture** as well as the details.
 
 Big-picture thinking helps you zoom out and see **possibilities and opportunities**.
 
-Detail-oriented thinking is all about figuring out **all of the aspects **that will help you **execute a plan**.
+Detail-oriented thinking is all about figuring out **all of the aspects** that will help you **execute a plan**.
 
 # Three questions to ask
 
