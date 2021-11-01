@@ -23,7 +23,7 @@ Data science is defined as creating new ways of modeling and understanding the u
 
   It's a very broad concept that encompasses everything from the job of **managing and using data** to the **tools and methods** that data workers use each and every day.
 
-## Data-driven decision-making
+## Data-driven decision-making
 
 A data analyst:
 
