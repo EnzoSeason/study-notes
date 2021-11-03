@@ -17,3 +17,7 @@ With quantitative data, we can see numbers visualized as **charts or graphs**.
 Qualitative data describes subjective or explanatory measures of **qualities and characteristics**.
 
 Qualitative data can then give us a more **high-level understanding** of why the numbers are the way they are.
+
+## Algorithm
+
+A process or a set of rules to be followed for a specific task.
