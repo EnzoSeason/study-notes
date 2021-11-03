@@ -58,7 +58,7 @@ The three most common categories are:
 
 A pivot table is a **data summarization** tool that is used in data processing.
 
-Pivot tables are used to summarize, sort, re-organize, group, count, total, or average data stored in a database.
+Pivot tables are used to **summarize, sort, re-organize, group, count, total, or average** data stored in a database.
 
 It allows its users to **transform columns into rows and rows into columns**.
 
