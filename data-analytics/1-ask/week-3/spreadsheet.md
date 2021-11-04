@@ -33,3 +33,36 @@ let’s explore how spreadsheets relate to each phase of the data life cycle: **
 - **Destroy** your spreadsheet when you are certain that you will never need it again, if you have better backup copies, or for legal or security reasons.
 
   Keep in mind, lots of businesses are required to follow certain rules or have measures in place to make sure data is destroyed properly.
+
+## Fomulas
+
+- **Absolute referencing**:
+
+  `=$A$10` has absolute referencing for both the column and the row value.
+
+  Absolute references will not change when you copy and paste the formula in a different cell.
+
+  To easily switch between absolute and relative referencing in the formula bar, highlight the reference you want to change and press the **F4 key**.
+
+- **Data range**: When you click into your formula, the colored ranges let you see which cells are being used in your spreadsheet.
+
+### Errors
+
+- **#DIV/0** : divide a value in a cell by zero or by an empty cell.
+
+  use `IFERROR(A1/B1, 'div error')` to avoid.
+
+- **#N/A**: The data in your formula can't be found by the spreadsheet.
+
+- **#NAME?**: A formula's name isn't recognized or understood.
+
+- **#NUM!**: A formula's calculation can't be performed as specified by the data.
+
+- **#REF!**: Cells being referenced in a formula have been deleted.
+
+- **#VALUE!**: A general error indicating a problem with a formula or with referenced cells.
+
+
+## Functions
+
+The preset commands, such as `SUM`, `AVERAGE`,`MAX`, `MIN`.
