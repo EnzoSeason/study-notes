@@ -22,3 +22,8 @@ If you are organizing the meeting, you will probably talk about the data. Before
 ## Conflict
 
 It's important to try and be objective and stay focused on the team's goals.
+
+
+To shift a situation from problematic to productive:
+
+- re-frame the problem
