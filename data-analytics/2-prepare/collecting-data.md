@@ -6,6 +6,8 @@
 
 - Observations
 
+  The scientists use a lot of observations.
+
 - Forms
 
 - Questionnaires
@@ -13,6 +15,8 @@
 - Surveys
 
 - Cookies
+
+  It's widely used on the Internet.
 
 ## Considerations
 
@@ -29,6 +33,10 @@
 - Decide what data to use
 
 - How much data to collect
+
+  - A **population** refers to all possible data values in a certain data set.
+
+  - A **sample** is a part of a population that is representative of the population.
 
 - Select the right data type
 
