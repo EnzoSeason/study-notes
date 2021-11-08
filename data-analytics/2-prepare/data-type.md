@@ -1,4 +1,4 @@
-# Data type
+# Data classification
 
 ![data-types](./data-types.png)
 
@@ -40,7 +40,6 @@ Data models help to **keep data consistent** and **provide a map of how data is 
 
 They're pieces of information, such as people's names, account numbers, and addresses
 
-
 ## Levels of data modeling
 
 1. **Conceptual data modeling** gives a high-level view of the data structure, such as how data interacts across an organization.
@@ -57,4 +56,80 @@ They're pieces of information, such as people's names, account numbers, and addr
 
 - **Unified Modeling Language (UML)**
 
-   UML diagrams are very detailed diagrams that describe the structure of a system by showing the system's entities, attributes, operations, and their relationships. 
+  UML diagrams are very detailed diagrams that describe the structure of a system by showing the system's entities, attributes, operations, and their relationships.
+
+# Data types
+
+A data type is a specific kind of data attribute that tells what kind of value the data is.
+
+## Data types in the spreadsheet
+
+- Number
+
+- String
+
+- Boolean
+
+## Data types in the database
+
+- Records: rows
+
+- Fields: columns
+
+## Wide data vs Long data
+
+### Wide data
+
+Every data subject has **a single row with multiple columns** to hold the values of various attributes of the subject.
+
+Wide data lets you easily identify and quickly compare different columns.
+
+It's used for:
+
+- Creating tables and charts with a few variables about each subject
+
+- Comparing straightforward line graphs
+
+### Long data
+
+Long data is data in which each row is **one time point per subject**, so each subject will have data in **multiple rows**.
+
+It's used for:
+
+- Storing a lot of variables about each subject. For example, 60 years worth of interest rates for each bank
+
+- Performing advanced statistical analysis or graphing
+
+# Data transformation
+
+ Data transformation is the process of changing the data’s format, structure.
+
+Data transformation usually involves:
+
+- Adding, copying, or replicating data
+
+- Deleting fields or records
+
+- Standardizing the names of variables
+
+- Renaming, moving, or combining columns in a database
+
+- Joining one set of data with another
+
+- Saving a file in a different format. For example, saving a spreadsheet as a comma separated values (CSV) file.
+
+## Why transform data?
+
+Goals for data transformation might be:
+
+- Data **organization**: better organized data is easier to use
+
+- Data **compatibility**: different applications or systems can then use the same data
+
+- Data **migration**: data with matching formats can be moved from one system to another
+
+- Data **merging**: data with the same organization can be merged together
+
+- Data **enhancement**: data can be displayed with more detailed fields
+
+- Data **comparison**: apples-to-apples comparisons of the data can then be made
