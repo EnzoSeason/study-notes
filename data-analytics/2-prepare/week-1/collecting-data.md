@@ -32,6 +32,8 @@
 
 - Decide what data to use
 
+  If you needed an answer **immediately**, you'd have to use **historical data**, which is data that already exists.
+
 - How much data to collect
 
   - A **population** refers to all possible data values in a certain data set.
