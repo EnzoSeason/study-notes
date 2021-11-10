@@ -2,6 +2,12 @@
 
 Metadata is information that's used to **describe the data**.
 
+Data analysts use metadata for what tasks:
+
+- **combine** data
+- **evaluate** data
+- **interpret** a database.
+
 There are three common types of metadata that you'll come across: **descriptive, structural, and administrative**.
 
 - **Descriptive metadata** is metadata that describes a piece of data and can be used to **identify it** at a later point in time.
