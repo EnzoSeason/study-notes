@@ -25,3 +25,13 @@ Data can also be compromised through **human error, viruses, malware, hacking, a
 2. Alignment to business objective + **additional data cleaning** = accurate conclusions
 
 3. Alignment to business objective + **newly discovered variables + constraints** = accurate conclusions
+
+## Process
+
+1. Determine data integrity by assessing the overall accuracy, consistency, and completeness of the data.
+
+2. Connect objectives to data by understanding how your business objectives can be served by an investigation into the data.
+
+3. Know when to stop collecting data.
+
+Data analysts perform **pre-cleaning activities** to complete these steps. Pre-cleaning activities help you determine and maintain data integrity.
