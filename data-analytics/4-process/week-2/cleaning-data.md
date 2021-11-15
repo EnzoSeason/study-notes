@@ -29,3 +29,31 @@ The types of dirty data are:
   They **develop processes and procedures** to effectively **store and organize data**.
 
   They make sure that data is **available, secure, and backed up to prevent loss** .
+
+## Common data-cleaning pitfalls
+
+- Not checking for spelling errors
+
+- Forgetting to document errors
+
+- Not checking for misfielded values
+
+- Overlooking missing values
+
+- Only looking at a subset of the data
+
+- Losing track of business objectives
+
+- Not fixing the source of the error
+
+- Not analyzing the system prior to data cleaning
+
+- Not backing up your data prior to data cleaning
+
+- Not accounting for data cleaning in your deadlines/process
+
+## Working with multiply data sources
+
+- **Data merging**: the process of combining two or more datasets into a single dataset
+
+- **Compatibility**: describes how well two or more datasets are able to work together
