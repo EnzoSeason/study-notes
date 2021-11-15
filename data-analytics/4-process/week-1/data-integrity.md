@@ -2,7 +2,7 @@
 
 Data integrity is the **accuracy, completeness, consistency, and trustworthiness** of data throughout its lifecycle.
 
-There's a chance data can be compromised every time it's **replicated, transferred, or manipulated** in any way.
+There's a chance data can be **compromised** every time it's **replicated, transferred, or manipulated** in any way.
 
 - **Data replication** is the process of storing data in multiple locations.
 
