@@ -17,3 +17,6 @@ Documenting data-cleaning makes it possible to:
 - keep team members on the same page
 
 - demonstrate to project stakeholders that you are accountable.
+
+
+A data analyst uses a changelog to access the information needed. A changelog is a file that contains a chronological list of modifications made to a project. 
