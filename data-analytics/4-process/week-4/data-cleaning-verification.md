@@ -1,6 +1,10 @@
 # Data cleaning verification
 
+Verification and reporting are the next steps for a data analyst after the data is cleaned. 
+
 Verification is a process to confirm that a data cleaning effort was well-executed and the resulting data is accurate and reliable.
+
+The first step in the verification process is to compare cleaned data with the original, uncleaned dataset and compare it to what is there now.
 
 It involves:
 
