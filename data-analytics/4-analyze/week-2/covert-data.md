@@ -32,5 +32,3 @@ Incorrectly formatted data can:
 - `+`: Adds two or more strings together using the + operator
 
   For exemple: `‘Google’ + ‘.com’`
-
-  
