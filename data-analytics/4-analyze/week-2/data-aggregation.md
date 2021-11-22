@@ -45,3 +45,11 @@ VLOOKUP only **returns the first match** it finds and can only search to the **r
 - **OUTER JOIN**: combines RIGHT and LEFT JOIN to return **all matching records in both tables**.
 
 ![join-types](./join-types.png)
+
+## Subquery (SQL)
+
+- A subquery may be nested in a SELECT clause.
+
+- For a subquery to compare multiple columns, those columns must be selected in the main query.
+
+- A SET command can’t have a nested subquery because it is used with UPDATE to adjust specific columns and values in a table.
