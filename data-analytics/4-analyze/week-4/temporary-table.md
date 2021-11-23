@@ -92,3 +92,4 @@ DROP TABLE table_name
   Deleting a temporary table removes the rows of the table but **leaves the table definition and columns ready to be used again**. Although local temporary tables are dropped after you end your SQL session, **it may not happen immediately**.
 
   If a lot of processing is happening in the database, **dropping your temporary tables** after using them is a good practice to keep the database running smoothly.
+
