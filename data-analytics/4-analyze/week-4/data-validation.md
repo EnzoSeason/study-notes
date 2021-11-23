@@ -20,6 +20,7 @@ This process involves **checking and rechecking the quality of your data** so th
 
    Check that the data makes sense in the context of other related data.
 
+5. Data structure
 
    Check that the data follows or conforms to a set structure.
 
