@@ -125,3 +125,15 @@ Design thinking for data visualization involves five phases:
 - **Prototype**: Putting visualizations together for testing and feedback
 
 - **Test**: Showing prototype visualizations to people before stakeholders see them
+
+## Designing a chart in 60 minutes
+
+![design-chart-time](./images/design-chart-time.png)
+
+- **Prep (5 min)**: Create the mental and physical space necessary for an environment of comprehensive thinking.
+
+- **Talk and listen (15 min)**: Identify the object of your work by getting to the “ask behind the ask” and establishing expectations.
+
+- **Sketch and design (20 min)**: Draft your approach to the problem. Define the timing and output of your work to get a clear and concise idea of what you are crafting.
+
+- **Prototype and improve (20 min)**: Generate a visual solution and gauge its effectiveness at accurately communicating your data. Take your time and repeat the process until a final visual is produced. It is alright if you go through several visuals until you find the perfect fit.
