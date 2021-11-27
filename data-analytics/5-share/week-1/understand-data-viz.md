@@ -72,4 +72,4 @@ C​hannels are visual aspects or variables that represent characteristics of th
 
 - **Causation** refers to the idea that an event leads to a specific outcome.
 
-![correlation-causation](correlation-causation.png)
+![correlation-causation](./images/correlation-causation.png)

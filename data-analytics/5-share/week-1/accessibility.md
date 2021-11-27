@@ -18,7 +18,7 @@
 
   An annotation briefly explains data or helps focus the audience on a particular aspect of the data in a visualization.
 
-![texts-guide](texts-guide.png)
+![texts-guide](./images/texts-guide.png)
 
 ## Ways to make data visualization accessible
 

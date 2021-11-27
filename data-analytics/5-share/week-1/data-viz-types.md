@@ -50,4 +50,4 @@ If outcomes are categorized on the x-axis by **distinct numeric values (or range
 
 A decision tree is a decision-making tool that allows you, the data analyst, to make decisions based on key questions that you can ask yourself.
 
-![data-viz-decision-tree](data-viz-decision-tree.png)
+![data-viz-decision-tree](./images/data-viz-decision-tree.png)
