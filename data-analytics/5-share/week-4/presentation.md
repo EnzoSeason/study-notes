@@ -8,6 +8,8 @@ The business task is the question or problem. your data analysis answers.
 
 The **theory** you're trying to prove or disprove with data.
 
+Establishing the hypothesis early in the presentation helps your audience understand data.
+
 ## The McCandless Method
 
 1. Introduce the graphic by name
