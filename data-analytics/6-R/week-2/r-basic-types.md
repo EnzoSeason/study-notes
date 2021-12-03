@@ -38,6 +38,10 @@
 
   A pipe is a tool in R for expressing a sequence of multiple operations, represented with `%>%`.
 
+- Factor:
+
+  Factors store **categorical data** in R where the data values are limited and usually based on a finite group **like country or year**.
+
 ## Atomic vectors
 
 A vector that contains **ONLY ONE** type of data.
