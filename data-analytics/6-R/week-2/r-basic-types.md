@@ -36,7 +36,7 @@
 
 - Pipe:
 
-  A pipe is a tool in R for expressing a sequence of multiple operations.
+  A pipe is a tool in R for expressing a sequence of multiple operations, represented with `%>%`.
 
 ## Atomic vectors
 
