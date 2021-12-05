@@ -57,3 +57,46 @@ The template is as followed:
 ```r
 ggplot(data = <data>) + <geom_function>(mapping = aes(<aesthetic mapping>))
 ```
+
+## Aesthetic attributes
+
+- **color**: This allows you to change the color of all of the points on your plot, or the color of each data group.
+
+- **size**: This allows you to change the size of the points on your plot by data group.
+
+- **shape**: This allows you to change the shape of the points on your plot by data group.
+
+```r
+ggplot(data, aes(x=distance, y=dep_delay, color=carrier, size=air_time, shape=carrier))
+```
+
+If you want to change all the color / shape / size of the points, set the parameter outside the `aes()` function.
+
+```r
+ggplot(data, aes(x=distance, y=dep_delay, size=air_time, shape=carrier), color=carrier)
+```
+
+## Smoothing
+
+Smoothing enables the detection of a **data trend** even when you can't easily notice a trend from the plotted data points.
+
+| Type            | Description                                  | Example                                                                                  |
+| --------------- | -------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| Loess smoothing | for the plots with **less than 1000 points** |  `ggplot(data, aes(x=, y=))+ geom_point() + geom_smooth(method="loess")`                 |
+| Gam smoothing   | for plots with **a large number of points**. |  `ggplot(data, aes(x=, y=))+ geom_point() + geom_smooth(method="gam", formula = y ~s(x)` |
+
+## Facet
+
+Facets let you display smaller groups or subsets of your data.
+
+- `facet_wrap()`: To facet your plot by a **single variable**
+
+  ```r
+  facet_wrap(~speices)
+  ```
+
+- `facet_grid()`: To facet your plot with **two variables**
+
+  ```r
+  facet_grid(sex~speices)
+  ```
