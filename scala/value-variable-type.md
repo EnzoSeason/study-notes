@@ -1,4 +1,4 @@
-# Basic
+# Values, Variables, and Types
 
 ## Values
 
@@ -56,3 +56,9 @@ In functional programming, we prefer `Values` over `Variable` because `Values` a
 - `Double`
 
   It represents float number.
+
+- `Unit`
+
+  It's `void` in other languages.
+
+  **Side effect** is an expression that returns `Unit`.
