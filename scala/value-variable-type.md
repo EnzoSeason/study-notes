@@ -10,7 +10,7 @@ val x: Int = 42
 
   It's like `const` or `final` in other language.
 
-- `Int` is optional.
+- `Int` is optional, but it's recommended.
 
   The compiler can infer that the type of variable is `Int`.
 
