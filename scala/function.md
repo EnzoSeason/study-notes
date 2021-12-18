@@ -3,7 +3,7 @@
 ## Basic function
 
 ```scala
-def aFunction(a: String, b: Int): String = 
+def aFunction(a: String, b: Int): String =
   a + " " + b
 
 // or using a code block
