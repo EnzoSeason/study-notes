@@ -3,7 +3,7 @@
 ## Basic function
 
 ```scala
-def aFunction(a: String, b: Int): String = 
+def aFunction(a: String, b: Int): String =
   a + " " + b
 
 // or using a code block
@@ -46,3 +46,19 @@ def outerFunction(num: Int): Int = {
   innerFunction(num, num - 1)
 }
 ```
+
+## Call-by-value vs Call-by-name
+
+```scala
+def calledByValue(x: Long): String = println(x)
+
+def calledByName(x: => Long): String = println(x)
+```
+
+The difference between two functions is `=>`.
+
+- **Call-by-value**: The parameter is calculated **before** being passed into the function.
+
+- **Call-by-name**: The parameter is calculated **after** being passed into the function.
+
+**Call-by-name** is used to **delay** the calculation. It's useful in **lazy** actions. That means if the **Call-by-name** parameter isn't used, it won't be calculated.
