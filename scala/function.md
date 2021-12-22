@@ -62,3 +62,26 @@ The difference between two functions is `=>`.
 - **Call-by-name**: The parameter is calculated **after** being passed into the function.
 
 **Call-by-name** is used to **delay** the calculation. It's useful in **lazy** actions. That means if the **Call-by-name** parameter isn't used, it won't be calculated.
+
+## Default parameter and Named parameter
+
+```scala
+def trFact(num: Int, acc: Int = 1): Int = {
+  if (num <= 1) acc
+  else trFact(num - 1, num * acc)
+}
+
+val fact10 = trFact(10)
+```
+
+- **Default parameter**: `acc: Int = 1` in the defination of the function means the default value of the parameter `acc` is `1`.
+
+```scala
+def greeting(name: String = "Batman", age: Int = 10): String = s"I'm $name, I'm $age years old"
+
+val greet1 = greeting(name = "Jack", age = 5)
+val greet = greeting(name = "Alice")
+val greet = greeting(age = 7, name = "Tom")
+```
+
+- **Named parameter**: It shows up as `name = "Jack"` and `age = 5` when we call the function. It doesn't care about the order.
