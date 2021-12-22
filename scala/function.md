@@ -76,6 +76,8 @@ val fact10 = trFact(10)
 
 - **Default parameter**: `acc: Int = 1` in the defination of the function means the default value of the parameter `acc` is `1`.
 
+- We can't omit the leading default parameter.
+
 ```scala
 def greeting(name: String = "Batman", age: Int = 10): String = s"I'm $name, I'm $age years old"
 
