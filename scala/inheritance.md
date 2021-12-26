@@ -105,3 +105,17 @@ class Bird extends Animal with Flying with Eating
 ```scala
 var a: Int = ??? // It means Nothing.
 ```
+
+## Anonymous class
+
+```scala
+class Person(val name: String) {
+  def greet = println(s"I'm $name.")
+}
+
+val jack = new Person("Jack") {
+  override def greet = println(s"My name is $name.")
+}
+```
+
+In this case, Scala will create an **anonymous class** that inherits the class `Person` and instanize it.
