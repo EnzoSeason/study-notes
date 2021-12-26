@@ -85,7 +85,7 @@ abstract class Animal
 trait Flying
 trait Eating
 
-class Bird extends Animal with Flying, Eating
+class Bird extends Animal with Flying with Eating
 ```
 
 ## Type Hierarchy
