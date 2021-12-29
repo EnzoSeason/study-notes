@@ -118,4 +118,4 @@ val jack = new Person("Jack") {
 }
 ```
 
-In this case, Scala will create an **anonymous class** that inherits the class `Person` and instanize it.
+In this case, Scala will create an **anonymous class** that inherits the class `Person` and instantiate it.
