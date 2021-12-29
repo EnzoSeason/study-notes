@@ -30,4 +30,58 @@ val res = stringToInt("3") + 4 // output: 7
 
 ## Anonymous Function
 
+We can transform `stringToInt` function into an **anonymous function** or **lambda function**.
 
+```scala
+val res = (str: String) => str.toInt
+```
+
+We can define **Function Type** of the value.
+
+```scala
+val res: String => Int = str => str.toInt
+```
+
+- Multiple parameters
+
+  ```scala
+  val adder = (a: Int, b: Int) => a + b
+  // to explicitize function type
+  val adder: (Int, Int) => Int = (a, b) => a + b
+
+  // run
+  println(adder(1, 2)) // output: 3
+  ```
+
+- No parameters
+
+  ```scala
+  val returnTwo = () => 2
+  // to explicitize function type
+  val returnTwo: () => Int = () => 2
+
+  // run
+  println(returnTwo()) // output: 2
+  ```
+
+  > Attention: We need `()` to call an anonymous function.
+
+### Useful Syntactic Sugar
+
+- One parameter
+
+  ```scala
+  val counter: Int => Int = x => x + 1
+  // nicer
+  val niceCounter: Int => Int = _ + 1
+  ```
+
+- Multiple parameters
+
+  ```scala
+  val adder: (Int, Int) => Int = (a, b) => a + b
+  // nicer
+  val niceAdder: (Int, Int) => Int = _ + _
+  ```
+
+In order to use these syntactic sugar, **Function Type** MUST be **explicit**.
