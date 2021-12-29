@@ -90,7 +90,7 @@ class Bird extends Animal with Flying with Eating
 
 ## Type Hierarchy
 
-![type-hierarchy](./images/type-hierarchy.png)
+![type-hierarchy](../images/type-hierarchy.png)
 
 - `Any` is the root class.
 
