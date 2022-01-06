@@ -12,4 +12,10 @@ object Predef {
 
 Immutable collections are found in `scala.collections.immutable` package. Here is the tree.
 
-![collections-tree](../images/collections-tree.png)
+We **mostly use immutable collections** in practice.
+
+![immutable-collections-tree](../images/immutable-collections-tree.png)
+
+## Mutable collections
+
+![mutable-collections-tree](../images/mutable-collections-tree.png)
