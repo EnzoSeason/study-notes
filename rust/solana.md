@@ -142,3 +142,30 @@ if num == 2 {
       println!("{}", i);
   }
   ```
+
+### [Pattern Matching](https://doc.rust-lang.org/book/ch06-02-match.html)
+
+```rust
+let x = 2;
+match x {
+    1 => println!("one"),
+    2 => println!("two"),
+    _ => println!("something else"),
+}
+```
+
+`match` can be more complicated and useful.
+
+```rust
+let x = true;
+let y = false;
+
+// match a tuple
+// It's much better than if conditions.
+match (x, y) {
+    (true, true) => println!("true and true"),
+    (true, false) => println!("true and false"),
+    (false, true) => println!("false and true"),
+    _ => println!("something else"),
+}
+```

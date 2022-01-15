@@ -51,4 +51,21 @@ fn main() {
         println!("{}", i);
     }
 
+    let x = 2;
+    match x {
+        1 => println!("one"),
+        2 => println!("two"),
+        _ => println!("something else"),
+    }
+
+    let x = true;
+    let y = false;
+
+    match (x, y) {
+        (true, true) => println!("true and true"),
+        (true, false) => println!("true and false"),
+        (false, true) => println!("false and true"),
+        _ => println!("something else"),
+    }
+
 }
