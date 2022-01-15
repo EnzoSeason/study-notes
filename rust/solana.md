@@ -38,8 +38,8 @@ There are 3 basic data types:
 
 - **number**
 
-  It contains `i32`, `u32`, `f64`, etc. 
-  
+  It contains `i32`, `u32`, `f64`, etc.
+
   The default integer is `i32` and default float is `f64`.
 
   ```rust
@@ -65,9 +65,9 @@ Other useful types are:
 
   ```rust
   let my_tuple = (1, "cool", true); // create a tuple
-  
+
   println!("{}", my_tuple.0); // access a member of the tuple
-  
+
   let (a, b, c) = my_tuple; // deconstruct a tuple
   ```
 
@@ -85,7 +85,9 @@ Other useful types are:
 
   The type of `my_filled_array` can be explict as `[i32; 10]`
 
-## Condition
+### [Control flow](https://doc.rust-lang.org/book/ch03-05-control-flow.html)
+
+#### Condition
 
 ```rust
 let num = 1
@@ -98,3 +100,45 @@ if num == 2 {
   // do something anyway...
 }
 ```
+
+#### Loop
+
+- `while`:
+
+  ```rust
+  let mut counter = 0;
+  while counter < 10 {
+      println!("{}", counter);
+      counter += 1;
+  }
+  ```
+
+- `loop`: It's `while true`
+
+  ```rust
+  let mut counter = 0;
+  loop {
+      println!("{}", counter);
+      counter += 1;
+      if counter == 10 {
+          break;
+      }
+    }
+  ```
+
+- `for`:
+
+  ```rust
+  for i in 0..10 {
+      println!("{}", i);
+  }
+  ```
+
+  `for` can be applied on the `iterator`.
+
+  ```rust
+  let my_array = [1, 2, 3, 4, 5];
+  for i in my_array {
+      println!("{}", i);
+  }
+  ```

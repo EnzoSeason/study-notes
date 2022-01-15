@@ -20,9 +20,6 @@ fn main() {
     let (a, b, c) = my_tuple;
     println!("{} {} {}", a, b, c);
 
-
-    let my_array = [1, 2, 3];
-    println!("{}", my_array[0]);
     let my_filled_array = [1; 10];
     println!("{:?}", my_filled_array);
 
@@ -32,6 +29,26 @@ fn main() {
         println!("{}", integer);
     } else {
         println!("{}", integer);
+    }
+
+    let mut counter = 0;
+    while counter < 10 {
+        // println!("{}", counter);
+        counter += 1;
+    }
+
+    let mut counter = 0;
+    loop {
+        // println!("{}", counter);
+        counter += 1;
+        if counter == 10 {
+            break;
+        }
+    }
+
+    let my_array = [1, 2, 3, 4, 5];
+    for i in my_array {
+        println!("{}", i);
     }
 
 }
