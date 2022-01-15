@@ -84,3 +84,17 @@ Other useful types are:
   ```
 
   The type of `my_filled_array` can be explict as `[i32; 10]`
+
+## Condition
+
+```rust
+let num = 1
+
+if num == 2 {
+  // do something
+} else if num == 1 {
+  // do something else
+} else {
+  // do something anyway...
+}
+```

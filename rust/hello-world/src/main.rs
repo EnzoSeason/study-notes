@@ -26,4 +26,12 @@ fn main() {
     let my_filled_array = [1; 10];
     println!("{:?}", my_filled_array);
 
+    if integer == 3 {
+        println!("{}, condition", integer);
+    } else if integer == 4 {
+        println!("{}", integer);
+    } else {
+        println!("{}", integer);
+    }
+
 }
