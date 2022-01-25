@@ -59,3 +59,34 @@ We can **cast between 2 different number types**.
 let a = 3 as f64; // 3.0
 let b = 3.9 as i32 // 3
 ```
+
+## Formatting print
+
+```rust
+let a = 10.0;
+let b = 3.0;
+
+let c = a / b;
+```
+
+- **Rounding** the number
+
+  ```rust
+  println!("c is {:.3}", c);
+  // c is 3.333
+  ```
+
+- **Padding** the display
+
+  ```rust
+  // 8 chars before dot, padding with 0
+  println!("c is {:08.3}", c);
+  // c is 0003.333
+  ```
+
+- **indicating** the values' indexes
+
+  ```rust
+  println("a is {1}, and b is {0}", b, a);
+  // a is 10.0, and b is 3.0
+  ```
