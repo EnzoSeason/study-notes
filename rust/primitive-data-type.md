@@ -164,13 +164,13 @@ The operations are as followed.
 
   If two values are different, then return `1`, else `0`.
 
-    ```rust
-    let new_val = value ^ 0b1111_0100;
-    println!("The value is {:08b}", value); // The value is 11110101
-    println!("The new value is {:08b}", new_val); // The value is 00000001
+  ```rust
+  let new_val = value ^ 0b1111_0100;
+  println!("The value is {:08b}", value); // The value is 11110101
+  println!("The new value is {:08b}", new_val); // The value is 00000001
 
-    // The second bit is set to 1.
-    ```
+  // The second bit is set to 1.
+  ```
 
 - **SHIFT**
 
@@ -183,3 +183,34 @@ The operations are as followed.
   new_val = new_val >> 2;
   // new_val: 00011100
   ```
+
+## Boolean
+
+`trun` and `false`. These can represent by the bit `1` or `0`.
+
+The bitwise operations can be applied on boolean, too.
+
+```rust
+let a = true;
+let b = false;
+
+println!("a AND b is {}", a & b); // a AND b is false
+```
+
+### Short-Circuiting Logical Operations
+
+It will **skip the right parts** if some conditions are meet.
+
+- `&&`
+
+  ```rust
+  let a = false && panic!(); // false
+  ```
+
+- `||`
+
+  ```rust
+  let b = true || panic!(); // true
+  ```
+
+> `panic!()` will throw an error.
