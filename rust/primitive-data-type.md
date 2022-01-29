@@ -214,3 +214,18 @@ It will **skip the right parts** if some conditions are meet.
   ```
 
 > `panic!()` will throw an error.
+
+## Char
+
+The `char` type:
+
+- represents a single character.
+
+- is unicode scalar value.
+
+- is stored using 4 bytes.
+
+```rust
+let a = 'a';
+let up_finger = '\u{261D}';
+```
