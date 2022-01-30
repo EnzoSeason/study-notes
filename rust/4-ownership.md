@@ -47,7 +47,16 @@ So that, Stack has the features:
 
 - The items in stack have **fixed size**.
 
-The data type, **Integer, Floating point, Boolean, Char, Array, Tuple**, has a fixed size, so they live in the stack.
+The data type:
+
+- Integer
+- Floating point
+- Boolean
+- Char
+- Array
+- Tuple
+
+has a **fixed size**, so they live in the stack.
 
 ### Heap
 
@@ -93,3 +102,62 @@ Rust uses the **ownership**. Variable are responsible for freeing their own reso
 
 > **Ownship** is a VERY IMPORTANT concept. Rust developer should keep it in mind.
 
+## Move, Clone
+
+### Move
+
+```rust
+let outer_message: String;
+
+{
+    let message = String::from("hello");
+    outer_message = message;
+    println!("{}", message); // Error
+}
+
+println!("{}", outer_message); // hello
+```
+
+In other languages, `outer_message` and `message` should both point to _hello_ who lives in the heap.
+
+However, because of the **ownership**: A value is **owned, and only owned** by ONE variable. `outer_message` owns _hello_ and `message` no longer exists.
+
+### Clone
+
+```rust
+let outer_message: String;
+let outer_num: i32;
+
+{
+    let message = String::from("hello");
+    let num = 1;
+
+    outer_message = message.clone();
+    outer_num = num;
+    println!("{}", message); // Error
+}
+
+println!("{}", outer_message); // hello
+```
+
+To solve the error appeared in the previous section, we use `clone()` for cloning a value that lives on the **heap**.
+
+> The value lives on the **stack** is cloned by default.
+
+## Transferring ownship
+
+```rust
+fn main() {
+    let message = String::from("Ownership is cool!");
+    update_message(message);
+    println!("{}", message); // Error
+}
+
+fn update_message(old_message: String) {
+    println!("{}", old_message);
+}
+```
+
+In this example, the **ownship** is transferred from `message` to `old_message`. That's why we have the error.
+
+One way to solve it is passing `message.clone()` instead of `message`.
