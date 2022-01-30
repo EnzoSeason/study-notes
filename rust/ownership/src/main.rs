@@ -1,6 +1,6 @@
 fn main() {
     let message = String::from("Ownership is cool!");
-    update_message(message);
+    update_message(message.clone());
     println!("{}", message);
 }
 
