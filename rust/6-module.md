@@ -1,6 +1,6 @@
 # Module
 
-Demo project: [module-guessing](./module-guessing/)
+Demo: [module-guessing](./module-guessing/)
 
 ## Standard Library
 
