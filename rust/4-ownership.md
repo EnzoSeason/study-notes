@@ -1,5 +1,7 @@
 # Ownership
 
+Playground: [ownership](./ownership/)
+
 ## Scope
 
 `{}` defines a scope.

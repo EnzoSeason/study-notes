@@ -12,6 +12,8 @@ Use [rustup](https://www.rust-lang.org/tools/install) to install.
 
 2. Use `cargo run` to build to project. The built project is under `/target`, and it shouldn't be committed to git.
 
+Demo: [hello-world](./hello-world/)
+
 ## Common concepts
 
 ### [Variables and Immutability](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html)
