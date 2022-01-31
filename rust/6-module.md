@@ -1,5 +1,7 @@
 # Module
 
+Demo project: [module-guessing](./module-guessing/)
+
 ## Standard Library
 
 To use a module in the standard library:
