@@ -1,0 +1,73 @@
+# Struct
+
+Demo: [struct-demo](./struct-demo/)
+
+- It groups multiple items of **mixed data types**.
+
+- Each item in a struct has a **name**.
+
+```rust
+struct Shuttle {
+    name: String,
+    crew_size: u16,
+    fuel: f64,
+}
+```
+
+To use `struct` data type:
+
+```rust
+// create a variable
+let car = Shuttle {
+    name: String::from("Car"),
+    crew_size: 11,
+    fuel: 1.0,
+};
+
+// access a field of the variable
+println!("{}", car.name);
+```
+
+## Struct Update syntax
+
+We can create another `Shuttle` by using the existing one.
+
+```rust
+let bus = Shuttle {
+    name: String::from("Bus"),
+    ..car
+};
+```
+
+Be careful, `name` must be a new `String` because of the **ownship**.
+
+```rust
+let bus = Shuttle {
+    ..car
+};
+// Error: The name's ownship on car is moved to bus. Car has no name.
+```
+
+## Struct Method
+
+```rust
+impl Shuttle {
+    fn get_name(&self) -> &str {
+        &self.name
+    }
+}
+```
+
+- The methods are written inside `impl`, not `struct`.
+
+- The first parameter of the method **must** be the reference of the structure itself, `&self`.
+
+We can implement a `setter` function, too.
+
+```rust
+impl Shuttle {
+    fn add_fuel(&mut self, amount: f64) {
+        self.fuel += amount;
+    }
+}
+```
