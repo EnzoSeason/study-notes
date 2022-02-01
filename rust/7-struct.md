@@ -92,3 +92,22 @@ impl Shuttle {
 // use the new function in Shuttle
 let ship = Shuttle::new("Ship");
 ```
+
+## Tuple Struct
+
+It's just alike the normal `tuple`, but it also has a name like `struct`.
+
+```rust
+struct Color(u8, u8, u8);
+
+// use it
+let red = Color(255, 0, 0);
+
+// access the first item
+println!("{}", red.0); // same as a tuple
+
+// pass a reference of Color variable to a function
+fn get_red_value(color: &Color) -> u8 {
+    color.0
+}
+```
