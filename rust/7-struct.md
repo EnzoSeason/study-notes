@@ -62,7 +62,7 @@ impl Shuttle {
 
 - The first parameter of the method **must** be the reference of the structure itself, `&self`.
 
-We can implement a `setter` function, too.
+We can implement a "setter" function, too.
 
 ```rust
 impl Shuttle {
@@ -70,4 +70,25 @@ impl Shuttle {
         self.fuel += amount;
     }
 }
+```
+
+## Associated function
+
+Associated function lives with `struct`, too. But, it **hasn't `&self` parameter**. So it can't access the fields in `struct`.
+
+It's commonly used for "constructor".
+
+```rust
+impl Shuttle {
+    fn new(name: &str) -> Shuttle {
+      Shuttle {
+          name: String::from(name),
+          crew_size: 0,
+          fuel: 0.0,
+      }
+  }
+}
+
+// use the new function in Shuttle
+let ship = Shuttle::new("Ship");
 ```
