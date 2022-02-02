@@ -25,12 +25,6 @@ fn get_bigger<T: PartialOrd>(first: T, second: T) -> T {
     }
 }
 
-struct Shuttle {
-    name: String,
-    crew_size: u16,
-    fuel: f64,
-}
-
 fn get_sum<T: std::ops::Add<Output = T>>(first: Box<T>, second: Box<T>) -> Box<T> {
     Box::new(*first + *second)
 }
@@ -40,10 +34,7 @@ fn main() {
         width: 30,
         height: 50.0,
     };
-    println!(
-        "rect's height is {}, width is {}",
-        rect.height, rect.width
-    );
+    println!("rect's height is {}, width is {}", rect.height, rect.width);
     print!("rect's width is {}", rect.get_width());
 
     let rect_f64 = Rectangle {
@@ -54,17 +45,26 @@ fn main() {
 
     println!("The bigger one is {}", get_bigger(10, 20));
 
-    let car = Shuttle {
-        name: String::from("Car"),
-        crew_size: 11,
-        fuel: 1.0,
-    };
-    println!("The memory used on stack for a car: {}", mem::size_of_val(&car));
-    let boxed_car = Box::new(car);
-    println!("The memory used on stack for a boxed car: {}", mem::size_of_val(&boxed_car));
-    println!("The memory used on heap for a boxed car: {}", mem::size_of_val(&*boxed_car));
+    println!(
+        "The memory used on stack for a rectangle: {}",
+        mem::size_of_val(&rect)
+    );
+    let boxed_rect = Box::new(rect);
+    println!(
+        "The memory used on stack for a boxed rectangle: {}",
+        mem::size_of_val(&boxed_rect)
+    );
+    println!(
+        "The memory used on heap for a boxed rectangle: {}",
+        mem::size_of_val(&*boxed_rect)
+    );
 
-
-    println!("The sum of two numbers: {}", get_sum(Box::new(10), Box::new(20)));
-    println!("The sum of two numbers: {}", get_sum(Box::new(10.1), Box::new(20.2)));
+    println!(
+        "The sum of two numbers: {}",
+        get_sum(Box::new(10), Box::new(20))
+    );
+    println!(
+        "The sum of two numbers: {}",
+        get_sum(Box::new(1.1), Box::new(2.2))
+    );
 }
