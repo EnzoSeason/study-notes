@@ -2,7 +2,7 @@
 
 Playground: [reference](./reference/)
 
-## Borrowing references
+## Borrowing references: `&`
 
 Since passing the variable directly into a function will cause **ownship** problem, we pass **a reference of the variable** to avoid that.
 
@@ -18,7 +18,7 @@ fn print_message(message: &String) {
 }
 ```
 
-## Mutable reference
+## Mutable reference: `&mut`
 
 We can **create a mutable reference**, and pass it to the function so that the function can modify the **mutable variable**.
 
@@ -111,3 +111,9 @@ fn get_first_world(message: &str) -> &str {
   message
 }
 ```
+
+## Dereference Operator: `*`
+
+`&a` means the **pointer** of the **variable** `a`.
+
+`*p` means the **variable** pointed by the **pointer** `p`.
