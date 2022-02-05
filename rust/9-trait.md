@@ -122,3 +122,13 @@ where
     // TODO 
 }
 ```
+
+## Return Type with `impl`
+
+Similar to trait bound, we can limit the output of a function.
+
+```rust
+fn get_displayable() -> impl fmt::Display {
+    "hi"
+}
+```
