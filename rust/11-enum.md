@@ -57,6 +57,8 @@ impl Shape {
 
 `Option<T>` enum makes sure **null-safety**. It wraps the value that **might be present or not**.
 
+It's included in `prelude` so we don't need to import it explictly.
+
 ```rust
 enum Option<T> {
     Some(T), // might have value
