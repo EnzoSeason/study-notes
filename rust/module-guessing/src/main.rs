@@ -7,10 +7,19 @@ fn main() {
     println!("Guess the number between 1 and 10: ");
     loop {
         let mut user_input = String::new();
-        io::stdin()
-            .read_line(&mut user_input)
-            .expect("Failed to read line");
-        let guess: u32 = user_input.trim().parse().expect("Fail to parse guess");
+        let guess = match io::stdin().read_line(&mut user_input) {
+            Ok(_) => match user_input.trim().parse::<u32>() {
+                Ok(num) => num,
+                Err(_) => {
+                    println!("Please enter a number!");
+                    continue;
+                }
+            },
+            Err(_) => {
+                println!("Error reading input!");
+                continue;
+            }
+        };
 
         if guess == secret_number {
             println!("You win!");
