@@ -1,7 +1,5 @@
 # Use Github webhooks
 
-## Set up
-
 ## Github webhooks JSON response
 
 We need to check the **markdown** files in github.
