@@ -1,6 +1,6 @@
-## SQL
+# SQL
 
-### Capitalization and case sensitivity
+## Capitalization and case sensitivity
 
 With SQL, capitalization usually **doesn’t matter**. The only time that capitalization does matter is when it is inside quotes.
 
@@ -15,7 +15,7 @@ To write SQL queries like a pro:
 - Table names should be in camelCase.
 
 
-### Comments as reminders
+## Comments as reminders
 
 Use `--` or `/* */`
 

@@ -36,14 +36,14 @@ class LinkedHashMap:
         return node
     
     def _remove_first_node(self) -> None:
-        ## remove it from linked list
+        # remove it from linked list
         first_node = self.head.next
         first_node.prev = None
         self.head.next = first_node.next
         if first_node.next is not None:
             first_node.next.prev = self.head
         first_node.next = None
-        ## remove it from hash table
+        # remove it from hash table
         hash_key = hash(first_node.key)
         p = self.hash_table[hash_key]
         q = p.hash_next
@@ -57,9 +57,9 @@ class LinkedHashMap:
     def _move_to_tail(self, node) -> None:
         if node.next is None: return
         next_node = node.next
-        ## remove node
+        # remove node
         node = self._remove_node(node)
-        ## add node to the tail
+        # add node to the tail
         while next_node.next is not None:
             next_node = next_node.next
         next_node.next = node
@@ -100,12 +100,12 @@ class LinkedHashMap:
     
     def put(self, key, val) -> None:
         new_node = LinkedNode(key, val)
-        ## update hash table
+        # update hash table
         hash_key = hash(key)
         if hash_key in self.hash_table:
             h = self.hash_table[hash_key]
             while h is not None:
-                if h.key == key: ## the item exists
+                if h.key == key: # the item exists
                     h.val = val
                     self._move_to_tail(h)
                     return
@@ -115,14 +115,14 @@ class LinkedHashMap:
             self.hash_table[hash_key] = LinkedNode(None, None)
             self.hash_table[hash_key].hash_next = new_node
         
-        ## update linked list
+        # update linked list
         p = self.head
         while p.next is not None:
             p = p.next
         p.next = new_node
         new_node.prev = p
         self.count += 1
-        ## remove LRU
+        # remove LRU
         if (self.count > self.capacity):
             self._remove_first_node()
             self.count -= 1
@@ -143,19 +143,19 @@ if __name__ == '__main__':
     print(m)
     m.put(1, 12)
     print(m)
-    ## test update
+    # test update
     m.put(3, 21)
     print(m)
-    ## test get
+    # test get
     val = m.get(1)
     print(val)
     print(m)
-    ## test LRU
+    # test LRU
     m.put(5, 23)
     print(m)
     m.put(2, 22)
     print(m)
-    ## test delete
+    # test delete
     node = m.delete(5)
     print(node)
     print(m)

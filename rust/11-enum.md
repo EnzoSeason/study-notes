@@ -1,4 +1,4 @@
-## Enum
+# Enum
 
 Demo: [enum-demo](./enum-demo/)
 
@@ -12,7 +12,7 @@ enum Command {
 }
 ```
 
-### Match operation
+## Match operation
 
 Match operation is very useful in Rust. It's similar to `switch` in other languages.
 
@@ -38,7 +38,7 @@ let res = match my_number {
 };
 ```
 
-### Enums method
+## Enums method
 
 We can implement **enum method** in the same way for `struct`.
 
@@ -53,7 +53,7 @@ impl Shape {
 }
 ```
 
-### `Option<T>` enum
+## `Option<T>` enum
 
 `Option<T>` enum makes sure **null-safety**. It wraps the value that **might be present or not**.
 

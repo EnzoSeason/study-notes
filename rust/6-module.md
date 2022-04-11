@@ -1,8 +1,8 @@
-## Module
+# Module
 
 Demo: [module-guessing](./module-guessing/)
 
-### Standard Library
+## Standard Library
 
 To use a module in the standard library:
 
@@ -12,7 +12,7 @@ use std::thread; // import the module
 
 All the rust programs import `std::prelude` automatically. That's why we can use `String` which lives in the standard library without importing it.
 
-### Crates
+## Crates
 
 Crates represent a collection of Rust code files.
 

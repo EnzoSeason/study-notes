@@ -1,6 +1,6 @@
-## Routing
+# Routing
 
-### set up
+## set up
 
 use `react-route-dom` package
 
@@ -12,7 +12,7 @@ Wrap the App with BrowserRouter
 </BrowserRouter>
 ```
 
-### Route
+## Route
 
 * render: 
 
@@ -28,7 +28,7 @@ Wrap the App with BrowserRouter
     <Route path="/posts" component={Posts} />
     ```
 
-### Switch
+## Switch
 
 find one of its children, from top to bottom, to fit the current url.
 
@@ -42,7 +42,7 @@ This means that you should put `<Route>s` with more specific (typically longer) 
 </Switch>
 ```
 
-### Route info
+## Route info
 
 The information of Route, like `match.url`, `match.params` is passed into the component as `props`.
 
@@ -52,7 +52,7 @@ While the children components haven't access to this info, we use `withRouter`.
 export default withRouter(ChildComponent);
 ```
 
-### Link
+## Link
 
 instead of using `<a>`, which will reload the whole app, using `<Link>` to navigate inside the app.
 
@@ -88,7 +88,7 @@ a.home-active {
 
 `activeStyle` can set the inline-style of NavLink
 
-### absolute vs relative path
+## absolute vs relative path
 
 * absolute
 
@@ -104,7 +104,7 @@ a.home-active {
     <Link to={this.props.match.url + "/1"}>Page 1</Link>
     ```
 
-### Route params
+## Route params
 
 ```javascript
 <Link to="/post/new" exact>new</Link>
@@ -128,7 +128,7 @@ componentDidMount() {
 }
 ```
 
-### navigating programmatically
+## navigating programmatically
 
 ```javascript
 props.history.push('/post/new');
@@ -136,7 +136,7 @@ props.history.push('/post/new');
 
 which navigates to a new page.
 
-### Redirection
+## Redirection
 
 ```javascript
 <Redirection from="/" to="/posts" />
@@ -162,7 +162,7 @@ render() {
 }
 ```
 
-#### redirect vs push
+### redirect vs push
 
 `this.props.history.push('/posts')` can also change the page, but:
 
@@ -172,7 +172,7 @@ render() {
 
     redirect is equal to `this.props.history.replace('/posts')`
 
-### Guards
+## Guards
 
 There hasn't a Guard which is like the one in Angular, but we can control is in 2 ways
 
@@ -196,7 +196,7 @@ There hasn't a Guard which is like the one in Angular, but we can control is in 
     }
     ```
 
-### Lazy Loading
+## Lazy Loading
 
 To load the components asynchronous, use `React.lazy` & `Suspense`
 

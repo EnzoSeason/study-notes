@@ -1,4 +1,4 @@
-## Functional Programming
+# Functional Programming
 
 **All scala functions are objects**. They just have the method `apply` so that we can call them as calling a function.
 
@@ -24,11 +24,11 @@ val res = stringToInt("3") + 4 // output: 7
 
 > Here, we use [Anonymous class](./inheritance.md#Anonymous-class) to create an instance.
 
-### Function Type
+## Function Type
 
 `(A, B) => R` is equivalent to `Function2[A, B, R]`.
 
-### Anonymous Function
+## Anonymous Function
 
 We can transform `stringToInt` function into an **anonymous function** or **lambda function**.
 
@@ -66,7 +66,7 @@ val res: String => Int = str => str.toInt
 
   > Attention: We need `()` to call an anonymous function.
 
-#### Useful Syntactic Sugar
+### Useful Syntactic Sugar
 
 - One parameter
 

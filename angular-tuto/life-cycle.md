@@ -1,4 +1,4 @@
-## lifeCycle
+# lifeCycle
 
 1. ngOnChange
 

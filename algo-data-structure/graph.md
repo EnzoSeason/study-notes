@@ -1,4 +1,4 @@
-## Graph
+# Graph
 
 Graph is a **non-linear** data structure, like Tree.
 
@@ -14,9 +14,9 @@ If the edge has the **orientation**, than the graph is **directed graph**.
 
 If the edge has the **weight**, than the graph is **weighted graph**.
 
-### Stock a graph
+## Stock a graph
 
-#### Adjacency Matrix
+### Adjacency Matrix
 
 Adjacency Matrix has 2 dimensions. `adj[i][j]` represents a edge **from vertex *i* to vertex *j***.
 
@@ -36,7 +36,7 @@ Adjacency Matrix is based on the array, so **it's easy to do the calculation**.
 
 However, if a graph has a lot of vertices but few of edges, than the adjacency matrix becomes a **sparse matrix**. It **wastes space**.
 
-#### Adjacency List
+### Adjacency List
 
 Since Adjacency Matrix can waste a lot of space, Adjacency List is created.
 

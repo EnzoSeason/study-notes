@@ -1,4 +1,4 @@
-## Data integrity
+# Data integrity
 
 Data integrity is the **accuracy, completeness, consistency, and trustworthiness** of data throughout its lifecycle.
 
@@ -18,7 +18,7 @@ There's a chance data can be **compromised** every time it's **replicated, trans
 
 Data can also be compromised through **human error, viruses, malware, hacking, and system failures**.
 
-### Alignment to business objective
+## Alignment to business objective
 
 1. Clean data + alignment to business objective = accurate conclusions
 
@@ -26,7 +26,7 @@ Data can also be compromised through **human error, viruses, malware, hacking, a
 
 3. Alignment to business objective + **newly discovered variables + constraints** = accurate conclusions
 
-### Process
+## Process
 
 1. Determine data integrity by assessing the overall accuracy, consistency, and completeness of the data.
 

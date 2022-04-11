@@ -1,14 +1,14 @@
-## Structured thinking
+# Structured thinking
 
 - recognize the current situation
 - organize information
 - identify options
 
-### Problem domain
+## Problem domain
 
 The specific area of analysis that encompasses every activity affecting or affected by the problem.
 
-### Scope of work (SOW)
+## Scope of work (SOW)
 
 An agreed-upon outline of the work you're going to perform on a project.
 
@@ -21,7 +21,7 @@ SOW includes:
 
 SOWs should also contain **information specific** to what is and isn’t considered part of the **project**.
 
-## Context
+# Context
 
 Context is the condition in which something exists or happens.
 

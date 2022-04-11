@@ -18,20 +18,20 @@ class Solution:
 
         prev = pivot
         while prev.next:
-            ## make sure there are, at least, k nodes left
+            # make sure there are, at least, k nodes left
             tail = prev.next
             for _ in range(k):
                 if not tail:
                     return pivot.next
                 tail = tail.next
 
-            ##  reverse sub linked list
+            #  reverse sub linked list
             sub_head, sub_tail = self.reverse(prev, k)
 
-            ## connect reversed linked list
+            # connect reversed linked list
             prev.next = sub_head
 
-            ##  update prev
+            #  update prev
             prev = sub_tail
 
         return pivot.next
@@ -39,14 +39,14 @@ class Solution:
     def reverse(self, pivot: ListNode, k) -> Tuple[ListNode, ListNode]:
         sub_tail = pivot.next
 
-        ##  reverse
+        #  reverse
         prev, curr = pivot, pivot.next
         i = 0
         while i < k and curr:
             curr.next, prev, curr = prev, curr, curr.next
             i += 1
 
-        ## update tail.next
+        # update tail.next
         sub_tail.next = curr
 
         return prev, sub_tail

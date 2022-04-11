@@ -1,4 +1,4 @@
-## R Basic types
+# R Basic types
 
 - Function:
 
@@ -42,7 +42,7 @@
 
   Factors store **categorical data** in R where the data values are limited and usually based on a finite group **like country or year**.
 
-### Atomic vectors
+## Atomic vectors
 
 A vector that contains **ONLY ONE** type of data.
 
@@ -55,7 +55,7 @@ To create a vector:
 - character vector: `c(“Sara” , “Lisa” , “Anna”)`
 - logical vector: `c(TRUE, FALSE, TRUE)`
 
-#### Naming vectors
+### Naming vectors
 
 ```r
 x <- c(1, 3, 5)
@@ -64,21 +64,21 @@ names(x) <- c("a", "b", "c")
 
 Now, R shows that the first element of the vector is named `a`, the second `b`, and the third `c`.
 
-### List
+## List
 
 Lists are different from atomic vectors because their elements can be of **any type**.
 
-#### Determining the structure of lists
+### Determining the structure of lists
 
 `str()` shows the structure of a list.
 
-#### Naming lists
+### Naming lists
 
 ```r
 list('Chicago' = 1, 'New York' = 2, 'Los Angeles' = 3)
 ```
 
-### Dates and times in R
+## Dates and times in R
 
 In R, there are three types of data that refer to an instant in time:
 
@@ -97,7 +97,7 @@ Converting from strings:
 - `ymd("2021-01-20")`
 - `ymd_hms("2021-01-20 20:11:59")`
 
-### Data frames
+## Data frames
 
 Data frames are the most common way of storing and analyzing data in R.
 
@@ -109,14 +109,14 @@ There are a few key things to keep in mind when you are working with data frames
 - Data frames can include many different types of data, like numeric, logical, or character.
 - Elements in the same column should be of the same type.
 
-### Files
+## Files
 
 - `dir.create` function to create a new folder
 - `file.create` function to create a new file
 - `file.copy` function to copy a file to the destination
 - `unlink` function to delete a file
 
-### Matrix
+## Matrix
 
 A matrix is a two-dimensional collection of data elements.
 

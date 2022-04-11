@@ -84,7 +84,7 @@ class SolutionBFS:
         if grid[0][0] != 0 or grid[max_row][max_col] != 0:
             return -1
 
-        queue = deque([(0, 0, 1)])  ## x, y, dist
+        queue = deque([(0, 0, 1)])  # x, y, dist
         visited = set()
 
         while queue:
@@ -198,14 +198,14 @@ class SolutionAStar:
             (1, 1),
         ]
 
-        ## Check that the first and last cells are open.
+        # Check that the first and last cells are open.
         if grid[0][0] or grid[max_row][max_col]:
             return -1
 
-        ## Set up the A* search.
+        # Set up the A* search.
         visited = set()
-        ## Entries on the priority queue are of the form
-        ## (total distance estimate, distance so far, (cell row, cell col))
+        # Entries on the priority queue are of the form
+        # (total distance estimate, distance so far, (cell row, cell col))
         priority_queue = [(1 + max(max_row, max_col), 1, (0, 0))]
 
         while priority_queue:
@@ -233,5 +233,5 @@ class SolutionAStar:
                 entry = (estimate, distance + 1, (new_row, new_col))
                 heapq.heappush(priority_queue, entry)
 
-        ## There was no path.
+        # There was no path.
         return -1

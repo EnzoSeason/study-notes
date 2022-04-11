@@ -1,6 +1,6 @@
-## Lists and Conditionals
+# Lists and Conditionals
 
-### Conditional
+## Conditional
 
 Unlike Angular, there isn't `ngIf` in React.
 
@@ -35,7 +35,7 @@ Unlike Angular, there isn't `ngIf` in React.
     }
     ```
 
-### List
+## List
 
 React don't have `ngFor`, but we can use JS to do it directly.
 
@@ -47,7 +47,7 @@ let persons = this.state.persons.map(person => {
 
 `key` is required by React to create a list. `key` must be unique.
 
-### state management
+## state management
 
 1. JS returns the **ref** of an Object
 2. Always use `setState` to manipulate the state

@@ -1,6 +1,6 @@
-## Organizing data
+# Organizing data
 
-### Best practices
+## Best practices
 
 - Naming conventions
 

@@ -1,4 +1,4 @@
-## Map, FlatMap, Filter
+# Map, FlatMap, Filter
 
 Scala can create a **list** as followed.
 
@@ -6,7 +6,7 @@ Scala can create a **list** as followed.
 val list = List(1, 2, 3)
 ```
 
-### Map
+## Map
 
 `map` manipulates **each element** in the list.
 
@@ -15,7 +15,7 @@ val mappedList = list.map((element: Int) => element + 1)
 println(mappedList) // List(2, 3, 4)
 ```
 
-### FlatMap
+## FlatMap
 
 `flatMap` flattens lists into one list.
 
@@ -34,7 +34,7 @@ val combinations = chars.flatMap(c => numbers.map(n => s"$c$n"))
 println(combinations) // List(a1, a2, a3, b1, b2, b3, c1, c2, c3)
 ```
 
-### For Comprehensions
+## For Comprehensions
 
 Although `map` and `flatMap` are powerful, they're hard to read. `for-comprehension` improves readability.
 
@@ -66,7 +66,7 @@ val evenCombinations = chars.flatMap(c => numbers.filter(n => n % 2 == 0).map(n 
 println(evenCombinations)
 ```
 
-### Exercises
+## Exercises
 
 Create a collection which contains AT MOST one element.
 

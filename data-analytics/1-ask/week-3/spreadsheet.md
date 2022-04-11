@@ -1,4 +1,4 @@
-## Spreadsheets
+# Spreadsheets
 
 Spreadsheet is used to **organize the data** and do the **calculation**.
 
@@ -6,7 +6,7 @@ The first step of organizing the data is to **sort and filter** data.
 
 The calculation involves using **formulas and functions**.
 
-### Data life cycle
+## Data life cycle
 
 let’s explore how spreadsheets relate to each phase of the data life cycle: **plan, capture, manage, analyze, archive, and destroy**.
 
@@ -34,7 +34,7 @@ let’s explore how spreadsheets relate to each phase of the data life cycle: **
 
   Keep in mind, lots of businesses are required to follow certain rules or have measures in place to make sure data is destroyed properly.
 
-### Fomulas
+## Fomulas
 
 - **Absolute referencing**:
 
@@ -46,7 +46,7 @@ let’s explore how spreadsheets relate to each phase of the data life cycle: **
 
 - **Data range**: When you click into your formula, the colored ranges let you see which cells are being used in your spreadsheet.
 
-#### Errors
+### Errors
 
 - **#DIV/0** : divide a value in a cell by zero or by an empty cell.
 
@@ -63,6 +63,6 @@ let’s explore how spreadsheets relate to each phase of the data life cycle: **
 - **#VALUE!**: A general error indicating a problem with a formula or with referenced cells.
 
 
-### Functions
+## Functions
 
 The preset commands, such as `SUM`, `AVERAGE`,`MAX`, `MIN`.

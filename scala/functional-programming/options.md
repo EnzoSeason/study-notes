@@ -1,4 +1,4 @@
-## Options
+# Options
 
 An **option** is a wrapper for a value that **might be present or not**.
 
@@ -19,7 +19,7 @@ val myOption: Option[Int] = Some(1)
 val noOption: Option[Int] = None
 ```
 
-### Unsafe API
+## Unsafe API
 
 Option is very useful for **unsafe APIs**. It does the **Null check** for us.
 
@@ -50,7 +50,7 @@ So that, we can better use them:
 val result = unsafeMethod() orElse backupMethod()
 ```
 
-### Functions on Option
+## Functions on Option
 
 ```scala
 val numOption: Option[Int] = Some(1)
@@ -82,7 +82,7 @@ val numOption: Option[Int] = Some(1)
 
 - `get`: It gets the value of `Option`. Avoid using it.
 
-### Exercise
+## Exercise
 
 Create a `connection` if `host` and `port` are given.
 
@@ -105,7 +105,7 @@ object Connection {
 }
 ```
 
-#### Normal call
+### Normal call
 
 ```scala
 val host = config.get("host")
@@ -120,7 +120,7 @@ val status = connection.map(conn => conn.connect())
 status.foreach(println)
 ```
 
-#### Chained call
+### Chained call
 
 ```scala
 val status = config
@@ -135,7 +135,7 @@ val status = config
 status.foreach(println)
 ```
 
-#### For Comprehensions call
+### For Comprehensions call
 
 ```scala
 val status = for {

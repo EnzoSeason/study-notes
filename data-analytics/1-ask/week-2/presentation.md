@@ -1,14 +1,14 @@
-## Sharing findings
+# Sharing findings
 
 - report
 - dashboard
 - pivot table
 
-### Report
+## Report
 
 A report is a **static** collection of data given to stakeholders **periodically**.
 
-#### Pros
+### Pros
 
 - high level historical data
 
@@ -16,7 +16,7 @@ A report is a **static** collection of data given to stakeholders **periodically
 
 - pre-cleaned and sorted data
 
-#### Cons
+### Cons
 
 - continual maintenance
 
@@ -24,11 +24,11 @@ A report is a **static** collection of data given to stakeholders **periodically
 
 - static
 
-### Dashboard
+## Dashboard
 
 A dashboard monitors **live, incoming** data.
 
-#### Pros
+### Pros
 
 - dynamic, automatic, interactive
 
@@ -36,7 +36,7 @@ A dashboard monitors **live, incoming** data.
 
 - low maintenance
 
-#### Cons
+### Cons
 
 - cost on design
 
@@ -44,7 +44,7 @@ A dashboard monitors **live, incoming** data.
 
 - potentially uncleaned data
 
-#### Types of dashboards
+### Types of dashboards
 
 The three most common categories are:
 
@@ -54,7 +54,7 @@ The three most common categories are:
 
 - **Analytical**: consists of the datasets and the mathematics used in these sets
 
-### Pivot table
+## Pivot table
 
 A pivot table is a **data summarization** tool that is used in data processing.
 
@@ -62,7 +62,7 @@ Pivot tables are used to **summarize, sort, re-organize, group, count, total, or
 
 It allows its users to **transform columns into rows and rows into columns**.
 
-## Metric
+# Metric
 
 A metric is a **single, quantifiable** type of data that can be used for **measurement**.
 

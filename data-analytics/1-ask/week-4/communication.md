@@ -1,4 +1,4 @@
-## Communication
+# Communication
 
 Before starting the communication, think about:
 
@@ -7,7 +7,7 @@ Before starting the communication, think about:
 - What they need to know?
 - How can you best communicate what they need to know? 
 
-### Tips for effective communication
+## Tips for effective communication
 
 - **learn** as you go and **ask** questions
 - practice good **writing habits**
@@ -16,7 +16,7 @@ Before starting the communication, think about:
 
 - answer in a **timely manner**
 
-### Speed vs Accuracy
+## Speed vs Accuracy
 
 To answer a question, we should be quick and accurate. To do that, we need:
 
@@ -24,7 +24,7 @@ To answer a question, we should be quick and accurate. To do that, we need:
 - outline the **problem, challenges, potential solutions, and timeframe** 
 
 
-### Limitation of data
+## Limitation of data
 
 - incomplete data
 

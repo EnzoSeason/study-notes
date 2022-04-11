@@ -1,10 +1,10 @@
-## A blogs system with Github webhooks
+# A blogs system with Github webhooks
 
 As a developer, I like learning and sharing new technology. However, I find it wastes a lot of time to copy my notes and post them on blogs websites like medium. So, I decided to create my own blog site.
 
 My blog site should **publish my notes automatically**, without posing them by hand. That means, when I take some notes, these notes should be presented on my blog sites without extra action. Awesome, right? Let's do it.
 
-### Structure
+## Structure
 
 Before coding, let's think about what I gonna build.
 
@@ -24,7 +24,7 @@ In conclusion, I need to build:
 
 - a front-end to present my notes
 
-### Needs
+## Needs
 
 I've known what I want to build. It's time to discuss what we need to do.
 
@@ -52,7 +52,7 @@ Then, I need a **back-end**. It should:
 
 Finally, **Front-end**. It needs to parse markdown into html and present them.
 
-### Tools
+## Tools
 
 Since I've figured out the needs. I should choose my tools.
 
@@ -78,11 +78,11 @@ Of course, there are downsides.
 
 We can use the `Static Generator`, which is also provided by `Next.js`, to overcome it. HTML file can be pre-rendered at the build time. But, the building will cost too much time if we have many files to generate.
 
-### Details
+## Details
 
 There are a lot of details to build a website, and most of them are boring. However, some points are very interesting.
 
-#### Listen to the Github repository
+### Listen to the Github repository
 
 The repository of Github provides **webhooks**. When there is a `push event`, webhooks will send this event to all the listeners. That's the key point of the whole blog system.
 
@@ -96,13 +96,13 @@ To build it, I did 3 things:
 
 3. setting the **secret key** of the webhooks
 
-#### Send notification to site admin
+### Send notification to site admin
 
 Once a push event is treated by the back-end, the back-end will send a notification to the site admin. It reminds the admin to rebuild the front-end.
 
 The notification can be an email. I use **Slack incoming webhooks** to send a message in Slack.
 
-#### Parse Markdown files into HTML files
+### Parse Markdown files into HTML files
 
 When an admin rebuilds the front-end, the front-end does a couple of things:
 
@@ -120,7 +120,7 @@ When an admin rebuilds the front-end, the front-end does a couple of things:
 
    In production, I need to node server to serve this front-end. The server will send the Html files according to the clients' requests.
 
-### Conclusion
+## Conclusion
 
 I built a blog site using Github webhooks. 
 

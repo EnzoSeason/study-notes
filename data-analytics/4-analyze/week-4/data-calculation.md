@@ -1,6 +1,6 @@
-## Data Calculation
+# Data Calculation
 
-### Spreadsheet
+## Spreadsheet
 
 - Count:
 

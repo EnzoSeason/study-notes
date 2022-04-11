@@ -1,6 +1,6 @@
-## Bitwise calculation
+# Bitwise calculation
 
-### Operators
+## Operators
 
 - `&`: 有 0 出 0
 
@@ -14,7 +14,7 @@
 
 - `>>`: 右移 (/2)
 
-### `~` 
+## `~` 
 
 ```python
 x ^ 0 = x
@@ -23,12 +23,12 @@ x ^ 1s = ~x
 
 x ^ (~x) = 1s
 
-x ^ x = 0 ## important
+x ^ x = 0 # important
 
-c = a ^ b => a = b ^ c or b = a ^ c ## swap
+c = a ^ b => a = b ^ c or b = a ^ c # swap
 ```
 
-### Practical use cases
+## Practical use cases
 
 1. odd or even (x % 2 == 0)
 

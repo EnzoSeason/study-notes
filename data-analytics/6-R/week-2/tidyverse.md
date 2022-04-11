@@ -1,4 +1,4 @@
-## Tidyverse
+# Tidyverse
 
 Tidyverse is **a collection of packages** in R with a common design philosophy for **data manipulation, exploration, and visualization**.
 

@@ -1,16 +1,16 @@
-## Presentation
+# Presentation
 
-### Bussiness Task
+## Bussiness Task
 
 The business task is the question or problem. your data analysis answers.
 
-### Hypothesis
+## Hypothesis
 
 The **theory** you're trying to prove or disprove with data.
 
 Establishing the hypothesis early in the presentation helps your audience understand data.
 
-### The McCandless Method
+## The McCandless Method
 
 1. Introduce the graphic by name
 
@@ -22,7 +22,7 @@ Establishing the hypothesis early in the presentation helps your audience unders
 
 5. Tell your audience why it matters
 
-### Good data presentation
+## Good data presentation
 
 Good presentation: people are logically guided through the data.
 
@@ -42,7 +42,7 @@ Good presentation: people are logically guided through the data.
 
 - Limitations to the data (caveats) - what the data can’t tell you
 
-### Prestation tips
+## Prestation tips
 
 - Channel your excitement
 
@@ -60,7 +60,7 @@ Good presentation: people are logically guided through the data.
 
 - Prepare well for the presentation
 
-### Present as Pro
+## Present as Pro
 
 Your audience:
 

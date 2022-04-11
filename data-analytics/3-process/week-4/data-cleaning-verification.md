@@ -1,4 +1,4 @@
-## Data cleaning verification
+# Data cleaning verification
 
 Verification and reporting are the next steps for a data analyst after the data is cleaned. 
 
@@ -26,7 +26,7 @@ It involves:
 
     That means thinking about where the data came from and testing your data collection and cleaning processes.
 
-### Common problems
+## Common problems
 
 - **Sources of errors**: Did you use the right tools and functions to find the source of the errors in your dataset?
 

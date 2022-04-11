@@ -40,9 +40,9 @@ class SolutionDFS:
 
     def minCut(self, s: str) -> int:
         self.s = s
-        ## if s[i:j] is a palindrome
+        # if s[i:j] is a palindrome
         self.palindrome_memo = [[None for _ in range(len(s))] for _ in range(len(s))]
-        ## the nb of cut in s[i:]
+        # the nb of cut in s[i:]
         self.cut_memo = [None for _ in range(len(s))]
 
         return self.dfs(0, len(s), len(s) - 1)
@@ -54,14 +54,14 @@ class SolutionDP:
         cut_dp = [0 for _ in range(n)]
         palindrome_dp = [[False for _ in range(n)] for _ in range(n)]
 
-        ## build palindrome_dp
+        # build palindrome_dp
         for end in range(n):
             for start in range(end + 1):
                 if s[start] == s[end]:
                     if end - start <= 2 or palindrome_dp[start + 1][end - 1]:
                         palindrome_dp[start][end] = True
 
-        ## build cut_dp
+        # build cut_dp
         for end in range(n):
             count = n
             for start in range(end + 1):

@@ -1,6 +1,6 @@
-## Values, Variables, and Types
+# Values, Variables, and Types
 
-### Values
+## Values
 
 ```scala
 val x: Int = 42
@@ -14,7 +14,7 @@ val x: Int = 42
 
   The compiler can infer that the type of variable is `Int`.
 
-### Variables
+## Variables
 
 ```scala
 var aVariable: Int = 4
@@ -29,7 +29,7 @@ aVariable = 5
 
 In functional programming, we prefer `Values` over `Variable` because `Values` are immutable, and they won't cause side effects.
 
-### Types
+## Types
 
 - `Boolean`
 

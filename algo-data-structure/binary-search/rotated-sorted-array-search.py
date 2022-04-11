@@ -12,8 +12,8 @@ def search(nums: List[int], target: int) -> int:
         is_target_bigger = target >= nums[0]
 
         if is_mid_bigger == is_target_bigger:
-            ## mid and target are in the sorted ASC interval
-            ## normal binary search
+            # mid and target are in the sorted ASC interval
+            # normal binary search
             if target < nums[mid]:
                 high = mid - 1
             else:

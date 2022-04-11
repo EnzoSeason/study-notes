@@ -1,11 +1,11 @@
-## Docker Compose
+# Docker Compose
 
-### docker-compose.yml
+## docker-compose.yml
 
 ```yaml
-version: "3.9" ## optional since v1.27.0
-services: ## containers, same as docker run
-  service1: ## a custom name, it's also the DNS name inside network
+version: "3.9" # optional since v1.27.0
+services: # containers, same as docker run
+  service1: # a custom name, it's also the DNS name inside network
     image: #optional
     command: #optional
     volumes: #optional, same as -v
@@ -18,7 +18,7 @@ volumes: #optional
 networks: #optional
 ```
 
-#### add image build
+### add image build
 
 docker-compose can build a custom image, too.
 
@@ -31,7 +31,7 @@ services:
     image: my-image 
 ```
 
-### CLI
+## CLI
 
 `docker-compose` is perfect for dev / test tasks. It can build and destroy the env quickly.
 

@@ -36,7 +36,7 @@ def generateGS(pattern: str) -> tuple:
     for i in range(m - 1):
         j = i
         k = 0
-        ## traverse the prefix and the suffix of the pattern
+        # traverse the prefix and the suffix of the pattern
         while j >= 0 and pattern[j] == pattern[m - 1 - k]:
             j -= 1
             k += 1
@@ -54,26 +54,26 @@ def makeGoodSuffixMove(
     - j: current traversing index in the pattern
     - m: the lenght of the pattern
     """
-    ##  The lenght of the suffix
+    #  The lenght of the suffix
     k = m - 1 - j
-    ## case 1: The good suffix exists in the pattern
+    # case 1: The good suffix exists in the pattern
     if suffix_latest_appearAt[k] != -1:
         return j - suffix_latest_appearAt[k] + 1
-    ## case 2: The suffix of good suffix matches the prefix of pattern
-    ## j+1 is included in the case 1, so we start at j+2
+    # case 2: The suffix of good suffix matches the prefix of pattern
+    # j+1 is included in the case 1, so we start at j+2
     for r in range(j + 2, m):
         if prefix_is_matched[m - r]:
             return r
-    ## case 3: no match between the good suffix and the prefix of pattern
+    # case 3: no match between the good suffix and the prefix of pattern
     return m
 
 
 def bm(main: str, pattern: str) -> int:
     n = len(main)
     m = len(pattern)
-    ## prepare for bad character rule
+    # prepare for bad character rule
     pattern_map = generateBC(pattern)
-    ## prepare for good suffix rule
+    # prepare for good suffix rule
     suffix_latest_appearAt, prefix_is_matched = generateGS(pattern)
     i = 0
     while i <= n - m:
@@ -82,7 +82,7 @@ def bm(main: str, pattern: str) -> int:
             if main[i + j] != pattern[j]:
                 break
             j -= 1
-        if j < 0:  ## Pattern is found in main
+        if j < 0:  # Pattern is found in main
             return i
         bad_character_move = (
             j - pattern_map[main[i + j]] if main[i + j] in pattern_map else j + 1

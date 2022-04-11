@@ -1,4 +1,4 @@
-## Documenting
+# Documenting
 
 Documenting is the process of tracking **changes, additions, deletions and errors** involved in your data cleaning effort.
 

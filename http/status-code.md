@@ -1,4 +1,4 @@
-## Status Code
+# Status Code
 
 - 1××: Indicating an intermediate state of protocol processing
 - 2××：Success
@@ -6,7 +6,7 @@
 - 4××：Request error
 - 5××：Server error
 
-### 2××
+## 2××
 
 - 200 OK
 
@@ -16,7 +16,7 @@
 
    Usually, it has `Content-Range`. For exemple, `Content-Range: bytes 0-99/2000`. It means get first 100 bytes of 2000 bytes.
 
-### 3××
+## 3××
 
 - 301 Moved Permanently:
 
@@ -32,7 +32,7 @@
 
   It's not of redirection. It's for **caching**.
 
-### 4××
+## 4××
 
 - **400 Bad Request**:
 
@@ -53,7 +53,7 @@
 - 408 Request Timeout
 
 
-### 5××
+## 5××
 
 - **500 Internal Server Error**:
 

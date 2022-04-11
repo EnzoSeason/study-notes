@@ -1,6 +1,6 @@
-## Object Oriented Programming
+# Object Oriented Programming
 
-### Basic
+## Basic
 
 ```scala
 class Person(name: String) // constructor
@@ -8,7 +8,7 @@ class Person(name: String) // constructor
 val person = new Person("John")
 ```
 
-#### Parameters vs Fields
+### Parameters vs Fields
 
 **Class parameters** can't be accessed by `.` because they aren't **class fields**. For example, `person.name` isn't working.
 
@@ -21,7 +21,7 @@ val person = new Person("John", 26)
 println(person.age) // works. Because age is a class field.
 ```
 
-#### Body
+### Body
 
 ```scala
 class Person(name: String, val age: Int) {
@@ -45,7 +45,7 @@ println(person.x) // works.
 - `this` points to **both class fields and methods**.
 - In general, **overloading methods works** in Scala except one case, which is two methods have **the same name and parameters** but **return different types** of data.
 
-#### Immutability
+### Immutability
 
 Immutability is very important in Functional Programming.
 
@@ -58,7 +58,7 @@ class Counter(val num: Int) {
 }
 ```
 
-### Operators
+## Operators
 
 All operators in Scala are **methods**.
 
@@ -102,7 +102,7 @@ mary("Hi")  // Hi, I'm Mary
 
 `apply` method breaks the barrier between OOP and Functional Programming. So it's heavily used in Scala.
 
-### Notation
+## Notation
 
 ```scala
 class Person(val name: String) {

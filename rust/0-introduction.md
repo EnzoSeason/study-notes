@@ -1,12 +1,12 @@
-## Rust for Solana
+# Rust for Solana
 
 [Quest 1: Introduction to Rust for Solana](https://www.youtube.com/playlist?list=PLeShFtA-ZIOVo7H59Gq-LA0Go1EiUs-vk)
 
-### Install Rust
+## Install Rust
 
 Use [rustup](https://www.rust-lang.org/tools/install) to install.
 
-### Hello world project
+## Hello world project
 
 1. Use `cargo new hello-world --bin` to initialize the project.
 
@@ -14,9 +14,9 @@ Use [rustup](https://www.rust-lang.org/tools/install) to install.
 
 Demo: [hello-world](./hello-world/)
 
-### Common concepts
+## Common concepts
 
-#### [Variables and Immutability](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html)
+### [Variables and Immutability](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html)
 
 By default, variables in Rust are **immutable**.
 
@@ -26,7 +26,7 @@ However, we can create a mutable variable.
 let mut x = "hello";
 ```
 
-#### [Data Type](https://doc.rust-lang.org/book/ch03-02-data-types.html)
+### [Data Type](https://doc.rust-lang.org/book/ch03-02-data-types.html)
 
 We can create a variable, and add a type annotation.
 
@@ -87,9 +87,9 @@ Other useful types are:
 
   The type of `my_filled_array` can be explict as `[i32; 10]`
 
-#### [Control flow](https://doc.rust-lang.org/book/ch03-05-control-flow.html)
+### [Control flow](https://doc.rust-lang.org/book/ch03-05-control-flow.html)
 
-##### Condition
+#### Condition
 
 ```rust
 let num = 1
@@ -103,7 +103,7 @@ if num == 2 {
 }
 ```
 
-##### Loop
+#### Loop
 
 - `while`:
 
@@ -145,7 +145,7 @@ if num == 2 {
   }
   ```
 
-#### [Pattern Matching](https://doc.rust-lang.org/book/ch06-02-match.html)
+### [Pattern Matching](https://doc.rust-lang.org/book/ch06-02-match.html)
 
 ```rust
 let x = 2;

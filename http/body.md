@@ -1,8 +1,8 @@
-## Body
+# Body
 
 ![data-type-headers](./img/data-type-headers.png)
 
-### Data type and Encoding
+## Data type and Encoding
 
 Http Body uses **MIME type** as data type.
 
@@ -30,7 +30,7 @@ There are 3 kinds.
 
 - **br**
 
-### Data type headers
+## Data type headers
 
 Once a http message has **MIME type** and **Encoding type**, we can seed it.
 
@@ -50,7 +50,7 @@ Content-Encoding: gzip
 
 If Encoding is not added, the message won't be compressed at server side, or compressed message won't be accepted.
 
-### Language encoding
+## Language encoding
 
 The **Unicode character set** that follows the **UTF-8 character encoding** is the standard character set on the Internet.
 
@@ -72,7 +72,7 @@ Content-Type: text/html; charset=utf-8
 
 However, language and charactor set can be detected by both browser and server. Therefore, Only `Accept-Language` will be set at client side, and `Content-Type` is set by the server.
 
-### Priority
+## Priority
 
 Since a browser can accept multiple types of data, we can set the priority by `q`
 
@@ -82,7 +82,7 @@ Accept: text/html,application/xml;q=0.9,*/*;q=0.8
 
 That means `text/html` (q = 1.0) > `application/xml` (q = 0.9) > `*/*` (q = 0.8).
 
-### Vary
+## Vary
 
 ```code
 Vary: Accept-Encoding,User-Agent,Accept
@@ -90,15 +90,15 @@ Vary: Accept-Encoding,User-Agent,Accept
 
 That means the server sent the response according to `Accept-Encoding`, `User-Agent` and `Accept` in the resquest headers.
 
-### Large body
+## Large body
 
 To transfer the large body, there are several ways.
 
-#### Compress
+### Compress
 
 Using `Accept-Encoding` and `Content-Encoding`, we can compress the data. It works fine with **text**, but doesn't good for images or videos.
 
-#### Chunk
+### Chunk
 
 We can chunk the body and sent them multiple responses.
 
@@ -110,7 +110,7 @@ Transfer-Encoding: chunked
 
 > Since the body is chunked, the body length is unknown. Therefore, `Content-Length` is NOT set.
 
-#### Range request
+### Range request
 
 Range request allows the client requests **a part of** the body.
 

@@ -23,7 +23,7 @@ class Solution:
         if root.val > p.val and root.val > q.val:
             return self.lowestCommonAncestor(root.left, p, q)
 
-        ## 1. root is None
-        ## 2. root is p or q
-        ## 3. root is between the p and q
+        # 1. root is None
+        # 2. root is p or q
+        # 3. root is between the p and q
         return root

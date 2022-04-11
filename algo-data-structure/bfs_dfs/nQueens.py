@@ -1,6 +1,6 @@
 from typing import List
 
-## leetcode 51
+# leetcode 51
 class Solution1:
     def __init__(self) -> None:
         self.result = []
@@ -34,7 +34,7 @@ class Solution1:
 
         return [["." * i + "Q" + "." * (n - i - 1) for i in case] for case in self.result]
 
-## leetcode 52
+# leetcode 52
 class Solution2:
     def __init__(self):
         self.result = 0

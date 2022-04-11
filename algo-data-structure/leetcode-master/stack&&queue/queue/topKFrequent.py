@@ -4,9 +4,9 @@ from typing import List
 
 class MinHeap:
     def __init__(self, n: int) -> None:
-        ## self.arr[0] is not used
-        ## make sure (2 * i) and (2 * i + 1) are
-        ## left, right child of (i)
+        # self.arr[0] is not used
+        # make sure (2 * i) and (2 * i + 1) are
+        # left, right child of (i)
         self.arr = [None] * (n + 1)
         self.n = n
         self.count = 0
@@ -24,7 +24,7 @@ class MinHeap:
             return tuple()
 
         val = self.arr[1]
-        ## replace the top by the last element
+        # replace the top by the last element
         self.arr[1] = self.arr[self.count]
         self.shiftdown(1)
         self.count -= 1

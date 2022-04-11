@@ -1,14 +1,14 @@
-## Ownership
+# Ownership
 
 Playground: [ownership](./ownership/)
 
-### Scope
+## Scope
 
 `{}` defines a scope.
 
 The variable defined in a scope can't be accessed by the outside of the scope.
 
-### Shadowing
+## Shadowing
 
 In Rust, the variable is immutable by default.
 
@@ -31,11 +31,11 @@ let a = "Hello";
 println!(a); // Hello
 ```
 
-### Program Memory
+## Program Memory
 
 Program memory which holds the data is divided into 2 section, **stack and heap**.
 
-#### Stack
+### Stack
 
 - Values are stored in **sequential order**.
 
@@ -60,7 +60,7 @@ The data type:
 
 has a **fixed size**, so they live in the stack.
 
-#### Heap
+### Heap
 
 - Size is **big and dynamic**.
 
@@ -70,7 +70,7 @@ has a **fixed size**, so they live in the stack.
 
 To access a item in a heap, we need a **pointer**.
 
-### String
+## String
 
 There are 2 string types in Rust.
 
@@ -89,7 +89,7 @@ let message = String::from("hello"); // String Type
 
 **String Type** makes it easy to modify the string.
 
-### Ownership
+## Ownership
 
 Although the size of the heap is huge, it's not infinite. We need to release the unused memory. The common ways are:
 
@@ -104,9 +104,9 @@ Rust uses the **ownership**. Variable are responsible for freeing their own reso
 
 > **Ownship** is a VERY IMPORTANT concept. Rust developer should keep it in mind.
 
-### Move, Clone
+## Move, Clone
 
-#### Move
+### Move
 
 ```rust
 let outer_message: String;
@@ -124,7 +124,7 @@ In other languages, `outer_message` and `message` should both point to _hello_ w
 
 However, because of the **ownership**: A value is **owned, and only owned** by ONE variable. `outer_message` owns _hello_ and `message` no longer exists.
 
-#### Clone
+### Clone
 
 ```rust
 let outer_message: String;
@@ -146,7 +146,7 @@ To solve the error appeared in the previous section, we use `clone()` for clonin
 
 > The value lives on the **stack** is cloned by default.
 
-### Transferring ownship
+## Transferring ownship
 
 ```rust
 fn main() {

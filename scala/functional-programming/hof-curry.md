@@ -1,6 +1,6 @@
-## HOF & Curry
+# HOF & Curry
 
-### High Order Function (HOF)
+## High Order Function (HOF)
 
 The function that either **takes functions as parameters** or **returns functions as results** is High Order Function (HOF).
 
@@ -30,7 +30,7 @@ val tenTimes = nTimesBuilder(plusOne, 10)
 println(tenTimes(1)) // output: 11
 ```
 
-### Currying
+## Currying
 
 Currying is the technique of converting a function that **takes multiple arguments into a sequence of functions** that each takes a **single argument**.
 

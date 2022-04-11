@@ -1,6 +1,6 @@
-## Complexity
+# Complexity
 
-### Time complexity
+## Time complexity
 
 ```math
 T(n) = O(f(n))
@@ -14,7 +14,7 @@ T(n) = O(f(n))
 
 Time complexity presents the relation between **the size of data** and **the time needed for running codes**, `T(n)`. So, it's usually written in `O(1)`, `O(n)`, `O(n^2)`, etc.
 
-#### Analysis of Time complexity
+### Analysis of Time complexity
 
 There are 3 rules
 
@@ -103,13 +103,13 @@ There are 2 kinds of Time complexity.
     `O(1)`, `O(n^k)`, `O(logn)`, `O(nlogn)`, `O(m+n)`
 
     ```python
-    ## O(logn)
+    # O(logn)
     def func_1(n):
         i = 1
         while (i < n):
             i = i * 2
 
-    ## O(nlogn)
+    # O(nlogn)
     def fun(n):
         for i in range(n):
             func_1(1)   
@@ -123,7 +123,7 @@ There are 2 kinds of Time complexity.
     
     It's NP problem.
 
-### Space complexity
+## Space complexity
 
 Similar to Time complexity, Space complexity presents the relation between **the size of data** and **the space needed for running codes**.
 
@@ -170,7 +170,7 @@ def find(arr: list, x: int) -> int:
     ```
 
 ```python
-MAX_LEN = N ## N is a global const number
+MAX_LEN = N # N is a global const number
 
 def insert(arr: list, val: int, pos: int) -> list:
     if pos >= MAX_LEN:

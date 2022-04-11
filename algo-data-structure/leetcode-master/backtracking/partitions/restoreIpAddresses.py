@@ -25,14 +25,14 @@ class Solution:
             return
 
         for end in range(start + 1, len(self.s) + 1):
-            ## prune
+            # prune
             if len(self.s) - end > 3 * (4 - len(path) - 1):
                 continue
             if self.isVaild(self.s[start:end]):
                 self.backTrack(path + [self.s[start:end]], end)
 
     def restoreIpAddresses(self, s: str) -> List[str]:
-        ## prune
+        # prune
         if len(s) > 3 * 4:
             return []
         self.s = s

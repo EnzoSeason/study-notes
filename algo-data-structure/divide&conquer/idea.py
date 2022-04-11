@@ -29,35 +29,35 @@ def merge_results(results):
 
 
 def recursion(level, params) -> None:
-    ## terminate
+    # terminate
     if level > MAX_LEVEL:
         print_result()
         return
 
-    ## process the current level
+    # process the current level
     process(level, params)
 
-    ## move to next level
+    # move to next level
     recursion(level + 1, params)
 
-    ## Optional clean up
-    ## reverse the state of current level
+    # Optional clean up
+    # reverse the state of current level
     reverse_state(level)
 
 
 def divideAndConquer(problem, params) -> Any:
-    ## terminate
+    # terminate
     if problem is None:
         return solve(params)
 
-    ## divide the current problem
+    # divide the current problem
     subproblems = split_problem(problem)
 
-    ## conquer the subproblems
+    # conquer the subproblems
     results = []
     for subproblem in subproblems:
         result = divideAndConquer(subproblem, params)
         results.append(result)
 
-    ## process the results
+    # process the results
     merge_results(results)

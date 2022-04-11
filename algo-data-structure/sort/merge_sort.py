@@ -13,7 +13,7 @@ def _merge_sort_worker(arr: List[int], start: int, end: int) -> None:
     merge sort the arr[start:end] recursively
     '''
     print(arr[start: end], start, end)
-    if start >= end - 1: ## end-1 is the index of the last item is the array
+    if start >= end - 1: # end-1 is the index of the last item is the array
         print('-----')
         return
     mid = start + (end - start) // 2

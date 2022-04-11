@@ -1,4 +1,4 @@
-## Pipe
+# Pipe
 
 Basic pipe: my-pipe.pipe.ts
 
@@ -40,7 +40,7 @@ export class MyPipe implements  PipeTransform {
 <p>{{ something | myPipe:'foo':'toto ' }}</p>
 ```
 
-### Data changes
+## Data changes
 
 Pipe reruns ONLY the input of the pipe changes. So, changing the data of the page won't rerun the pipe.
 

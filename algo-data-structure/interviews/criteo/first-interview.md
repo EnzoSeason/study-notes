@@ -1,6 +1,6 @@
-## First interview
+# First interview
 
-### Reconstruct CRM robot
+## Reconstruct CRM robot
 
 We have a CRM Application, Pipedrive. It tracks all the projects of our company. I've created a CRM robot. It used pipedrive webhooks to listen all the events on the pipedrive. and then it will make reactions, such as sending an email, assigning an activity to the people.
 
@@ -20,11 +20,11 @@ With this architecture, it's very easy to add a pipeline or add the new reaction
 2. If there have common methods need to be implemented by the classes, I will create an interface.
 3. If I need to pass the data from one class to another, I will let a class to compose another one.
 
-### Signature Detection
+## Signature Detection
 
 It's an application to detect signatures in a PDF file or an image.
 
-#### Backend
+### Backend
 
 If it's a PDF file, we transform it into images, and deal with the images one by one.
 
@@ -42,17 +42,17 @@ The extractor, first, generates the regions from the mask. Then, it removes the 
 4. calculate the size of the big outlier: `big_size_outlier = small_size_outlier * amplfier`
 5. remove the small and big outliers
 
-##### Cropper
+#### Cropper
 
 The cropper finds the contours of regions in the labeled masks and crop them. If the regions are overlapped, merge them.
 
-##### Judger 
+#### Judger 
 
 The judger reads the cropped mask and identifies if it's a signature or not.
 
 I use 2 metrics: the ratio of height and width, the ratio of pixels.
 
-##### Frontend
+#### Frontend
 
 It's created by React. It allows
 
@@ -60,7 +60,7 @@ It's created by React. It allows
 - modify the region. They are chips in another card. We can drag a chip from signature zone to not signature zone, or simply delete the chip. So that, the region is removed.
 - Add a region. open a canvas and draw a retangle.
 
-##### Structure
+#### Structure
 
 The application has a frontend interface created by React, a backend api used Fastapi as the framework. The request is proxyed by Nginx. The entire app is shipped by Docker.
 

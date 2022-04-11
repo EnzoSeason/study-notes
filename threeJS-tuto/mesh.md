@@ -1,6 +1,6 @@
-## Mesh
+# Mesh
 
-### MeshBasicMaterial
+## MeshBasicMaterial
 
 The simplest mesh in Three.js. It doesn't need light or texture settings. It helps you create an 3D object quickly. (with wireframe === true)
 
@@ -18,7 +18,7 @@ There are some props can be modify:
 
 - combine: combine texture and reflection
 
-### MeshNormalMaterial
+## MeshNormalMaterial
 
 It's also a simple mesh. It doesn't need light or texture settings, either.
 
@@ -29,11 +29,11 @@ It provides flatShading which doesn't exist in BaseMaterial.
 It doesn't need light. It can map image on the object.
 
 
-### MeshLambertMaterial
+## MeshLambertMaterial
 
 This material needs light. However, we can set `emissive` to show it.
 
-### MeshPhongMaterial
+## MeshPhongMaterial
 
 This material needs light, and it can control the shininess of the reflection. It is useful for polish object.
 
@@ -55,6 +55,6 @@ It provides 2 more options:
 It is an extention of MeshStandardMaterial. It has reflectivity and refractionRatio.
 
 
-### MeshToonMaterial
+## MeshToonMaterial
 
 Toon shading or Cel shading, it makes the object more cartoonish.

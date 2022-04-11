@@ -1,12 +1,12 @@
-## OOP
+# OOP
 
-### Basic
+## Basic
 
 OOP is a programming style based on the **class** or **object**.
 
 It has 4 main features, **Encapsulation, Abstraction, Inheritance, Polymorphism**.
 
-### Encapsulation
+## Encapsulation
 
 By exposing **the limited access**, the class authorizes the outside to **access internal data ONLY through the function** provided by the class.
 
@@ -18,7 +18,7 @@ The advantage is that
 
 - It makes the class easy to use since there are less access.
 
-### Abstraction
+## Abstraction
 
 Encapsulation mainly talks about how to hide information and protect data, abstraction talks about how to **hide the specific implementation of functions**.
 
@@ -28,7 +28,7 @@ The advantage is:
 
 - Easier to code since we use the existed functions.
 
-### Inheritance
+## Inheritance
 
 Inheritance is used to express **the is-a relationship between classes**.
 
@@ -44,7 +44,7 @@ The disadvantage is:
 
 - Over-used inheritance is hard to maintain. That's why, sometimes, composition is better.
 
-### Polymorphism
+## Polymorphism
 
 With the polymorphism, the parent class can be replaced its child.
 
@@ -68,7 +68,7 @@ There are 3 ways to realise the polymorphism.
             print(“I insert data into db. ”)
 
     def test(recorder):
-        recorder.record() ## polymorphism
+        recorder.record() # polymorphism
 
     def demo():
         logger = Logger()

@@ -1,4 +1,4 @@
-## Scala Learning
+# Scala Learning
 
 The topics are as followed:
 

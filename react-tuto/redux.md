@@ -1,20 +1,20 @@
-## Redux
+# Redux
 
 When we want to use **some data in the whole app**, we can pass it by `query parmeters` or `props`. But it's not convenient.
 
 Redux is what you need.
 
-### install 
+## install 
 
 ```command
 npm install redux react-redux
 ```
 
-### Basic
+## Basic
 
 Redux is a state management tool. It's independant to React. It has some concepts.
 
-#### Store
+### Store
 
 Store saves all the states in App. Only Reducers can update it.
 
@@ -22,7 +22,7 @@ Store saves all the states in App. Only Reducers can update it.
 const store = redux.createStore(rootReducer);
 ```
 
-#### Reducers
+### Reducers
 
 It updates the store according to the actions.
 
@@ -41,7 +41,7 @@ const rootReducer = (state = initialState, action) => {
 };
 ```
 
-#### Actions
+### Actions
 
 Actions tell the Reducers how to update the Store. It can be **dispatched**.
 
@@ -50,7 +50,7 @@ const action = {type: 'ADD_COUNTER', value: 10};
 store.dispatch({type: 'ADD_COUNTER', value: 10});
 ```
 
-#### subscribe
+### subscribe
 
 Once Store is updated, it will tell all the components which subscribe it.
 
@@ -59,7 +59,7 @@ store.subscribe(() => {
     console.log('[Subscription]', store.getState());
 });
 ```
-### react-redux
+## react-redux
 
 * `<Provider>`: inject Redux store into React
 
@@ -116,7 +116,7 @@ store.subscribe(() => {
         <button onClick={this.props.onMyClick}></button>
         ```
 
-### Multi Reducers
+## Multi Reducers
 
 use `combineReducers` to combine multi reducers into one
 
@@ -144,7 +144,7 @@ const mapStateToProps = state => {
 However, in `counterReducer.js`, we can't access the `state`.
 
 
-### update state immutably
+## update state immutably
 
 [Immutable Update Patterns](https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns/)
 

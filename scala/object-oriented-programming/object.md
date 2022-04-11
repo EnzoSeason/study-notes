@@ -1,4 +1,4 @@
-## Object
+# Object
 
 Scala doesn't have the "class-level" functionality (the attributes or methods with `static` keyword). Instead, It uses a special class with `object` keyword.
 
@@ -12,7 +12,7 @@ println(Person.N_EYES)
 
 Attention: `object` class doesn't receive parameters.
 
-### Singleton
+## Singleton
 
 `object` creates the **singleton**.
 
@@ -22,7 +22,7 @@ val paul = Person
 println(mary == paul) // true
 ```
 
-### Companions
+## Companions
 
 ```scala
 object Person {
@@ -50,7 +50,7 @@ val father = new Person("Jack")
 val kid = Person(mother, father)
 ```
 
-### Scala Application
+## Scala Application
 
 The scala application is a `object` class with `def main(args: Array[String])`. This function serves as an entry point for JVM to run the codes inside it.
 

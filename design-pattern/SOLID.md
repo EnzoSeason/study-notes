@@ -1,8 +1,8 @@
-## SOLID
+# SOLID
 
 SOLID is composed by 5 principles.
 
-### Single Responsibility Principle (SRP)
+## Single Responsibility Principle (SRP)
 
 A class or module should have a single responsibility.
 
@@ -20,7 +20,7 @@ There are some simple metrics for SRP.
 
 However, it's not always good to follow this rule. **We don't split a small class into tiny pieces**. It also makes the code hard to maintain.
 
-### Open Closed Principle
+## Open Closed Principle
 
 Software entities (modules, classes, functions, etc.) should be **open for extension , but closed for modification**.
 
@@ -33,7 +33,7 @@ The ways to extend the code are:
 - Programming based on interfaces rather than implementation
 - most of the design patterns (for example, decoration, strategy, template, chain of responsibility, state)
 
-### Liskov Substitution Principle
+## Liskov Substitution Principle
 
 If **S is a subtype of T**, then **objects of type T may be replaced with objects of type S**, without breaking the program.
 
@@ -41,7 +41,7 @@ When we create a subclass, we should not change the **input, output, exception, 
 
 To check whether this rule is followed, we can **use the unit tests of the parent class to test to subclass**.
 
-### Interface Segregation Principle
+## Interface Segregation Principle
 
 Clients should ONLY be forced to depend upon interfaces that they do use.
 
@@ -59,7 +59,7 @@ Here, we have 3 different angles to understand it.
 
   The interface has a single duty. We split the generic interface into specific interfaces.
 
-### Dependency Inversion Principle
+## Dependency Inversion Principle
 
 High-level modules shouldn’t depend on low-level modules. Both **modules should depend on abstractions**. In addition, abstractions shouldn’t depend on details. **Details depend on abstractions.**
 

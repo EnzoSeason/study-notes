@@ -1,10 +1,10 @@
-## Principles
+# Principles
 
-### Why Amazon
+## Why Amazon
 
 I want to be an engineer who has deep understanding of the sofeware inductry. And I want to work and make friends with the best software engineers in the world. So, I need to go the top-class tech company, like Amazon.
 
-### Principles
+## Principles
 
 - **Customer Obsession**
 

@@ -1,8 +1,8 @@
-## Component
+# Component
 
 The component is the core of React. It composes the React App.
 
-### Basic
+## Basic
 
 1. Component is a **pure function**. Only the `props` and the `states` can change it.
 
@@ -16,7 +16,7 @@ The component is the core of React. It composes the React App.
    - Output: pass the function into the component, and bind it on an `event`, such as `onClick`, `onChange`, etc.
 
 
-### Rule
+## Rule
 
 1. make small and simple component
 
@@ -30,7 +30,7 @@ The component is the core of React. It composes the React App.
 3. use stateless component as much as possible. use `props` to pass in data
    Stateless component is easier to write and maintain. `state` increases the complexity of the component.
 
-### Controlled component vs Uncontrolled component
+## Controlled component vs Uncontrolled component
 
 A controlled component is only controlled by the `state`.
 
@@ -45,7 +45,7 @@ It's the recommanded way to deal with `input`, `select` or `textarea`.
 
 Uncontrolled component is not controlled by the `state`. It's the tradition way to code, using DOM API. It loses the track of `state`.
 
-### life cycle
+## life cycle
 
 1. Mounting
 
@@ -79,7 +79,7 @@ Uncontrolled component is not controlled by the `state`. It's the tradition way 
 
     1. componentWillUnmout()
 
-### Virtual DOM
+## Virtual DOM
 
 React doesn't update DOM tree directly. It creates virtual DOM. When an update comes, it will **differ 2 virtual DOM tree** and update part of the tree. The time complexity of `diff` is `O(n)`.
 

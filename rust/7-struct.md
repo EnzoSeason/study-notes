@@ -1,4 +1,4 @@
-## Struct
+# Struct
 
 Demo: [struct-demo](./struct-demo/)
 
@@ -28,7 +28,7 @@ let car = Shuttle {
 println!("{}", car.name);
 ```
 
-### Struct Update syntax
+## Struct Update syntax
 
 We can create another `Shuttle` by using the existing one.
 
@@ -48,7 +48,7 @@ let bus = Shuttle {
 // Error: The name's ownship on car is moved to bus. Car has no name.
 ```
 
-### Struct Method
+## Struct Method
 
 ```rust
 impl Shuttle {
@@ -72,7 +72,7 @@ impl Shuttle {
 }
 ```
 
-### Associated function
+## Associated function
 
 Associated function lives with `struct`, too. But, it **hasn't `&self` parameter**. So it can't access the fields in `struct`.
 
@@ -93,7 +93,7 @@ impl Shuttle {
 let ship = Shuttle::new("Ship");
 ```
 
-### Tuple Struct
+## Tuple Struct
 
 It's just alike the normal `tuple`, but it also has a name like `struct`.
 

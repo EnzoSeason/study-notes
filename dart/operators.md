@@ -1,20 +1,20 @@
-## Operators
+# Operators
 
-### Arithmetic operators
+## Arithmetic operators
 
 | Operator | Meaning                                               |
 | -------- | ----------------------------------------------------- |
 | ~/       | Divide, returning an **integer** result               |
 | %        | Get the remainder of an **integer** division (modulo) |
 
-### Equality and relational operators
+## Equality and relational operators
 
 To test whether two objects x and y represent the same thing, use the `==` operator.
 
 1. If _x_ or _y_ is null, return true if both are null, and false if only one is null.
 2. Return the result of invoking the == method on x with the argument y. (That’s right, operators such as `==` are methods that are invoked on their first operand.)
 
-### Type test operators
+## Type test operators
 
 | Operator | Meaning                                            |
 | -------- | -------------------------------------------------- |
@@ -39,7 +39,7 @@ if (employee is Person) {
 }
 ```
 
-### Assignment operators
+## Assignment operators
 
 ```dart
 // Assign value to a
@@ -48,7 +48,7 @@ a = value;
 b ??= value;
 ```
 
-### Cascade notation
+## Cascade notation
 
 Cascades (`..`, `?..`) allow you to make a sequence of operations on the same object.
 

@@ -1,4 +1,4 @@
-## ggplot2
+# ggplot2
 
 ggplot2 includes features that:
 
@@ -8,7 +8,7 @@ ggplot2 includes features that:
 
 - add labels and annotations to a plot.
 
-### Main conception
+## Main conception
 
 - **Aesthetic**:
 
@@ -28,7 +28,7 @@ ggplot2 includes features that:
 
   the label and annotate functions let you customize your plot.
 
-### Example
+## Example
 
 ```r
 ggplot(data = penguins) + geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g))
@@ -52,7 +52,7 @@ ggplot(data = penguins) + geom_point(mapping = aes(x = flipper_length_mm, y = bo
 
   Each geom function in ggplot2 takes a mapping argument. This defines how variables in your dataset are mapped to visual properties.
 
-### Create a ggplot
+## Create a ggplot
 
 1. Start with the `ggplot` function and choose a dataset to work with.
 
@@ -66,7 +66,7 @@ The template is as followed:
 ggplot(data = <data>) + <geom_function>(mapping = aes(<aesthetic mapping>))
 ```
 
-### Aesthetic attributes
+## Aesthetic attributes
 
 **Mapping** is an argument that matches up a specific variable in your data set with a specific aesthetic.
 
@@ -88,7 +88,7 @@ If you want to change all the color / shape / size of the points, set the parame
 ggplot(data, aes(x=distance, y=dep_delay, size=air_time, shape=carrier), color=carrier)
 ```
 
-### Smoothing
+## Smoothing
 
 Smoothing enables the detection of a **data trend** even when you can't easily notice a trend from the plotted data points.
 
@@ -99,7 +99,7 @@ Smoothing enables the detection of a **data trend** even when you can't easily n
 
 The `geom_jitter()` function creates a scatterplot and then **adds a small amount of random noise** to each point in the plot to **make the points easier to find**.
 
-### Facet
+## Facet
 
 Facets let you display smaller groups or subsets of your data.
 
@@ -115,7 +115,7 @@ Facets let you display smaller groups or subsets of your data.
   facet_grid(sex~speices)
   ```
 
-### Annotate
+## Annotate
 
 Annotate means to **add notes** to a document or diagram to **explain or comment** upon it.
 
@@ -129,7 +129,7 @@ Annotate means to **add notes** to a document or diagram to **explain or comment
   annotation("text", x=100, y=200, label="my note")
   ```
 
-### Save the plot
+## Save the plot
 
 1. `ggsave()`
 

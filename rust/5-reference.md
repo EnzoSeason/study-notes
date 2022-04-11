@@ -1,8 +1,8 @@
-## Reference
+# Reference
 
 Playground: [reference](./reference/)
 
-### Borrowing references: `&`
+## Borrowing references: `&`
 
 Since passing the variable directly into a function will cause **ownship** problem, we pass **a reference of the variable** to avoid that.
 
@@ -18,7 +18,7 @@ fn print_message(message: &String) {
 }
 ```
 
-### Mutable reference: `&mut`
+## Mutable reference: `&mut`
 
 We can **create a mutable reference**, and pass it to the function so that the function can modify the **mutable variable**.
 
@@ -38,13 +38,13 @@ fn update(message: &mut String) {
 }
 ```
 
-#### Restriction
+### Restriction
 
 We can create **ONLY ONE** mutable reference for a mutable variable.
 
 However, we can createa as many reference as we want for a immutable variable.
 
-### Slice
+## Slice
 
 We can use the reference to choose the slice we want.
 
@@ -66,7 +66,7 @@ let inner_nums = &nums[..2];
 println!("{:?}", inner_nums); // [1, 2]
 ```
 
-### Slices in function
+## Slices in function
 
 We can let the function **get/return a slice**.
 
@@ -99,7 +99,7 @@ fn get_first_world(message: &str) -> &str {
 
   - The length of the slice.
 
-#### Deref Coercion
+### Deref Coercion
 
 `&String` can be passed into a function as `&str`, while `&str` can't be treated as `&String`.
 
@@ -112,7 +112,7 @@ fn get_first_world(message: &str) -> &str {
 }
 ```
 
-### Dereference Operator: `*`
+## Dereference Operator: `*`
 
 `&a` means the **pointer** of the **variable** `a`.
 

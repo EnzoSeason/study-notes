@@ -1,6 +1,6 @@
-## Securing data
+# Securing data
 
-### Data security
+## Data security
 
 Data security means protecting data from unauthorized access or corruption by adopting safety measures.
 

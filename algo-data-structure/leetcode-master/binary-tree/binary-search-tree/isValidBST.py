@@ -20,11 +20,11 @@ class Solution1:
             return True
 
         if min_val < node.val < max_val:
-            ## The left subtree of a node contains only nodes with keys less than the node's key
+            # The left subtree of a node contains only nodes with keys less than the node's key
             left = self.dfs(node.left, min_val, node.val)
-            ## The right subtree of a node contains only nodes with keys greater than the node's key.
+            # The right subtree of a node contains only nodes with keys greater than the node's key.
             right = self.dfs(node.right, node.val, max_val)
-            ## Both the left and right subtrees must also be binary search trees.
+            # Both the left and right subtrees must also be binary search trees.
             return left and right
 
         return False
@@ -47,17 +47,17 @@ class Solution2:
         if not root:
             return True
         
-        ## check left child tree
+        # check left child tree
         left = self.isValidBST(root.left)
         if not left:
             return False
         
-        ## check current node
+        # check current node
         if root.val <= self.leftMax:
             return False
         self.leftMax = root.val
         
-        ## check right child tree
+        # check right child tree
         return self.isValidBST(root.right)
 
 

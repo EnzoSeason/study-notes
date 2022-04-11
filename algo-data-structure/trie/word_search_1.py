@@ -10,7 +10,7 @@ class Solution:
         word: str,
     ) -> bool:
 
-        ## end conditions
+        # end conditions
         if len(word) == 0:
             return True
 
@@ -25,14 +25,14 @@ class Solution:
         if visited[i][j]:
             return False
 
-        ## prepare date
+        # prepare date
         visited[i][j] = True
-        ## divide & conquer
+        # divide & conquer
         top = self._dfs(board, visited, [i - 1, j], word[1:])
         bottom = self._dfs(board, visited, [i + 1, j], word[1:])
         left = self._dfs(board, visited, [i, j - 1], word[1:])
         right = self._dfs(board, visited, [i, j + 1], word[1:])
-        ## recover data
+        # recover data
         visited[i][j] = False
 
         return top or bottom or left or right

@@ -1,10 +1,10 @@
-## Understand Data Visualization
+# Understand Data Visualization
 
-### Frameworks
+## Frameworks
 
 Frameworks can help you organize your thoughts about data visualization and give you a useful checklist to reference.
 
-#### The McCandless Method
+### The McCandless Method
 
 - **Information**: the **data** you are working with
 
@@ -16,7 +16,7 @@ Frameworks can help you organize your thoughts about data visualization and give
 
 All four elements need to be at work to create an effective visual.
 
-#### Kaiser Fung’s Junk Charts Trifecta Checkup
+### Kaiser Fung’s Junk Charts Trifecta Checkup
 
 This approach is a useful set of questions that can help consumers of data visualization critique what they are consuming and determine how effective it is. The Checkup has three question:
 
@@ -26,13 +26,13 @@ This approach is a useful set of questions that can help consumers of data visua
 
 This checklist helps you think about your data viz from **the perspective of your audience** and decide if your visual is communicating your data effectively to them or not.
 
-### Pre-attentive attributes
+## Pre-attentive attributes
 
 Pre-attentive attributes are the elements of a data visualization that people recognize automatically **without conscious effort**.
 
 The essential, basic building blocks that make visuals immediately understandable are called **marks and channels**.
 
-#### Marks
+### Marks
 
 M​arks are basic visual objects like **points, lines, and shapes**. Every mark can be broken down into four qualities:
 
@@ -44,7 +44,7 @@ M​arks are basic visual objects like **points, lines, and shapes**. Every mark
 
 4. **Color** - What color the mark is
 
-#### Channels
+### Channels
 
 C​hannels are visual aspects or variables that represent characteristics of the data. Channels will vary in terms of how effective they are at communicating data based on three elements:
 
@@ -54,7 +54,7 @@ C​hannels are visual aspects or variables that represent characteristics of th
 
 3. **Grouping** - How good is a channel at communicating groups that exist in the data?
 
-### Design principles
+## Design principles
 
 | Principle                   | Description                                                                                                                                                     |
 | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -64,7 +64,7 @@ C​hannels are visual aspects or variables that represent characteristics of th
 | Color                       | Using color **consciously and meaningfully**, **staying consistent throughout your visuals**.                                                                   |
 | Numbers of things           | If your visualization uses lines, try to plot **five or fewer**. When using visuals like pie charts, try to keep the number of segments to **less than seven**. |
 
-### Correlation vs. Causation
+## Correlation vs. Causation
 
 - **Correlation** in statistics is the measure of the degree to which two variables move in relationship to each other.
 

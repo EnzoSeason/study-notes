@@ -1,4 +1,4 @@
-## Cookie
+# Cookie
 
 1. The client sends a request to the server **without cookie**.
 2. The server reponses with the cookie by setting `Set-cookie` header.
@@ -6,7 +6,7 @@
 
 ![cookie](./img/cookie.png)
 
-### Cookie attributes
+## Cookie attributes
 
 - Expires, Max-Age
 

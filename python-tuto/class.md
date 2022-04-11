@@ -1,6 +1,6 @@
-## Class
+# Class
 
-### constructor
+## constructor
 
 ```python
 class Student:
@@ -24,7 +24,7 @@ class Student:
         __repr__ = __str__ # common trick for display
 
     s = Student('Michael')
-    print(s) ## Student object (name=Michael)
+    print(s) # Student object (name=Michael)
     ```
 
 - `__iter__` / `__next__`: The instance is iterable.
@@ -40,7 +40,7 @@ class Student:
     s = Student() 
     s.name = 'Michael'
     s.age = 25
-    s.score = 99 ## AttributeError: 'Student' object has no attribute 'score'
+    s.score = 99 # AttributeError: 'Student' object has no attribute 'score'
     ```
 
 - `__getattr__`: when an inexistent attr is called, this function is triggered.
@@ -59,7 +59,7 @@ class Student:
 
         __repr__ = __str__
     
-    Chain().status.user ## /status/user
+    Chain().status.user # /status/user
     ```
 
 - `__call__`: make instance callable
@@ -76,7 +76,7 @@ class Student:
     s() # My name is Michael.
     ```
 
-### private attribute
+## private attribute
 
 ```python
 class Student:
@@ -112,7 +112,7 @@ class Student:
 
 We can get / set `birth`, but `age` is read only.
 
-### Inheritance
+## Inheritance
 
 ```python
 class Animal:
@@ -142,7 +142,7 @@ We can also use `@abstractmethod` to decorate `run`, which makes `Animal` an abs
 - It can't be instanced
 - All the abstract method must be override by the child class.
 
-#### MixIn
+### MixIn
 
 Python allows inherits **multiple class**. Some classes provides services. We call them `MixIn`.
 
@@ -160,7 +160,7 @@ class Dog(Animal, RunnableMixIn):
 
 Dog is an animal, dog can run, but dog isn't a runnable. So we let dog inherit Animal and RunnableMixIn
 
-### Class attribut vs Instance attribut
+## Class attribut vs Instance attribut
 
 ```python
 class Student:
@@ -169,15 +169,15 @@ class Student:
     def __init__(self, id):
         self.id = id;
 
-print(Student.IDENTITY) ## student
+print(Student.IDENTITY) # student
 
 jack = Student(1);
-print(jack.id); ## 1
+print(jack.id); # 1
 ```
 
 > DO NOT use the same name for class attr and instance attr.
 
-### class method vs static method
+## class method vs static method
 
 class method does the tasks which can't be done by `__init__`.
 

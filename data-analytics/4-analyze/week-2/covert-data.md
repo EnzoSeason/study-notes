@@ -1,4 +1,4 @@
-## Covert data
+# Covert data
 
 Incorrectly formatted data can:
 
@@ -6,20 +6,20 @@ Incorrectly formatted data can:
 - Take time to fix
 - Affect stakeholder's decision-making
 
-### Spreadsheet
+## Spreadsheet
 
-#### Combining data from two cells
+### Combining data from two cells
 
 - `CONCAT`: combine **2** values
 - `CONCATENATE`: combine **multiple** values
 
-#### Data validation
+### Data validation
 
 - Add dropdown lists with predetermined options
 - Create custom checkboxes
 - Protect structured data and formulas
 
-### SQL
+## SQL
 
 - `CONCAT`: A function that adds strings together to create new text strings that can be used as unique keys
 

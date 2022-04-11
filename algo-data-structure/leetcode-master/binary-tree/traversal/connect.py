@@ -22,14 +22,14 @@ class Solution:
 
         level_head = root
         while level_head.left:
-            ## perfect binary tree
-            ## If it has left child, it must have right child.
+            # perfect binary tree
+            # If it has left child, it must have right child.
             parent = level_head
             while parent:
                 parent.left.next = parent.right
                 if parent.next:
-                    ## perfect binary tree
-                    ## All the nodes have 2 children, except the leaves.
+                    # perfect binary tree
+                    # All the nodes have 2 children, except the leaves.
                     parent.right.next = parent.next.left
                 parent = parent.next
             level_head = level_head.left

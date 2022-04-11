@@ -1,8 +1,8 @@
-## Ethics
+# Ethics
 
 Ethics refers to well-founded standards of right and wrong that prescribe **what humans ought to do**, usually in terms of rights, obligations, benefits to society, fairness or specific virtues.
 
-## Data ethics
+# Data ethics
 
 Data ethics refers to well-founded **standards of right and wrong** that dictate how data is **collected, shared, and used**.
 
@@ -15,29 +15,29 @@ There are lots of different aspects of data ethics but we'll cover six:
 - **privacy**
 - **openness**
 
-### Ownership
+## Ownership
 
 It's **individuals** who own the raw data they provide, and they have primary control over its usage, how it's processed and how it's shared.
 
-### Transaction transparency
+## Transaction transparency
 
 All **data processing activities and algorithms** should be completely **explainable and understood** by the **individual** who provides their data.
 
-### Consent
+## Consent
 
 This is an individual's right to **know explicit details** about how and why their data will be used before agreeing to provide it.
 
-### Currency
+## Currency
 
 Individuals should be aware of **financial transactions resulting** from the use of their personal data and the scale of these transactions.
 
-### Privacy
+## Privacy
 
 Privacy means preserving a data subject's information and activity **any time a data transaction occurs**.
 
 This is sometimes called information privacy or data protection.
 
-#### Data anonymization
+### Data anonymization
 
 **Personally identifiable information**, or **PII**, is information that can be used by itself or with other data to track down a person's identity.
 
@@ -47,7 +47,7 @@ Typically, data anonymization involves **blanking, hashing, or masking personal 
 
 A data analyst **removes personally identifying information** from a dataset.
 
-### Openness
+## Openness
 
 Openness refers to **free access, usage and sharing of data**.
 
@@ -61,7 +61,7 @@ The advantage is
 
 - Credible databases can be **used more widely**. More importantly, all of that good data can be leveraged, shared, and combined with other data.
 
-#### Interoperability
+### Interoperability
 
 Interoperability is key to open data's success.
 

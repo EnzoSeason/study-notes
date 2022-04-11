@@ -1,6 +1,6 @@
-## Collecting Data
+# Collecting Data
 
-### How data is collected
+## How data is collected
 
 - Interviews
 
@@ -18,7 +18,7 @@
 
   It's widely used on the Internet.
 
-### Considerations
+## Considerations
 
 - How data will be collected
 

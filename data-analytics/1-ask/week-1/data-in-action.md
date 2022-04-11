@@ -1,8 +1,8 @@
-## Data in action
+# Data in action
 
 Here is a case that will illustrate how **problem solving** relates to each phase of the **data analysis** process and shed some light on how these phases work in the real world.
 
-### Ask
+## Ask
 
 It’s impossible to solve a problem if you don’t know what it is. These are some things to consider.
 
@@ -16,7 +16,7 @@ It’s impossible to solve a problem if you don’t know what it is. These are s
 
 - Take a step back and see the whole situation in context
 
-### Prepare
+## Prepare
 
 You will decide what data you need to collect in order to answer your questions and how to organize it so that it is useful. You might use your business task to decide:
 
@@ -26,7 +26,7 @@ You will decide what data you need to collect in order to answer your questions 
 
 - Create security measures to protect that data
 
-### Process
+## Process
 
 Clean data is the best data and you will need to **clean up your data** to get rid of any possible errors, inaccuracies, or inconsistencies. This might mean:
 
@@ -38,7 +38,7 @@ Clean data is the best data and you will need to **clean up your data** to get r
 
 - Checking as much as possible for bias in the data
 
-### Analyze
+## Analyze
 
 You will want to think analytically about your data. At this stage, you might sort and format your data to make it easier to:
 
@@ -48,7 +48,7 @@ You will want to think analytically about your data. At this stage, you might so
 
 - Create tables with your results
 
-### Share
+## Share
 
 Everyone shares their results differently so be sure to summarize your results with clear and enticing visuals of your analysis using data viz tools like graphs or dashboards. This is your chance to show the stakeholders you have solved their problem and how you got there. Sharing will certainly help your team:
 
@@ -60,11 +60,11 @@ Everyone shares their results differently so be sure to summarize your results w
 
 - Successfully communicate your findings
 
-### Act
+## Act
 
 Now it’s time to act on your data. You will take everything you have learned from your data analysis and put it to use. This could mean providing your stakeholders with recommendations based on your findings so they can make **data-driven decisions**.
 
-## Structured thinking
+# Structured thinking
 
 These six steps can help you to break the data analysis process into smaller, manageable parts, which is called structured thinking. This process involves four basic activities:
 

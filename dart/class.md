@@ -1,4 +1,4 @@
-## Class
+# Class
 
 Dart is an object-oriented language with classes and mixin-based inheritance. Every object is an instance of a class, and all classes except `Null` descend from Object.
 
@@ -6,7 +6,7 @@ Extension methods are a way to add functionality to a class without changing the
 
 Mixin-based inheritance means that although every class (except for the top class, Object?) has exactly one superclass, a class body can be reused in multiple class hierarchies.
 
-### Using class members
+## Using class members
 
 - Use a dot (`.`) to refer to an instance variable or method
 - Use `?.` instead of `.` to avoid an exception when the leftmost operand is null
@@ -24,7 +24,7 @@ double distance = p.distanceTo(Point(4, 4));
 var a = p?.y;
 ```
 
-### Using constructors
+## Using constructors
 
 1. You can create an object using a constructor. Constructor names can be either `ClassName` or `ClassName.identifier`.
 
@@ -48,7 +48,7 @@ var a = p?.y;
    assert(!identical(a, b)); // NOT the same instance!
    ```
 
-### Instance variables
+## Instance variables
 
 All uninitialized instance variables have the value `null`.
 
@@ -79,7 +79,7 @@ class ProfileMark {
 }
 ```
 
-### Constructors
+## Constructors
 
 ```dart
 class Point {
@@ -100,15 +100,15 @@ class Point {
 }
 ```
 
-#### Default constructors
+### Default constructors
 
 If you don’t declare a constructor, a default constructor is provided for you. The default constructor has **no arguments** and invokes the **no-argument constructor** in the superclass.
 
-#### Constructors aren’t inherited
+### Constructors aren’t inherited
 
 Subclasses don’t inherit constructors from their superclass.
 
-#### Named constructors
+### Named constructors
 
 Use a named constructor to **implement multiple constructors** for a class or to provide extra clarity:
 
@@ -129,7 +129,7 @@ class Point {
 }
 ```
 
-#### Invoking a non-default superclass constructor
+### Invoking a non-default superclass constructor
 
 The order of execution is as follows:
 
@@ -166,7 +166,7 @@ void main() {
 }
 ```
 
-#### Initializer list
+### Initializer list
 
 Besides invoking a superclass constructor (`super`), you can also initialize instance variables before the constructor body runs. Separate initializers with commas.
 
@@ -180,7 +180,7 @@ Point.fromJson(Map<String, double> json)
 }
 ```
 
-#### Redirecting constructors
+### Redirecting constructors
 
 Sometimes a constructor’s only purpose is to redirect to another constructor in the same class. A redirecting constructor’s body is empty, with the constructor call (using this instead of the class name) appearing after a colon (`:`).
 
@@ -196,7 +196,7 @@ class Point {
 }
 ```
 
-#### Constant constructors
+### Constant constructors
 
 If your class produces objects that **never change**, you can make these objects compile-time constants.
 
@@ -212,7 +212,7 @@ class ImmutablePoint {
 }
 ```
 
-#### Factory constructors
+### Factory constructors
 
 Use the `factory` keyword when implementing a constructor that **doesn’t always create a new instance** of its class.
 
@@ -249,11 +249,11 @@ class Logger {
 }
 ```
 
-### Methods
+## Methods
 
 Methods are functions that provide behavior for an object.
 
-#### Operators
+### Operators
 
 An operator declaration is identified using the built-in identifier `operator`.
 
@@ -281,7 +281,7 @@ void main() {
 }
 ```
 
-#### Getters and setters
+### Getters and setters
 
 Getters and setters are special methods that provide read and write access to an object’s properties.
 
@@ -306,7 +306,7 @@ void main() {
 }
 ```
 
-#### Abstract methods
+### Abstract methods
 
 Instance, getter, and setter methods can be abstract, defining an interface but leaving its implementation up to other classes.
 
@@ -328,13 +328,13 @@ class EffectiveDoer extends Doer {
 }
 ```
 
-### Abstract classes
+## Abstract classes
 
 Use the `abstract` modifier to define an abstract class—a class that **can’t be instantiated**.
 
 Abstract classes are useful for **defining interfaces**, often with some implementation.
 
-### Implicit interfaces
+## Implicit interfaces
 
 **Every class** implicitly defines an interface containing all the instance members of the class and of any interfaces it implements.
 
@@ -374,7 +374,7 @@ Here’s an example of specifying that a class implements multiple interfaces:
 class Point implements Comparable, Location {...}
 ```
 
-### Extending a class
+## Extending a class
 
 Use `extends` to create a subclass, and `super` to refer to the superclass:
 
@@ -398,11 +398,11 @@ class SmartTelevision extends Television {
 }
 ```
 
-#### Overriding members
+### Overriding members
 
 Subclasses can override instance methods (including operators), getters, and setters. You can use the `@override` annotation to indicate that you are intentionally overriding a member.
 
-### Enumerated types
+## Enumerated types
 
 Enumerated types, often called enumerations or enums, are a special kind of class used to represent **a fixed number of constant values**.
 
@@ -424,7 +424,7 @@ List<Color> colors = Color.values;
 assert(colors[2] == Color.blue);
 ```
 
-### Adding features to a class: mixins
+## Adding features to a class: mixins
 
 Mixins are a way of reusing a class’s code in multiple class hierarchies.
 
@@ -467,6 +467,6 @@ mixin MusicalPerformer on Musician {
 }
 ```
 
-### Class variables and methods
+## Class variables and methods
 
 Use the `static` keyword to implement class-wide variables and methods.

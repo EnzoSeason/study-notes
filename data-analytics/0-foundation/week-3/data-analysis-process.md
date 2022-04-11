@@ -1,8 +1,8 @@
-## Data analysis process
+# Data analysis process
 
 This program is split into courses, six of which are based upon the steps of data analysis: **ask, prepare, process, analyze, share, and act**.
 
-### Ask
+## Ask
 
 In this phase, we do two things:
 
@@ -20,24 +20,24 @@ In this phase, we do two things:
 
 Stakeholders hold a stake in the project. They are people who have invested time and resources into a project and are interested in the outcome.
 
-### Prepare
+## Prepare
 
 This is where data analysts **collect and store data** they'll use for the upcoming analysis process.
 
-### Process
+## Process
 
 Data analysts find and eliminate **any errors and inaccuracies** that can get in the way of results.
 
 This usually means **cleaning data**, transforming it into a more useful format, combining two or more datasets to make information more complete and removing outliers,
 
-### Analyze
+## Analyze
 
 Analyzing the data you've collected involves **using tools to transform and organize that information** so that you can draw useful conclusions, make predictions, and drive informed decision-making.
 
-### Share
+## Share
 
 Data analysts **interpret results and share them** with others to help stakeholders make effective data-driven decisions.
 
 Visualization is a data analyst's best friend.
 
-### Act
+## Act

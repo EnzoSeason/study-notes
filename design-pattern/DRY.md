@@ -1,4 +1,4 @@
-## DRY
+# DRY
 
 Don’t Repeat Yourself.
 
@@ -10,7 +10,7 @@ Don’t Repeat Yourself.
 
 - Duplicate code execution: Solving by removing the duplicated execution.
 
-### Code Reusability
+## Code Reusability
 
 When we develop new features, we try to reuse existing code as much as possible.
 

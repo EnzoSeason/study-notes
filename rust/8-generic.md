@@ -1,8 +1,8 @@
-## Generic
+# Generic
 
 Demo: [generic-demo](./generic-demo/)
 
-### Generic struct
+## Generic struct
 
 ```rust
 // create a generic struct
@@ -18,7 +18,7 @@ let rect = Rectangle {
 };
 ```
 
-### Generic method
+## Generic method
 
 ```rust
 impl<T, U> Rectangle<T, U> {
@@ -48,7 +48,7 @@ let rect_f64 = Rectangle {
 println!("rect2's area is {}", rect_f64.area());
 ```
 
-### Generic function
+## Generic function
 
 ```rust
 fn get_bigger<T: PartialOrd>(first: T, second: T) -> T {
@@ -64,7 +64,7 @@ println!("The bigger one is {}", get_bigger(10, 20));
 
 `<T: PartialOrd>` makes sure the type `T` can be compared.
 
-### Box type
+## Box type
 
 It stores the data on the **heap** instead of stack.
 
@@ -89,7 +89,7 @@ println!("The memory used on heap for a boxed car: {} bytes", mem::size_of_val(&
 // The memory used on heap for a boxed car: 40 bytes
 ```
 
-#### Smart pointer
+### Smart pointer
 
 The **pointer** kept by the `Box` has more functionality than reference.
 
@@ -100,7 +100,7 @@ println!("{}", boxed_car.crew_size); // OK. No problem.
 println!("{}", car.crew_size);// Error, car lost its ownship. The ownership is transferred to boxed_car.
 ```
 
-#### Use cases of `Box`
+### Use cases of `Box`
 
 - Store the type whose size can't be known at compile time, such as a **recursive data type**.
 

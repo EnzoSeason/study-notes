@@ -1,4 +1,4 @@
-## Temporary table
+# Temporary table
 
 A temporary table is a database table that is created and exists temporarily on a database server. It stores subsets of data from standard data tables for a certain period of time.
 
@@ -6,7 +6,7 @@ Data analyst want to perform calculations on a small subset of the table. Rather
 
 By using a temporary table, you were able to **answer a more complex question** and **not make any changes to a primary table** in the database.
 
-### WITH (SQL)
+## WITH (SQL)
 
 We use `WITH` to create a temporary table.
 
@@ -25,7 +25,7 @@ WITH
   LIMIT
     1 )
 
-### find the station at which the longest ride start
+## find the station at which the longest ride start
 
 SELECT
   trips.start_station_id,
@@ -44,7 +44,7 @@ LIMIT
   1
 ```
 
-### SELECT INTO (SQL)
+## SELECT INTO (SQL)
 
 `SELECT INTO` is another way to create a temporary table.
 
@@ -59,7 +59,7 @@ WHERE
   region = "Africa"
 ```
 
-### CREATE TABLE (SQL)
+## CREATE TABLE (SQL)
 
 CREATE TABLE statement will create a table and save it in the database.
 
@@ -75,7 +75,7 @@ CREATE TABLE table_name(
 DROP TABLE table_name
 ```
 
-### Best practices when working with temporary tables
+## Best practices when working with temporary tables
 
 - **Global vs. local temporary tables**:
 

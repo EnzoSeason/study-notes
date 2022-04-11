@@ -1,6 +1,6 @@
-## Basic
+# Basic
 
-### Variable
+## Variable
 
 ```dart
 var name = 'Bob';
@@ -10,7 +10,7 @@ String name = 'Bob';
 
 Follows the style guide recommendation of using `var`, rather than `type annotations`, for local variables.
 
-#### Null safety
+### Null safety
 
 Variables can’t contain null unless you say they can.
 
@@ -23,7 +23,7 @@ int y = 0;
 
 You don’t have to initialize a local variable where it’s declared, but you do need to assign it a value **before it’s used**.
 
-#### Final and const
+### Final and const
 
 - A final variable can be set only once.
 
@@ -33,7 +33,7 @@ Const variables are implicitly final.
 
 Although a final object cannot be modified, its fields can be changed. In comparison, a const object and its fields cannot be changed: they’re immutable.
 
-#### Late variables
+### Late variables
 
 There has two use cases:
 

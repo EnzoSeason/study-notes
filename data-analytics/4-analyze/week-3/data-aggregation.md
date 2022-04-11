@@ -1,4 +1,4 @@
-## Data aggregation
+# Data aggregation
 
 Data aggregation helps data analyst:
 
@@ -6,7 +6,7 @@ Data aggregation helps data analyst:
 - make comparisons
 - gain insights
 
-### VLOOKUP (Spreadsheet)
+## VLOOKUP (Spreadsheet)
 
 VLOOKUP stands for **vertical lookup**.
 
@@ -34,7 +34,7 @@ VLOOKUP only **returns the first match** it finds and can only search to the **r
 
 - You want the column that matches the search key in a VLOOKUP formula to be on the left side of the data. VLOOKUP only looks at data to the right after a match is found. In other words, the index for VLOOKUP indicates columns to the right only. This may require you to move columns around before you use VLOOKUP.
 
-### JOIN (SQL)
+## JOIN (SQL)
 
 - **INNER JOIN**: return the records that exist **where the tables are overlapping**.
 
@@ -46,7 +46,7 @@ VLOOKUP only **returns the first match** it finds and can only search to the **r
 
 ![join-types](./join-types.png)
 
-### Subquery (SQL)
+## Subquery (SQL)
 
 - A subquery may be nested in a SELECT clause.
 
