@@ -1,6 +1,6 @@
-# Data source
+## Data source
 
-## CSV
+### CSV
 
 CSV stands for comma-separated values.
 
@@ -12,13 +12,13 @@ A CSV file makes it easier for data analysts to:
 
 - distinguish values from one another.
 
-## Sorting and filtering
+### Sorting and filtering
 
 Sorting involves arranging data into a meaningful order to make it easier to understand, analyze, and visualize.
 
 Filtering means showing only the data that meets a specific criteria while hiding the rest.
 
-## Clean data
+### Clean data
 
 - Sorting data
 - Removing incorrect data

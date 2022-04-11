@@ -1,6 +1,6 @@
-# Design
+## Design
 
-## The element of Art
+### The element of Art
 
 - **Line**
 
@@ -26,7 +26,7 @@
 
   Movement is used to create a sense of flow or action in a visualization.
 
-## Principles of design
+### Principles of design
 
 There are nine basic principles of design that data analysts should think about when building their visualizations.
 
@@ -42,7 +42,7 @@ There are nine basic principles of design that data analysts should think about 
 
 These first six principles of design are key considerations that you can make while you are creating your data visualization. These next three principles are useful checks once your data visualization is finished.
 
-### Balance
+#### Balance
 
 The design of a data visualization is balanced when the key visual elements, like color and shape, are **distributed evenly**.
 
@@ -50,53 +50,53 @@ If your data visualization is balanced, this could mean that the lines used to c
 
 Your visualization shouldn’t have one side distracting from the other.
 
-### Emphasis
+#### Emphasis
 
 Your data visualization should have **a focal point**, so that your audience knows where to **concentrate**.
 
 Using **color and value** is one effective way to make this happen.
 
-### Movement
+#### Movement
 
 Movement can refer to the path the **viewer’s eye travels** as they look at a data visualization, or literal movement created by **animations**.
 
 You can use **lines and colors** to pull the viewer’s attention across the page.
 
-### Pattern
+#### Pattern
 
 You can use **similar shapes and colors** to create patterns in your data visualization.
 
 You can use patterns to **highlight similarities** between different data sets, or break up a pattern with a unique shape, color, or line to **create more emphasis**.
 
-### Repetition
+#### Repetition
 
 Repeating chart types, shapes, or colors adds to the **effectiveness** of your visualization.
 
-### Proportion
+#### Proportion
 
 Proportion is another way that you can **demonstrate the importance of certain data**.
 
 Using various **colors and sizes** helps demonstrate that you are calling attention to a specific visual over others.
 
-### Rhythm
+#### Rhythm
 
 This refers to **creating a sense of movement or flow** in your visualization.
 
 Rhythm is closely tied to the movement principle.
 
-### Variety
+#### Variety
 
 Your visualizations should have some variety in the chart types, lines, shapes, colors, and values you use.
 
 Variety keeps the audience engaged. But it is good to find balance since too much variety can confuse people.
 
-### Unity
+#### Unity
 
 This means that your final data visualization should be **cohesive**.
 
 If the visual is disjointed or not well organized, it will be confusing and overwhelming.
 
-## Element for effective visuals
+### Element for effective visuals
 
 - Clear meaning
 
@@ -110,7 +110,7 @@ If the visual is disjointed or not well organized, it will be confusing and over
 
   Visuals with refined execution include **deep attention to detail**, using all the elements of art.
 
-## Design thinking
+### Design thinking
 
 Design thinking is a process used to solve complex problems in a **user-centric** way.
 
@@ -126,7 +126,7 @@ Design thinking for data visualization involves five phases:
 
 - **Test**: Showing prototype visualizations to people before stakeholders see them
 
-## Designing a chart in 60 minutes
+### Designing a chart in 60 minutes
 
 ![design-chart-time](./images/design-chart-time.png)
 

@@ -15,16 +15,16 @@ class Solution:
 
     def maxProfit(self, prices: List[int]) -> int:
         minPrice = float("inf")
-        #  The minimal of maxGain is 0
+        ##  The minimal of maxGain is 0
         maxGain = 0
 
         for p in prices:
-            # update minPrice
+            ## update minPrice
             if p < minPrice:
                 minPrice = p
 
-            #  update maxGain
-            # p is the price in the future of the minPrice
+            ##  update maxGain
+            ## p is the price in the future of the minPrice
             if p - minPrice > maxGain:
                 maxGain = p - minPrice
 

@@ -1,4 +1,4 @@
-# Function
+## Function
 
 Dart is a true object-oriented language, so even functions are objects and have a type, `Function`.
 
@@ -20,9 +20,9 @@ bool isNoble(int atomicNumber) => _nobleGases[atomicNumber] != null;
 
 The `=>` expr syntax is a shorthand for `{ return expr; }`.
 
-## Parameters
+### Parameters
 
-### Named parameters
+#### Named parameters
 
 When defining a function, use `{param1, param2, …}` to specify named parameters:
 
@@ -42,7 +42,7 @@ Although named parameters are a kind of optional parameter, you can annotate the
 const Scrollbar({Key? key, required Widget child})
 ```
 
-### Optional positional parameters
+#### Optional positional parameters
 
 Wrapping a set of function parameters in `[]` marks them as optional positional parameters:
 
@@ -56,7 +56,7 @@ String say(String from, String msg, [String? device]) {
 }
 ```
 
-### Default parameter values
+#### Default parameter values
 
 Your function can use `=` to define default values for both named and positional parameters.
 
@@ -79,7 +79,7 @@ void doStuff(
 }
 ```
 
-## Functions as first-class objects
+### Functions as first-class objects
 
 You can pass a function as a parameter to another function. For example:
 
@@ -101,7 +101,7 @@ var loudify = (msg) => '!!! ${msg.toUpperCase()} !!!';
 assert(loudify('hello') == '!!! HELLO !!!');
 ```
 
-## Anonymous functions
+### Anonymous functions
 
 ```dart
 () { ... }
@@ -111,11 +111,11 @@ assert(loudify('hello') == '!!! HELLO !!!');
 () => ...
 ```
 
-### Lexical scope
+#### Lexical scope
 
 Dart is a **lexically scoped language**, which means that the scope of variables is determined statically, simply by the layout of the code.
 
-### Lexical closures
+#### Lexical closures
 
 A closure is a function object that has access to variables in its lexical scope, even when the function is used outside of its original scope.
 
@@ -138,6 +138,6 @@ void main() {
 }
 ```
 
-### Return values
+#### Return values
 
 All functions return a value. If no return value is specified, the statement `return null;` is implicitly appended to the function body.

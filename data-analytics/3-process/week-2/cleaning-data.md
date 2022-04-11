@@ -1,6 +1,6 @@
-# Cleaning data
+## Cleaning data
 
-## Dirty data
+### Dirty data
 
 Dirty data is data that's **incomplete, incorrect, or irrelevant** to the problem you're trying to solve.
 
@@ -16,7 +16,7 @@ The types of dirty data are:
 
 - Inconsistent data
 
-## Person who works on cleaning data
+### Person who works on cleaning data
 
 - **Data engineers**:
 
@@ -30,7 +30,7 @@ The types of dirty data are:
 
   They make sure that data is **available, secure, and backed up to prevent loss** .
 
-## Common data-cleaning pitfalls
+### Common data-cleaning pitfalls
 
 - Not checking for spelling errors
 
@@ -52,7 +52,7 @@ The types of dirty data are:
 
 - Not accounting for data cleaning in your deadlines/process
 
-## Working with multiply data sources
+### Working with multiply data sources
 
 - **Data merging**: the process of combining two or more datasets into a single dataset
 

@@ -1,4 +1,4 @@
-# Heap
+## Heap
 
 Heap is a special tree.
 
@@ -6,7 +6,7 @@ Heap is a special tree.
 
 - Every node must be smaller / bigger or equal to **all** the nodes in **its sub trees**.
 
-## Data structure
+### Data structure
 
 Since the heap is a complete binary tree, the **array** is more suitable for storing data.
 
@@ -14,13 +14,13 @@ If the data of the node `i` is saved in `arr[i]`, then its left child is saved i
 
 > `arr[0]` is null.
 
-## Operation
+### Operation
 
 ```python
 class MinHeap:
     def __init__(self, n: int) -> None:
         """
-        ## Arributes
+        ### Arributes
         - n: the capacity of the MinHeap
         - arr: the array that contains heap's data
         - count: current volume of the heap
@@ -30,7 +30,7 @@ class MinHeap:
         self.count = 0
 ```
 
-### Push
+#### Push
 
 ```python
 def push(self, num: int) -> None:
@@ -67,7 +67,7 @@ def push(self, num: int) -> None:
     ```
     Time complexity: `O(logn)`.
 
-### Pop
+#### Pop
 
 ```python
 def pop(self) -> Optional[int]:
@@ -109,7 +109,7 @@ def pop(self) -> Optional[int]:
    ```
    Time complexity: `O(logn)`.
 
-### Create a heap
+#### Create a heap
 
 Since we have 2 ways to heapify, we have 2 ways to create a heap.
 
@@ -148,7 +148,7 @@ Since we have 2 ways to heapify, we have 2 ways to create a heap.
 
     S = `O(n)`. So the time complexity is `O(n)`.
 
-### Sort
+#### Sort
 
 After the min-heap is built, the top, `arr[1]`, is the smallest item. The sort is to swap `arr[1]` with `arr[n]` and heapify `arr[1:n]`.
 
@@ -174,14 +174,14 @@ The time complexity is `O(nlogn)`. It isn't stable because of heapifying. It's s
 The heap sort is **not by the order of the index**. It's not friendly for CPU. Beside, **the times of switch** is too much during **heapifying**. That's why people usually choose **Quick sort** than **Heap sort**.
 
 
-## Applications
-### Priority queue (alias of Heap)
+### Applications
+#### Priority queue (alias of Heap)
 
 Priority queue is similar to Queue. However, it always pops the item having the **highest priority**.
 
 Priority queue can be implemented by Heap. The **top item** has the highest priority.
 
-### Top k problems
+#### Top k problems
 
 For exemple, [finding the **k<sup>th</sup> largest** item](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 
@@ -197,7 +197,7 @@ The advantages of using heap are
 1. It's very efficient. Creating a heap is `O(n)`, and inserting / removing are `O(logn)`.
 2. The size of input data can be **dynamic**. We don't care about the input data. We just need to maintain the heap.
 
-### Finding the Median
+#### Finding the Median
 
 For exemple, [finding Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
 

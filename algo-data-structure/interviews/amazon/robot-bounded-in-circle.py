@@ -1,12 +1,12 @@
 class Solution:
     def isRobotBounded(self, instructions: str) -> bool:
         x, y = 0, 0
-        dx, dy = 0, 1  # orientation vector
+        dx, dy = 0, 1  ## orientation vector
 
         for ins in instructions:
-            # rotation matrix
-            # new_x = consO * old_x - sinO * old_y
-            # new_y = sinO * old_x + consO * old_y
+            ## rotation matrix
+            ## new_x = consO * old_x - sinO * old_y
+            ## new_y = sinO * old_x + consO * old_y
             if ins == "L":
                 dx = 0 * dx - 1 * dy
                 dy = 1 * dx + 0 * dy

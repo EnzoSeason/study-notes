@@ -29,20 +29,20 @@ class Solution:
                         )
         """
         n = len(weight)
-        # init dp
+        ## init dp
         dp = [[0 for _ in range(capacity + 1)] for _ in range(n + 1)]
 
-        #  create the first line
+        ##  create the first line
         if weight[0] <= capacity:
             dp[0][weight[0]] = value[0]
 
-        # update dp
+        ## update dp
         for i in range(1, n + 1):
-            # do not take item i
+            ## do not take item i
             for j in range(capacity + 1):
                 if dp[i - 1][j] > 0:
                     dp[i][j] = dp[i - 1][j]
-            # take item i
+            ## take item i
             for j in range(capacity + 1):
                 if dp[i - 1][j] > 0:
                     if j + weight[i] <= capacity:
@@ -60,18 +60,18 @@ class Solution:
         dp represents current and previous status.
         """
         n = len(weight)
-        # init dp
+        ## init dp
         dp = [0] * (capacity + 1)
 
-        #  create the first line for the first item
+        ##  create the first line for the first item
         if weight[0] <= capacity:
             dp[weight[0]] = value[0]
 
-        # update dp
-        for i in range(1, n + 1):  # traverse the items, start at the second item
-            for j in range(capacity - weight[i], -1, -1):  # traverse the capacity
+        ## update dp
+        for i in range(1, n + 1):  ## traverse the items, start at the second item
+            for j in range(capacity - weight[i], -1, -1):  ## traverse the capacity
                 if dp[j] != 0:
                     dp[j + weight[i]] = max(dp[j + weight[i]], dp[j] + value[i])
-            # hidden case: do not take item i.
+            ## hidden case: do not take item i.
 
         return max(dp)

@@ -16,8 +16,8 @@ class Solution:
             self.res.append(prev)
             return
 
-        # If end isn't pruned, end is self.n
-        # We prune end to make sure the length of all the prev can reach self.k.
+        ## If end isn't pruned, end is self.n
+        ## We prune end to make sure the length of all the prev can reach self.k.
         end = self.n - (self.k - len(prev)) + 1
         for i in range(start, end + 1):
             self.helper(prev + [i], i + 1)

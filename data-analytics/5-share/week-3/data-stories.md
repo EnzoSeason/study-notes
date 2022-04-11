@@ -1,10 +1,10 @@
-# Data Stories
+## Data Stories
 
 Data storytelling is **communicating the meaning of a dataset** with **visuals and a narrative** that is customized for a **particular audience**.
 
 A data-storytelling narrative **connects the data to the project objectives**.
 
-## 3 data storytelling ways
+### 3 data storytelling ways
 
 1. Engage the audience
 
@@ -18,7 +18,7 @@ A data-storytelling narrative **connects the data to the project objectives**.
 
 3. Tell the story in an interesting way
 
-## Live and static insights
+### Live and static insights
 
 **S​tatic data** involves providing screenshots or snapshots in presentations or building dashboards using snapshots of data.
 
@@ -56,7 +56,7 @@ CONS
 
 - Can potentially cause a lack of trust if the data isn’t handled properly
 
-## Dashboard
+### Dashboard
 
 A dashboard is used to **track, analyze, and visualize** information.
 
@@ -66,7 +66,7 @@ You might choose to **use filters** in order to **highlight individual data poin
 
 When designing a dashboard, data analysts can ensure that charts and graphs are most effective by **placing them in a balanced layout** and **making good use of available space**.
 
-## Presentation tips
+### Presentation tips
 
 The following aspects should be considered when you make a presentation.
 

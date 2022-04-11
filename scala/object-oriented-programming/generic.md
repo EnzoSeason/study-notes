@@ -1,6 +1,6 @@
-# Generic
+## Generic
 
-## Generic class
+### Generic class
 
 A class (or trait) can have multiple generic types.
 
@@ -10,7 +10,7 @@ A class (or trait) can have multiple generic types.
 class MyNode[T]
 ```
 
-## Generic method
+### Generic method
 
 ```scala
 object MyList {
@@ -20,7 +20,7 @@ object MyList {
 val firstNode = MyList.first[Int]
 ```
 
-## Variance Problem
+### Variance Problem
 
 ```scala
 class Animal
@@ -28,7 +28,7 @@ class Cat extends Animal
 class Dog extends Animal
 ```
 
-### Covariance
+#### Covariance
 
 ```scala
 class CovariantList[+T]
@@ -38,7 +38,7 @@ val catList: CovariantList[Animal] = new CovariantList[Cat]
 
 The generic type in the class' **declaration** can be the **super type** of the class' **instance**.
 
-### Invariance
+#### Invariance
 
 ```scala
 class InvariantList[T]
@@ -48,7 +48,7 @@ val animalList: InvariantList[Animal] = new InvariantList[Animal]
 
 The generic type in the class' **declaration** must be **exact type** of the class' **instance**.
 
-### Contravariance
+#### Contravariance
 
 ```scala
 class ContravariantList[-T]
@@ -60,7 +60,7 @@ The generic type in the class' **declaration** can be the **sub type** of the cl
 
 > The trainers of _Animal_ are those of _Cat_, too.
 
-## Bounded Type
+### Bounded Type
 
 There are 2 types of bounds:
 

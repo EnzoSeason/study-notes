@@ -27,17 +27,17 @@ class Solution:
           - dp[i - 1][j - weight[j]] + value[i]: take item i.
         """
         type = len(weight)
-        # init dp
+        ## init dp
         dp = [[0 for _ in range(capacity + 1)] for _ in range(type + 1)]
 
-        # update dp
+        ## update dp
         for i in range(type + 1):
             for j in range(capacity + 1):
                 if j < weight[i]:
-                    # do not take item i since it's over the capacity.
+                    ## do not take item i since it's over the capacity.
                     dp[i][j] = max(dp[i][j], dp[i - 1][j])
                 else:
-                    #  get the max value of taking or not the item i.
+                    ##  get the max value of taking or not the item i.
                     dp[i][j] = max(
                         dp[i][j],
                         dp[i][j - weight[i]] + value[i],
@@ -55,15 +55,15 @@ class Solution:
         dp represents current and previous status.
         """
         type = len(weight)
-        # init dp
+        ## init dp
         dp = [0] * (capacity + 1)
 
-        # update dp
-        for i in range(type + 1):  # traverse the items' types
-            for j in range(weight[i], capacity + 1):  # traverse the capacity
-                #  get the max value of taking or not the item i.
+        ## update dp
+        for i in range(type + 1):  ## traverse the items' types
+            for j in range(weight[i], capacity + 1):  ## traverse the capacity
+                ##  get the max value of taking or not the item i.
                 dp[j] = max(dp[j], dp[j - weight[i]] + value[i])
-            # hidden condition
-            # if j < weight[i], do not take item i.
+            ## hidden condition
+            ## if j < weight[i], do not take item i.
 
         return dp[capacity]

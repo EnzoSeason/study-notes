@@ -1,6 +1,6 @@
-# Exception
+## Exception
 
-## Throwing an exception
+### Throwing an exception
 
 Throwable classes extend the Throwable class.
 
@@ -10,7 +10,7 @@ Throwable classes extend the Throwable class.
 throw new NullPointerException
 ```
 
-## Catching an exception
+### Catching an exception
 
 ```scala
 val potentialFail = try {
@@ -25,7 +25,7 @@ val potentialFail = try {
 
 - `finally` is optional. It doesn't effect the return. It's used for **side effects**, such as logging.
 
-## Defining your own exception
+### Defining your own exception
 
 ```scala
 class MyException extends Exception

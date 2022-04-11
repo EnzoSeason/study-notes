@@ -1,4 +1,4 @@
-# DNS
+## DNS
 
 It maps **Domain name** to **IP address**.
 
@@ -22,7 +22,7 @@ server {
 }
 ```
 
-## Caching
+### Caching
 
 Once we visited a website, its **IP address** is cached.
 
@@ -40,7 +40,7 @@ Once we visited a website, its **IP address** is cached.
    resolver 8.8.8.8 valid=30s;  #指定Google的DNS，缓存30秒
    ```
 
-## Load balancing based on domain name
+### Load balancing based on domain name
 
 If the server of "buy.tv" need maintain, we can switch to another server by telling DNS, mapping "buy.tv" to new server's IP address "4.5.6.7" instead of current IP address "1.2.3.4".
 

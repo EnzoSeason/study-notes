@@ -1,4 +1,4 @@
-# Sequences
+## Sequences
 
 Sequence is a general interface for data structure that:
 
@@ -12,7 +12,7 @@ trait Seq[+A] {
 }
 ```
 
-## Seq
+### Seq
 
 Here is some codes of using `Seq` in Scala
 
@@ -30,7 +30,7 @@ println(seq ++ Seq(4, 5)) // List(1, 2, 3, 4, 5) concat
 println(Seq(7, 9, 8).sorted) // List(7, 8, 9)
 ```
 
-## List
+### List
 
 `List` inherits `LinearSeq`. `LinearSeq` has some features:
 
@@ -56,7 +56,7 @@ val apple5 = List.fill(5)("apple")
 println(apple5) // List(apple, apple, apple, apple, apple)
 ```
 
-## Range
+### Range
 
 `Range` inherits `IndexSeq`.
 
@@ -67,7 +67,7 @@ val range = 0 until 10 // 0 is included and 10 is not.
 range.foreach(println)
 ```
 
-## Vector
+### Vector
 
 It's the **default implementation for immutable sequence**.
 
@@ -84,7 +84,7 @@ It's
 
 - good performance for large sizes
 
-## Array
+### Array
 
 `Array` in Scala is equivalent to that in Java.
 

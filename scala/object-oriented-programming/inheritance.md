@@ -1,8 +1,8 @@
-# Inheritance
+## Inheritance
 
 Scala offers the **single class inheritance**, which means a class can only inherit **ONE** class.
 
-## Constructor
+### Constructor
 
 JVM initializes the parent class before the current class.
 
@@ -11,7 +11,7 @@ class Person(name: String)
 class Adult(name: String, job: String) extends Person(name)
 ```
 
-## Override
+### Override
 
 ```scala
 class Animal {
@@ -46,7 +46,7 @@ We can also prevent override.
   sealed class Animal
   ```
 
-## Polymorphism
+### Polymorphism
 
 ```scala
 val pet: Animal = new Dog
@@ -54,7 +54,7 @@ val pet: Animal = new Dog
 
 In this case, `pet` is an instance of `Dog` although we declare it as an `Animal`.
 
-## Abstract class
+### Abstract class
 
 ```scala
 abstract class Animal {
@@ -74,7 +74,7 @@ abstract class Animal {
 }
 ```
 
-## Traits
+### Traits
 
 Since Scala class can ONLY inherit ONE class, we create `trait` to make it extend **multiple traits**.
 
@@ -88,7 +88,7 @@ trait Eating
 class Bird extends Animal with Flying with Eating
 ```
 
-## Type Hierarchy
+### Type Hierarchy
 
 ![type-hierarchy](../images/type-hierarchy.png)
 
@@ -106,7 +106,7 @@ class Bird extends Animal with Flying with Eating
 var a: Int = ??? // It means Nothing.
 ```
 
-## Anonymous class
+### Anonymous class
 
 ```scala
 class Person(val name: String) {

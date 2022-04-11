@@ -17,11 +17,11 @@ class Solution:
         if not postorder:
             return None
         
-        # create the root
+        ## create the root
         root_val = postorder.pop()
         root = TreeNode(root_val)
         
-        # split the Lists
+        ## split the Lists
         idx = inorder.index(root_val)
         root.left = self.buildTree(inorder[0:idx], postorder[0:idx])
         root.right = self.buildTree(inorder[idx + 1 :], postorder[idx:])

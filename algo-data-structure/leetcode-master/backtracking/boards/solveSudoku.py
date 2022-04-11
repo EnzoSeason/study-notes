@@ -31,7 +31,7 @@ class Solution:
         row, col = self.getPlace()
         
         if row == -1 and col == -1:
-            # The board is completed.
+            ## The board is completed.
             return True
         
         for i in range(1, 10):

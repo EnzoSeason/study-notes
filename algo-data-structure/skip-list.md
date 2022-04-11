@@ -1,4 +1,4 @@
-# Skip list
+## Skip list
 
 Skip list is based on **linked list**.
 
@@ -14,7 +14,7 @@ For example, The orginal linked list has 8 nodes. We need create 2 index layers.
 - orignal   o - o - o - o - o - o - o - o
 ```
 
-## Time complexity
+### Time complexity
 
 What is the time complexity of finding a node in the skip list ?
 
@@ -39,7 +39,7 @@ The time complexity can be approached by the number of noded traversed. `m` is a
 
 For the other operation, like **inserting**, **deleteing**, the time complexity is `O(logn)`, too.
 
-## Space complexity
+### Space complexity
 
 How many nodes in the skip list.
 
@@ -51,7 +51,7 @@ s = 2 + 4 + 8 + ... + n/2^i + ... + n/4 + n/2 = n-2
 
 The space complexity is `O(n)`.
 
-## Update the indexes
+### Update the indexes
 
 To avoid turning a skip list into a list, we need to update the indexes dynamically.
 

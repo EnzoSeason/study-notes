@@ -1,4 +1,4 @@
-# Enum
+## Enum
 
 ```scala
 enum Permissions {
@@ -8,7 +8,7 @@ enum Permissions {
 val somePermission = Permissions.READ
 ```
 
-## Enum APIs
+### Enum APIs
 
 1. `ordinal`: the index of enum
 

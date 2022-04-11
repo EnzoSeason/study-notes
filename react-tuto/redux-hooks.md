@@ -1,6 +1,6 @@
-# Redux Hooks
+## Redux Hooks
 
-## useDispatch
+### useDispatch
 
 ```javascript
 // outside Component Function
@@ -20,7 +20,7 @@ replace by
  const addIngredient = (ingName) => dispatch(actions.addIngredient(ingName));
 ```
 
-## useSelector
+### useSelector
 
 ```javascript
 // outside Component Function

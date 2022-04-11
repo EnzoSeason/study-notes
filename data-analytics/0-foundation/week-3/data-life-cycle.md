@@ -1,8 +1,8 @@
-# Data life cycle
+## Data life cycle
 
 The life cycle of data is **plan, capture, manage, analyze, archive and destroy**.
 
-## Plan
+### Plan
 
 During planning, a business decides:
 
@@ -11,11 +11,11 @@ During planning, a business decides:
 - who will be responsible for it
 - the optimal outcomes
 
-## Capture
+### Capture
 
 This is where data is collected from a variety of different sources and brought into the organization.
 
-## Manage
+### Manage
 
 We need to consider:
 
@@ -24,14 +24,14 @@ We need to consider:
 - the tools used to keep it safe and secure
 - the actions taken to make sure that it's maintained properly.
 
-## Analyze
+### Analyze
 
 In this phase, the data is used to **solve problems, make great decisions, and support business goals**.
 
-## Archive
+### Archive
 
 Archiving means storing data in a place where it's still available, but may not be used again.
 
-## Destroy
+### Destroy
 
 We destroy data for protecting a company's private information, as well as private data about its customers.

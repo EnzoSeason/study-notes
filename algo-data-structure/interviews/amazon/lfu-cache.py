@@ -22,7 +22,7 @@ class DLinkedList:
     """
 
     def __init__(self):
-        self._sentinel = Node(None, None)  # dummy node
+        self._sentinel = Node(None, None)  ## dummy node
         self._sentinel.next = self._sentinel.prev = self._sentinel
         self._size = 0
 
@@ -79,8 +79,8 @@ class LFUCache:
         self._size = 0
         self._capacity = capacity
 
-        self._node = dict()  # key: Node
-        self._freq = defaultdict(DLinkedList) # freq: list of Node, order by least recently use
+        self._node = dict()  ## key: Node
+        self._freq = defaultdict(DLinkedList) ## freq: list of Node, order by least recently use
         self._minfreq = 0
 
     def _update_freq(self, node):

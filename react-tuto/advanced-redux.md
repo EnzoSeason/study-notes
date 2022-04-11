@@ -1,6 +1,6 @@
-# Advanced Redux
+## Advanced Redux
 
-## Middleware
+### Middleware
 
 ```javascript
 // index.js
@@ -16,7 +16,7 @@ const store = createStore(rootReducer, applyMiddleware(logger));
 
 `logger` will be executed when state in store changes.
 
-## Redux DevTool
+### Redux DevTool
 
 Install redux devtool on chrome, and add a middleware.
 
@@ -28,7 +28,7 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger))
 
 `compose` in Redux package is like `combineReducers`. It combines middlewares.
 
-## Action Creator
+### Action Creator
 
 action creator is the function **dispatchs action**.
 
@@ -61,7 +61,7 @@ const mapDispatchToProps = dispatch => {
 }
 ```
 
-## Async Action
+### Async Action
  
 Action creator is powerful. It can handle async codes:
 
@@ -86,7 +86,7 @@ Action creator is powerful. It can handle async codes:
     }
     ```
 
-## Action Creator vs Reducer
+### Action Creator vs Reducer
 
 Since both Action Creator and Reducer can update state, when should we place the logic.
 

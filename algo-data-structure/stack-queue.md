@@ -1,6 +1,6 @@
-# Stack and Queue
+## Stack and Queue
 
-## Stack
+### Stack
 
 Stack is a **linear list** limited by the rule **FILO** (First In Last Out).
 
@@ -95,7 +95,7 @@ Problems:
 
 - [224. Basic Calculator](https://leetcode.com/problems/basic-calculator/)
 
-## Queue
+### Queue
 
 Queue is a limited **linear list**, too. The rule is **FIFO** (First In First Out).
 
@@ -106,8 +106,8 @@ class ArrayQueue:
     def __init__(self, n):
         self.items = []
         self.n = n
-        self.head = 0 # index of the first item
-        self.tail = 0 # index after the last item
+        self.head = 0 ## index of the first item
+        self.tail = 0 ## index after the last item
     
     def enqueue(self, item) -> bool:
         if self.tail == self.n:
@@ -139,8 +139,8 @@ class LinkedNode:
 
 class LinkedListQueue:
     def __init__(self, n):
-        self.head = LinkedNode(None) # node before the first node
-        self.tail = self.head # node of the last node
+        self.head = LinkedNode(None) ## node before the first node
+        self.tail = self.head ## node of the last node
         self.n = n
         self.count = 0
     
@@ -162,7 +162,7 @@ class LinkedListQueue:
         return val
 ```
 
-### Circular Queue
+#### Circular Queue
 
 The circular queue is based on **array queue**. The tail of the queue is followed by the head.
 
@@ -197,8 +197,8 @@ class CircularArrayQueue:
     def __init__(self, n):
         self.items = []
         self.n = n
-        self.head = 0 # index of the first item
-        self.tail = 0 # index after the last item
+        self.head = 0 ## index of the first item
+        self.tail = 0 ## index after the last item
     
     def enqueue(self, item):
         if (self.tail + 1) % self.n == self.head:

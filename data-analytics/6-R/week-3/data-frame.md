@@ -1,4 +1,4 @@
-# Data frame
+## Data frame
 
 A data frame is **a collection of columns**. It is similar to a table in spreadsheets or SQL.
 
@@ -8,7 +8,7 @@ A data frame is **a collection of columns**. It is similar to a table in spreads
 
 - Each data column should contain **the same number of data items**, even some of those are missing.
 
-## Tibble
+### Tibble
 
 Tibbles are like **steamlined data frames**.
 
@@ -17,7 +17,7 @@ Tibbles are like **steamlined data frames**.
 - Never create row names
 - Make printing easier
 
-## Tidy data (R)
+### Tidy data (R)
 
 It's a way of **standardizing the organization of data** within R.
 
@@ -25,7 +25,7 @@ It's a way of **standardizing the organization of data** within R.
 - Observations are organized into rows.
 - Each value must have its own cell.
 
-## Basic functions in R to work with a data frame
+### Basic functions in R to work with a data frame
 
 - `head()`: return the first 6 rows of a data frame
 
@@ -35,7 +35,7 @@ It's a way of **standardizing the organization of data** within R.
 
 - `mutate()`: manipulate the data frame, like adding a new column.
 
-## Data cleaning
+### Data cleaning
 
 Cleaning functions help you **preview and rename data** so that it’s easier to work with.
 
@@ -51,7 +51,7 @@ Cleaning functions help you **preview and rename data** so that it’s easier to
 
 - `clean_names()`: ensure that there's only **charactors, numbers and underscores** in the names.
 
-## Organizing data
+### Organizing data
 
 Organizational functions help you **sort, filter, and summarize** your data.
 
@@ -60,25 +60,25 @@ Usually, they work with the **pipe**.
 - `arrange()`: sort the data
 
   ```r
-  # sort the data by level
+  ## sort the data by level
   raw_data %>% arrange(level)
   ```
 
 - `group_by()`:
 
   ```r
-  # find the mean income of each year
+  ## find the mean income of each year
   raw_data %>% group_by(year) %>% drop_na() %>% summarize(mean_income = mean(income))
   ```
 
 - `filter()`:
 
   ```r
-  # find the data of 2020
+  ## find the data of 2020
   raw_data %>% filter(year == "2020")
   ```
 
-## Transforming data
+### Transforming data
 
 Transformational functions help you **separate and combine data**, as well as **create** new variables.
 
@@ -100,7 +100,7 @@ Transformational functions help you **separate and combine data**, as well as **
   employee %>% mutate(year_salary=month_salaire * 12)
   ```
 
-## Bias function
+### Bias function
 
 The bias function **compares the actual outcome of the data with the predicted outcome** to determine whether or not the model is biased.
 

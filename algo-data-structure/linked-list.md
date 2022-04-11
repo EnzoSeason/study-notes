@@ -1,4 +1,4 @@
-# Linked List
+## Linked List
 
 There are 3 basic types of linked list:
 
@@ -8,7 +8,7 @@ There are 3 basic types of linked list:
 
 - doubly linked list
 
-## singly linked list
+### singly linked list
 
 Singly linked list is composed by **nodes**.
 
@@ -26,11 +26,11 @@ There are 2 special nodes.
 
 Different from Array, Singly linked list is good at inserting and deleting an item. The time complexity is O(1). But it's terrible to find one. The time complexity is O(n).
 
-## circular linked list
+### circular linked list
 
 It's a special singly linked list. The tail node points to the head node.
 
-## doubly linked list
+### doubly linked list
 
 It's a special singly linked list, too. Each node has **2 pointers** which point to the **previous node and next node**.
 

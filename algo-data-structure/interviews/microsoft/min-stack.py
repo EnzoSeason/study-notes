@@ -8,7 +8,7 @@ class MinStack:
         initialize your data structure here.
         """
         self.stack = []
-        self.min_stack = []  # element is [val, nb of val]
+        self.min_stack = []  ## element is [val, nb of val]
 
     def push(self, val: int) -> None:
         self.stack.append(val)

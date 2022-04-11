@@ -1,6 +1,6 @@
-# Component
+## Component
 
-## class-based vs functional
+### class-based vs functional
 
 \ | class-based | functional
 --- | --- | ---
@@ -12,9 +12,9 @@ Class-based component is more powerful, it could be used as a **Stateful** compo
 
 Functional componenet is simpler, it can be used as a **Stateless** component.
 
-## lifecycle
+### lifecycle
 
-### Mounting
+#### Mounting
 
 1. **constructor(props)**
 
@@ -60,7 +60,7 @@ Functional componenet is simpler, it can be used as a **Stateless** component.
     * call other functions, such as http request
     * DO NOT cause re-rendering, like update states.
 
-### updating
+#### updating
 
 1. getDerivedStateFromProps(props, state)
 
@@ -93,7 +93,7 @@ Functional componenet is simpler, it can be used as a **Stateless** component.
 
     * call other functions, such as http request
 
-## useEffect
+### useEffect
 
 `useEffect` makes functional component accessable to lifecycles:
 
@@ -109,7 +109,7 @@ useEffect(() => {
 });
 ```
 
-### control `useEffect`
+#### control `useEffect`
 
 pass the second param:
 
@@ -129,7 +129,7 @@ useEffect(
     []);
 ```
 
-### cleanup
+#### cleanup
 
 Sometime, we need cleanup, like remove event listener.
 
@@ -145,7 +145,7 @@ useEffect(
 );
 ```
 
-## React.memo()
+### React.memo()
 
 In class-based component, we need `shouldComponentUpdate` to control the update.
 
@@ -159,7 +159,7 @@ It will check if the `props` is changed.
 
 Be careful of the update check. In a lot of cases, the stateless child component always is updated while its stateful parent component changes. In these cases, the update check is useless.
 
-## PureComponent
+### PureComponent
 
 A common case, we don't update component unless one of the props is updated, we use `PureComponent`.
 

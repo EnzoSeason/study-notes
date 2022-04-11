@@ -32,8 +32,8 @@ class SolutionGreedy:
         for i in range(n):
             global_rest += gas[i] - cost[i]
             local_rest += gas[i] - cost[i]
-            # Once local_rest < 0, the circuit can't be completed.
-            # So, we need to update start and local_rest.
+            ## Once local_rest < 0, the circuit can't be completed.
+            ## So, we need to update start and local_rest.
             if local_rest < 0:
                 local_rest = 0
                 start = i + 1

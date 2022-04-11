@@ -45,14 +45,14 @@ class SolutionRE:
             self.memo[root] = root.val
             return root.val
 
-        # not rob current node
+        ## not rob current node
         val1 = root.val
         if root.left:
             val1 += self.rob(root.left.left) + self.rob(root.left.right)
         if root.right:
             val1 += self.rob(root.right.left) + self.rob(root.right.right)
 
-        # rob current node
+        ## rob current node
         val2 = self.rob(root.left) + self.rob(root.right)
 
         self.memo[root] = max(val1, val2)

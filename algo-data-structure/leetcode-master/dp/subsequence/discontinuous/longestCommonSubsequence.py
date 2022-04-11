@@ -5,7 +5,7 @@ class Solution:
 
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
         n1, n2 = len(text1), len(text2)
-        # dp[0][:] and dp[:][0] are pivots.
+        ## dp[0][:] and dp[:][0] are pivots.
         dp = [[0 for _ in range(n2 + 1)] for _ in range(n1 + 1)]
 
         for i in range(1, n1 + 1):

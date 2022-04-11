@@ -22,8 +22,8 @@ class Solution:
                 elif token == "*":
                     stack.append(int(a * b))
                 elif token == "/":
-                    # math.floor(-3 / 2) == -2 or -3 // 2 == -2
-                    # int(-3 / 2) == -1
+                    ## math.floor(-3 / 2) == -2 or -3 // 2 == -2
+                    ## int(-3 / 2) == -1
                     stack.append(int(a / b))
             else:
                 stack.append(int(token))

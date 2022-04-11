@@ -1,8 +1,8 @@
-# Next.js Test
+## Next.js Test
 
 The article will talk about how to test Next.js
 
-## install packages
+### install packages
 
 Our next app is written by Typescript. We need to install some packages
 
@@ -22,7 +22,7 @@ npm install -D @testing-library/dom @testing-library/react @testing-library/jest
 }
 ```
 
-## create `.babelrc`
+### create `.babelrc`
 
 Once these have been installed, the next step is to create a `.babelrc` configuration file to instruct `babel` to use the custom preset for Next.js. 
 
@@ -34,7 +34,7 @@ Once these have been installed, the next step is to create a `.babelrc` configur
 }
 ```
 
-## create `jest.config.js`
+### create `jest.config.js`
 
 create a blank `jest.config.js` at the root of project.
 
@@ -93,7 +93,7 @@ moduleNameMapper: {
 
 Next, we need create `jest.tsconfig.json` and `mocks`.
 
-## create `jest.tsconfig.json`
+### create `jest.tsconfig.json`
 
 `jest.config.js` needs it. It extends `tsconfig.json` and sets `"jsx": "react"`.
 
@@ -106,7 +106,7 @@ Next, we need create `jest.tsconfig.json` and `mocks`.
 }
 ```
 
-## create scripts
+### create scripts
 
 add command to `package.json`
 
@@ -123,7 +123,7 @@ run `npm run test` when you need to write the test
 
 run `npm run coverage` to see code coverage.
 
-## create mocks
+### create mocks
 
 Files and styles is not interested in Tests. We create the `mocks` at `/__mocks__/`.
 
@@ -137,7 +137,7 @@ module.exports = "placeholder-file";
 module.exports = {};
 ```
 
-## mock services
+### mock services
 
 We don't want to use http connection in unit test. We need to mock it.
 

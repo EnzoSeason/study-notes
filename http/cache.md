@@ -1,4 +1,4 @@
-# Cache
+## Cache
 
 The response can be cached at the **client side**. In response header, `Cache-Control` controls the cache.
 
@@ -7,13 +7,13 @@ The response can be cached at the **client side**. In response header, `Cache-Co
 - no-cache: before using cache, ask server to check if it can be used.
 - must-revalidate: After expiring, ask server to check if it can be used in the future.
 
-## When the cache is used
+### When the cache is used
 
 When we click `backward`.
 
 If we refresh the web, the browser will send the request with `Cache-Control: max-age=0`. (`Ctrl + F5` will add `Cache-Control: no-cache`.)
 
-## Use the cache
+### Use the cache
 
 1. `if-Modified-Since` and `Last-modified`
 

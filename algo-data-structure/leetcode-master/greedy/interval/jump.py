@@ -16,7 +16,7 @@ class Solution:
 
         for i in range(len(nums) - 1):
             curr = max(curr, i + nums[i])
-            if i == prev: # update jumping range
+            if i == prev: ## update jumping range
                 prev = curr
                 count += 1
 

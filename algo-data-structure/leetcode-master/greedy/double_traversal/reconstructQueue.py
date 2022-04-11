@@ -7,9 +7,9 @@ class Solution:
     """
 
     def reconstructQueue(self, people: List[List[int]]) -> List[List[int]]:
-        # sort by
-        # First item in DESC, then
-        # Second item in ASC
+        ## sort by
+        ## First item in DESC, then
+        ## Second item in ASC
         people = sorted(people, key=lambda x: (-x[0], x[1]))
         
         res = []

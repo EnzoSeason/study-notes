@@ -26,10 +26,10 @@ class Solution:
             self.res.append(prev)
             return
 
-        # width search
+        ## width search
         for end in range(start + 1, len(self.s) + 1):
             if self.isPalindrome(start, end):
-                # depth search
+                ## depth search
                 self.helper(prev + [self.s[start:end]], end)
 
     def partition(self, s: str) -> List[List[str]]:

@@ -1,4 +1,4 @@
-# Data-driven decision-making
+## Data-driven decision-making
 
 Data-driven decision-making involved using facts to guide business strategy.
 

@@ -19,7 +19,7 @@ class Solution:
                 else:
                     return False
             if num == 20:
-                # greedy: use $10 first.
+                ## greedy: use $10 first.
                 if cash[0] > 0 and cash[1] > 0:
                     cash[0] -= 1
                     cash[1] -= 1

@@ -1,4 +1,4 @@
-# Tableau
+## Tableau
 
 Tableau enables you to:
 
@@ -8,7 +8,7 @@ Tableau enables you to:
 
 - create and share interactive **dashboards** with data
 
-## Primary chart types
+### Primary chart types
 
 - **Column (vertical bar)**: a column chart allows you to display and compare multiple categories of data by their values.
 
@@ -24,7 +24,7 @@ Tableau enables you to:
 
 - **Combo**: combo charts use multiple visual markers like columns and lines to showcase different aspects of the data in one visualization.
 
-## Data Type in Tableau
+### Data Type in Tableau
 
 - **#**: Numeric data
 
@@ -36,14 +36,14 @@ Tableau enables you to:
 
 - **Calendar with a clock**: Date and time data
 
-## Diverging color palette
+### Diverging color palette
 
 A diverging color palette in Tableau displays characteristics of values using:
 
 - Intensity for the magnitude
 - Hue for the range
 
-## What makes an effective visualization?
+### What makes an effective visualization?
 
 - **Five-second rule**: A data visualization should be **clear, effective, and convincing** enough to be absorbed in five seconds or less.
 

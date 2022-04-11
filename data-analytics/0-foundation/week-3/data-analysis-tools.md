@@ -1,6 +1,6 @@
-# Data analysis tools
+## Data analysis tools
 
-## Spreadsheet
+### Spreadsheet
 
 Data analysts rely on spreadsheets to **collect and organize data**.
 
@@ -12,7 +12,7 @@ Spreadsheets structure data in a meaningful way by letting you
 
 - Create excellent data visualizations, like graphs and charts.
 
-## Query language
+### Query language
 
 It allows you to retrieve and manipulate data from a database.
 
@@ -24,6 +24,6 @@ Query languages
 
 - Allow analysts to select, create, add, or download data from a database for analysis
 
-## Data visualization
+### Data visualization
 
 Data visualization is the graphical representation of information. Some examples include **graphs, maps, and tables**.

@@ -13,15 +13,15 @@ class Solution:
         pivot = ListNode()
         pivot.next = head
 
-        # init the interval between slow and fast
+        ## init the interval between slow and fast
         slow, fast = pivot, pivot
         for _ in range(n):
             if not fast:
                 return pivot.next
             fast = fast.next
         
-        # move the fast pointer to the tail
-        # remove the node pointed by slow
+        ## move the fast pointer to the tail
+        ## remove the node pointed by slow
         while fast.next:
             slow = slow.next
             fast = fast.next

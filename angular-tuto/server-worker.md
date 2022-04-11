@@ -1,4 +1,4 @@
-# Server worker
+## Server worker
 
 1. install `pwa`
 

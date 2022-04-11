@@ -1,4 +1,4 @@
-# Data Types
+## Data Types
 
 Because every variable in Dart refers to an `object`— _an instance of a class_ —you can usually use constructors to initialize variables.
 
@@ -23,7 +23,7 @@ Some other types also have special roles in the Dart language:
 - `dynamic`: Indicates that you want to disable static checking. Usually you should use `Object` or `Object?` instead.
 - `void`: Indicates that a value is never used. Often used as a return type.
 
-## Number
+### Number
 
 Both `int` and `double` are subtypes of `num`.
 
@@ -42,7 +42,7 @@ var one = int.parse('1');
 var onePointOne = double.parse('1.1');
 ```
 
-## String
+### String
 
 A Dart string (String object) holds a sequence of UTF-16 code units.
 
@@ -59,7 +59,7 @@ To get the string corresponding to an object, Dart calls the object’s `toStrin
 
 You can concatenate strings using adjacent string literals or the + operator:
 
-## Boolean
+### Boolean
 
 Dart’s type safety means that you can’t use code like `if (nonbooleanValue)` or `assert (nonbooleanValue)`. Instead, explicitly check for values, like this:
 
@@ -81,7 +81,7 @@ var iMeantToDoThis = 0 / 0;
 assert(iMeantToDoThis.isNaN);
 ```
 
-## List
+### List
 
 In Dart, arrays are `List` objects, so most people just call them lists.
 
@@ -132,7 +132,7 @@ var listOfStrings = [
 assert(listOfStrings[1] == '#1');
 ```
 
-## Set
+### Set
 
 A set in Dart is an **unordered** collection of **unique** items.
 
@@ -156,7 +156,7 @@ Same as `List`, `Set` works with
 
 - collection `if` and collection `for`
 
-## Map
+### Map
 
 A map is an object that associates keys and values. Both keys and values can be any type of object. Each key occurs only once, but you can use the same value multiple times.
 
@@ -191,7 +191,7 @@ nobleGases[10] = 'neon';
 nobleGases[18] = 'argon';
 ```
 
-> If you come from a language like C# or Java, you might expect to see new Map() instead of just Map(). In Dart, the new keyword is optional.
+> If you come from a language like C## or Java, you might expect to see new Map() instead of just Map(). In Dart, the new keyword is optional.
 
 If you look for a key that isn’t in a map, you get a `null` in return.
 
@@ -203,11 +203,11 @@ Same as `List`, `Map` works with
 
 - collection `if` and collection `for`
 
-## Runes and grapheme clusters
+### Runes and grapheme clusters
 
 Runes expose the Unicode code points of a string. Dart can hanlder special character, such as emoji.
 
-## Symbols
+### Symbols
 
 A Symbol object represents an operator or identifier declared in a Dart program. To get the symbol for an identifier, use a symbol literal, which is just `#` followed by the identifier:
 

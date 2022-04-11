@@ -8,8 +8,8 @@ class Solution:
 
     def stoneGame(self, piles: List[int]) -> bool:
         n = len(piles)
-        # Let dp(i, j) be the largest score Alex (the first hand) can achieve
-        # where the piles remaining are piles[i], piles[i+1], ..., piles[j]
+        ## Let dp(i, j) be the largest score Alex (the first hand) can achieve
+        ## where the piles remaining are piles[i], piles[i+1], ..., piles[j]
         dp = [[0 for _ in range(n + 2)] for _ in range(n + 2)]
 
         for size in range(1, n + 1):

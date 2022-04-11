@@ -1,6 +1,6 @@
-# Django Set up
+## Django Set up
 
-## Previously
+### Previously
 
 [Previously](https://github.com/EnzoSeason/study-notes/blob/main/seasonliu/frontend-setup.md), we have set up the front-end, which includes configuring server, domain and Nginx.
 
@@ -8,7 +8,7 @@ This article will talk about setting up API powered by Django and DRF(Django Res
 
 API is deployed by `docker compose`. I will present how to create `docker-compose.yml` and `DockerFile`.
 
-## `docker-compose.yml`
+### `docker-compose.yml`
 
 API contains, at least, 2 parts, **database** and **web application**. 
 
@@ -125,10 +125,10 @@ I use `docker-compose.override.yml` to override the configuration for `dev` mode
 In `dev` mode, we **build the image locally** and push it to the docker hub. Besides, we use `runsever` to start the application.
 
 ```yml
-# docker-compose.override.yml
+## docker-compose.override.yml
 version: "3.9"
 
-# dev config
+## dev config
 services:
   django_app:
     build: "./django_app"
@@ -142,10 +142,10 @@ To run the application in the `dev` mode, launch `docker-compose up`.
 In `production` mode, we do NOT build the image, and we use `gunicorn` to start the application.
 
 ```yml
-# docker-compose.prod.yml
+## docker-compose.prod.yml
 version: "3.9"
 
-# prod config
+## prod config
 services:
   django_app:
     command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
@@ -157,7 +157,7 @@ To run the application at background, launch:
 docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 ```
 
-## DockerFile
+### DockerFile
 
 `DockerFile` describes how the image is built. We can followed the [offical example](https://docs.docker.com/language/python/build-images/).
 
@@ -172,12 +172,12 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /opt/build
 
-# set extra env variable
-# ENV OPENCV_VERSION="4.5.1"
+## set extra env variable
+## ENV OPENCV_VERSION="4.5.1"
 
-# install extra packages
-# RUN apt-get -qq update \ 
-# && apt-get -qq install -y --no-install-recommends ...
+## install extra packages
+## RUN apt-get -qq update \ 
+## && apt-get -qq install -y --no-install-recommends ...
 
 WORKDIR /code
 
@@ -194,7 +194,7 @@ docker tag <container> repo/my-api
 docker push repo/my-api
 ```
 
-## Initialize Django Application
+### Initialize Django Application
 
 Creating a django application is simple. We should move under the `django_app` and run the CLI.
 

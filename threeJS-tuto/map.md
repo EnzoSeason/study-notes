@@ -1,6 +1,6 @@
-# Maps
+## Maps
 
-## Specular Map
+### Specular Map
 
 It's a **texture image** that affects:
 
@@ -18,29 +18,29 @@ In practice:
 
 3. The texture (specular map) will be shown in the light by the reflection.
 
-## Roughness Map and Metalness Map
+### Roughness Map and Metalness Map
 
 The roughnessMap and metalnessMap are the specularMap equivalents for the MeshStandardMaterial and the MeshPhysicalMaterial.
 
-## Bump Map
+### Bump Map
 
 An image texture to create a bump map.
 
 The Bump map doesn't actually affect the geometry of the object, only the **lighting**. It helps improve the view of 3D (make 2D image bump up).
 
-## Displacement Map
+### Displacement Map
 
 An image that can be used to alter the geometry of a mesh.
 
 The value of **each pixel** is used to change **the position of the vertices** of the mesh. 
 
-## Material Repeat and Center
+### Material Repeat and Center
 
 Where material textures sit on a geometry can be changed by changing their **UV co-ordinates**.
 
 We can use `texture.repeat` to select (zoom in or zoom out) a part of the object, `texture.center` to move the focus.
 
-## Texture Mipmaps
+### Texture Mipmaps
 
 Three.js creates different sizes of texture,and renders them on the object depending **how far away it is from the camera**.
 
@@ -48,10 +48,10 @@ Three.js creates different sizes of texture,and renders them on the object depen
 
 `texture.minFilter` is for **far view**, when the pixel being textured maps to an area **greater than** one texture element (texel).
 
-## Custom Mipmaps
+### Custom Mipmaps
 
 `texture.mipmaps` is an **array of function**. We can create custom function, and apply on it.
 
-## Anistropic Filtering
+### Anistropic Filtering
 
 Anisotropic Filtering allows us to improve the quality of the Mipmaps.

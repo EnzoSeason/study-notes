@@ -1,6 +1,6 @@
-# HTTP
+## HTTP
 
-## call api
+### call api
 
 use `axios` to call api in the lifecycle: 
 
@@ -20,7 +20,7 @@ componentDidMount() {
 }
 ```
 
-## handle error
+### handle error
 
 ```javascript
 axios.get('/api/posts')
@@ -28,7 +28,7 @@ axios.get('/api/posts')
     .catch(error => {})
 ```
 
-## interceptor
+### interceptor
 
 We can manipulate the request and response using axios:
 
@@ -36,7 +36,7 @@ We can manipulate the request and response using axios:
 
 * axios.interceptors.response.use()
 
-### add
+#### add
 
 in the root: `index.js`
 
@@ -52,7 +52,7 @@ axios.interceptors.request.use(
 );
 ```
 
-### remove
+#### remove
 
 ```javascript
 componentDidMount() {
@@ -64,11 +64,11 @@ componentWillUnmount() {
 }
 ```
 
-## Global configuration
+### Global configuration
 
 In the root: `index.js`
 
-### base url
+#### base url
 
 ```javascript
 axios.defaults.baseUrl = "www.my-api.com";
@@ -76,13 +76,13 @@ axios.defaults.baseUrl = "www.my-api.com";
 axios.get('/posts'); // www.my-api.com/posts
 ```
 
-### authorization
+#### authorization
 
 ```javascript
 axios.defaults.header.common['Authorization'] = "AUTH TOKEN";
 ```
 
-## Instance of axios
+### Instance of axios
 
 It's another way to set global configuration.
 

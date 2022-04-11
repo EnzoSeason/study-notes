@@ -13,13 +13,13 @@ class SolutionDP:
             dp[i][0] = 1
 
         for i in range(1, n1 + 1):
-            # make sure the length of source is greater than that of target.
+            ## make sure the length of source is greater than that of target.
             end = i if i < n2 else n2
             for j in range(1, end + 1):
                 if s[i - 1] == t[j - 1]:
-                    # dp[i - 1][j - 1] is the status of matching s[i - 1] == t[j - 1]
-                    # dp[i - 1][j] is previous status.
-                    # Discontinuous problems need keeping previous status in current one.
+                    ## dp[i - 1][j - 1] is the status of matching s[i - 1] == t[j - 1]
+                    ## dp[i - 1][j] is previous status.
+                    ## Discontinuous problems need keeping previous status in current one.
                     dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j]
                 else:
                     dp[i][j] = dp[i - 1][j]
@@ -44,8 +44,8 @@ class SolutionDP2:
         dp[0] = 1
 
         for i in range(1, n1 + 1):
-            # deep copy
-            # Otherwise, prev and dp points to the same list.
+            ## deep copy
+            ## Otherwise, prev and dp points to the same list.
             prev = dp.copy()
             end = i if i < n2 else n2
             for j in range(1, end + 1):

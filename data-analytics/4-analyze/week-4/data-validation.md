@@ -1,8 +1,8 @@
-# Data validation
+## Data validation
 
 This process involves **checking and rechecking the quality of your data** so that it is **complete, accurate, secure, and consistent**.
 
-## Types of data validation
+### Types of data validation
 
 1. Data type
 

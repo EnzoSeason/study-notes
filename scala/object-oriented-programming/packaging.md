@@ -1,4 +1,4 @@
-# Packaging
+## Packaging
 
 The classes in the **same package** are visiable to each other, and **accessable by their names**.
 
@@ -15,13 +15,13 @@ object Demo1 extends App {
 }
 ```
 
-## Package Object
+### Package Object
 
 It's created for **universal constants or methods** for a package.
 
 Each package has only **ONE** package object.
 
-## Import
+### Import
 
 ```scala
 import java.util.Date
@@ -43,7 +43,7 @@ If you want to use `java.sql.Date` at the same time, there are 2 ways.
     import java.sql.{Date => SqlDate}
     ```
   
-### Multiple Imports
+#### Multiple Imports
 
 You can import **multiple classes from the same package** by:
 
@@ -51,7 +51,7 @@ You can import **multiple classes from the same package** by:
 import zoo.{Cat, Dog}
 ```
 
-### Default Imports
+#### Default Imports
 
 - `java.lang`: `String`, `Object`, `Exception`, etc
 - `scala`: `Int`, `Nothing`, `Function`, etc

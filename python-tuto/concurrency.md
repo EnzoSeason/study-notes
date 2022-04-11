@@ -1,6 +1,6 @@
-# Concurrency
+## Concurrency
 
-## Concurrency vs Parallelism
+### Concurrency vs Parallelism
 
 - Concurrency: Only one task runs at a time. But, there are multiple tasks to run. OS decides when to run / stop a task.
    
@@ -17,11 +17,11 @@ Concurrency is for optimisation for I/O. We don't have to wait an I/O task finis
 
 Parallelism is for CPU heavy situation. Add more machine to work. 
 
-## asyncio
+### asyncio
 
 Asyncio in Python has **only one thread**. But, it uses **event loop** to do multiple tasks.
 
-## GIL (Global Interpreter Lock)
+### GIL (Global Interpreter Lock)
 
 While Python runs multiple threads. CPython, an interpreter of Python will run only one thread and block the others.
 
@@ -33,7 +33,7 @@ The reason using GIL:
 
 - avoiding race condition
 
-## Garbage Collection
+### Garbage Collection
 
 To avoid **memory leak**, Python does garbage collection.
 

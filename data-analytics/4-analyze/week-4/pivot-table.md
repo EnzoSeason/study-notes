@@ -1,4 +1,4 @@
-# Pivot table
+## Pivot table
 
 Pivot tables make it possible to **view data in multiple ways in order to identify insights and trends**.
 

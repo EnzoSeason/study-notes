@@ -1,12 +1,12 @@
-# Mathematical thinking
+## Mathematical thinking
 
 It means looking at a problem and logically **breaking it down step-by-step**, so you can see **the relationship of patterns** in your data, and use that to analyze your problem.
 
 This kind of thinking can also help you figure out the best tools for analysis because it lets us see the **different aspects** of a problem and choose the best logical approach.
 
-# Big and small data
+## Big and small data
 
-## Small data
+### Small data
 
 - Describes a data set made up of **specific metrics** over a **short, well-defined time period**
 
@@ -18,7 +18,7 @@ This kind of thinking can also help you figure out the best tools for analysis b
 
 - Usually already a manageable size for analysis
 
-## Big data
+### Big data
 
 - Describes **large, less-specific** data sets that cover a **long time period**
 
@@ -30,7 +30,7 @@ This kind of thinking can also help you figure out the best tools for analysis b
 
 - Usually needs to be broken into smaller pieces in order to be organized and analyzed effectively for decision-making
 
-## The three (or four) V words for big data
+### The three (or four) V words for big data
 
 They are volume, variety, velocity, and veracity.
 

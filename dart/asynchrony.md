@@ -1,10 +1,10 @@
-# Asynchrony
+## Asynchrony
 
 Dart libraries are full of functions that return `Future` or `Stream` objects.
 
 The `async` and `await` keywords support asynchronous programming.
 
-## Handling Futures
+### Handling Futures
 
 ```dart
 Future<void> checkVersion() async {

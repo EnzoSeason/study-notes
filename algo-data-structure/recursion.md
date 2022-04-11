@@ -1,4 +1,4 @@
-# Recursion
+## Recursion
 
 A recursion has 2 key points.
 
@@ -32,7 +32,7 @@ What's more, we can use `Dynamic Programming`. It avoids **stack overflow** and 
 
 ```python
 def climb_staires(n: int) -> int:
-    dp = list(range(0, n+1)) # end condition: dp[1] = 1; dp[2] = 2
+    dp = list(range(0, n+1)) ## end condition: dp[1] = 1; dp[2] = 2
     
     if n > 2:
         for i in range(3, n+1):
@@ -41,13 +41,13 @@ def climb_staires(n: int) -> int:
     return dp[n]
 ```
 
-## Stack overflow
+### Stack overflow
 
 A common problem of recursion is the **stack overflow**. 
 
 We will create a space once a function is called. Then, we push this space into a stack. If the recursion is too deep, stack overflow happens.
 
-## Repeated calculation
+### Repeated calculation
 
 Somtimes, the same result can be calculated repeatedly.
 

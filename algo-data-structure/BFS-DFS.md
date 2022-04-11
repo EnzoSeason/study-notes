@@ -1,10 +1,10 @@
-# BFS & DFS
+## BFS & DFS
 
 BFS(Breadth-First-Search) and DFS(Depth-First-Search) are 2 common ways to **search a path from A to B** in the graph.
 
 This article will focus on **UndirectedGraph Graph**.
 
-## BFS
+### BFS
 
 BFS will traverse **all the adjacent vertices** before moving to the next **vertex**.
 
@@ -58,7 +58,7 @@ The worst case is that **all the edges and vertrices** are visited. The time com
 The space complexity is `O(V)` because the length of both 2 assist array, `visited` and `prev_vertices`, is `V`.
 
 
-## DFS
+### DFS
 
 BFS will traverse **all the descendant vertices** before moving to the next **branch**.
 
@@ -94,10 +94,10 @@ def dfs_worker(graph: UndirectedGraph, start: int, end: int, visited: List[bool]
         is_found = True
         return
     
-    # The following line can't be placed inside of while loop.
-    # Because the last function in recursion stack is first executed.
-    # Some function can be executed before the vertex is marked visited 
-    # if the following line is in the while loop.
+    ## The following line can't be placed inside of while loop.
+    ## Because the last function in recursion stack is first executed.
+    ## Some function can be executed before the vertex is marked visited 
+    ## if the following line is in the while loop.
     visited[start] = True
     
     p = graph.adj[start].next

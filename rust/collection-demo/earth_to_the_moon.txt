@@ -11570,7 +11570,7 @@ _italics_ are marked with underbars
 
 These are left in for the next proofer to turn into CAPS for PG.
 
-#SMALL CAPS# are enclosed in hash-marks
+#SMALL CAPS## are enclosed in hash-marks
 #
 $ae $’e dollar-sign preceeds ligatures and accented characters.
 The accent follows the $ and precedes the letter. I’ve tried to get ’

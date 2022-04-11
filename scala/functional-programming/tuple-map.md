@@ -1,6 +1,6 @@
-# Tuple & Map
+## Tuple & Map
 
-## Tuple
+### Tuple
 
 `Tuple` is immutable. It's just like that in Python.
 
@@ -21,7 +21,7 @@ We can copy a tuple, and replace the elements in copy.
 println(tuple.copy(_2 = "Hi")) // (1, "Hi")
 ```
 
-## Map
+### Map
 
 `Map` is the data structure that has `key` - `value`
 
@@ -31,7 +31,7 @@ val bank: Map[String, Int] = Map(("Jack", 100), "Jay" -> 200)
 
 > `"Jay" -> 200` is equivalent to ("Jay", 200)
 
-### Basic operations
+#### Basic operations
 
 - check if the `key` exists
 
@@ -54,7 +54,7 @@ val bank: Map[String, Int] = Map(("Jack", 100), "Jay" -> 200)
   val newBank = bank + newClient
   ```
 
-### Functionals
+#### Functionals
 
 - `map`
 
@@ -74,7 +74,7 @@ val bank: Map[String, Int] = Map(("Jack", 100), "Jay" -> 200)
   val richBank = bank.view.mapValues(value => value + 100).toMap;
   ```
 
-## Conversion to other collections
+### Conversion to other collections
 
 - `toList`:
 

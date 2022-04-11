@@ -1,10 +1,10 @@
-# URI (Uniform Resource Locator)
+## URI (Uniform Resource Locator)
 
 URI = URL & URN.
 
 Since URL is so popular, sometimes, we make URI = URL.
 
-## URI format
+### URI format
 
 ```code
 scheme :// host:port /path ?query #fragment
@@ -22,7 +22,7 @@ scheme :// host:port /path ?query #fragment
 
 - fragment: It's only used by the client. The browser won't send it to the server.
 
-## URI Encoding
+### URI Encoding
 
 URI uses **ASCII** code.
 

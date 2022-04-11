@@ -1,4 +1,4 @@
-# String
+## String
 
 ```scala
 val str: String = "abcde,efg"
@@ -6,7 +6,7 @@ val str: String = "abcde,efg"
 
 Scala accesses the `String` class of Java.
 
-## Useful functions
+### Useful functions
 
 - `charAt`: `str.charAt(1)` returns `b`.
 
@@ -20,7 +20,7 @@ Scala accesses the `String` class of Java.
 
 - `toLowerCase` and `toUpperCase`
 
-## Interpolation
+### Interpolation
 
 ```scala
 val name: String = "Jack"

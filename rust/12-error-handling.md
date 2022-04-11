@@ -1,4 +1,4 @@
-# Error handling
+## Error handling
 
 Demo: [error-handling](./error-handling/)
 
@@ -11,7 +11,7 @@ In Rust, there are 2 types of error.
 
 `panic!` stop the program immediately and provide feedback.
 
-## `Result<T, E>` enum
+### `Result<T, E>` enum
 
 Similar to `Option<T>`, `Result<T, E>` wraps the value. It provides `Ok` and `Err` to make sure the error is catched.
 
@@ -36,7 +36,7 @@ let contents = match result {
 };
 ```
 
-## Propagating errors
+### Propagating errors
 
 Sometimes, we want to propagate the errors from low level to high level, then deal with it. For example, we create a `read_file` function and call it.
 

@@ -15,9 +15,9 @@ class RandomizedSet:
         """
         if val in self.hash_map:
             return False
-        # update self.hash_map
+        ## update self.hash_map
         self.hash_map[val] = len(self.arr)
-        # update self.arr
+        ## update self.arr
         self.arr.append(val)
         return True
         
@@ -30,7 +30,7 @@ class RandomizedSet:
             return False
         idx = self.hash_map[val]
         last = self.arr[-1]
-        # update self.arr
+        ## update self.arr
         self.arr[idx] = last
         self.arr.pop()
         # update self.hash_map
@@ -46,8 +46,8 @@ class RandomizedSet:
         
 
 
-# Your RandomizedSet object will be instantiated and called as such:
-# obj = RandomizedSet()
-# param_1 = obj.insert(val)
-# param_2 = obj.remove(val)
-# param_3 = obj.getRandom()
+## Your RandomizedSet object will be instantiated and called as such:
+## obj = RandomizedSet()
+## param_1 = obj.insert(val)
+## param_2 = obj.remove(val)
+## param_3 = obj.getRandom()

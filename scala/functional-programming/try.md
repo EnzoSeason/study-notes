@@ -1,4 +1,4 @@
-# Try
+## Try
 
 A `Try` is a wrapper for **a computation that might fail**.
 
@@ -8,7 +8,7 @@ case class Failure[+T](t: Throwable) extends Try[+T]
 case class Success[+T](value: T) extends Try[+T]
 ```
 
-## Usage
+### Usage
 
 Suppose that we have a method that throws an error.
 
@@ -32,7 +32,7 @@ val potentialFail = Try {
 }
 ```
 
-### Utilities
+#### Utilities
 
 - `isSuccess` / `isFailure`
 
@@ -61,7 +61,7 @@ val potentialFail = Try {
 
 - `map`, `flatMap`, `filter`
 
-### API Design
+#### API Design
 
 If your codes might throw an error, wrap them with `Try`.
 

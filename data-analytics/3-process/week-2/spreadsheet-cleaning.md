@@ -1,4 +1,4 @@
-# Cleaning data in the Spreadsheet
+## Cleaning data in the Spreadsheet
 
 There's a lot of great efficiency tools that data analysts use all the time, such as:
 
@@ -11,7 +11,7 @@ There's a lot of great efficiency tools that data analysts use all the time, suc
 - fixing text strings and substrings
 - splitting text to columns
 
-## Common functions to use
+### Common functions to use
 
 - COUNTIF
 
@@ -28,7 +28,7 @@ There's a lot of great efficiency tools that data analysts use all the time, suc
 - CONCATENATE
 - TRIM
 
-## Common way to find the dirty data
+### Common way to find the dirty data
 
 - Sorting
 - Filtering
@@ -39,9 +39,9 @@ There's a lot of great efficiency tools that data analysts use all the time, suc
 
 - Graphics
 
-## Avanced cleaning skills
+### Avanced cleaning skills
 
-### Data mapping
+#### Data mapping
 
 Data mapping is the process of **matching fields from one database to another**.
 

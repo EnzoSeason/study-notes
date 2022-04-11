@@ -1,4 +1,4 @@
-# Case Study: New data perspectives
+## Case Study: New data perspectives
 
 The six steps of the data analysis process that you have been learning in this program are:
 
@@ -13,7 +13,7 @@ These six steps apply to any data analysis. Continue reading to learn how a team
 
 The analysts used the data analysis process to answer the following question: **how can the organization improve the retention rate for new employees?**
 
-## Ask
+### Ask
 
 First up, the analysts needed to define **what the project would look like** and **what would qualify as a successful result**.
 
@@ -25,7 +25,7 @@ So, to determine these things, they asked effective questions and collaborated w
 
 - By what percentage would you like employee retention to increase in the next fiscal year?
 
-## Prepare
+### Prepare
 
 The group built a timeline of three months and decided **how they wanted to relay their progress** to interested parties.
 
@@ -39,7 +39,7 @@ In this case, the analysts chose to _gather the data from an online survey of ne
 
 - They **finalized what specific information would be gathered**, and **how best to present the data visually**. The analysts brainstormed possible project- and data-related issues and how to avoid them.
 
-## Process
+### Process
 
 The group sent the survey out. Great analysts know how to **respect both their data and the people who provide it**.
 
@@ -53,7 +53,7 @@ In order to maintain confidentiality and protect and store the data effectively,
 
 - They uploaded raw data to an internal data warehouse for an additional layer of security.
 
-## Analyze
+### Analyze
 
 From the completed surveys, the data analysts **discovered** that an employee’s experience with certain processes was a key indicator of overall job satisfaction. These were their findings:
 
@@ -63,7 +63,7 @@ From the completed surveys, the data analysts **discovered** that an employee’
 
 The group knew it was important to **document exactly what they found in the analysis**, no matter what the results. To do otherwise would diminish trust in the survey process and reduce their ability to collect truthful data from employees in the future.
 
-## Share
+### Share
 
 Just as they made sure the data was carefully protected, the analysts were also careful sharing the report. This is how they shared their findings:
 
@@ -73,7 +73,7 @@ Just as they made sure the data was carefully protected, the analysts were also 
 
 This process gave managers an opportunity to **communicate the results with the right context**. As a result, they could have productive team conversations about next steps to improve employee engagement.
 
-## Act
+### Act
 
 The last stage of the process for the team of analysts was to **work with leaders** within their company and **decide how best to implement changes and take actions** based on the findings. These were their recommendations:
 
@@ -81,7 +81,7 @@ The last stage of the process for the team of analysts was to **work with leader
 
 - Conduct the same survey annually and compare results with those from the previous year.
 
-## Summary
+### Summary
 
 1. Ask: The analysts asked questions to define both the **issue** to be solved and what would equal a successful **result**.
 

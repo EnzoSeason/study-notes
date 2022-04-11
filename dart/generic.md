@@ -1,6 +1,6 @@
-# Generics
+## Generics
 
-## Why use generics?
+### Why use generics?
 
 Generics are often required for **type safety**, but they have more benefits than just allowing your code to run:
 
@@ -22,7 +22,7 @@ var pages = <String, String>{
 };
 ```
 
-## Using parameterized types with constructors
+### Using parameterized types with constructors
 
 To specify one or more types when using a constructor, put the types in angle brackets (`<...>`) just after the class name.
 
@@ -32,7 +32,7 @@ var nameSet = Set<String>.from(names);
 var views = Map<int, View>();
 ```
 
-## Restricting the parameterized type
+### Restricting the parameterized type
 
 When implementing a generic type, you might want to limit the types that can be provided as arguments, so that the argument must be a subtype of a particular type. You can do this using `extends`.
 

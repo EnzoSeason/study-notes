@@ -1,4 +1,4 @@
-# Case class
+## Case class
 
 `case` class adds a lot of useful features to the normal class. It is handy to build lightweight data structures.
 

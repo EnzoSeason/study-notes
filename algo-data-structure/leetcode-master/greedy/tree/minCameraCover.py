@@ -7,7 +7,7 @@ class TreeNode:
 
 class Solution:
     def __init__(self) -> None:
-        self.covered = set([None])  # None is covered
+        self.covered = set([None])  ## None is covered
         self.nb = 0
 
     def dfs(self, node: TreeNode, parent: TreeNode) -> None:
@@ -20,7 +20,7 @@ class Solution:
             self.dfs(node.right, node)
 
         # case 1: If root is not covered, add an camera at root
-        # case 2: If one of the children isn't covered, add an camera at the current node.
+        ## case 2: If one of the children isn't covered, add an camera at the current node.
         if (
             not parent
             and node not in self.covered
@@ -28,7 +28,7 @@ class Solution:
             or node.right not in self.covered
         ):
             self.nb += 1
-            # add more nodes into covered set.
+            ## add more nodes into covered set.
             self.covered |= set([parent, node, node.left, node.right])
 
     def minCameraCover(self, root: TreeNode) -> int:

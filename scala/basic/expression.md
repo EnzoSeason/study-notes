@@ -1,6 +1,6 @@
-# Expression
+## Expression
 
-## Instruction vs Expression
+### Instruction vs Expression
 
 Instruction tells the computer **to do** something, such as changing a variable, printing in the console, etc.
 
@@ -19,7 +19,7 @@ It's a `IF Expression`. It **always returns a value**.
 
 **Everything in Scala is an Expression**.
 
-## Code block
+### Code block
 
 The code block is an expression. The value of a code block is that of the its last expression.
 

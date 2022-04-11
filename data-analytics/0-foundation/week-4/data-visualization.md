@@ -1,4 +1,4 @@
-# Data visualization
+## Data visualization
 
 Data visualizations are **pictures**, they are a wonderful way to take very basic ideas around data and data points and make them come alive.
 
@@ -10,7 +10,7 @@ Data visualization allows you:
 
 - create interesting graphs
 
-## Steps to plan a data visualization
+### Steps to plan a data visualization
 
 1. Explore the data for patterns
 

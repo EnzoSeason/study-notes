@@ -1,6 +1,6 @@
-# Primitive data type
+## Primitive data type
 
-## Variable
+### Variable
 
 By default, variables in Rust are **immutable**.
 
@@ -10,7 +10,7 @@ However, we can create a mutable variable.
 let mut x = "hello";
 ```
 
-## Integer
+### Integer
 
 There are 2 types:
 
@@ -26,7 +26,7 @@ For example, 8-bit integer represents 2<sup>8</sup> = 256 possible values.
 
 The default integer is `i32`.
 
-## Floating-point
+### Floating-point
 
 Rust has 2 types of Floating-point:
 
@@ -40,7 +40,7 @@ Rust has 2 types of Floating-point:
 
 The default float is `f64`.
 
-## Arithmetic operations
+### Arithmetic operations
 
 Rust can do arithmetic operations, such as `+`, `-`, `*`, `/`, `%`.
 
@@ -60,7 +60,7 @@ let a = 3 as f64; // 3.0
 let b = 3.9 as i32 // 3
 ```
 
-## Formatting print
+### Formatting print
 
 ```rust
 let a = 10.0;
@@ -91,7 +91,7 @@ let c = a / b;
   // a is 10.0, and b is 3.0
   ```
 
-## Bitwise operations
+### Bitwise operations
 
 ```rust
 let value = 0b1111_0101u8;
@@ -184,7 +184,7 @@ The operations are as followed.
   // new_val: 00011100
   ```
 
-## Boolean
+### Boolean
 
 `trun` and `false`. These can represent by the bit `1` or `0`.
 
@@ -197,7 +197,7 @@ let b = false;
 println!("a AND b is {}", a & b); // a AND b is false
 ```
 
-### Short-Circuiting Logical Operations
+#### Short-Circuiting Logical Operations
 
 It will **skip the right parts** if some conditions are meet.
 
@@ -215,7 +215,7 @@ It will **skip the right parts** if some conditions are meet.
 
 > `panic!()` will throw an error.
 
-## Char
+### Char
 
 The `char` type:
 

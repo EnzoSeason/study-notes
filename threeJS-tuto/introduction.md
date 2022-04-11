@@ -1,6 +1,6 @@
-# Introduction
+## Introduction
 
-## Scene, Renderer, Camera
+### Scene, Renderer, Camera
 
 - Scene:
 
@@ -26,7 +26,7 @@
 
   The **Orthographic projection** is like a cube in itself where the perspective remains constant **regardless of it's distance from the camera**.
 
-## Tools
+### Tools
 
 - stats: It can monitor the performance (fps, MS, MB). [link](https://github.com/mrdoob/stats.js/)
 

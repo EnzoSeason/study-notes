@@ -1,4 +1,4 @@
-# Trait
+## Trait
 
 Demo: [trait-demo](./trait-demo/)
 
@@ -42,7 +42,7 @@ impl Describable for SpaceStation {
 }
 ```
 
-## Default trait implementation
+### Default trait implementation
 
 As we can see, the method in `trait` was not implemented. Actually, We can implement it.
 
@@ -56,7 +56,7 @@ trait Describable {
 
 Then, the `impl Describable for Satelite` and `impl Describable for SpaceStation` can choose to override it or not.
 
-## Derive trait
+### Derive trait
 
 Derive trait provides **default implementations** for severval common traits, which are:
 
@@ -84,7 +84,7 @@ struct Satelite {
 
 - `PartialOrd` decides `>` just using the first field.
 
-## Trait bound
+### Trait bound
 
 A trait bound **sets the limits** on the **generic type**.
 
@@ -98,7 +98,7 @@ fn print<T: fmt::Display>(item: T) {
 }
 ```
 
-### Multiple trait bounds
+#### Multiple trait bounds
 
 Sometimes, we need to use more than one trait bound.
 
@@ -123,7 +123,7 @@ where
 }
 ```
 
-## Return Type with `impl`
+### Return Type with `impl`
 
 Similar to trait bound, we can limit the output of a function.
 

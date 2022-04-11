@@ -1,6 +1,6 @@
-# Compound Data Type
+## Compound Data Type
 
-## Array
+### Array
 
 - It is collection of **same data type**.
 
@@ -31,7 +31,7 @@ let len: usize = nums.len();
 
 > The size `usize` is based on the processor. For 32-bit processor, it's 4 btypes. For 64-bit processor, it's 8 btypes.
 
-### Multidimensional Array
+#### Multidimensional Array
 
 ```rust
 // create a two dimensional array with the size of 3 * 2
@@ -44,7 +44,7 @@ let store: [[[i32; 3]; 4]; 2]
 store = [[[0; 3]; 4]; 2]
 ```
 
-## Tuple
+### Tuple
 
 - It groups items of **mixed data types**.
 
@@ -59,7 +59,7 @@ let stuff: (u8, f32, char) = (1, 3.14, 'a');
 let first_item = stuff.0;
 ```
 
-### Destruction
+#### Destruction
 
 ```rust
 let (a, b, c) = stuff;

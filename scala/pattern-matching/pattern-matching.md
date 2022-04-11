@@ -1,4 +1,4 @@
-# Pattern Matching
+## Pattern Matching
 
 Pattern matching in Scala is similar to `switch` in other languages.
 
@@ -13,7 +13,7 @@ val desc = x match {
 
 but, it can do much more.
 
-## Decompose value
+### Decompose value
 
 ```scala
 case class Person(name: String, age: Int)
@@ -33,7 +33,7 @@ There are some rules:
 - The type of the returned value of Pattern Matching is the **lowest common ancestor** of all the cases' type.
 - Pattern Matching works directly with `case class`.
 
-## Patterns
+### Patterns
 
 In Scala, the patterns can be used in pattern matching are as followed.
 

@@ -1,4 +1,4 @@
-# Meeting
+## Meeting
 
 To have an effective meeting, we should:
 
@@ -7,7 +7,7 @@ To have an effective meeting, we should:
 - pay attention
 - ask questions
 
-## Before the meeting
+### Before the meeting
 
 If you are organizing the meeting, you will probably talk about the data. Before the meeting:
 
@@ -19,7 +19,7 @@ If you are organizing the meeting, you will probably talk about the data. Before
 
 - Prepare and distribute an agenda.
 
-## Conflict
+### Conflict
 
 It's important to try and be objective and stay focused on the team's goals.
 

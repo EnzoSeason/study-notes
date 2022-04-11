@@ -1,6 +1,6 @@
-# Function
+## Function
 
-## Basic function
+### Basic function
 
 ```scala
 def aFunction(a: String, b: Int): String =
@@ -17,7 +17,7 @@ def otherFunction(a: String, b: Int): String = {
 println(aFunction("Hello", 1))
 ```
 
-## Recursion function
+### Recursion function
 
 In functional programming, we **avoid using the iteration** because it causes the side effects. We should use **recursion** instead.
 
@@ -28,7 +28,7 @@ def aRepeatFunction(word: String, count: Int): String = {
 }
 ```
 
-## Function with side effects
+### Function with side effects
 
 For now, the function doesn't cause side effects. However, It can. It must return a `Unit` type.
 
@@ -36,7 +36,7 @@ For now, the function doesn't cause side effects. However, It can. It must retur
 def aFunctionWithSideEffects(a: Int): Unit = println(a)
 ```
 
-## Nested function
+### Nested function
 
 Scala allows us to define nested function.
 
@@ -47,7 +47,7 @@ def outerFunction(num: Int): Int = {
 }
 ```
 
-## Call-by-value vs Call-by-name
+### Call-by-value vs Call-by-name
 
 ```scala
 def calledByValue(x: Long): String = println(x)
@@ -63,7 +63,7 @@ The difference between two functions is `=>`.
 
 **Call-by-name** is used to **delay** the calculation. It's useful in **lazy** actions. That means if the **Call-by-name** parameter isn't used, it won't be calculated.
 
-## Default parameter and Named parameter
+### Default parameter and Named parameter
 
 ```scala
 def trFact(num: Int, acc: Int = 1): Int = {

@@ -19,7 +19,7 @@ class FileSystem:
     def ls(self, path: str) -> List[str]:
         node = self.root
 
-        # find the lowest dir or file
+        ## find the lowest dir or file
         if path != "/":
             dirs = path.split("/")
             for d in dirs[1:]:
@@ -65,9 +65,9 @@ class FileSystem:
         return node.files[file].content
 
 
-# Your FileSystem object will be instantiated and called as such:
-# obj = FileSystem()
-# param_1 = obj.ls(path)
-# obj.mkdir(path)
-# obj.addContentToFile(filePath,content)
-# param_4 = obj.readContentFromFile(filePath)
+## Your FileSystem object will be instantiated and called as such:
+## obj = FileSystem()
+## param_1 = obj.ls(path)
+## obj.mkdir(path)
+## obj.addContentToFile(filePath,content)
+## param_4 = obj.readContentFromFile(filePath)

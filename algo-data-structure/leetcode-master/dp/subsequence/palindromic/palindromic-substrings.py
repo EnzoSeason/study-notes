@@ -10,8 +10,8 @@ class SolutionDP:
         dp = [[True if i == j else False for j in range(n)] for i in range(n)]
         res = n
 
-        # make sure dp[i + 1][j - 1] is calculated
-        # before processing dp[i][j]
+        ## make sure dp[i + 1][j - 1] is calculated
+        ## before processing dp[i][j]
         for i in range(n - 1, -1, -1):
             for j in range(i + 1, n):
                 if s[i] == s[j]:
@@ -30,8 +30,8 @@ class SolutionTwoPointers:
         res = 0
 
         for i in range(len(s)):
-            res += self.count(s, i, i) # set s[i] as search center
-            res += self.count(s, i, i + 1) # set s[i], s[i] + 1 as search center.
+            res += self.count(s, i, i) ## set s[i] as search center
+            res += self.count(s, i, i + 1) ## set s[i], s[i] + 1 as search center.
 
         return res
 

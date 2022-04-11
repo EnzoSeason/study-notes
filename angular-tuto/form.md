@@ -1,11 +1,11 @@
-# Form
+## Form
 
 * [template-driven](#template-driven)
 * [reactive](#reactive)
 
-## Template-driven
+### Template-driven
 
-### Set up
+#### Set up
 
 use `ngModel` in the built-in Angular Directive: `FormsModule`
 
@@ -51,7 +51,7 @@ export class AComponent {
 }
 ```
 
-### Validation
+#### Validation
 
 By default, Angular disables HTML5 validation, and uses [its validators](https://angular.io/api/forms/Validators), like:
 
@@ -80,7 +80,7 @@ input.ng-invalid.ng-touched {
 }
 ```
 
-### Grouping Form Control
+#### Grouping Form Control
 
 We can control a group of inputs:
 
@@ -101,7 +101,7 @@ We can control a group of inputs:
 const myGroup = this.myForm.value.userData
 ```
 
-### Set value of Form
+#### Set value of Form
 
 We set some form fields without affecting other fields by using `ngForm.form.patchValue()`.
 
@@ -118,11 +118,11 @@ this.myForm.form.patchValue({
 });
 ```
 
-### Use value of Form
+#### Use value of Form
 
 All the data in `ngForm` is in `ngForm.value`.
 
-### Reset form
+#### Reset form
 
 reset the form concludes:
 
@@ -135,7 +135,7 @@ reset the form concludes:
 this.myForm.reset()
 ```
 
-### Bonus: Two way binding
+#### Bonus: Two way binding
 
 A very useful method:
 
@@ -152,9 +152,9 @@ export class AComponent {
 }
 ```
 
-## Reactive
+### Reactive
 
-### Set up
+#### Set up
 
 use `formGroup` in `@angular/forms`.
 
@@ -185,7 +185,7 @@ onSubmit(){
 }
 ```
 
-### Validation
+#### Validation
 
 In `FormGroup`:
 

@@ -1,6 +1,6 @@
-# Accessibility
+## Accessibility
 
-## Highlighting key information
+### Highlighting key information
 
 - **Headlines that pop**
 
@@ -20,7 +20,7 @@
 
 ![texts-guide](./images/texts-guide.png)
 
-## Ways to make data visualization accessible
+### Ways to make data visualization accessible
 
 - Labeling
 

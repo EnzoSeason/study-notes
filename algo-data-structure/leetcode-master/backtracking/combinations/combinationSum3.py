@@ -15,11 +15,11 @@ class Solution:
         if len(prev) == self.k and sum(prev) == self.n:
             self.res.append(prev)
 
-        # prune by the sum
+        ## prune by the sum
         if sum(prev) >= self.n:
             return
 
-        # prune by the length of prev.
+        ## prune by the length of prev.
         end = 9 - (self.k - len(prev)) + 1
         for i in range(start, end + 1):
             self.helper(prev + [i], i + 1)

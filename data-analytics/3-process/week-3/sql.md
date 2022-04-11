@@ -1,4 +1,4 @@
-# SQL
+## SQL
 
 SQL can
 
@@ -18,7 +18,7 @@ Data stored in a SQL database is useful to a project with multiple team members 
 
 - track changes to SQL queries across the team.
 
-## Spreadsheet vs SQL
+### Spreadsheet vs SQL
 
 | Spreadsheet                                          | SQL                                                                |
 | ---------------------------------------------------- | ------------------------------------------------------------------ |
@@ -28,7 +28,7 @@ Data stored in a SQL database is useful to a project with multiple team members 
 | Built-in spell check and other useful functions      | Fast and powerful functionality                                    |
 | Best when working solo on a project                  | Great for collaborative work and tracking queries run by all users |
 
-## Basic data cleaning
+### Basic data cleaning
 
 1. Inspect the column
 
@@ -46,7 +46,7 @@ Data stored in a SQL database is useful to a project with multiple team members 
 
    We use `TRIM` to remove the extra space.
 
-## Advanced data cleaning
+### Advanced data cleaning
 
 - `CAST`: convert the data type
 

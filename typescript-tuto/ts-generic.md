@@ -1,6 +1,6 @@
-# Generic
+## Generic
 
-## Generic Types
+### Generic Types
 
 ```typescript
 function identity<T>(arg: T): T {
@@ -17,7 +17,7 @@ interface GenericIdentityFn {
 let myIdentity: GenericIdentityFn = identity; // ok
 ```
 
-## Generic Constraints
+### Generic Constraints
 
 extends interface
 
@@ -31,7 +31,7 @@ function count<T extends HasLength>(element: T): number {
 }
 ```
 
-## Using Type Parameters in Generic Constraints
+### Using Type Parameters in Generic Constraints
 
 keyof
 
@@ -41,7 +41,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: K) {
 }
 ```
 
-## Generic Classes
+### Generic Classes
 
 ```typescript
 function getProperty<T, K extends keyof T>(obj: T, key: K) {

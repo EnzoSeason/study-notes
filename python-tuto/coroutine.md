@@ -1,4 +1,4 @@
-# Coroutine
+## Coroutine
 
 Before learning coroutine, let see the [history of Process and Thread](https://www.liaoxuefeng.com/wiki/1016959663602400/1017631469467456). Coroutine is better than them in most cases.
 
@@ -31,7 +31,7 @@ async def main():
 
 %time asyncio.run(main())
 
-########## output ##########
+########### output ##########
 
 before await
 worker_1 start
@@ -72,7 +72,7 @@ async def main():
 
 %time asyncio.run(main())
 
-########## output ##########
+########### output ##########
 
 before await
 worker_1 start

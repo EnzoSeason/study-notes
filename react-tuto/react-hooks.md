@@ -1,11 +1,11 @@
-# React Hooks
+## React Hooks
 
 React hooks can be use ONLY in:
 
 * functional components
 * custom React hooks
 
-## useState
+### useState
 
 The most important hook. It allows functional component to use **state**.
 
@@ -37,7 +37,7 @@ const [amount, setAmount] = useState(0);
 
     > `setState1(value); setState2(value);` These 2 *setStateFn* ONLY trigger one rendering. Same as `this.setState()`
 
-## useEffect
+### useEffect
 
 Another very useful React Hook. It controles the **side effect**, which is NOT affected on rendering DOM, such as:
 
@@ -45,7 +45,7 @@ Another very useful React Hook. It controles the **side effect**, which is NOT a
 
 It is executed **after every component's render cycle**
 
-### usage
+#### usage
 
 ```javascript
 useEffect(() => {
@@ -66,7 +66,7 @@ The second param controls the dependencies of re-execution. `[]` means NOTHING w
 
 However, we can provide dependencies. For exemple, `[data]` means re-execute the `useEffect` **everytime when** `data` is changed.
 
-### clean up function
+#### clean up function
 
 `return` inside of `useEffect` is a clean up function. It runs before the next time component rendering or unmount.
 
@@ -80,7 +80,7 @@ useEffect(() => {
 });
 ```
 
-## useCallback
+### useCallback
 
 `useCallBack` caches the function. When the component is rerendered, the function will NOT be created again.
 
@@ -96,7 +96,7 @@ As `useEffect`, the second param controls the dependencies. If one of the depend
 
 > Good practice: add `useCallBack` to the function which will be passed into child component.
 
-## useMemo
+### useMemo
 
 Returns a memoized value. This optimization helps to avoid expensive calculations on every render.
 
@@ -106,7 +106,7 @@ If no array is provided, a new value will be computed on every render.
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
 
-## useRef
+### useRef
 
 `useRef` holds a mutable value (as a pointer pointed to a memory).
 
@@ -123,7 +123,7 @@ const inputEl = useRef(null); // init by null
 console.log(inputEl.current.value);
 ```
 
-## useReducer
+### useReducer
 
 An alternative to `useState`. It is usually preferable when :
 
@@ -153,7 +153,7 @@ const reducer = (state, action) => {
 
 React guarantees that **dispatch function** identity is stable and won’t change on re-renders. This is why it’s **safe to omit** from the `useEffect` or `useCallback` dependency list.
 
-## useContext
+### useContext
 
 `useContext(MyContext)` is equivalent to `static contextType = MyContext` in a class, or to `<MyContext.Consumer>`, only lets you :
  * read the context 
@@ -208,7 +208,7 @@ function ThemedButton() {
 }
 ```
 
-## useContext
+### useContext
 
 It passes data to components without using `props`., like `Redux`.
 
@@ -216,7 +216,7 @@ BUT, it shouldn't be used for **high frequence changes**. Because it lacks of im
 
 It can be used for `user auth info`, `theme`, etc.
 
-## Custom Hooks
+### Custom Hooks
 
 The idea of custom hooks shares logic. (avoid doulbing codes)
 

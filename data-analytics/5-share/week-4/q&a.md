@@ -1,6 +1,6 @@
-# Q&A
+## Q&A
 
-## Before Q&A
+### Before Q&A
 
 First, you should
 
@@ -24,7 +24,7 @@ Finally, you should be prepared to consider any **limitaions of your data** by
 - looking at the context
 - understand the strengths and weekness of your tools
 
-## Handling objections
+### Handling objections
 
 The objections or questions could be:
 
@@ -60,7 +60,7 @@ To reponse these:
 
 - acknowledge that the objections are valid and take steps to investigate further
 
-## Best practices
+### Best practices
 
 - Listen to the whole question
 

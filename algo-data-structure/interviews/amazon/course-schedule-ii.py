@@ -30,17 +30,17 @@ class SolutionDFS:
         self.memo[node] = SolutionDFS.REMOVED
 
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        #  creat adg list, src: [dests]
+        ##  creat adg list, src: [dests]
         for dest, src in prerequisites:
             if src in self.adj_list:
                 self.adj_list[src].append(dest)
             else:
                 self.adj_list[src] = [dest]
 
-        # init memo
+        ## init memo
         self.memo = {i: SolutionDFS.NOT_VISITED for i in range(numCourses)}
 
-        # dfs
+        ## dfs
         for vertex in range(numCourses):
             if self.memo[vertex] == SolutionDFS.NOT_VISITED:
                 self.dfs(vertex)
@@ -60,7 +60,7 @@ class SolutionBFS:
         self.res = []
 
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
-        #  creat adg list and in_degree
+        ##  creat adg list and in_degree
         for dest, src in prerequisites:
             if src in self.adj_list:
                 self.adj_list[src].append(dest)
@@ -68,16 +68,16 @@ class SolutionBFS:
                 self.adj_list[src] = [dest]
             self.in_degree[dest] = self.in_degree.get(dest, 0) + 1
 
-        # init zero degree queue
+        ## init zero degree queue
         self.zero_degree_queue = deque(
             [i for i in range(numCourses) if i not in self.in_degree]
         )
 
-        # bfs
+        ## bfs
         while self.zero_degree_queue:
             node = self.zero_degree_queue.popleft()
             self.res.append(node)
-            # reduce in_degree
+            ## reduce in_degree
             if node in self.adj_list:
                 for vertex in self.adj_list[node]:
                     self.in_degree[vertex] -= 1

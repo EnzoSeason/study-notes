@@ -1,6 +1,6 @@
-# Angular Modules & Optimizing Angular Apps
+## Angular Modules & Optimizing Angular Apps
 
-## Understanding NgModule
+### Understanding NgModule
 
 ```typescript
 @NgModule({
@@ -29,7 +29,7 @@ const appRoutes: Routes = [
 export class AppRoutingModule {}
 ```
 
-## Feature Module
+### Feature Module
 
 Split codes into feature modules. The key point is defining the correct routes.
 
@@ -46,7 +46,7 @@ const routes: Routes = [
 export ChildRoutingModule
 ```
 
-## Lazy Loading
+### Lazy Loading
 
 Lazy Loading improves the performance. **It makes initial  load faster.**  
 
@@ -93,7 +93,7 @@ In AppRoutingModule:
 export class AppRoutingModule {}
 ```
 
-### IMPORTANT
+#### IMPORTANT
 
 If the service is provided in a Lazy Loaded module, the instance of service is created lazily, too. It might cause bugs: you have **create another instance of service**.
 
@@ -107,7 +107,7 @@ The best practice of providing service:
 
 It makes sure that only one instance of service is created in entire App.
 
-## AoT (Ahead-of-Time) vs JiT (Just-in-Time)
+### AoT (Ahead-of-Time) vs JiT (Just-in-Time)
 
 Angular parses the project to HTML, CSS, JavaScript DOM operation. There are two way to do:
 

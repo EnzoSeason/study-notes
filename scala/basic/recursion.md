@@ -1,6 +1,6 @@
-# Recursion
+## Recursion
 
-## Overstack
+### Overstack
 
 It's a very common problem when we use the recursion.
 
@@ -30,7 +30,7 @@ factorial(5)
 
 To optimise that, we use the **tail recursion**.
 
-## Tail recursion
+### Tail recursion
 
 1. The tail recursion is the tail call itself.
 

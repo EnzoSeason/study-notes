@@ -1,4 +1,4 @@
-# Function
+## Function
 
 ```rust
 fn say_sum(a: u8, b: u8) {
@@ -20,7 +20,7 @@ say_sum(x, y);
 say_number(x);
 ```
 
-## Statement vs Expression
+### Statement vs Expression
 
 A statement performs an action **without return**. In Rust, it **ends with `;`**.
 
@@ -35,7 +35,7 @@ let sum = 1 + 2;
 // It's a statement while 1 + 2 is an expression.
 ```
 
-## Function return
+### Function return
 
 ```rust
 fn square(x: i32) -> i32 {

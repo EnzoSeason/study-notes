@@ -1,4 +1,4 @@
-# Iifetime
+## Iifetime
 
 Demo: [lifetime-demo](./lifetime-demo/)
 
@@ -24,7 +24,7 @@ let b = 1;
 println!("{}", a); // OK
 ```
 
-## Lifetime annotation syntax
+### Lifetime annotation syntax
 
 We can use the **lifetime annotation syntax** to tell the compilor the lifetime of a **reference**.
 
@@ -42,7 +42,7 @@ fn longer_string<'a>(string_1: &'a str, string_2: &'a str) -> &'a str {
 
 `'a` is the **lifetime annotation syntax**. It means the **three reference**, `string_1`, `string_2` and _return value_, have the same lifetime.
 
-## Lifetime elision rules
+### Lifetime elision rules
 
 At the beginning of Rust, we must write the lifetime explictly for the reference. So far, we've some elision rules to make development easier.
 
@@ -64,7 +64,7 @@ At the beginning of Rust, we must write the lifetime explictly for the reference
 
    `func<'a, 'b>(&'a self, name_1: &'b str) -> &'a str`
 
-## Struct lifetime
+### Struct lifetime
 
 If a `struct` owns a reference, we need a lifetime on it.
 
@@ -98,7 +98,7 @@ impl<'a> Person<'a> {
 }
 ```
 
-## Static lifetime `'static`
+### Static lifetime `'static`
 
 The static lifetime indicates the reference is available for **entire duration of program**.
 

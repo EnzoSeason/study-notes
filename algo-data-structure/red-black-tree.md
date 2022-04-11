@@ -1,18 +1,18 @@
-# Red Black Tree
+## Red Black Tree
 
 The performance of the Binary Search Tree isn't stable. The worst time complexity is `O(n)` (The tree becomes a linked list).
 
 To solve this problem, we need to **balance** the tree. It avoids turning a tree into a list.
 
 
-## Balanced Binary Tree
+### Balanced Binary Tree
 
 For any node in a Binary Tree, the **difference of the height** of its **left child tree** and that of its **right child** must be smaller or equal to `1`.
 
 For example, [AVL Tree](https://en.wikipedia.org/wiki/AVL_tree) is a balanced binary tree.
 
 
-## Red Black Tree
+### Red Black Tree
 
 A red–black tree is a special type of **binary search tree**.
 

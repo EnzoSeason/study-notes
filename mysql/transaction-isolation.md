@@ -1,4 +1,4 @@
-# Transaction Isolation
+## Transaction Isolation
 
 In gerneral, executing a sql query is a transaction.
  
@@ -16,7 +16,7 @@ There are 4 levels of isolation in the transaction.
 
 From level `1` to `4`, the isolation becomes better and better. However, the efficiency turns worse and worse.
 
-## Implement
+### Implement
 
 How do we implement the isolation ? We use the **rollback log**.
 

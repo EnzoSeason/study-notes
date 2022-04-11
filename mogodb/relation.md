@@ -1,4 +1,4 @@
-# Relation
+## Relation
 
 There are two ways to present the relation.
 
@@ -20,19 +20,19 @@ There is no strict rule to tell which method to use. It depends on the use cases
 
   It can **reduce the size of a document** and **save the bandwidth**. However, you need multiple requests if you need the related collections.
 
-## One to One
+### One to One
 
 For example, a patient has one disease summary.
 
 Usually, we use _Embedded document_ if there is no reason to split them.
 
-## One to Many
+### One to Many
 
 For example, a question has many answers.
 
 Usually, we use _Embedded document_ if there is no reason to split them.
 
-## Many to Many
+### Many to Many
 
 An author has many books, and a book has many authors.
 

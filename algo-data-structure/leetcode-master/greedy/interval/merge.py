@@ -12,10 +12,10 @@ class Solution:
 
         for interval in intervals:
             if res[-1][1] >= interval[0]:
-                # overlapped, update the upper bound
+                ## overlapped, update the upper bound
                 res[-1][1] = max(res[-1][1], interval[1])
             else:
-                # not overlapped, add into result
+                ## not overlapped, add into result
                 res.append(interval)
         
         return res

@@ -1,8 +1,8 @@
-# Collection
+## Collection
 
 Demo: [collection-demo](./collection-demo/)
 
-## Vector: `Vec<T>`
+### Vector: `Vec<T>`
 
 - A collection of the **same** data type.
 
@@ -14,13 +14,13 @@ Demo: [collection-demo](./collection-demo/)
 
 - It's stored on the heap.
 
-## HashMap: `HashMap<K, V>`
+### HashMap: `HashMap<K, V>`
 
 - It stores the data in key-value pair.
 
 - All the key or value must have the same type.
 
-### Update a key-value pair
+#### Update a key-value pair
 
 - override the existing one
 

@@ -38,7 +38,7 @@ class Solution:
         while stack:
             node = stack.pop()
             res.append(node.val)
-            # Attention: the order here is different from that of the preorder.
+            ## Attention: the order here is different from that of the preorder.
             if node.left:
                 stack.append(node.left)
             if node.right:
