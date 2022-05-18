@@ -22,8 +22,9 @@ It utilize some functionality of a smart contract system.
 
 For exemple:
 
+- to collateralize
 - to represent reputation or stake
-- to maintain stable value
+- to maintain stable value (stablecoins)
 - to pay application-specific fees
 
 ## Governance token
