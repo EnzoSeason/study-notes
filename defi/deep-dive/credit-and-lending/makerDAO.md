@@ -30,3 +30,38 @@ If the value of collateral, e.g. ETH, is going **down**, the vault holder faces 
 - The loan is **liquidated by the keeper** (external actor).
 
   The keeper **pays off the loan** in ETH, and he get the **incentive fee** in ETH.
+
+## Stability of DAI
+
+The forces to keep DAI stable are:
+
+1. Overcollateralization
+2. Market actions
+
+   In the liquidation, ETH are sold to buy DAI.
+
+### Stability fee
+
+It's a **variable interest rate** paid by **vault holder** on **DAI debt** they generate.
+
+It controls the **generation or repayment** of DAI to keep its price to the peg (which is USD).
+
+### DAI Savings Rate (DSR)
+
+It's a **variable rate** that DAI holder can earn on their DAI deposit.
+
+Stability fee is always **greater than or equal to** DSR.
+
+### DAI Debt Celling
+
+There is a **max limit on DAI supply**.
+
+Some of parameters can't be changed, while others can be changed by using governance token.
+
+### Large drop of the value of collateral
+
+If the collateral drops that the DAI debt can't be fully repaid, the position is closed. The protocol accrues what is call **protocol debt**.
+
+There is a **buffer pool** of DAI that covers **protocol debt**.
+
+If **buffer pool** can't cover it, then we need **governance token** and **governance system** to solve it.
