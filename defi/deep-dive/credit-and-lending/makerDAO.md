@@ -20,3 +20,13 @@ They have 2 tokens:
 Because ETH is more volatile DAI, we need **over-collateral**.
 
 What's more, we don't mint DAI to the max. We have a **buffer** to avoid being liquidated if the value of ETH drops.
+
+## Liquidation
+
+If the value of collateral, e.g. ETH, is going **down**, the vault holder faces 3 scenarios.
+
+- He can **increase the amount of collateral**. e.g. add 1 ETH.
+- He can use DAI to **pay back the loan**, and **retrieve the collateral**.
+- The loan is **liquidated by the keeper** (external actor).
+
+  The keeper **pays off the loan** in ETH, and he get the **incentive fee** in ETH.
