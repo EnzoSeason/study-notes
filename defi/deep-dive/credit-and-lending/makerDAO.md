@@ -65,3 +65,31 @@ If the collateral drops that the DAI debt can't be fully repaid, the position is
 There is a **buffer pool** of DAI that covers **protocol debt**.
 
 If **buffer pool** can't cover it, then we need **governance token** and **governance system** to solve it.
+
+## Governance
+
+The MKR token controls MakerDAO. With MKR tokens, we can change the parameters of DAI, doing the right things to make MakerDAO better.
+
+As we discussed before, MakerDAO has serveral levels to protect DAI value.
+
+1. overcollateralization
+2. stability (stability fee, DSR, DAI Debt Celling, buffer pool)
+
+If these 2 levels are broken, and the value of DAI keeps dropping, it reaches the third level, global settlement.
+
+### Global settlement
+
+We mint more MKR tokens to inflate it, and let more investors in.
+
+## Riskes
+
+- DAI supply is highly depended on ETH-collateralization.
+- No clear arbitrage loop.
+
+  For example, Coinbase makes sure that you can get $1 by selling 1 USDC. It's not for DAI since it's collatered on ETH.
+
+## Solution to the current problem
+
+Let's see what kinds of the problem that MakerDAO solves.
+
+![makerdao-solution](./images/makerdao-solution.png)
