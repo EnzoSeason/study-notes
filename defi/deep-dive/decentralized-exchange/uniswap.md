@@ -37,3 +37,17 @@ It's a **drawback** of AAM and Proof of Work. The miner can see all the pending 
 Arbitrage occurs when an investor can make a profit from **simultaneously buying and selling a commodity in two different markets**. For example, gold may be traded on both New York and Tokyo stock exchanges.
 
 Arbitrageurs profit at the expense of liquidity providers.
+
+## Flash swap
+
+Flash swap sends the tokens before the user pays for them.
+
+It's different from **flash loan**, whose repayment needs the same asset. Flash swap doesn't. Therefore, it's interesting for **arbitrageurs**.
+
+For example, we borrow in USDC and pay back in DAI.
+
+![flash-swap](./images/flash-swap.png)
+
+## Solution
+
+![uniswap-solution](./images/uniswap-solution.png)
