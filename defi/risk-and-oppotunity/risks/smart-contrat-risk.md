@@ -18,7 +18,7 @@ There are 2 main types of exploits:
 
   It's the most common error. The attacks use the different asset prices on different platforms to make money, similar to **arbitrage**. (e.g. flash attack)
 
-  ![flash-attack](./images/flash-attack.png)
+  ![flash-attack](../images/flash-attack.png)
 
   An example of an economic exploit is the exchange between two tokens when the price is linked via an oracle to an illiquid exchange. The exploiter can **attack the oracle exchange** and **manipulate the price**.
 
