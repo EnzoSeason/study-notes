@@ -23,3 +23,5 @@ Either of the parties wants to withdraw the coin, it's on-chain.
 ## Rollup
 
 Similar to Layer 2, Rollup aggregates the small transactions into a big one and put it on-chain.
+
+The aggregator needs to **escrow**. If the aggregator misbehaves, the escrow will be used.
