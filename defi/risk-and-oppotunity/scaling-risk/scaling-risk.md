@@ -2,9 +2,9 @@
 
 ## Blockchain Trilemma
 
-- Decentralized
-- Scalable
-- Secure
+- Decentralization
+- Scalability
+- Security
 
 Tradeoffs refers to **the inability to achieve all three**. For example, the more centralized blockchains are much scalable.
 
