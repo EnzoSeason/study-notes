@@ -1,7 +1,7 @@
 # Tag 2
 
-[tag-1](./tag-1.md)
+- [tag-1](./tag-1.md)
 
-[usage](../usage.md)
+- [usage](../usage.md)
 
 RUA
