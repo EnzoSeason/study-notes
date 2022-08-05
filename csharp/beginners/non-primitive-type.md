@@ -43,7 +43,7 @@ Console.WriteLine(nums[0]);
 
 ## String
 
-String is **immutable**.
+String is **immutable**. If you want to build a complex string, use `StringBuilder` class.
 
 To join the string:
 
