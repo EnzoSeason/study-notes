@@ -136,3 +136,27 @@ public class HttpCookie
   }
 }
 ```
+
+## Inheritance vs Composition
+
+Inheritance: `is-a`
+
+```c#
+public class Animal {}
+public class Bird: Animal {}
+```
+
+Composition: `has-a`. More specific A **must** `has-a` B.
+
+```c#
+public class Engine {}
+public class Car
+{
+  private readonly Engine _engine;
+
+  public Car(Engine engin)
+  {
+    _engine = engine;
+  }
+}
+```
