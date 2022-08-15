@@ -56,3 +56,43 @@ AWS offers two container orchestration services:
 | An EC2 instance with the ECS Agent installed and configured | container instance    | worker node |
 | ECS Container                                               | task                  | pod         |
 | technology                                                  | AWS native technology | Kubernetes  |
+
+## Serverless
+
+Every definition of serverless mentions four aspects.
+
+- No servers to provision or manage.
+
+- Scales with usage.
+
+- You never pay for idle resources.
+
+- Availability and fault tolerance are built-in.
+
+With serverless, spend time on the things that differentiate your application, rather than spending time on ensuring availability, scaling, and managing servers.
+
+AWS has several serverless compute options, including AWS Fargate and AWS Lambda.
+
+### AWS Fargate
+
+AWS Fargate is a purpose-built serverless compute engine for **containers**. Fargate scales and manages the infrastructure.
+
+### AWS Lambda
+
+AWS Lambda lets you run code **without provisioning or managing servers or containers**.
+
+There are three primary components of a Lambda function:
+
+- trigger
+
+  Triggers describe when the Lambda function should run.
+
+- code
+
+  The code is source code, that describes what the Lambda function should run.
+
+- configuration
+
+  The configuration of a Lambda function consists of information that describes how the function should run.
+
+You pay only for what you use. You are charged for the number of times your code is triggered (requests) and for the time your code executes, rounded up to the nearest 1ms (duration). With this pricing, it can be very cost effective to run functions whose execution time is very low, such as functions with durations under 100ms or low latency APIs.
