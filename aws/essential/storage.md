@@ -41,6 +41,12 @@ Amazon S3 provides two main access management features:
 - IAM policies
 - S3 bucket policies
 
+## AWS Database Services
+
+![aws-db-services](./images/aws-db-services.png)
+
 ## Exercises
 
 - [Storage](https://aws-tc-largeobjects.s3-us-west-2.amazonaws.com/DEV-AWS-MO-GCNv2/lab-5-storage.html)
+
+- [Database](https://aws-tc-largeobjects.s3-us-west-2.amazonaws.com/DEV-AWS-MO-GCNv2/lab-6-databases.html)
