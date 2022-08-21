@@ -97,6 +97,10 @@ There are three primary components of a Lambda function:
 
 You pay only for what you use. You are charged for the number of times your code is triggered (requests) and for the time your code executes, rounded up to the nearest 1ms (duration). With this pricing, it can be very cost effective to run functions whose execution time is very low, such as functions with durations under 100ms or low latency APIs.
 
+There is an example for a serverless application.
+
+![serverless-app](./images/servless-solution.png)
+
 ## Exercises
 
 - [Create an AWS Account](https://aws-tc-largeobjects.s3-us-west-2.amazonaws.com/DEV-AWS-MO-GCNv2/lab-1-account.html)
