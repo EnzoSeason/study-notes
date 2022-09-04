@@ -55,3 +55,19 @@ A stage is a named reference to a deployment, which is a snapshot of the API. Yo
 Every time you make a change to your API, you must deploy it to a stage for that change to go live. You can host multiple versions of your API simultaneously by deploying changes to different stages.
 
 Using stages is perfect for setting up dev, qa, and production environments for you API.
+
+## Authentication
+
+API Gateway can use **Amazon Cognito** or **Amazon Lambda** to do authentication.
+
+**Amazon Lambda** requires the user to code their own authentication flow, while **Amazon Cognito** doesn't.
+
+**Amazon Cognito** will uses **User pool** to identifier an user, and then return a JWT token for API gateway.
+
+If the user want to access the AWS resources bypassing API gatway. We need to add an **idnentification pool of Congito**.
+
+## Exercises
+
+- [Lab 2: Amazon API Gateway](https://rrs-public.s3.amazonaws.com/exercises/lab-2-api-mocks.html)
+
+- [Lab 3: Amazon Cognito Authentication](https://rrs-public.s3.amazonaws.com/exercises/lab-3-cognito.html)
