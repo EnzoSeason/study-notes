@@ -50,3 +50,9 @@ Each execution context provides **512 MB of additional disk space in the /tmp di
 For most REST API operations, the client will want a response from the Lambda function so it makes sense to have Lambda executed synchronously during those times.
 
 In the case of a long-latency operation, it would make sense to invoke it asynchronously and use another mechanism to let the client know that the operation is completed. For example, S3 invokes Lambda asynchronously.
+
+### Versioning and Aliases
+
+You can publish a new version of your AWS Lambda function when you create new or update existing functions. **Each version of a lambda function gets it’s own unique Amazon Resource Name (ARN).** You can then use these ARNs to use different versions of the Lambda function for different purposes.
+
+You also have the ability to create aliases for AWS Lambda functions. Aliases are essentially pointers to one specific Lambda version.
