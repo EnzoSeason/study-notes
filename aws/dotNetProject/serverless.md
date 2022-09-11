@@ -56,3 +56,7 @@ In the case of a long-latency operation, it would make sense to invoke it asynch
 You can publish a new version of your AWS Lambda function when you create new or update existing functions. **Each version of a lambda function gets it’s own unique Amazon Resource Name (ARN).** You can then use these ARNs to use different versions of the Lambda function for different purposes.
 
 You also have the ability to create aliases for AWS Lambda functions. Aliases are essentially pointers to one specific Lambda version.
+
+## Exercises
+
+- [AWS Lambda Functions](https://rrs-public.s3.amazonaws.com/exercises/lab-4-lambda.html)
