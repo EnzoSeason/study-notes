@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/binary-search/
+
 object Solution {
   def search(nums: Array[Int], target: Int): Int = {
     var left = 0
