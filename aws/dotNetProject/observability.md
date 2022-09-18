@@ -83,3 +83,11 @@ It's a log system provided by Amazon.
   Retention settings can be used to specify how long log events are kept in CloudWatch Logs.
 
   The retention assigned to a log group is applied to their log streams.
+
+## AWS Lambda and CloudWatch Logs
+
+The only step is to make sure that Lambda is allowed to **create a Log Group, create a Log Stream and put Log Events**. This can easily be done by using the IAM managed policy “AWSLambdaBasicExecutionRole”.
+
+## Amazon API Gateway and CloudWatch Logs
+
+You configure this at the **stage level**.
