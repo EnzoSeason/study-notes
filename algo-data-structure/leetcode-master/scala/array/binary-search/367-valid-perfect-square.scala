@@ -1,4 +1,4 @@
-package playground
+// https://leetcode.com/problems/valid-perfect-square/
 
 object Solution {
   def isPerfectSquare(num: Int): Boolean = {
