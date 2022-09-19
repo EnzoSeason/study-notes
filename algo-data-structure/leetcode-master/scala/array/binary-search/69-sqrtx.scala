@@ -1,7 +1,9 @@
-package playground
+// https://leetcode.com/problems/sqrtx/
 
 object Solution {
   def mySqrt(x: Int): Int = {
+    // Be careful about the stackoverflow
+    // use BigInt instead of Int
     var left: BigInt = 1
     var right: BigInt = x
 
