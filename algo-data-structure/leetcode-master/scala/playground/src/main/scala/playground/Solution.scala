@@ -1,18 +1,19 @@
 package playground
 
 object Solution {
-  def isPerfectSquare(num: Int): Boolean = {
-    if (num == 1) return true
+  def removeElement(nums: Array[Int], target: Int): Int = {
+    if (nums.length == 0) return 0
 
-    var left: BigInt = 1
-    var right: BigInt = num
-    while (left < right) {
-      val mid = left + (right - left) / 2
-      if (mid * mid < num) left = mid + 1
-      else if (mid * mid > num) right = mid
-      else return true
+    var slow = 0
+    var fast = 0
+
+    while (fast < nums.length) {
+      if (nums(fast) != target) {
+        nums(slow) = nums(fast)
+        slow += 1
+      }
+      fast += 1
     }
-
-    false
+    slow
   }
 }
