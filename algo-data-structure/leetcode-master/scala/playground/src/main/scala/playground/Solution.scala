@@ -1,19 +1,20 @@
 package playground
 
 object Solution {
-  def removeElement(nums: Array[Int], target: Int): Int = {
-    if (nums.length == 0) return 0
+  def moveZeroes(nums: Array[Int]): Unit = {
+    var head = 0
+    var tail = nums.length
 
-    var slow = 0
-    var fast = 0
-
-    while (fast < nums.length) {
-      if (nums(fast) != target) {
-        nums(slow) = nums(fast)
-        slow += 1
+    while (head < tail) {
+      if (nums(head) == 0) {
+        for (i <- head until tail - 1) {
+          nums(i) = nums(i + 1)
+        }
+        nums(tail - 1) = 0
+        tail -= 1
+      } else {
+        head += 1
       }
-      fast += 1
     }
-    slow
   }
 }
