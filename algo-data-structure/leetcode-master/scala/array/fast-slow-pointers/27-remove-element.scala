@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/remove-element/
 
 // Brut
-// If the target is met, bubble up it to the tail
+// If the target is met, insert it to the tail
 
 object SolutionBrut {
   def removeElement(nums: Array[Int], target: Int): Int = {
