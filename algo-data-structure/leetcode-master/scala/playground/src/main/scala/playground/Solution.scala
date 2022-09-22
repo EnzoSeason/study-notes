@@ -1,23 +1,39 @@
 package playground
 
 object Solution {
-  def sortedSquares(nums: Array[Int]): Array[Int] = {
-    var head = 0
-    var tail = nums.length - 1
-    val res = new Array[Int](nums.length)
-    var i = tail
+  def moveTo(s: String, startAt: Int): Int = {
+    var skipCount = 0
+    var i = startAt
 
     while (i >= 0) {
-      if (nums(head) * nums(head) > nums(tail) * nums(tail)) {
-        res(i) = nums(head) * nums(head)
-        head += 1
+      if (s.charAt(i) == '#') {
+        skipCount += 1
+        i -= 1
+      } else if (skipCount > 0) {
+        skipCount -= 1
+        i -= 1
       } else {
-        res(i) = nums(tail) * nums(tail)
-        tail -= 1
+        return i
       }
-      i -= 1
     }
+    i
+  }
 
-    res
+  def backspaceCompare(s: String, t: String): Boolean = {
+    var tailS = s.length - 1
+    var tailT = t.length - 1
+
+    while (tailS >= 0 || tailT >= 0) {
+      tailS = moveTo(s, tailS)
+      tailT = moveTo(t, tailT)
+
+      if ((tailS >= 0) != (tailT >= 0)) return false
+
+      if (tailS >= 0 && tailT >= 0 && s.charAt(tailS) != t.charAt(tailT)) return false
+
+      tailS -= 1
+      tailT -= 1
+    }
+    true
   }
 }
