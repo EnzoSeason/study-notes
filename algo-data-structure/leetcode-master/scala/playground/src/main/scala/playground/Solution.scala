@@ -1,20 +1,23 @@
 package playground
 
 object Solution {
-  def moveZeroes(nums: Array[Int]): Unit = {
+  def sortedSquares(nums: Array[Int]): Array[Int] = {
     var head = 0
-    var tail = nums.length
+    var tail = nums.length - 1
+    val res = new Array[Int](nums.length)
+    var i = tail
 
-    while (head < tail) {
-      if (nums(head) == 0) {
-        for (i <- head until tail - 1) {
-          nums(i) = nums(i + 1)
-        }
-        nums(tail - 1) = 0
-        tail -= 1
-      } else {
+    while (i >= 0) {
+      if (nums(head) * nums(head) > nums(tail) * nums(tail)) {
+        res(i) = nums(head) * nums(head)
         head += 1
+      } else {
+        res(i) = nums(tail) * nums(tail)
+        tail -= 1
       }
+      i -= 1
     }
+
+    res
   }
 }

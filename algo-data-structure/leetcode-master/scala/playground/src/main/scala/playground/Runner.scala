@@ -3,5 +3,5 @@ package playground
 object Runner extends App {
   val solution = Solution
 
-  println(solution.mySqrt(2147395599))
+  println(solution.sortedSquares(Array(-4,-1,0,3,10)))
 }
