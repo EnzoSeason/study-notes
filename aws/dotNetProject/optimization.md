@@ -61,3 +61,23 @@ Find the AWS Lambda Power Tuning project here: https://serverlessrepo.aws.amazon
 - **Load test** the lamdba function to find out **optimal timeout value**.
 
 To read a list of AWS Lambda Best Practices in detail click here: https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html
+
+## API Gateway
+
+### Proxy for AWS Services
+
+This allows you to proxy other AWS services with API Gateway.
+
+Read more about API Gateway integration types here: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-integration-types.html
+
+### HTTP APIs
+
+HTTP APIs are designed for **low-latency, cost-effective AWS Lambda proxy** and **HTTP proxy APIs**.
+
+HTTP APIs support OIDC and OAuth 2.0 authorization, and come with built-in support for CORS and automatic deployments.
+
+Read about how to choose between REST and HTTP APIs here: https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html
+
+## Exercises
+
+- [Lab 6: Optimizing the Application](https://aws-tc-largeobjects.s3-us-west-2.amazonaws.com/DEV-AWS-MO-BuildingNet/lab-6-optimizing.html)
