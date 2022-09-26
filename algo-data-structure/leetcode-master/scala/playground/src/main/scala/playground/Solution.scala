@@ -1,39 +1,27 @@
 package playground
 
 object Solution {
-  def moveTo(s: String, startAt: Int): Int = {
-    var skipCount = 0
-    var i = startAt
+  def totalFruit(fruits: Array[Int]): Int = {
+    val bag = collection.mutable.Map[Int, Int]()
+    var res = 0
 
-    while (i >= 0) {
-      if (s.charAt(i) == '#') {
-        skipCount += 1
-        i -= 1
-      } else if (skipCount > 0) {
-        skipCount -= 1
-        i -= 1
-      } else {
-        return i
+    var left = 0
+    var right = 0
+    while (right < fruits.length) {
+      bag(fruits(right)) = bag.getOrElse(fruits(right), 0) + 1
+
+      while (bag.size > 2) {
+        bag(fruits(left)) -= 1
+
+        if (bag(fruits(left)) == 0) bag -= fruits(left)
+
+        left += 1
       }
+
+      res = math.max(right - left + 1, res)
+      right += 1
     }
-    i
-  }
 
-  def backspaceCompare(s: String, t: String): Boolean = {
-    var tailS = s.length - 1
-    var tailT = t.length - 1
-
-    while (tailS >= 0 || tailT >= 0) {
-      tailS = moveTo(s, tailS)
-      tailT = moveTo(t, tailT)
-
-      if ((tailS >= 0) != (tailT >= 0)) return false
-
-      if (tailS >= 0 && tailT >= 0 && s.charAt(tailS) != t.charAt(tailT)) return false
-
-      tailS -= 1
-      tailT -= 1
-    }
-    true
+    res
   }
 }
