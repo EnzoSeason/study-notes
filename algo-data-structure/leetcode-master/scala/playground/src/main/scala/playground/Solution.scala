@@ -1,46 +1,34 @@
 package playground
 
 object Solution {
-  def minWindow(s: String, t: String): String = {
-    if (s.length < t.length) return ""
+  def spiralOrder(matrix: Array[Array[Int]]): List[Int] = {
+    val m = matrix.length
+    val n = matrix(0).length
+    val visited = scala.Array.ofDim[Boolean](m, n)
+    val dx = Array(0, 1, 0, -1)
+    val dy = Array(1, 0, -1, 0)
+    var res = List[Int]()
 
-    val target = collection.mutable.Map[Char, Int]()
-    for (char <- t) {
-      target(char) = target.getOrElse(char, 0) + 1
-    }
+    var direction = 0
+    var i = 0
+    var j = 0
+    for (_ <- 0 until m * n) {
+      res = res :+ matrix(i)(j)
+      visited(i)(j) = true
 
-    val slidingWindow = collection.mutable.Map[Char, Int]()
-    var minLen = Int.MaxValue
-    var start = 0
-    var end = 0
-
-    var left = 0
-    var right = 0
-    var matchCount = 0
-
-    while (right < s.length) {
-      slidingWindow(s(right)) = slidingWindow.getOrElse(s(right), 0) + 1
-      if (target.contains(s(right)) && slidingWindow(s(right)) == target(s(right))) {
-        matchCount += 1
+      val nextI = (i + dx(direction)) % m
+      val nextJ = (j + dy(direction)) % n
+      if (nextI < 0 ||
+        nextI >= m ||
+        nextJ < 0 ||
+        nextJ >= n ||
+        visited(nextI)(nextJ)) {
+        direction = (direction + 1) % 4
       }
 
-      while (left <= right && matchCount == target.size) {
-        if (right - left + 1 < minLen) {
-          minLen = right - left + 1
-          start = left
-          end = right
-        }
-        slidingWindow(s(left)) -= 1
-        if (target.contains(s(left)) && slidingWindow(s(left)) < target(s(left))) {
-          matchCount -= 1
-        }
-        left += 1
-      }
-
-      right += 1
+      i += dx(direction)
+      j += dy(direction)
     }
-
-    if (minLen != Int.MaxValue) s.slice(start, end + 1)
-    else ""
+    res
   }
 }
