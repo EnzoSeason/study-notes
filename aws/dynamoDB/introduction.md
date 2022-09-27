@@ -83,3 +83,6 @@ There are 3 main types of NoSQL:
 
 - [Creating an Amazon DynamoDB Table using
 the AWS Software Development Kit (AWS SDK)](./docs/week-1-exercise-1.pdf)
+- [Adding items to Amazon
+DynamoDB using the AWS Software
+Development Kit (AWS SDK)](./docs/week-1-exercise-2.pdf)
