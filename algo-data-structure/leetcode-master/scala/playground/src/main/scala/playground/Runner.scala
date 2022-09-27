@@ -3,5 +3,5 @@ package playground
 object Runner extends App {
   val solution = Solution
 
-  println(solution.totalFruit(Array(0,1,2,2)))
+  println(solution.spiralOrder(Array(Array(1, 2, 3), Array(4, 5, 6), Array(7, 8, 9))))
 }
