@@ -1,27 +1,46 @@
 package playground
 
 object Solution {
-  def totalFruit(fruits: Array[Int]): Int = {
-    val bag = collection.mutable.Map[Int, Int]()
-    var res = 0
+  def minWindow(s: String, t: String): String = {
+    if (s.length < t.length) return ""
+
+    val target = collection.mutable.Map[Char, Int]()
+    for (char <- t) {
+      target(char) = target.getOrElse(char, 0) + 1
+    }
+
+    val slidingWindow = collection.mutable.Map[Char, Int]()
+    var minLen = Int.MaxValue
+    var start = 0
+    var end = 0
 
     var left = 0
     var right = 0
-    while (right < fruits.length) {
-      bag(fruits(right)) = bag.getOrElse(fruits(right), 0) + 1
+    var matchCount = 0
 
-      while (bag.size > 2) {
-        bag(fruits(left)) -= 1
+    while (right < s.length) {
+      slidingWindow(s(right)) = slidingWindow.getOrElse(s(right), 0) + 1
+      if (target.contains(s(right)) && slidingWindow(s(right)) == target(s(right))) {
+        matchCount += 1
+      }
 
-        if (bag(fruits(left)) == 0) bag -= fruits(left)
-
+      while (left <= right && matchCount == target.size) {
+        if (right - left + 1 < minLen) {
+          minLen = right - left + 1
+          start = left
+          end = right
+        }
+        slidingWindow(s(left)) -= 1
+        if (target.contains(s(left)) && slidingWindow(s(left)) < target(s(left))) {
+          matchCount -= 1
+        }
         left += 1
       }
 
-      res = math.max(right - left + 1, res)
       right += 1
     }
 
-    res
+    if (minLen != Int.MaxValue) s.slice(start, end + 1)
+    else ""
   }
 }
