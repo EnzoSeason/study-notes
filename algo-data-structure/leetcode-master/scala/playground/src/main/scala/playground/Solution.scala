@@ -7,15 +7,15 @@ class ListNode(_x: Int = 0, _next: ListNode = null) {
 }
 
 object Solution {
-  def reverseList(head: ListNode): ListNode = {
-    def reverse(prev: ListNode, curr: ListNode): ListNode = {
-      if (curr == null) prev
-      else {
-        val next = curr.next
-        curr.next = prev
-        reverse(curr, next)
-      }
-    }
-    reverse(null, head)
+  def swapPairs(head: ListNode): ListNode = {
+    if (head == null || head.next == null) return head
+
+    val secondNode = head.next
+    val swappedPairs = swapPairs(secondNode.next)
+
+    secondNode.next = head
+    head.next = swappedPairs
+
+    secondNode
   }
 }
