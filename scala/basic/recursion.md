@@ -39,7 +39,7 @@ To optimise that, we use the **tail recursion**.
 ```scala
 def factorialOpt(num: Int, accumlator: BigInt): BigInt = {
   if (num == 1) accumlator
-  else factorialOpt(num - 1, * num accumlator)
+  else factorialOpt(num - 1, num * accumlator)
 }
 
 println(factorialOpt(5, 1))
