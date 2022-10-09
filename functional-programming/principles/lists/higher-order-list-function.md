@@ -136,7 +136,7 @@ Attention: In some cases, `foldRight` can't be replaced by `foldLeft`.
 
 ```scala
 def concat[T](xs: List[T], initList: List[T]): List[T] = {
-  xs.foldRight(initList)((x, foldedXs) => foldedXs :: x)
+  xs.foldRight(initList)((x, xs) => x :: xs)
 }
 ```
 
