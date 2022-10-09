@@ -124,7 +124,7 @@ def reverse[T](xs: List[T]): List[T] = {
 ```code
    op
   / \
-  x1  .
+  xn  .
        .
         \
          op
@@ -135,8 +135,8 @@ def reverse[T](xs: List[T]): List[T] = {
 Attention: In some cases, `foldRight` can't be replaced by `foldLeft`.
 
 ```scala
-def concat[T](xs: List[T], ys: List[T]): List[T] = {
-  xs.foldRight(ys)(_ :: _)
+def concat[T](xs: List[T], initList: List[T]): List[T] = {
+  xs.foldRight(initList)((x, foldedXs) => foldedXs :: x)
 }
 ```
 
