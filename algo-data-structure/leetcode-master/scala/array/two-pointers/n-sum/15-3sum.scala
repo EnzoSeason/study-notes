@@ -15,14 +15,14 @@ object Solution {
       var right = nums.length - 1
       while (left < right) {
         val localSum = nums(i) + nums(left) + nums(right)
-        if ( localSum == 0) {
+        if (localSum == 0) {
           result = (nums(i) :: nums(left) :: nums(right) :: Nil) :: result
           left += 1
-          while (left < nums.length && nums(left) == nums(left - 1)){
+          while (left < right && nums(left) == nums(left - 1)){
             left += 1
           }
           right -= 1
-          while (right > 0 && nums(right) == nums(right + 1)) {
+          while (left < right && nums(right) == nums(right + 1)) {
             right -= 1
           }
         }
