@@ -23,10 +23,10 @@ object SolutionCacheMap1 {
 
 object SolutionCacheMap2 {
   def groupAnagrams(strs: Array[String]): List[List[String]] = {
-    var cache = Map[String, List[String]]()
+    var cache = Map[List[Char], List[String]]()
 
     for (s <- strs) {
-      val key = s.toList.sorted.toString()
+      val key = s.toList.sorted
       cache.get(key) match {
         case Some(l) => cache = cache + (key -> (s :: l))
         case None => cache = cache + (key -> (s :: Nil))
