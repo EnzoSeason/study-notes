@@ -1,35 +1,34 @@
 package playground
 
+import scala.annotation.tailrec
+
 object Solution {
-  def commonChars(words: Array[String]): List[String] = {
-    val globalCache = Array.fill(26)(0)
-    var result = List[String]()
-
-    // init cache
-    for (c <- words.head) {
-      globalCache(c.toInt - 'a'.toInt) += 1
+  def isHappy(n: Int): Boolean = {
+    def getNextNumFromString(n: BigInt): BigInt = {
+      var localSum: BigInt = 0
+      for (c <- n.toString) {
+        val num = c.asDigit
+        localSum += num * num
+      }
+      localSum
     }
 
-    // update cache
-    for (word <- words.tail) {
-      val localCache = Array.fill(26)(0)
-      for (c <- word) {
-        localCache(c.toInt - 'a'.toInt) += 1
-      }
-      for (i <- 0 until 26) {
-        globalCache(i) = math.min(globalCache(i), localCache(i))
-      }
-    }
-
-    // generate the result from the cache
-    for (i <- 0 until 26) {
-      val count = globalCache(i)
-      for (_ <- 0 until count) {
-        val charCode = i + 'a'.toInt
-        result :+= charCode.toChar.toString
+    @tailrec
+    def getNextNumFromNumber(n: BigInt, acc: BigInt): BigInt = {
+      if (n == 0) acc
+      else {
+        val localSum = (n % 10) * (n % 10)
+        getNextNumFromNumber(n / 10, acc + localSum)
       }
     }
 
-    result
+    @tailrec
+    def isHappyRec(n: BigInt, history: Set[BigInt]): Boolean = {
+      if (n == 1) return true
+      if (history contains n) false
+      else isHappyRec(getNextNumFromNumber(n, 0), history + n)
+    }
+
+    isHappyRec(n, Set[BigInt]())
   }
 }
