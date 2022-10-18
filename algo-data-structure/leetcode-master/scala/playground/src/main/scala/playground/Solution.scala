@@ -3,32 +3,33 @@ package playground
 import scala.annotation.tailrec
 
 object Solution {
-  def isHappy(n: Int): Boolean = {
-    def getNextNumFromString(n: BigInt): BigInt = {
-      var localSum: BigInt = 0
-      for (c <- n.toString) {
-        val num = c.asDigit
-        localSum += num * num
-      }
-      localSum
-    }
+  def fourSumCount(nums1: Array[Int], nums2: Array[Int], nums3: Array[Int], nums4: Array[Int]): Int = {
+    val n = nums1.length
+    var cache = Map[Int, Int]()
+    var count = 0
 
-    @tailrec
-    def getNextNumFromNumber(n: BigInt, acc: BigInt): BigInt = {
-      if (n == 0) acc
-      else {
-        val localSum = (n % 10) * (n % 10)
-        getNextNumFromNumber(n / 10, acc + localSum)
+    for {
+      i <- 0 until n
+      j <- 0 until n
+    } {
+      val localSum = nums1(i) + nums2(j)
+      cache.get(localSum) match {
+        case Some(value) => cache += (localSum -> (value + 1))
+        case None => cache += (localSum -> 1)
       }
     }
 
-    @tailrec
-    def isHappyRec(n: BigInt, history: Set[BigInt]): Boolean = {
-      if (n == 1) return true
-      if (history contains n) false
-      else isHappyRec(getNextNumFromNumber(n, 0), history + n)
+    for {
+      k <- 0 until n
+      l <- 0 until n
+    } {
+      val localSum = - (nums3(k) + nums4(l))
+      cache.get(-localSum) match {
+        case Some(value) => count += value
+        case None => null
+      }
     }
 
-    isHappyRec(n, Set[BigInt]())
+    count
   }
 }
