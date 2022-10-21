@@ -3,5 +3,5 @@ package playground
 object Runner extends App {
   val solution = Solution
 
-  println(solution.reverseStr("abcdefg", 2))
+  println(solution.reverseWords("  hello world  "))
 }
