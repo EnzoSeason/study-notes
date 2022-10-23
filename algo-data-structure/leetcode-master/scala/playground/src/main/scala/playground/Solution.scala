@@ -3,51 +3,43 @@ package playground
 import scala.annotation.tailrec
 
 object Solution {
-  def reverseWords(s: String): String = {
-    val cleanSentence = removeExtraSpace(s.toArray)
-    reverseInPlace(cleanSentence, 0, cleanSentence.length - 1)
+  def strStr(haystack: String, needle: String): Int = {
+    val nextTable = getNextTable(needle)
 
     var i = 0
-    while (i < cleanSentence.length) {
-      var j = i
-      while (j < cleanSentence.length && cleanSentence(j) != ' ') j += 1
-      reverseInPlace(cleanSentence, i, j - 1)
-
-      i = j + 1
-    }
-
-    cleanSentence.mkString
-  }
-
-  def reverseInPlace(sentence: Array[Char], beginIndex: Int, endIndex: Int): Unit = {
-    var left = beginIndex
-    var right = endIndex
-    while (left < right) {
-      val tmp = sentence(left)
-      sentence(left) = sentence(right)
-      sentence(right) = tmp
-
-      left += 1
-      right -= 1
-    }
-  }
-
-  def removeExtraSpace(sentence: Array[Char]): Array[Char] = {
-    var slow = 0
-    var fast = 0
-
-    while (sentence(fast) == ' ') fast += 1
-
-    while (fast < sentence.length) {
-      if (fast > 0 && sentence(fast - 1) == ' ' && sentence(fast) == ' ') fast += 1
-      else {
-        sentence(slow) = sentence(fast)
-        slow += 1
-        fast += 1
+    var j = 0
+    while (i < haystack.length && j < needle.length) {
+      while (j >= 0 && haystack(i) != needle(j)) {
+        j = nextTable(j)
       }
+
+      j += 1
+      i += 1
     }
 
-    if (slow > 0 && sentence(slow - 1) == ' ') sentence.take(slow - 1)
-    else sentence.take(slow)
+    if (j == needle.length) i - j
+    else -1
+  }
+
+  /**
+   * Create a Partial Match Table (PMT)
+   * for the word we need to find in the string
+   *
+   * In a word: NextTable = -1 :: PartialMatchTable
+   */
+  def getNextTable(word: String): Array[Int] = {
+    val nextTable = Array.fill(word.length + 1)(-1)
+
+    var j = -1
+    for (i <- 0 until word.length) {
+      while (j >= 0 && word(i) != word(j)) {
+        j = nextTable(j)
+      }
+
+      j += 1
+      nextTable(i + 1) = j
+    }
+
+    nextTable
   }
 }
