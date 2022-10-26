@@ -1,6 +1,8 @@
 class MyQueue() {
-  private var _stack = scala.collection.mutable.Stack[Int]()
-  private var _cacheStack = scala.collection.mutable.Stack[Int]()
+  import scala.collection.mutable
+
+  private val _stack = mutable.Stack[Int]()
+  private val _cacheStack = mutable.Stack[Int]()
 
   def push(x: Int): Unit = {
     _stack.push(x)
