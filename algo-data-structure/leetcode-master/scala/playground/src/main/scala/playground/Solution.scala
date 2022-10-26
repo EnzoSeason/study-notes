@@ -2,22 +2,29 @@ package playground
 
 import scala.annotation.tailrec
 
-object Solution {
-  def repeatedSubstringPattern(s: String): Boolean = {
-    val pmt = Array.fill(s.length)(0)
+class MyQueue() {
+  private var _stack = scala.collection.mutable.Stack[Int]()
+  private var _cacheStack = scala.collection.mutable.Stack[Int]()
 
-    var j = 0
-    for (i <- 1 until s.length) {
-      while (j > 0 && s(i) != s(j)) j = pmt(j - 1)
-
-      if (s(i) != s(j)) pmt(i) = 0
-      else {
-        j += 1
-        pmt(i) = j
-      }
-    }
-
-    val n = s.length
-    pmt.last != 0 && n % (n - pmt.last) == 0
+  def push(x: Int): Unit = {
+    _stack.push(x)
   }
+
+  def pop(): Int = {
+    if (_cacheStack.nonEmpty) _cacheStack.pop()
+    else {
+      while (_stack.nonEmpty) {
+        _cacheStack.push(_stack.pop())
+      }
+      _cacheStack.pop()
+    }
+  }
+
+  def peek(): Int = {
+    var result = pop()
+    _cacheStack.push(result)
+    result
+  }
+
+  def empty(): Boolean = _stack.isEmpty && _cacheStack.isEmpty
 }
