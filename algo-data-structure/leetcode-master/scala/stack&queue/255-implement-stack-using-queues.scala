@@ -7,9 +7,7 @@ class MyStack() {
   }
 
   def pop(): Int = {
-    val n = _queue.length - 1
-
-    for (_ <- 0 until n) {
+    for (_ <- 0 until _queue.size - 1) {
       _queue.enqueue(_queue.dequeue())
     }
 
