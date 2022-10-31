@@ -2,29 +2,26 @@ package playground
 
 import scala.annotation.tailrec
 
-class MyQueue() {
-  private var _stack = scala.collection.mutable.Stack[Int]()
-  private var _cacheStack = scala.collection.mutable.Stack[Int]()
+object Solution {
+  def isValid(s: String): Boolean = {
+    val matchingTable = Map(
+      ')' -> '(',
+      ']' -> '[',
+      '}' -> '{'
+    )
 
-  def push(x: Int): Unit = {
-    _stack.push(x)
-  }
+    val stack = scala.collection.mutable.Stack[Int]()
 
-  def pop(): Int = {
-    if (_cacheStack.nonEmpty) _cacheStack.pop()
-    else {
-      while (_stack.nonEmpty) {
-        _cacheStack.push(_stack.pop())
+    for (c <- s) {
+      matchingTable.get(c) match {
+        case Some(value) => {
+          if (stack.nonEmpty && stack.top == value) stack.pop()
+          else return false
+        }
+        case None => stack.push(c)
       }
-      _cacheStack.pop()
     }
-  }
 
-  def peek(): Int = {
-    var result = pop()
-    _cacheStack.push(result)
-    result
+    stack.isEmpty
   }
-
-  def empty(): Boolean = _stack.isEmpty && _cacheStack.isEmpty
 }
