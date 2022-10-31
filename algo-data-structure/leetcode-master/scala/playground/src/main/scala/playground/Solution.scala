@@ -3,25 +3,14 @@ package playground
 import scala.annotation.tailrec
 
 object Solution {
-  def isValid(s: String): Boolean = {
-    val matchingTable = Map(
-      ')' -> '(',
-      ']' -> '[',
-      '}' -> '{'
-    )
-
-    val stack = scala.collection.mutable.Stack[Int]()
+  def removeDuplicates(s: String): String = {
+    val stack = scala.collection.mutable.Stack[Char]()
 
     for (c <- s) {
-      matchingTable.get(c) match {
-        case Some(value) => {
-          if (stack.nonEmpty && stack.top == value) stack.pop()
-          else return false
-        }
-        case None => stack.push(c)
-      }
+      if (stack.nonEmpty && stack.top == c) stack.pop()
+      else stack.push(c)
     }
 
-    stack.isEmpty
+    stack.mkString.reverse
   }
 }
