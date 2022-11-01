@@ -53,3 +53,29 @@ To maintain the availability, there are 3 ways:
 - Limiting
 
   If there are too many requests, we need to limit the access to the resources.
+
+## MapReduce
+
+The process of MapReduce is as followed:
+
+1. map a kv pair into another one -> `Map(k -> v)`
+2. group the pairs by key -> `Map(k -> Collection[v])`
+3. reduce the key-collection pairs to result -> `Map(k -> result)`
+
+![map-reduce-example](./images/map-reduce-example.png)
+
+Dive into details:
+
+- **Application process** will send jobs to **JobTracker** server.
+
+- **JobTracker** will create tasks based the job and send tasks to **TaskTracker**.
+
+- **TaskTracker** will run `map` or `reduce` based on the task.
+
+![map-reduce-processes](./images/map-reduce-processes.png)
+
+A JobTracker has multiple TaskTracker. It's main-sub pattern.
+
+Between `map` and `reduce`, there is another process, `shuffle`. It **collects related data from different servers** for the  further processes.
+
+![shuffle](./images/shuffle-map-reduce.png)
