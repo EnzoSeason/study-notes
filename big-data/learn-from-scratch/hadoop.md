@@ -76,6 +76,29 @@ Dive into details:
 
 A JobTracker has multiple TaskTracker. It's main-sub pattern.
 
-Between `map` and `reduce`, there is another process, `shuffle`. It **collects related data from different servers** for the  further processes.
+Between `map` and `reduce`, there is another process, `shuffle`. It **collects related data from different servers** for the further processes.
 
 ![shuffle](./images/shuffle-map-reduce.png)
+
+## Yarn
+
+In Hadoop 1, JobTracker and TaskTracker handles
+
+1. send `map` or `reduce` function to the servers
+2. execute these function
+
+Yarn is created for taking over the first point. Therefore, Yarn's full name is Yet Another Resource Negotiator.
+
+![yarn](./images/yarn.png)
+
+1. The client send application to Yarn, which includes MapReduce AppplicationMaster, MapReduce programs, and MapReduce Application start command.
+
+2. ResourceManager talks to NodeManager for allocate resources, and send MapReduce ApplicationMaster to NodeManager.
+
+3. MapReduce ApplicationMaster starts, and regirsters itself to ResourceManager for resources.
+
+4. After receiving resource, MapReduce ApplicationMaster send MapReduce programs to NodeManager and ask it to run them.
+
+5. During the execution, MapReduce programs reports the status to MapReduce ApplicationMaster.
+
+6. After finishing the task, MapReduce ApplicationMaster will log out from ResourceManager and release the resource.
