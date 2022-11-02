@@ -76,7 +76,7 @@ Dive into details:
 
 A JobTracker has multiple TaskTracker. It's main-sub pattern.
 
-Between `map` and `reduce`, there is another process, `shuffle`. It **collects related data from different servers** for the further processes.
+Between `map` and `reduce`, there is another process, `shuffle`. It **groups related data from different servers by key** for the further processes.
 
 ![shuffle](./images/shuffle-map-reduce.png)
 
