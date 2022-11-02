@@ -1,37 +1,34 @@
 object Solution {
   def maxSlidingWindow(nums: Array[Int], k: Int): Array[Int] = {
-    val monoQueue = MonotonePriorityQueue()
+    val maxHeap = MaxHeap()
 
     // init max heap
     for (i <- 0 until k) {
-      monoQueue.add(nums(i))
+      maxHeap.add(nums(i))
     }
 
     var slow = 0
     var fast = k
     val result = new Array[Int](nums.length - k + 1)
-    result(0) = monoQueue.top
+    result(0) = maxHeap.top
 
     while (fast < nums.length) {
-      monoQueue.remove(nums(slow))
-      monoQueue.add(nums(fast))
+      maxHeap.remove(nums(slow))
+      maxHeap.add(nums(fast))
 
       slow += 1
       fast += 1
-      result(slow) = monoQueue.top
+      result(slow) = maxHeap.top
     }
 
     result
   }
 
-  /**
-    * The elements in this queue are are in desc order.
-    * We only care about the head of this queue.
-    */
-  case class MonotonePriorityQueue() {
+  case class MaxHeap() {
+
     import scala.collection.mutable
 
-    private var _queue = mutable.ArrayBuffer[Int]()
+    private val _queue = mutable.ArrayBuffer[Int]()
 
     def add(elem: Int): Unit = {
       while (_queue.nonEmpty && _queue.last < elem) {
