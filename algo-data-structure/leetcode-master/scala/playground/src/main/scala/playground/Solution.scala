@@ -11,7 +11,7 @@ object Solution {
 
     var slow = 0
     var fast = k
-    val result: Array[Int] = new Array[Int](nums.length - k + 1)
+    val result = new Array[Int](nums.length - k + 1)
     result(0) = maxHeap.top
 
     while (fast < nums.length) {
@@ -23,13 +23,14 @@ object Solution {
       result(slow) = maxHeap.top
     }
 
-    result.toArray
+    result
   }
 
   case class MaxHeap() {
+
     import scala.collection.mutable
 
-    private var _queue = mutable.ArrayBuffer[Int]()
+    private val _queue = mutable.ArrayBuffer[Int]()
 
     def add(elem: Int): Unit = {
       while (_queue.nonEmpty && _queue.last < elem) {
