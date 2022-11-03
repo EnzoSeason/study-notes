@@ -6,10 +6,7 @@ object SolutionPriorityQueue {
     // key: num, value: frequency
     val freqMap = mutable.Map[Int, Int]()
     for (num <- nums) {
-      freqMap.get(num) match {
-        case Some(count) => freqMap.put(num, count + 1)
-        case None => freqMap.put(num, 1)
-      }
+      freqMap += (num -> (freqMap.getOrElse(num, 0) + 1))
     }
 
     // build the priority queue
