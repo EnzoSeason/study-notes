@@ -25,7 +25,7 @@ object SolutionPriorityQueue {
   }
 }
 
-object SolutionFunctionalProgramming {
+object SolutionMapReduce {
   // It's similar to WordCount problem. 
   def topKFrequent(nums: Array[Int], k: Int): Array[Int] = {
     nums
