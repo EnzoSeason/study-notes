@@ -9,3 +9,5 @@
    - Hive: a tool that translate SQL into MapReduce
 
    - [Spark](./spark.md)
+
+   - [HBase](./hbase.md)
