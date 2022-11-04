@@ -1,15 +1,24 @@
 package playground
 
+
 object Solution {
-  def topKFrequent(nums: Array[Int], k: Int): Array[Int] = {
-    nums
-      .map((_, 1))
-      .groupBy(_._1)
-      .map {
-        case (num, freqMap) => (num, freqMap.map(_._2).sum)
-      }
-      .toArray.sortBy(_._2).reverse
-      .take(k)
-      .map(_._1)
+
+  import scala.collection.mutable
+
+  def preorderTraversal(root: TreeNode): List[Int] = {
+    if (root == null) return Nil
+
+    val stack = mutable.Stack[TreeNode](root)
+    var result = List[Int]()
+
+    while (stack.nonEmpty) {
+      val node = stack.pop()
+      result :+= node.value
+
+      if (node.right != null) stack.push(node.right)
+      if (node.left != null) stack.push(node.left)
+    }
+
+    result
   }
 }
