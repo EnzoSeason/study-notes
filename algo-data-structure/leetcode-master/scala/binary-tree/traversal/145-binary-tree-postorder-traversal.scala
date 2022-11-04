@@ -25,10 +25,15 @@ object SolutionIter {
       val node = stack.pop()
       result :+= node.value
 
+      // Attention: we push left then right
       if (node.left != null) stack.push(node.left)
       if (node.right != null) stack.push(node.right)
     }
 
+    // result keeps the order 
+    //      -> midd :: right :: left
+    // we need left :: right :: midd
+    // Therefore, we need to reverse the result.
     result.reverse
   }
 }
