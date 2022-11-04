@@ -5,7 +5,7 @@ object Solution {
 
   import scala.collection.mutable
 
-  def preorderTraversal(root: TreeNode): List[Int] = {
+  def postorderTraversal(root: TreeNode): List[Int] = {
     if (root == null) return Nil
 
     val stack = mutable.Stack[TreeNode](root)
@@ -15,10 +15,10 @@ object Solution {
       val node = stack.pop()
       result :+= node.value
 
-      if (node.right != null) stack.push(node.right)
       if (node.left != null) stack.push(node.left)
+      if (node.right != null) stack.push(node.right)
     }
 
-    result
+    result.reverse
   }
 }
