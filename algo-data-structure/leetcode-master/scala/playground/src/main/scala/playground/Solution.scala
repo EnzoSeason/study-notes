@@ -5,20 +5,22 @@ object Solution {
 
   import scala.collection.mutable
 
-  def postorderTraversal(root: TreeNode): List[Int] = {
-    if (root == null) return Nil
-
-    val stack = mutable.Stack[TreeNode](root)
+  def inorderTraversal(root: TreeNode): List[Int] = {
+    val stack = mutable.Stack[TreeNode]()
     var result = List[Int]()
+    var curr = root
 
-    while (stack.nonEmpty) {
-      val node = stack.pop()
-      result :+= node.value
-
-      if (node.left != null) stack.push(node.left)
-      if (node.right != null) stack.push(node.right)
+    while (curr != null || stack.nonEmpty) {
+      if (curr != null) {
+        stack.push(curr)
+        curr = curr.left
+      } else {
+        curr = stack.pop()
+        result :+= curr.value
+        curr = curr.right
+      }
     }
 
-    result.reverse
+    result
   }
 }
