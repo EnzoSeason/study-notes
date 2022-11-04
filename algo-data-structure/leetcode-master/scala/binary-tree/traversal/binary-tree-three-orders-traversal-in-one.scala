@@ -44,7 +44,9 @@ object Solution {
     while (stack.nonEmpty) {
       if (stack.top == null) {
         stack.pop()
-        result :+= stack.pop()
+        
+        val node = stack.pop()
+        result :+= node.value
       } else {
         order match {
           case "preorder" => preorder()
