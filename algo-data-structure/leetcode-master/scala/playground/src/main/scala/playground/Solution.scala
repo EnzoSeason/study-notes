@@ -5,19 +5,56 @@ object Solution {
 
   import scala.collection.mutable
 
-  def inorderTraversal(root: TreeNode): List[Int] = {
-    val stack = mutable.Stack[TreeNode]()
-    var result = List[Int]()
-    var curr = root
+  def traversal(root: TreeNode)(order: String): List[Int] = {
+    if (root == null) return Nil
 
-    while (curr != null || stack.nonEmpty) {
-      if (curr != null) {
-        stack.push(curr)
-        curr = curr.left
+    val stack = mutable.Stack[TreeNode](root)
+    var result = List[Int]()
+
+    def preorder(): Unit = {
+      val node = stack.pop()
+
+      if (node.right != null) stack.push(node.right) // right
+
+      if (node.left != null) stack.push(node.left) // left
+
+      stack.push(node) // mid
+      stack.push(null) // mark as visited
+    }
+
+    def postorder(): Unit = {
+      val node = stack.pop()
+
+      stack.push(node) // mid
+      stack.push(null)
+
+      if (node.right != null) stack.push(node.right) // right
+
+      if (node.left != null) stack.push(node.left) // left
+    }
+
+    def inorder(): Unit = {
+      val node = stack.pop()
+
+      if (node.right != null) stack.push(node.right) // right
+
+      stack.push(node) // mid
+      stack.push(null)
+
+      if (node.left != null) stack.push(node.left) // left
+    }
+
+    while (stack.nonEmpty) {
+      if (stack.top == null) {
+        stack.pop()
+        val node = stack.pop()
+        result :+= node.value
       } else {
-        curr = stack.pop()
-        result :+= curr.value
-        curr = curr.right
+        order match {
+          case "preorder" => preorder()
+          case "postorder" => postorder()
+          case "inorder" => inorder()
+        }
       }
     }
 
