@@ -1,3 +1,3 @@
 package playground
 
-case class TreeNode(value: Int = 0, left: TreeNode = null, right: TreeNode = null)
+case class TreeNode(var value: Int = 0, var left: TreeNode = null, var right: TreeNode = null)
