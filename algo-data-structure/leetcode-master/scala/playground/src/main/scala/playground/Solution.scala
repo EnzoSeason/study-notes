@@ -5,59 +5,27 @@ object Solution {
 
   import scala.collection.mutable
 
-  def traversal(root: TreeNode)(order: String): List[Int] = {
-    if (root == null) return Nil
+  def minDepth(root: TreeNode): Int = {
+    if (root == null) return 0
 
-    val stack = mutable.Stack[TreeNode](root)
-    var result = List[Int]()
+    val queue = mutable.Queue[TreeNode](root)
+    var depth = 0
 
-    def preorder(): Unit = {
-      val node = stack.pop()
+    while (queue.nonEmpty) {
+      val levelSize = queue.size
+      depth += 1
 
-      if (node.right != null) stack.push(node.right) // right
+      for (_ <- 0 until levelSize) {
+        val node = queue.dequeue()
 
-      if (node.left != null) stack.push(node.left) // left
+        if (node.left == null && node.right == null) return depth
 
-      stack.push(node) // mid
-      stack.push(null) // mark as visited
-    }
-
-    def postorder(): Unit = {
-      val node = stack.pop()
-
-      stack.push(node) // mid
-      stack.push(null)
-
-      if (node.right != null) stack.push(node.right) // right
-
-      if (node.left != null) stack.push(node.left) // left
-    }
-
-    def inorder(): Unit = {
-      val node = stack.pop()
-
-      if (node.right != null) stack.push(node.right) // right
-
-      stack.push(node) // mid
-      stack.push(null)
-
-      if (node.left != null) stack.push(node.left) // left
-    }
-
-    while (stack.nonEmpty) {
-      if (stack.top == null) {
-        stack.pop()
-        val node = stack.pop()
-        result :+= node.value
-      } else {
-        order match {
-          case "preorder" => preorder()
-          case "postorder" => postorder()
-          case "inorder" => inorder()
-        }
+        if (node.left != null) queue.enqueue(node.left)
+        if (node.right != null) queue.enqueue(node.right)
       }
     }
 
-    result
+    depth
   }
+
 }
