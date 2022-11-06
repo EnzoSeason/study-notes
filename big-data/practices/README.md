@@ -1,3 +1,5 @@
 # Big Data Practices
 
-- [overview](./overview.md)
+- [Overview](./overview.md)
+
+- [Basic knowledge](./basic-knowledge.md)
