@@ -5,27 +5,24 @@ object Solution {
 
   import scala.collection.mutable
 
-  def minDepth(root: TreeNode): Int = {
-    if (root == null) return 0
+  def invertTree(root: TreeNode): TreeNode = {
+    if (root == null) return root
 
-    val queue = mutable.Queue[TreeNode](root)
-    var depth = 0
-
-    while (queue.nonEmpty) {
-      val levelSize = queue.size
-      depth += 1
-
+    val cache = mutable.Queue[TreeNode](root)
+    while (cache.nonEmpty) {
+      val levelSize = cache.size
       for (_ <- 0 until levelSize) {
-        val node = queue.dequeue()
+        val node = cache.dequeue()
 
-        if (node.left == null && node.right == null) return depth
+        val tmp = node.left
+        node.left = node.right
+        node.right = tmp
 
-        if (node.left != null) queue.enqueue(node.left)
-        if (node.right != null) queue.enqueue(node.right)
+        if (node.left != null) cache.enqueue(node.left)
+        if (node.right != null) cache.enqueue(node.right)
       }
     }
 
-    depth
+    root
   }
-
 }
