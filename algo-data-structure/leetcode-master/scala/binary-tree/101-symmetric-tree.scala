@@ -13,11 +13,10 @@ object SolutionRec {
   }
 
   def isSame(t1: TreeNode, t2: TreeNode): Boolean = {
-    if (t1 == null && t2 == null) return true
-    if (t1 == null || t2 == null) return false
-    if (t1.value != t2.value) return false
-    
-    isSame(t1.left, t2.right) && isSame(t1.right, t2.left)
+    if (t1 == null && t2 == null) true
+    else if (t1 == null || t2 == null) false
+    else if (t1.value != t2.value) false
+    else isSame(t1.left, t2.right) && isSame(t1.right, t2.left)
   }
 }
 
