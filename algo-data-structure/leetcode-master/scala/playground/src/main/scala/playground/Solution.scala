@@ -5,24 +5,25 @@ object Solution {
 
   import scala.collection.mutable
 
-  def invertTree(root: TreeNode): TreeNode = {
-    if (root == null) return root
+  def isSubtree(root: TreeNode, subRoot: TreeNode): Boolean = {
+    val cache = mutable.Stack[TreeNode](root)
 
-    val cache = mutable.Queue[TreeNode](root)
     while (cache.nonEmpty) {
-      val levelSize = cache.size
-      for (_ <- 0 until levelSize) {
-        val node = cache.dequeue()
-
-        val tmp = node.left
-        node.left = node.right
-        node.right = tmp
-
-        if (node.left != null) cache.enqueue(node.left)
-        if (node.right != null) cache.enqueue(node.right)
+      val node = cache.pop()
+      if (isSame(node, subRoot)) return true
+      if (node != null) {
+        cache.push(node.left)
+        cache.push(node.right)
       }
     }
 
-    root
+    false
+  }
+
+  def isSame(p: TreeNode, q: TreeNode): Boolean = {
+    if (p == null && q == null) true
+    else if (p == null || q == null) false
+    else if (p.value != q.value) false
+    else isSame(p.left, q.left) && isSame(p.right, q.right)
   }
 }
