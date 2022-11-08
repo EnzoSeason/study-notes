@@ -5,25 +5,23 @@ object Solution {
 
   import scala.collection.mutable
 
-  def isSubtree(root: TreeNode, subRoot: TreeNode): Boolean = {
-    val cache = mutable.Stack[TreeNode](root)
+  def maxDepth(root: Node): Int = {
+    if (root == null) return 0
 
-    while (cache.nonEmpty) {
-      val node = cache.pop()
-      if (isSame(node, subRoot)) return true
-      if (node != null) {
-        cache.push(node.left)
-        cache.push(node.right)
+    val queue = mutable.Queue[Node](root)
+    var depth = 0
+
+    while (queue.nonEmpty) {
+      val levelSize = queue.size
+      depth += 1
+      for (_ <- 0 until levelSize) {
+        val node = queue.dequeue()
+        for (child <- node.children) {
+          if (child != null) queue.enqueue(child)
+        }
       }
     }
 
-    false
-  }
-
-  def isSame(p: TreeNode, q: TreeNode): Boolean = {
-    if (p == null && q == null) true
-    else if (p == null || q == null) false
-    else if (p.value != q.value) false
-    else isSame(p.left, q.left) && isSame(p.right, q.right)
+    depth
   }
 }
