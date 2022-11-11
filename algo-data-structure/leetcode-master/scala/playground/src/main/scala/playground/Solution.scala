@@ -3,23 +3,34 @@ package playground
 
 object Solution {
 
-  import scala.collection.mutable
+  // Hint:
+  // Nb of nodes of a perfect binary tree = 2^depth - 1
 
-  def isSymmetric(root: TreeNode): Boolean = {
-    if (root == null) return true
+  def countNodes(root: TreeNode): Int = {
+    // This function traverses level by level (O(logN)),
+    // and on each level, it calculates the depth of the leftest sub branch (O(logN)).
+    // Therefore, the time complexity is O(logN * logN)
 
-    val cache = mutable.Queue[(TreeNode, TreeNode)]((root.left, root.right))
-    while (cache.nonEmpty) {
-      cache.dequeue() match {
-        case (null, null) =>
-        case (_, null) => return false
-        case (null, _) => return false
-        case (left, right) =>
-          if (left.value != right.value) return false
-          cache.enqueue((left.left, right.right))
-          cache.enqueue((left.right, right.left))
-      }
+    if (root == null) return 0
+
+    val left = getLeftDepth(root.left)
+    val right = getLeftDepth(root.right)
+
+    if (left == right) {
+      // left sub tree is perfect binary tree
+      // Nb of nodes = root + left sub tree + right sub tree
+      1 + (Math.pow(2, left).toInt - 1) + countNodes(root.right)
+    } else {
+      // right sub tree is perfect binary tree
+      // Nb of nodes = root + left sub tree + right sub tree
+      1 + (Math.pow(2, right).toInt - 1) + countNodes(root.left)
     }
-    true
+  }
+
+  def getLeftDepth(root: TreeNode): Int = {
+    // Time complexity: O(logN)
+
+    if (root == null) 0
+    else 1 + getLeftDepth(root.left)
   }
 }
