@@ -1,36 +1,34 @@
 package playground
 
-
 object Solution {
 
-  // Hint:
-  // Nb of nodes of a perfect binary tree = 2^depth - 1
+  import scala.collection.mutable
 
-  def countNodes(root: TreeNode): Int = {
-    // This function traverses level by level (O(logN)),
-    // and on each level, it calculates the depth of the leftest sub branch (O(logN)).
-    // Therefore, the time complexity is O(logN * logN)
+  def binaryTreePaths(root: TreeNode): List[String] = {
+    if (root == null) return List[String]()
 
-    if (root == null) return 0
+    val result = mutable.ListBuffer[String]()
+    val previousPaths = mutable.Stack[List[Int]](List())
+    val stack = mutable.Stack[TreeNode](root)
 
-    val left = getLeftDepth(root.left)
-    val right = getLeftDepth(root.right)
+    while (stack.nonEmpty) {
+      val node = stack.pop()
+      val prevPath = previousPaths.pop()
 
-    if (left == right) {
-      // left sub tree is perfect binary tree
-      // Nb of nodes = root + left sub tree + right sub tree
-      1 + (Math.pow(2, left).toInt - 1) + countNodes(root.right)
-    } else {
-      // right sub tree is perfect binary tree
-      // Nb of nodes = root + left sub tree + right sub tree
-      1 + (Math.pow(2, right).toInt - 1) + countNodes(root.left)
+      if (node.left == null && node.right == null) {
+        result.append((prevPath :+ node.value).mkString("->"))
+      }
+
+      if (node.right != null) {
+        stack.push(node.right)
+        previousPaths.push(prevPath :+ node.value)
+      }
+      if (node.left != null) {
+        stack.push(node.left)
+        previousPaths.push(prevPath :+ node.value)
+      }
     }
-  }
 
-  def getLeftDepth(root: TreeNode): Int = {
-    // Time complexity: O(logN)
-
-    if (root == null) 0
-    else 1 + getLeftDepth(root.left)
+    result.toList
   }
 }
