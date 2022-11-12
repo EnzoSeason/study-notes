@@ -2,7 +2,7 @@ package org.jijie.spark.core.wordcount
 
 import org.apache.spark.{SparkConf, SparkContext}
 
-object WordCount extends App {
+object WordCount1 extends App {
 
   // connect to Spark
   val conf = new SparkConf().setAppName("WordCount").setMaster("local")
