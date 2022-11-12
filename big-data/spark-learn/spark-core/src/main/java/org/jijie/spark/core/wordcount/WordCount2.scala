@@ -12,7 +12,8 @@ object WordCount2 extends App {
   val wordCount = sc
     .textFile("data")
     .flatMap(_.split(" "))
-    .map((_, 1)) // map word to (word, 1)
+    // map word to (word, 1)
+    .map((_, 1))
     .groupBy(_._1)
     .map {
       case (_, wordTuples) =>
