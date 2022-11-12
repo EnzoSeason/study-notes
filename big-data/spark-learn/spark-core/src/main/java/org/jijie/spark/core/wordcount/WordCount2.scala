@@ -12,10 +12,11 @@ object WordCount2 extends App {
   val wordCount = sc
     .textFile("data")
     .flatMap(_.split(" "))
-    .map((_, 1))
+    .map((_, 1)) // map word to (word, 1)
     .groupBy(_._1)
     .map {
       case (_, wordTuples) =>
+        // reduce tuples to counts
         wordTuples.reduce((t1, t2) => (t1._1, t1._2 + t2._2))
     }
     .collect()
