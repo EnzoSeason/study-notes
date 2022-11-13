@@ -1,24 +1,16 @@
 package playground
 
 object Solution {
+  def constructMaximumBinaryTree(nums: Array[Int]): TreeNode = {
+    if (nums.isEmpty) return null
 
-  import scala.collection.mutable
+    val maxValue = nums.max
+    val idx = nums.indexOf(maxValue)
 
-  def pathSum(root: TreeNode, targetSum: Int): List[List[Int]] = {
-    if (root == null) return Nil
+    val root = new TreeNode(maxValue)
+    root.left = constructMaximumBinaryTree(nums.take(idx))
+    root.right = constructMaximumBinaryTree(nums.drop(idx + 1))
 
-    val result = mutable.ListBuffer[List[Int]]()
-    val stack = mutable.Stack[(TreeNode, List[Int])]((root, List[Int]()))
-    while (stack.nonEmpty) {
-      val (node, prev) = stack.pop()
-      if (node.left == null && node.right == null && node.value + prev.sum == targetSum) {
-        result.append(prev :+ node.value)
-      }
-
-      if (node.right != null) stack.push((root.right, prev :+ node.value))
-      if (node.left != null) stack.push((root.left, prev :+ node.value))
-    }
-
-    result.toList
+    root
   }
 }
