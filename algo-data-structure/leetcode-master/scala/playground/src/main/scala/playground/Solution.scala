@@ -1,16 +1,25 @@
 package playground
 
 object Solution {
-  def mergeTrees(root1: TreeNode, root2: TreeNode): TreeNode = {
-    if (root1 == null && root2 == null) null
-    else if (root1 == null) root2
-    else if (root2 == null) root1
+
+  def isValidBST(root: TreeNode): Boolean = {
+    val nodes = inorderSearch(root)
+
+    if (nodes.length <= 1)
+      return true
+
+    for (i <- 1 until nodes.length) {
+      if (nodes(i - 1).value >= nodes(i).value)
+        return false
+    }
+
+    true
+  }
+
+  def inorderSearch(node: TreeNode): List[TreeNode] = {
+    if (node == null) Nil
     else {
-      val node = new TreeNode()
-      node.value = root1.value + root2.value
-      node.left  = mergeTrees(root1.left, root2.left)
-      node.right = mergeTrees(root1.right, root2.right)
-      node
+      inorderSearch(node.left) ::: List(node) ::: inorderSearch(node.right)
     }
   }
 }
