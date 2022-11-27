@@ -1,25 +1,24 @@
 package playground
 
 object Solution {
+  var minDiff = Int.MaxValue
+  var leftMax: TreeNode = null
 
-  def isValidBST(root: TreeNode): Boolean = {
-    val nodes = inorderSearch(root)
-
-    if (nodes.length <= 1)
-      return true
-
-    for (i <- 1 until nodes.length) {
-      if (nodes(i - 1).value >= nodes(i).value)
-        return false
-    }
-
-    true
+  def getMinimumDifference(root: TreeNode): Int = {
+    search(root)
+    minDiff
   }
 
-  def inorderSearch(node: TreeNode): List[TreeNode] = {
-    if (node == null) Nil
-    else {
-      inorderSearch(node.left) ::: List(node) ::: inorderSearch(node.right)
-    }
+  def search(node: TreeNode): Unit = {
+    if (node == null)
+      return
+
+    search(node.left)
+
+    if (leftMax != null)
+      minDiff = Math.min(minDiff, Math.abs(node.value - leftMax.value))
+    leftMax = node
+
+    search(node.right)
   }
 }
