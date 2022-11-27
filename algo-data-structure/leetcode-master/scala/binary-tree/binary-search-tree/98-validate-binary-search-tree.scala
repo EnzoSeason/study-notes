@@ -29,6 +29,27 @@ object Solution1 {
 }
 
 /**
+  * Inorder: Tracking the left Max
+  */
+object Solution2 {
+  var leftMax = Long.MinValue
+  
+  def isValidBST(root: TreeNode): Boolean = {
+    if (root == null)
+      return true
+    
+    if (!isValidBST(root.left))
+      return false
+    
+    if (root.value <= leftMax)
+      return false
+    
+    leftMax = root.value
+    isValidBST(root.right)
+  }
+}
+
+/**
   * Inorder: The list's order must be ASC.
   */
 object Solution3 {
