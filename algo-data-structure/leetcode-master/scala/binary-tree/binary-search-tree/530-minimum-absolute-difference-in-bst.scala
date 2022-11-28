@@ -37,25 +37,25 @@ object Solution {
 /**
   * Inorder: Tracking the left max
   */
-object Solution2 {
-  var minDiff = Int.MaxValue
-  var leftMax: TreeNode = null
-
+object Solution {
   def getMinimumDifference(root: TreeNode): Int = {
-    search(root)
+    var minDiff = Int.MaxValue
+    var prevNode: TreeNode = null
+
+    def inorderSearch(node: TreeNode): Unit = {
+      if (node == null)
+        return
+
+      inorderSearch(node.left)
+
+      if (prevNode != null)
+        minDiff = Math.min(minDiff, Math.abs(node.value - prevNode.value))
+      
+      prevNode = node
+      inorderSearch(node.right)
+    }
+
+    inorderSearch(root)
     minDiff
-  }
-
-  def search(node: TreeNode): Unit = {
-    if (node == null)
-      return
-
-    search(node.left)
-    
-    if (leftMax != null)
-      minDiff = Math.min(minDiff, Math.abs(node.value - leftMax.value))
-    leftMax = node
-
-    search(node.right)
   }
 }
