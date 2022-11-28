@@ -32,20 +32,24 @@ object Solution1 {
   * Inorder: Tracking the left Max
   */
 object Solution2 {
-  var leftMax = Long.MinValue
-  
   def isValidBST(root: TreeNode): Boolean = {
-    if (root == null)
-      return true
-    
-    if (!isValidBST(root.left))
-      return false
-    
-    if (root.value <= leftMax)
-      return false
-    
-    leftMax = root.value
-    isValidBST(root.right)
+    var leftMax = Long.MinValue
+
+    def inorderSearch(node: TreeNode): Boolean = {
+      if (node == null)
+        return true
+
+      if (!inorderSearch(node.left))
+        return false
+
+      if (node.value <= leftMax)
+        return false
+
+      leftMax = node.value
+      inorderSearch(node.right)
+    }
+
+    inorderSearch(root)
   }
 }
 
