@@ -1,24 +1,16 @@
 package playground
 
 object Solution {
-  def getMinimumDifference(root: TreeNode): Int = {
-    var minDiff = Int.MaxValue
-    var prevNode: TreeNode = null
+  def lowestCommonAncestor(root: TreeNode, p: TreeNode, q: TreeNode): TreeNode = {
+    if (root == null || root == p || root == q) root
+    else {
+      val left = lowestCommonAncestor(root.left, p, q)
+      val right = lowestCommonAncestor(root.right, p, q)
 
-    def inorderSearch(node: TreeNode): Unit = {
-      if (node == null)
-        return
-
-      inorderSearch(node.left)
-
-      if (prevNode != null)
-        minDiff = Math.min(minDiff, Math.abs(node.value - prevNode.value))
-
-      prevNode = node
-      inorderSearch(node.right)
+      if (left != null && right != null) root
+      else if (left != null && right == null) left
+      else if (left == null && right != null) right
+      else null
     }
-
-    inorderSearch(root)
-    minDiff
   }
 }
