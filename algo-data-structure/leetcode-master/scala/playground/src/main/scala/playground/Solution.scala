@@ -1,21 +1,29 @@
 package playground
 
 object Solution {
-  def convertBST(root: TreeNode): TreeNode = {
-    var acc = 0
 
-    def sumNodeValue(node: TreeNode): Unit = {
-      if (node == null) return
+  import scala.collection.mutable
 
-      sumNodeValue(node.right)
+  def combinationSum3(k: Int, n: Int): List[List[Int]] = {
+    val result = mutable.Stack[List[Int]]()
+    val cache = mutable.Stack[Int]()
 
-      node.value += acc
-      acc = node.value
+    def backtracking(startAt: Int): Unit = {
+      if (cache.sum > n) return
 
-      sumNodeValue(node.left)
+      if (cache.length == k && cache.sum == n) {
+        result.push(cache.toList)
+      }
+      else {
+        for (i <- startAt to 9) {
+          cache.push(i)
+          backtracking(i + 1)
+          cache.pop()
+        }
+      }
     }
 
-    sumNodeValue(root)
-    root
+    backtracking(1)
+    result.toList
   }
 }
