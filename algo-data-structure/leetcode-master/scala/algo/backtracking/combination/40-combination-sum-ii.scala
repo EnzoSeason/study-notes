@@ -20,7 +20,7 @@ object Solution {
 
       // check to sum before backtracking
       for (i <- startAt until sortedCandidates.length if sortedCandidates(i) + localSum <= target) {
-        if (i > startAt && candidates(i) != candidates(i - 1)) {
+        if (i == startAt || candidates(i) == candidates(i - 1)) {
           cache.push(sortedCandidates(i))
           backtracking(i)
           cache.pop()
