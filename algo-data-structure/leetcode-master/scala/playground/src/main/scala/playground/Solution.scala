@@ -4,26 +4,30 @@ object Solution {
 
   import scala.collection.mutable
 
-  def combinationSum3(k: Int, n: Int): List[List[Int]] = {
+  def combinationSum(candidates: Array[Int], target: Int): List[List[Int]] = {
     val result = mutable.Stack[List[Int]]()
     val cache = mutable.Stack[Int]()
+    val sortedCandidates = candidates.sorted
 
     def backtracking(startAt: Int): Unit = {
-      if (cache.sum > n) return
+      val localSum = cache.sum
 
-      if (cache.length == k && cache.sum == n) {
+      if (localSum == target) {
         result.push(cache.toList)
+        return
       }
-      else {
-        for (i <- startAt to 9) {
-          cache.push(i)
-          backtracking(i + 1)
-          cache.pop()
-        }
+      if (localSum > target) {
+        return
+      }
+
+      for (i <- startAt until sortedCandidates.length if sortedCandidates(i) + localSum <= target) {
+        cache.push(sortedCandidates(i))
+        backtracking(i)
+        cache.pop()
       }
     }
 
-    backtracking(1)
+    backtracking(0)
     result.toList
   }
 }
