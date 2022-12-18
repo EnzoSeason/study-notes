@@ -4,30 +4,33 @@ object Solution {
 
   import scala.collection.mutable
 
-  def combinationSum2(candidates: Array[Int], target: Int): List[List[Int]] = {
-    val result = mutable.Stack[List[Int]]()
-    val cache = mutable.Stack[Int]()
-    val sortedCandidates = candidates.sorted // sort in the order ASC
+  def restoreIpAddresses(s: String): List[String] = {
+    if (s.length < 4 || s.length > 12) return Nil
+
+    val result = mutable.Stack[String]()
+    val cache = mutable.Stack[String]()
 
     def backtracking(startAt: Int): Unit = {
-      val localSum = cache.sum
-
-      if (localSum == target) {
-        result.push(cache.toList)
-        return
-      }
-      if (localSum > target) {
+      if (cache.length > 4) {
         return
       }
 
-      // check to sum before backtracking
-      for (i <- startAt until sortedCandidates.length if sortedCandidates(i) + localSum <= target) {
-        if (i == startAt || candidates(i) == candidates(i - 1)) {
-          cache.push(sortedCandidates(i))
-          backtracking(i)
-          cache.pop()
-        }
+      if (startAt == s.length && cache.length == 4) {
+        result.push(cache.reverse.mkString("."))
+        return
       }
+
+      for (endAt <- startAt until startAt + 3 if endAt < s.length && isValidNumber(startAt, endAt)) {
+        cache.push(s.substring(startAt, endAt + 1))
+        backtracking(endAt + 1)
+        cache.pop()
+      }
+    }
+
+    def isValidNumber(start: Int, end: Int): Boolean = {
+      if (start != end && s(start) == '0') return false
+      if (s.substring(start, end + 1).toInt > 255) false
+      else true
     }
 
     backtracking(0)
