@@ -9,14 +9,17 @@ object Solution {
     val cache = mutable.Stack[Int]()
 
     def backtracking(i: Int): Unit = {
-      if (i == nums.length) {
-        result.push(cache.reverse.toList)
-        return
+      result.push(cache.reverse.toList)
+
+//      if (i == nums.length) {
+//        return
+//      }
+
+      for (j <- i until nums.length) {
+        cache.push(nums(j))
+        backtracking(j + 1)
+        cache.pop()
       }
-      backtracking(i + 1)
-      cache.push(nums(i))
-      backtracking(i + 1)
-      cache.pop()
     }
 
     backtracking(0)
