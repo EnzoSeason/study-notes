@@ -4,20 +4,17 @@ object Solution {
 
   import scala.collection.mutable
 
-  def subsets(nums: Array[Int]): List[List[Int]] = {
-    val result = mutable.Stack[List[Int]]()
+  def subsetsWithDup(nums: Array[Int]): List[List[Int]] = {
+    val sortedNums = nums.sorted
+    val result = mutable.Set[List[Int]]()
     val cache = mutable.Stack[Int]()
 
-    def backtracking(i: Int): Unit = {
-      result.push(cache.reverse.toList)
+    def backtracking(startAt: Int): Unit = {
+      result.add(cache.reverse.toList)
 
-//      if (i == nums.length) {
-//        return
-//      }
-
-      for (j <- i until nums.length) {
-        cache.push(nums(j))
-        backtracking(j + 1)
+      for (i <- startAt until sortedNums.length) {
+        cache.push(sortedNums(i))
+        backtracking(i + 1)
         cache.pop()
       }
     }
