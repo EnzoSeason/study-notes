@@ -4,23 +4,26 @@ object Solution {
 
   import scala.collection.mutable
 
-  def permute(nums: Array[Int]): List[List[Int]] = {
+  def subsetsWithDup(nums: Array[Int]): List[List[Int]] = {
+    val sortedNums = nums.sorted
     val result = mutable.Stack[List[Int]]()
     val cache = mutable.Stack[Int]()
 
-    def backtracking(): Unit = {
-      if (cache.length == nums.length) {
-        result.push(cache.reverse.toList)
-        return
-      }
-      for (item <- nums if !cache.contains(item)) {
-        cache.push(item)
-        backtracking()
+    def backtracking(startAt: Int): Unit = {
+      result.push(cache.reverse.toList)
+
+      val visited = mutable.Set[Int]()
+      for (i <- startAt until sortedNums.length if !visited(sortedNums(i))) {
+        cache.push(sortedNums(i))
+        visited.add(sortedNums(i))
+
+        backtracking(i + 1)
+
         cache.pop()
       }
     }
 
-    backtracking()
+    backtracking(0)
     result.toList
   }
 }
