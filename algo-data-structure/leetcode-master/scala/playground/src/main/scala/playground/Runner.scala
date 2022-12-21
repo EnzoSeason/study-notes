@@ -3,5 +3,5 @@ package playground
 object Runner extends App {
   val solution = Solution
 
-  println(solution.restoreIpAddresses("101023"))
+  println(solution.subsets(Array(1, 2, 3)))
 }
