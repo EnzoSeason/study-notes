@@ -32,3 +32,15 @@ The following are important aspects to enable success in going into production w
 - Security design and implementation at multiple levels: authentication, authorization, secrets management, secure communication, etc.
 - Rapid application delivery, usually with different teams focusing on different microservices.
 - DevOps and CI/CD practices and infrastructure.
+
+### Data sovereignty per microservice
+
+An important rule for microservices architecture is that each microservice **must own its domain data and logic**. This principle is similar in [Domain-driven design (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design), where each [Bounded Context](https://martinfowler.com/bliki/BoundedContext.html) or autonomous subsystem or service must own its domain model (data plus logic and behavior).
+![[data-mono-vs-ms.png]]
+A monolithic application with typically a single relational database has two important benefits: [ACID transactions](https://en.wikipedia.org/wiki/ACID) and the SQL language.
+
+However, data access becomes much more complicated when you move to a microservices architecture. Even when using ACID transactions within a microservice or Bounded Context, it is crucial to consider that the data owned by each microservice is **private to that microservice** and should only be **accessed either synchronously through its API endpoints**(REST, gRPC, SOAP, etc) or **asynchronously via messaging**(AMQP or similar).
+
+Microservices-based applications often use a mixture of SQL and NoSQL databases, which is sometimes called the [polyglot persistence](https://martinfowler.com/bliki/PolyglotPersistence.html) approach.
+
+Each microservice owns its related data. In addition, each BC usually has its own [ubiquitous language](https://martinfowler.com/bliki/UbiquitousLanguage.html) to help communication between software developers and domain experts.
