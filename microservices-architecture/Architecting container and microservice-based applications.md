@@ -44,3 +44,13 @@ However, data access becomes much more complicated when you move to a microservi
 Microservices-based applications often use a mixture of SQL and NoSQL databases, which is sometimes called the [polyglot persistence](https://martinfowler.com/bliki/PolyglotPersistence.html) approach.
 
 Each microservice owns its related data. In addition, each BC usually has its own [ubiquitous language](https://martinfowler.com/bliki/UbiquitousLanguage.html) to help communication between software developers and domain experts.
+
+## Logical architecture versus physical architecture
+
+A business microservice or Bounded Context is a logical architecture that might coincide (or not) with physical architecture. 
+
+The important point is that a business microservice or Bounded Context must be **autonomous** by allowing code and state to be independently versioned, deployed, and scaled.
+
+![[catalog-buissiness-ms.png]]
+
+The catalog business microservice could **be composed of several services or processes**. More importantly, the services could **share the same data**, as long as these services are **cohesive with respect to the same business domain**.
