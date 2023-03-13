@@ -3,6 +3,7 @@ This repo contains the notes of [.NET Microservices: Architecture for Containeri
 ## Notes
 1. [[Docker container .Net]]
 2. [[Architecting container and microservice-based applications]]
+3. [[Distributed data management]]
 
 ## E-Books
 
