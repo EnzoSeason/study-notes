@@ -31,3 +31,18 @@ A popular approach is to implement **HTTP (REST)-based microservices,** due to t
 - Failure in any one microservice
 
 Therefore, in order to enforce microservice autonomy and have better resiliency, you should **minimize the use of chains of request/response communication across microservices**. It's recommended that you u**se only asynchronous interaction for inter-microservice communication**, either by **using asynchronous message- and event-based communication**, or by **using (asynchronous) HTTP polling** independently of the original HTTP request/response cycle.
+
+## Identify domain-model boundaries for each microservice
+
+The goal should be to get to the **most meaningful separation** guided by your **domain knowledge**. **Cohesion** is a way to identify how to break apart or group together microservices.
+
+To identify bounded contexts, you can use a DDD pattern called the [Context Mapping pattern](https://www.infoq.com/articles/ddd-contextmapping). A BC is **autonomous** and includes **the details of a single domain** -details like the domain entities- and defines **integration contracts with other BCs**.
+
+When designing a large application, developers **accept the differences and richness** provided by each domain, not try to unify them.
+
+![[identifying-domain-model.png]]
+However, you might also have entities that have a different shape but share the same identity across the multiple domain models from the multiple microservices.
+![[decomposing-into-domain-models.png]]
+Basically, there's a **shared concept** of a user that exists in multiple services (domains), which all share the identity of that user. But in each domain model there might **be additional or different details** about the user entity. The benefits are:
+- reduce duplication
+- having a **primary microservice** that owns a certain type of data per entity so that updates and queries for that type of data are driven only by that microservice.
