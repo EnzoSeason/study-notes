@@ -46,3 +46,50 @@ However, you might also have entities that have a different shape but share the 
 Basically, there's a **shared concept** of a user that exists in multiple services (domains), which all share the identity of that user. But in each domain model there might **be additional or different details** about the user entity. The benefits are:
 - reduce duplication
 - having a **primary microservice** that owns a certain type of data per entity so that updates and queries for that type of data are driven only by that microservice.
+
+## API gateway pattern vs Direct client-to-microservice communication
+
+### Direct client-to-microservice communication
+
+![[direct-client-communication.png]]
+
+In this approach, **each microservice has a public endpoint**, sometimes with a different TCP port for each microservice.
+
+In production environments, you could have an Application Delivery Controller (ADC) like [Azure Application Gateway](https://learn.microsoft.com/en-us/azure/application-gateway/application-gateway-introduction) **between your microservices and the Internet**. This layer acts as a transparent tier that not only performs load balancing, but secures your services by offering SSL termination.
+
+A direct client-to-microservice communication architecture could be good enough for **a small microservice-based application**, especially if the client app is a server-side web application like an ASP.NET MVC app. Consider the following questions when developing a large application based on microservices:
+-  _How can client apps minimize the number of requests to the back end and reduce chatty communication to multiple microservices?_
+-  _How can you handle cross-cutting concerns such as authorization, data transformations, and dynamic request dispatching?_ API Gateway is a place to handle them.
+- _How can client apps communicate with services that use non-Internet-friendly protocols?_ Requests must be performed through protocols like HTTP/HTTPS and translated to the other protocols afterwards
+- _How can you shape a facade especially made for mobile apps?_ API Gateway is a choice.
+
+### Why consider API Gateways instead of direct client-to-microservice communication
+
+-   **Coupling**: Without the API Gateway pattern, the client apps are coupled to the internal microservices. The client apps need to know how the multiple areas of the application are decomposed in microservices.
+ 
+-   **Too many round trips**: A single page/screen in the client app might require several calls to multiple services.
+
+-   **Security issues**: Without a gateway, all the microservices must be exposed to the "external world", making the attack surface larger than if you hide internal microservices that aren't directly used by the client apps.
+
+-   **Cross-cutting concerns**: Each publicly published microservice must handle concerns such as authorization and SSL.
+
+### API Gateway
+
+This pattern is a service that provides a **single-entry point** for certain groups of microservices. The API Gateway pattern is also sometimes known as the "backend for frontend" ([BFF](https://samnewman.io/patterns/architectural/bff/)) because you build it while thinking about the needs of the client app.
+
+Therefore, the API gateway sits between the client apps and the microservices. It acts as a **reverse proxy, routing requests** from clients to services. It can also **provide other cross-cutting features** such as authentication, SSL termination, and cache.
+
+![[single-api-gateway.png]]
+
+That fact can be an important risk because your API Gateway service will be growing and evolving based on many different requirements from the client apps. That's why it's very much recommended to **split the API Gateway in multiple services or multiple smaller API Gateways**, one per client app form-factor type, for instance.
+
+![[multi-api-gateways.png]]
+
+Drawbacks of API Gateway:
+- Coupling that tier with the internal microservices
+- An additional possible single point of failure
+- An API Gateway can introduce increased response time due to the additional network call.
+- If not scaled out properly, the API Gateway can become a bottleneck.
+- An API Gateway requires additional development cost and future maintenance if it includes **custom logic and data aggregation**.
+- If the API Gateway is developed by a single team, there can be a development bottleneck. We can have **several fined-grained API Gateways** or **segregate the API Gateway internally** into multiple areas or layers owned by different teams working on the internal microservices.
+
