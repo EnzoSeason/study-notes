@@ -40,9 +40,9 @@ To identify bounded contexts, you can use a DDD pattern called the [Context Map
 
 When designing a large application, developers **accept the differences and richness** provided by each domain, not try to unify them.
 
-![[identifying-domain-model.png]]
+![identifying-domain-model.png](../images/identifying-domain-model.png)
 However, you might also have entities that have a different shape but share the same identity across the multiple domain models from the multiple microservices.
-![[decomposing-into-domain-models.png]]
+![decomposing-into-domain-models.png](../images/decomposing-into-domain-models.png)
 Basically, there's a **shared concept** of a user that exists in multiple services (domains), which all share the identity of that user. But in each domain model there might **be additional or different details** about the user entity. The benefits are:
 - reduce duplication
 - having a **primary microservice** that owns a certain type of data per entity so that updates and queries for that type of data are driven only by that microservice.
@@ -51,7 +51,7 @@ Basically, there's a **shared concept** of a user that exists in multiple servic
 
 ### Direct client-to-microservice communication
 
-![[direct-client-communication.png]]
+![direct-client-communication.png](../images/direct-client-communication.png)
 
 In this approach, **each microservice has a public endpoint**, sometimes with a different TCP port for each microservice.
 
@@ -79,11 +79,11 @@ This pattern is a service that provides a **single-entry point** for certain gro
 
 Therefore, the API gateway sits between the client apps and the microservices. It acts as a **reverse proxy, routing requests** from clients to services. It can also **provide other cross-cutting features** such as authentication, SSL termination, and cache.
 
-![[single-api-gateway.png]]
+![single-api-gateway.png](../images/single-api-gateway.png)
 
 That fact can be an important risk because your API Gateway service will be growing and evolving based on many different requirements from the client apps. That's why it's very much recommended to **split the API Gateway in multiple services or multiple smaller API Gateways**, one per client app form-factor type, for instance.
 
-![[multi-api-gateways.png]]
+![multi-api-gateways.png](../images/multi-api-gateways.png)
 
 Drawbacks of API Gateway:
 - Coupling that tier with the internal microservices

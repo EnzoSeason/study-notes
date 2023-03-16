@@ -5,7 +5,7 @@ When you design a container image, you'll see an [ENTRYPOINT](https://docs.dock
 If the process fails, the container ends, and the **orchestrator** takes over. If the orchestrator was configured to keep five instances running and one fails, the orchestrator will create another container instance to replace the failed process.
 
 ## Containerizing monolithic applications
-![[mono-containerized-app.png]]
+![mono-containerized-app.png](../images/mono-containerized-app.png)
 The downside of this approach becomes evident if the application grows, requiring it to **scale**. In most cases, just a few parts of the application are the choke points that require scaling, while other components are used less.
 
 ### Manage state and data in Docker applications
@@ -24,7 +24,9 @@ SOA means that you structure your application by decomposing it into multiple se
 It's an approach to building a server application as **a set of small services**.
 Each service **runs in its own process** and **communicates with other processes using protocols** such as HTTP/HTTPS, WebSockets.
 Each microservice implements a specific end-to-end domain or business.  Each microservice should own its related **domain data model and domain logic**.
-![[ms-vs-mono.png]]
+
+![ms-vs-mono.png](../images/ms-vs-mono.png)
+
 The following are important aspects to enable success in going into production with a microservices-based system:
 
 - Monitoring and health checks of the services and infrastructure.
@@ -36,7 +38,9 @@ The following are important aspects to enable success in going into production w
 ### Data sovereignty per microservice
 
 An important rule for microservices architecture is that each microservice **must own its domain data and logic**. This principle is similar in [Domain-driven design (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design), where each [Bounded Context](https://martinfowler.com/bliki/BoundedContext.html) or autonomous subsystem or service must own its domain model (data plus logic and behavior).
-![[data-mono-vs-ms.png]]
+
+![data-mono-vs-ms.png](../images/data-mono-vs-ms.png)
+
 A monolithic application with typically a single relational database has two important benefits: [ACID transactions](https://en.wikipedia.org/wiki/ACID) and the SQL language.
 
 However, data access becomes much more complicated when you move to a microservices architecture. Even when using ACID transactions within a microservice or Bounded Context, it is crucial to consider that the data owned by each microservice is **private to that microservice** and should only be **accessed either synchronously through its API endpoints**(REST, gRPC, SOAP, etc) or **asynchronously via messaging**(AMQP or similar).
@@ -51,6 +55,6 @@ A business microservice or Bounded Context is a logical architecture that might 
 
 The important point is that a business microservice or Bounded Context must be **autonomous** by allowing code and state to be independently versioned, deployed, and scaled.
 
-![[catalog-buissiness-ms.png]]
+![catalog-buissiness-ms.png](../images/catalog-buissiness-ms.png)
 
 The catalog business microservice could **be composed of several services or processes**. More importantly, the services could **share the same data**, as long as these services are **cohesive with respect to the same business domain**.
