@@ -158,3 +158,116 @@ POST /products/_search
   }
 }
 ```
+
+## Multi Match
+
+Sometimes, we want to search by **different fields** in a query. Multi Match is created for it.
+
+![multi-match](./images/multi-match.png)
+
+- `best_fields` is the same as [dis_max](https://www.elastic.co/guide/en/elasticsearch/reference/7.17/query-dsl-dis-max-query.html).
+
+- `most_fields` uses extra fields to improve search results
+
+```json
+PUT /titles
+{
+  "mappings": {
+    "properties": {
+      "title": {
+        "type": "text",
+        "analyzer": "english",
+        "fields": {
+          "std": {
+            "type": "text",
+            "analyzer": "standard"
+          }
+        }
+      }
+    }
+  }
+}
+
+POST /titles/_bulk
+{"index":{"_id":1}}
+{"title":"My dog barks"}
+{"index":{"_id":2}}
+{"title":"There are a lot of barking dogs on the street"}
+
+POST /titles/_search
+{
+  "query": {
+    "multi_match": {
+      "type": "most_fields",
+      "query": "barking dogs",
+      "fields": [
+        "title", // This field is analysed by `english`. Both docs have the same terms, `dog` and `bark`.
+        "title.std" // This field is analysed by `standard`, it keeps the orginal terms.
+      ]
+    }
+  }
+}
+```
+
+- `most_fields` can apply `and` operation. We use `cross_fields` for that.
+
+
+## Function Score
+
+We can apply functions to the calcation of score.
+
+For example, we have 3 documents with the same title but different votes.
+
+```json
+POST /blogs/_bulk
+{"index":{"_id":1}}
+{"title":"test", "vote":0}
+{"index":{"_id":2}}
+{"title":"test", "vote":100}
+{"index":{"_id":3}}
+{"title":"test", "vote":10000}
+```
+
+We can **multiply the `vote` to the score** which will change the hits order.
+
+```json
+POST /blogs/_search
+{
+  "query": {
+    "function_score": {
+      "query": {
+        "multi_match": {
+          "type": "best_fields", 
+          "query": "test",
+          "fields": ["title"]
+        }
+      },
+      "functions": [
+        {
+          "field_value_factor": {
+            "field": "vote"
+            "modifier": "log1p", // function applied on `vote`
+            "factor": 5 // factor of the modifier
+          }
+        }
+      ],
+      "boost_mode": "sum" // default is multiply, now is sum
+    }
+  }
+}
+```
+
+We can return a random order of a list of blog. What's more, we use `seed` to make the order won't be changed for the same user.
+
+```json
+POST /blogs/_search
+{
+  "query": {
+    "function_score": {
+      "random_score": {
+        "seed": 314159265352
+      }
+    }
+  }
+}
+```
