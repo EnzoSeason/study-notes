@@ -85,3 +85,58 @@ Now, if the `node2` is down.
 After a while, ES will relocate the shards.
 
 ![relocate-shards](./images/relocate-shards.png)
+
+### Saving documents on shards
+
+The shard that the document will be saved is calculated by:
+
+```code
+shard = hash(_routing) % nb_of_primary_shard
+```
+
+The doc `routing` is `id` by default.
+
+### Refresh
+
+![refresh](./images/refresh.png)
+
+Refresh means writing data from the index buffer to the segment.
+
+> The collection of segments is a shard.
+
+> When there is a new doc is indexed, a new segment will be created.
+
+Refresh freq: **1s**
+
+If the index buffer is full (10% of JVM), refresh will be triggered, too.
+
+### Transaction log
+
+![transaction-log](./images/transaction-log.png)
+
+It costs time to write the segment to disks. To improve the performance, the segment is, first, written into the **cache**, and allow to be used for searching.
+
+To keep the data when there is an accident (e.g. out of the electricity), the document will be written into the **transaction log**, and the transaction log is written into the disk.
+
+After each refresh, the index buffer will be cleaned up. While the transaction log won't be.
+
+### Flush
+
+![flush](./images/flush.png)
+
+Flush will:
+
+- clear the index buffers and transaction logs
+- write the segments into disks
+
+It will be triggered:
+
+- every 30 min
+- when the transaction log is full (512 MB)
+
+### Merge
+
+It does 2 things:
+
+- reduce the nb of segments
+- delete removed documents
