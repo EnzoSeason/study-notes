@@ -50,7 +50,7 @@ There are two kinds of asynchronous messaging communication:
 
 Attention: **Due to network or other failures**, the client has to be able to **retry sending messages**, and the server has to implement an operation to be **idempotent** in order to process a particular message just once.
 
-### Asynchronous event-driven communication
+### Multiple receivers message-based communication
 
 ![Asynchronous event-driven communication](../images/multi-receiver-message-based-comm.png)
 
