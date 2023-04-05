@@ -59,3 +59,9 @@ The goal is to have **eventual consistency** between multiple data sources acros
 When you use an event bus, you might want to use an **abstraction level** (like an event bus interface) based on a related implementation in classes with code using the API from a **message broker** like [RabbitMQ](https://www.rabbitmq.com/) or a **service bus** like Azure Service Bus with Topics. Alternatively, you might want to use a **higher-level service bus** like [NServiceBus](https://particular.net/nservicebus), [MassTransit](https://masstransit-project.com/), or [Brighter](https://github.com/BrighterCommand/Brighter) to articulate your event bus and publish/subscribe system.
 
 A challenge when implementing an event-driven architecture across multiple microservices is how to atomically update state in the original microservice while **resiliently publishing** its related integration event into the event bus, somehow based on **transactions**.
+
+## API Versioning
+
+ If you're using an HTTP-based mechanism such as REST, one approach is to embed the API version number in the URL or into an HTTP header. A good approach for this functionality is the [Mediator pattern](https://en.wikipedia.org/wiki/Mediator_pattern) (for example, [MediatR library](https://github.com/jbogard/MediatR)) to decouple the different implementation versions into independent handlers.
+
+Finally, if you're using a REST architecture, Hypermedia is the best solution for versioning your services and allowing evolvable APIs.
