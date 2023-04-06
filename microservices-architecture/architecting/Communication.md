@@ -62,6 +62,12 @@ A challenge when implementing an event-driven architecture across multiple micro
 
 ## API Versioning
 
- If you're using an HTTP-based mechanism such as REST, one approach is to embed the API version number in the URL or into an HTTP header. A good approach for this functionality is the [Mediator pattern](https://en.wikipedia.org/wiki/Mediator_pattern) (for example, [MediatR library](https://github.com/jbogard/MediatR)) to decouple the different implementation versions into independent handlers.
+If you're using an HTTP-based mechanism such as REST, one approach is to embed the API version number in the URL or into an HTTP header. A good approach for this functionality is the [Mediator pattern](https://en.wikipedia.org/wiki/Mediator_pattern) (for example, [MediatR library](https://github.com/jbogard/MediatR)) to decouple the different implementation versions into independent handlers.
 
 Finally, if you're using a REST architecture, Hypermedia is the best solution for versioning your services and allowing evolvable APIs.
+
+## Microservices addressability and the service registry
+
+Each microservice has a unique name (URL) that's used to resolve its location. There needs to be a **service registry**.
+
+The registry is a database containing the network locations of service instances. A service registry needs to be **highly available** and **up-to-date**. Clients could cache network locations obtained from the service registry.
