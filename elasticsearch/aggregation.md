@@ -71,3 +71,33 @@ POST employees/_search
     }
 }
 ```
+
+## Pipeline aggregation
+
+Apply functions on the results of aggregation.
+
+```json
+POST employees/_search
+{
+    "size": 0 // Since we don't need the items
+    "aggs": {
+        "jobs": {
+            "terms": {
+                "fields": "job.keyword"
+            },
+            "aggs": {
+                "avg_salary": {
+                    "avg": {
+                        "field": "salary"
+                    }
+                }
+            }
+        },
+        "min_salary_by_jobs": {
+            "min_bucket": { // pipeline function
+                "bucket_path": "jobs>avg_salary" // bucket_path indicates it's a pipeline aggregation
+            }
+        }
+    }
+}
+```
