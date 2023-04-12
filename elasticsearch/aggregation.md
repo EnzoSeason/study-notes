@@ -101,3 +101,28 @@ POST employees/_search
     }
 }
 ```
+
+## Query + Aggregation
+
+`Query` gives a **range** for aggregation result.
+
+```json
+POST employees/_search
+{
+    "size": 0,
+    "query": { // the employee should be over 30 years old.
+        "range": {
+            "age": {
+                "gte": 30
+            }            
+        }
+    },
+    "aggs": {
+        "max_salary": {
+            "max": {
+                "field": "salary"
+            }
+        }
+    }
+}
+```
