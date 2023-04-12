@@ -122,6 +122,16 @@ POST employees/_search
             "max": {
                 "field": "salary"
             }
+        },
+        "all": {
+            "global": {} // It overrides the query range.
+            "aggs": {
+                "max_salary": {
+                    "max": {
+                        "field": "salary"
+                    }
+                }
+            }
         }
     }
 }
