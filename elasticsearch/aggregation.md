@@ -114,7 +114,7 @@ POST employees/_search
         "range": {
             "age": {
                 "gte": 30
-            }            
+            }
         }
     },
     "aggs": {
@@ -134,5 +134,36 @@ POST employees/_search
             }
         }
     }
+}
+```
+
+## Performance
+
+![es-performance](./images/es-performance.png)
+
+- If the data size is small, ES works very good.
+
+- If the data size is big, ES will share the data on different shards, and the **precision** goes down.
+
+To improve the it, there are 2 ways:
+
+- put all the data in **one primary size**.
+
+- increase the `shard_size` in the term aggregation.
+
+The terms aggregation fetches more than the top size terms from each shard. It fetches the top shard_size terms, which defaults to size \* 1.5 + 10.
+
+```json
+{
+  "size": 0,
+  "aggs": {
+    "<a-name>": {
+      "terms": {
+        "field": "someKeyword",
+        "size": 3,
+        "shard_size": 10 // the size of data the ES will fetch on each shard
+      }
+    }
+  }
 }
 ```
